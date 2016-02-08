@@ -8,6 +8,7 @@ public class KNNalgorithm {
 	private ArrayList<DataPoint> trainingSet = null;
 	private int numberOfPoints = 10000;
 	private int k = 3;
+	private DataPoint referance = null;
 
 	public static void main(String[] args)
 	{
@@ -15,6 +16,22 @@ public class KNNalgorithm {
 	}
 	
 	public KNNalgorithm()
+	{
+		setupData();
+		
+		for (int i = 0; i < numberOfPoints; i++)
+		{
+			double dist = calculateDistance(referance, trainingSet.get(i));
+			trainingSet.get(i).setDistanceFromRef(dist);
+		}
+
+		SortList();
+		
+		printOutput();
+		
+	}
+	
+	private void setupData()
 	{
 		trainingSet = new ArrayList<>();
 		
@@ -28,16 +45,18 @@ public class KNNalgorithm {
 			trainingSet.add(new DataPoint(gen.nextInt(1000), gen.nextInt(1000), "blue"));
 		}
 		
-		DataPoint referance = new DataPoint(gen.nextInt(1000), gen.nextInt(1000), "NA");
-		
-		for (int i = 0; i < numberOfPoints; i++)
-		{
-			double dist = calculateDistance(referance, trainingSet.get(i));
-			trainingSet.get(i).setDistanceFromRef(dist);
-		}
-
+		referance = new DataPoint(gen.nextInt(1000), gen.nextInt(1000), "NA");
+	}
+	
+	private double calculateDistance(DataPoint dp1, DataPoint dp2)
+	{
+		return Math.sqrt(Math.pow(Math.abs(dp1.getX() - dp2.getX()), 2) + Math.pow(Math.abs(dp1.getY() - dp2.getY()), 2));
+	}
+	
+	private void SortList()
+	{
 		boolean flag = true;   // set flag to true to begin first pass
-		double temp;   //holding variable
+		DataPoint temp;   //holding variable
 
 		while ( flag )
 		{
@@ -46,15 +65,18 @@ public class KNNalgorithm {
 			{
 				if ( trainingSet.get(j).getDistanceFromRef() > trainingSet.get(j+1).getDistanceFromRef() )
 				{
-					temp = trainingSet.get(j).getDistanceFromRef();//swap elements
-					trainingSet.get(j).setDistanceFromRef(trainingSet.get(j+1).getDistanceFromRef());
-					trainingSet.get(j+1).setDistanceFromRef(temp);
+					temp = trainingSet.get(j);//swap elements
+					trainingSet.set(j, trainingSet.get(j+1));
+					trainingSet.set(j+1, temp);
 					flag = true;//shows a swap occurred
 				}
 			}
 		}
-		
-		System.out.println("Name\tX\tY\tClass");
+	}
+
+	private void printOutput()
+	{
+		System.out.println("Name\tX\tY\tClass\tDistance");
 		System.out.println("Ref\t" + referance.getX() + "\t" + referance.getY() + "\t" + referance.getClassification());
 		int redVote = 0;
 		int blueVote = 0;
@@ -68,24 +90,18 @@ public class KNNalgorithm {
 			{
 				blueVote++;
 			}
-			System.out.println(i + "\t" + trainingSet.get(i).getX() + "\t" + trainingSet.get(i).getY() + "\t" + trainingSet.get(i).getClassification());
+			System.out.println(i + "\t" + trainingSet.get(i).getX() + "\t" + trainingSet.get(i).getY() + "\t" + trainingSet.get(i).getClassification() + "\t" + trainingSet.get(i).getDistanceFromRef());
 		}
 		
 		if (redVote > blueVote)
 		{
 			System.out.println("Ref class is red");
+			referance.setClassification("red");
 		}
 		else
 		{
 			System.out.println("Ref class is blue");
+			referance.setClassification("blue");
 		}
-		
-		
 	}
-	
-	private double calculateDistance(DataPoint dp1, DataPoint dp2)
-	{
-		return Math.sqrt(Math.pow(Math.abs(dp1.getX() - dp2.getX()), 2) + Math.pow(Math.abs(dp1.getY() - dp2.getY()), 2));
-	}
-
 }
