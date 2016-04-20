@@ -1,6 +1,6 @@
 // Dakota Koelling
 
-module kSorting(clk, reset, valid, k, dataNameIn, dataValueIn, dataNameOut, dataValueOut);
+module kSorting(clk, reset, valid, done, k, dataNameIn, dataValueIn, dataNameOut, dataValueOut);
 
 	parameter dataWidth = 32;
 	parameter maxMemory = 1024;
@@ -8,6 +8,7 @@ module kSorting(clk, reset, valid, k, dataNameIn, dataValueIn, dataNameOut, data
 	input clk;
 	input reset;
 	input valid;
+	input done;
 	input [31:0] k;
 	input [31:0] dataNameIn;
 	input [dataWidth-1:0] dataValueIn;
@@ -25,13 +26,13 @@ module kSorting(clk, reset, valid, k, dataNameIn, dataValueIn, dataNameOut, data
 			begin
 				if (reset)
 				begin
-					nameMem[i] <= dataWidth'hFFFFFFFF; //all 1s
-					valueMem[i] <= dataWidth'hFFFFFFFF; //all 1s
+					nameMem[i] <= 32'hFFFFFFFF; //all 1s
+					valueMem[i] <= 32'hFFFFFFFF; //all 1s
 				end
 				else if (valid)
 				begin
-					nameMem[i] <= ;
-					valueMem[i] <= ;
+					nameMem[i] <= 0;
+					valueMem[i] <= 0;
 				end
 			end
 		end

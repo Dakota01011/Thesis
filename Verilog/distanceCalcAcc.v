@@ -1,14 +1,14 @@
 // Dakota Koelling
 
-module distanceCalculationAccumulator(clk, reset, data1, data2, numberOfDimensions, distance);
+module distanceCalculationAccumulator(clk, reset, data1, data2, distance);
 
 	parameter dataWidth = 32;
+	parameter numberOfDimensions = 32;
 
 	input clk;
 	input reset;
 	input [dataWidth-1:0] data1;
 	input [dataWidth-1:0] data2;
-	input numberOfDimensions;
 	output reg [dataWidth-1:0] distance;
 
 	reg [dataWidth-1:0] difference;

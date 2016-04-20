@@ -1,13 +1,14 @@
 // Dakota Koelling
 
-module knnTop(clk, reset, k, numberOfDimensions, refDataIn, loadRef, dataNameIn, dataValueIn, dataNameOut, dataValueOut);
+module knnTop(clk, reset, done, k, refDataIn, loadRef, dataNameIn, dataValueIn, dataNameOut, dataValueOut);
 
 	parameter dataWidth = 32;
+	parameter numberOfDimensions = 32;
 
 	input clk;
 	input reset;
+	input done;
 	input [31:0] k;
-	input [31:0] numberOfDimensions;
 	input [dataWidth-1:0] refDataIn;
 	input loadRef;
 	input [31:0] dataNameIn;
@@ -29,7 +30,7 @@ module knnTop(clk, reset, k, numberOfDimensions, refDataIn, loadRef, dataNameIn,
 		end
 		else
 		begin
-			currentRefPoint <= refDataIn;
+			currentRefPoint <= FIFOout;
 		end
 	end
 
@@ -38,21 +39,23 @@ module knnTop(clk, reset, k, numberOfDimensions, refDataIn, loadRef, dataNameIn,
 	) sort(
 		.clk(clk),
 		.reset(reset),
+		.valid(valid),
+		.done(done),
 		.k(k),
 		.dataNameIn(dataNameIn),
-		.distance(distance),
+		.dataValueIn(distance),
 		.dataNameOut(dataNameOut),
 		.dataValueOut(dataValueOut)
 	);
 	
 	distanceCalculationAccumulator #(
-		.dataWidth(dataWidth)
+		.dataWidth(dataWidth),
+		.numberOfDimensions(numberOfDimensions)
 	) dist(
 		.clk(clk),
 		.reset(reset),
 		.data1(currentRefPoint),
-		.dataValueIn(currentDataPoint),
-		.numberOfDimensions(numberOfDimensions),
+		.data2(currentDataPoint),
 		.distance(distance)
 	);
 
