@@ -56,7 +56,8 @@ module knnTop(clk, reset, done, k, refDataIn, loadRef, dataNameIn, dataValueIn, 
 		.reset(reset),
 		.data1(currentRefPoint),
 		.data2(currentDataPoint),
-		.distance(distance)
+		.distance(distance),
+		.distanceValid(valid)
 	);
 
 	// FIFO_SYNC_MACRO: Synchronous First-In, First-Out (FIfor) RAM Buffer
