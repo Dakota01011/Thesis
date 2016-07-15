@@ -1,20 +1,20 @@
 // Dakota Koelling
 
-module knnTop(clk, reset, done, k, refDataIn, loadRef, dataNameIn, dataValueIn, dataNameOut, dataValueOut);
-
-	parameter dataWidth = 32;
-	parameter numberOfDimensions = 32;
-
-	input clk;
-	input reset;
-	input done;
-	input [31:0] k;
-	input [dataWidth-1:0] refDataIn;
-	input loadRef;
-	input [31:0] dataNameIn;
-	input [dataWidth-1:0] dataValueIn;
-	output [31:0] dataNameOut;
-	output [dataWidth-1:0] dataValueOut;
+module knnTop #(
+	parameter dataWidth = 32,
+	parameter numberOfDimensions = 32
+	) (
+	input 					clk,
+	input 					reset,
+	input 					done,
+	input [31:0] k,
+	input [dataWidth-1:0] 	refDataIn,
+	input 					loadRef,
+	input [31:0] 			dataNameIn,
+	input [dataWidth-1:0] 	dataValueIn,
+	output [31:0] 			dataNameOut,
+	output [dataWidth-1:0] 	dataValueOut
+	);
 
 	wire [dataWidth-1:0] distance;
 	reg [dataWidth-1:0] currentRefPoint;
