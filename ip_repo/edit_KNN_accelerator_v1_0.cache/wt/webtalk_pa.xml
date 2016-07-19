@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Fri Jul 15 15:26:21 2016">
+<application name="pa" timeStamp="Tue Jul 19 16:35:06 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="0dafd4ebffcb4fbea99364d0fc236ba3" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -17,20 +17,43 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="AddSources" value="2" type="JavaHandler"/>
+<property name="AddSources" value="4" type="JavaHandler"/>
+<property name="CloseProject" value="1" type="JavaHandler"/>
+<property name="EditDelete" value="2" type="JavaHandler"/>
+<property name="IPPackagerHandler" value="2" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
-<property name="CANCEL, Cancel" value="1" type="GuiResourceData"/>
-<property name="FINISH, Finish" value="1" type="GuiResourceData"/>
+<property name="FINISH, Finish" value="2" type="GuiResourceData"/>
 <property name="NEXT, Next " value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, KNN_accelerator_v1_0 (KNN_accelerator_v1_0.v" value="3" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, Verilog Synthesis ;  ;  ; false ;  ; KNN_accelerator_v1_0, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, Verilog Synthesis ;  ;  ; false ;  ; KNN_accelerator_v1_0, 2, Verilog Synthesis, 0, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints, constrs_1], 4, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints], 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, KNN_accelerator_v1_0 (KNN_accelerator_v1_0.v" value="9" type="GuiResourceData"/>
 <property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Project Manager, Add Sources], 2, false" value="2" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Project Manager, Package IP], 5, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/edit_KNN_accelerator_v1_0.xpr, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, Merge changes from Customization Parameters Wizard" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, Merge changes from File Groups Wizard" value="2" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Customization Parameters, 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, File Groups, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Review and Package, 7" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.RemoveSourcesDialog_ALSO_DELETE, Also delete  project local files/directories from disk, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, Re-Package IP" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files" value="3" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, Copy sources into project, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO, Copy sources into project, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserTable_SRC_CHOOSER_TABLE, VerilogSourceFile_small ; 1 ; distanceCalcAcc.v ; xil_defaultlib ; C:/Users/dkoellin/Documents/GitHub/Thesis/Verilog, 0, 1, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserTable_SRC_CHOOSER_TABLE, VerilogSourceFile_small ; 2 ; kSorting.v ; xil_defaultlib ; C:/Users/dkoellin/Documents/GitHub/Thesis/Verilog, 1, 2, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserTable_SRC_CHOOSER_TABLE, VerilogSourceFile_small ; 3 ; knnTop.v ; xil_defaultlib ; C:/Users/dkoellin/Documents/GitHub/Thesis/Verilog, 2, knnTop.v, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceTtoZ.TaskBanner_CLOSE, (String" value="1" type="GuiResourceData"/>
+<property name="RDIResource.AbstractCombinedPanel_REMOVE_SELECTED_ELEMENTS, Remove" value="3" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="3" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="24" type="GuiMode"/>
+<property name="GuiMode" value="26" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="22" type="TclMode"/>
+<property name="TclMode" value="24" type="TclMode"/>
 </item>
 </section>
 </application>
