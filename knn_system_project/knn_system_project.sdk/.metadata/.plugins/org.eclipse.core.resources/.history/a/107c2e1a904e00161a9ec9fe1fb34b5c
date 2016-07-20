@@ -8,16 +8,14 @@
 #include "KNN_accelerator.h"
 #include <stdio.h>
 #include "platform.h"
-using namespace std;
 
 int main() {
 
 	init_platform();
 	print("Hello\n\r");
 
-	vector<DataPoint> trainingData;
-	ifstream trainingFile;
-	trainingFile.open("data\training-data.dat");
+	std::vector<DataPoint> trainingData;
+	std::ifstream trainingFile("data\training-data.dat");
 
 	if(trainingFile.bad() || trainingFile.fail())
 	{
