@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Tue Jul 19 17:09:10 2016
+| Date             : Wed Jul 20 16:45:57 2016
 | Host             : AUSLAB-749807 running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+--------+
-| Total On-Chip Power (W)  | 1.698  |
-| Dynamic (W)              | 1.564  |
-| Device Static (W)        | 0.133  |
+| Total On-Chip Power (W)  | 1.841  |
+| Dynamic (W)              | 1.705  |
+| Device Static (W)        | 0.136  |
 | Effective TJA (C/W)      | 11.5   |
-| Max Ambient (C)          | 65.4   |
-| Junction Temperature (C) | 44.6   |
+| Max Ambient (C)          | 63.8   |
+| Junction Temperature (C) | 46.2   |
 | Confidence Level         | Medium |
 | Setting File             | ---    |
 | Simulation Activity File | ---    |
@@ -49,18 +49,20 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.003 |        3 |       --- |             --- |
-| Slice Logic             |     0.002 |     1564 |       --- |             --- |
-|   LUT as Logic          |     0.002 |      414 |     17600 |            2.35 |
-|   Register              |    <0.001 |      761 |     35200 |            2.16 |
-|   CARRY4                |    <0.001 |       12 |      4400 |            0.27 |
-|   F7/F8 Muxes           |    <0.001 |       32 |     17600 |            0.18 |
+| Clocks                  |     0.018 |        3 |       --- |             --- |
+| Slice Logic             |     0.051 |    26941 |       --- |             --- |
+|   LUT as Logic          |     0.049 |    12986 |     17600 |           73.78 |
+|   CARRY4                |     0.001 |      568 |      4400 |           12.91 |
+|   Register              |    <0.001 |     9239 |     35200 |           26.25 |
+|   F7/F8 Muxes           |    <0.001 |     1632 |     17600 |            9.27 |
 |   LUT as Shift Register |    <0.001 |       68 |      6000 |            1.13 |
-|   Others                |     0.000 |      183 |       --- |             --- |
-| Signals                 |     0.003 |     1134 |       --- |             --- |
+|   Others                |     0.000 |      194 |       --- |             --- |
+| Signals                 |     0.073 |    11121 |       --- |             --- |
+| Block RAM               |     0.004 |        1 |        60 |            1.67 |
+| DSPs                    |     0.003 |        3 |        80 |            3.75 |
 | PS7                     |     1.556 |        1 |       --- |             --- |
-| Static Power            |     0.133 |          |           |                 |
-| Total                   |     1.698 |          |           |                 |
+| Static Power            |     0.136 |          |           |                 |
+| Total                   |     1.841 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.015 |       0.008 |      0.007 |
+| Vccint    |       1.000 |     0.156 |       0.148 |      0.008 |
 | Vccaux    |       1.800 |     0.012 |       0.000 |      0.012 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -79,11 +81,11 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.733 |       0.703 |      0.030 |
+| Vccpint   |       1.000 |     0.735 |       0.703 |      0.032 |
 | Vccpaux   |       1.800 |     0.085 |       0.074 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.458 |       0.456 |      0.002 |
@@ -146,13 +148,15 @@ Table of Contents
 +--------------------------------------------------+-----------+
 | Name                                             | Power (W) |
 +--------------------------------------------------+-----------+
-| design_1_wrapper                                 |     1.564 |
-|   design_1_i                                     |     1.564 |
-|     KNN_accelerator_0                            |     0.002 |
-|       inst                                       |     0.002 |
-|         KNN_accelerator_v1_0_S00_AXI_inst        |     0.002 |
-|           knnTop                                 |     0.000 |
-|             FIFO_SYNC_MACRO_inst                 |     0.000 |
+| design_1_wrapper                                 |     1.705 |
+|   design_1_i                                     |     1.705 |
+|     KNN_accelerator_0                            |     0.143 |
+|       inst                                       |     0.143 |
+|         KNN_accelerator_v1_0_S00_AXI_inst        |     0.143 |
+|           knnTop                                 |     0.142 |
+|             FIFO_SYNC_MACRO_inst                 |     0.004 |
+|             dist                                 |     0.024 |
+|             sort                                 |     0.114 |
 |     processing_system7_0                         |     1.557 |
 |       inst                                       |     1.557 |
 |     processing_system7_0_axi_periph              |     0.005 |
@@ -168,12 +172,12 @@ Table of Contents
 |               RD.r_channel_0                     |     0.001 |
 |                 rd_data_fifo_0                   |    <0.001 |
 |                 transaction_fifo_0               |    <0.001 |
-|               SI_REG                             |     0.002 |
+|               SI_REG                             |     0.001 |
 |                 ar_pipe                          |    <0.001 |
 |                 aw_pipe                          |    <0.001 |
 |                 b_pipe                           |    <0.001 |
 |                 r_pipe                           |    <0.001 |
-|               WR.aw_channel_0                    |     0.001 |
+|               WR.aw_channel_0                    |    <0.001 |
 |                 aw_cmd_fsm_0                     |    <0.001 |
 |                 cmd_translator_0                 |    <0.001 |
 |                   incr_cmd_0                     |    <0.001 |

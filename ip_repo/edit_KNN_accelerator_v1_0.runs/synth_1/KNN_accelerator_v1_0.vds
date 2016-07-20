@@ -1,0 +1,495 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Wed Jul 20 16:35:20 2016
+# Process ID: 8728
+# Current directory: C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/edit_KNN_accelerator_v1_0.runs/synth_1
+# Command line: vivado.exe -log KNN_accelerator_v1_0.vds -mode batch -messageDb vivado.pb -notrace -source KNN_accelerator_v1_0.tcl
+# Log file: C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/edit_KNN_accelerator_v1_0.runs/synth_1/KNN_accelerator_v1_0.vds
+# Journal file: C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/edit_KNN_accelerator_v1_0.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source KNN_accelerator_v1_0.tcl -notrace
+Command: synth_design -top KNN_accelerator_v1_0 -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 8900 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 317.789 ; gain = 109.426
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'KNN_accelerator_v1_0' [C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0/hdl/KNN_accelerator_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'KNN_accelerator_v1_0_S00_AXI' [C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0/hdl/KNN_accelerator_v1_0_S00_AXI.v:4]
+	Parameter WIDTH bound to: 32 - type: integer 
+	Parameter NUM_DIM bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 2 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'knnTop' [C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0/hdl/knnTop.v:3]
+	Parameter dataWidth bound to: 32 - type: integer 
+	Parameter numberOfDimensions bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'kSorting' [C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0/hdl/kSorting.v:3]
+	Parameter dataWidth bound to: 32 - type: integer 
+	Parameter maxMemory bound to: 128 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'kSorting' (1#1) [C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0/hdl/kSorting.v:3]
+INFO: [Synth 8-638] synthesizing module 'distanceCalculationAccumulator' [C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0/hdl/distanceCalcAcc.v:3]
+	Parameter dataWidth bound to: 32 - type: integer 
+	Parameter numberOfDimensions bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'distanceCalculationAccumulator' (2#1) [C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0/hdl/distanceCalcAcc.v:3]
+INFO: [Synth 8-638] synthesizing module 'FIFO_SYNC_MACRO' [C:/Xilinx/Vivado/2016.2/data/verilog/src/unimacro/FIFO_SYNC_MACRO.v:25]
+	Parameter ALMOST_EMPTY_OFFSET bound to: 32 - type: integer 
+	Parameter ALMOST_FULL_OFFSET bound to: 9'b100000000 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DEVICE bound to: 7SERIES - type: string 
+	Parameter DO_REG bound to: 0 - type: integer 
+	Parameter INIT bound to: 72'b000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter SRVAL bound to: 72'b000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter FIFO_SIZE bound to: 36Kb - type: string 
+	Parameter SIM_MODE bound to: SAFE - type: string 
+	Parameter DATA_P bound to: FALSE - type: string 
+	Parameter d_size bound to: 36 - type: integer 
+	Parameter D_WIDTH bound to: 32 - type: integer 
+	Parameter DIP_WIDTH bound to: 0 - type: integer 
+	Parameter DOP_WIDTH bound to: 1 - type: integer 
+	Parameter COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter MAX_D_WIDTH bound to: 64 - type: integer 
+	Parameter MAX_DP_WIDTH bound to: 8 - type: integer 
+	Parameter MAX_COUNT_WIDTH bound to: 13 - type: integer 
+	Parameter fin_width bound to: 32 - type: integer 
+	Parameter sim_device_pm bound to: 7SERIES - type: string 
+INFO: [Synth 8-638] synthesizing module 'FIFO36E1' [C:/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:4498]
+	Parameter ALMOST_EMPTY_OFFSET bound to: 32 - type: integer 
+	Parameter ALMOST_FULL_OFFSET bound to: 9'b100000000 
+	Parameter DATA_WIDTH bound to: 36 - type: integer 
+	Parameter DO_REG bound to: 0 - type: integer 
+	Parameter EN_ECC_READ bound to: FALSE - type: string 
+	Parameter EN_ECC_WRITE bound to: FALSE - type: string 
+	Parameter EN_SYN bound to: TRUE - type: string 
+	Parameter FIFO_MODE bound to: FIFO36 - type: string 
+	Parameter FIRST_WORD_FALL_THROUGH bound to: FALSE - type: string 
+	Parameter INIT bound to: 72'b000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter IS_RDCLK_INVERTED bound to: 1'b0 
+	Parameter IS_RDEN_INVERTED bound to: 1'b0 
+	Parameter IS_RSTREG_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter IS_WRCLK_INVERTED bound to: 1'b0 
+	Parameter IS_WREN_INVERTED bound to: 1'b0 
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+	Parameter SRVAL bound to: 72'b000000000000000000000000000000000000000000000000000000000000000000000000 
+INFO: [Synth 8-256] done synthesizing module 'FIFO36E1' (3#1) [C:/Xilinx/Vivado/2016.2/scripts/rt/data/unisim_comp.v:4498]
+INFO: [Synth 8-256] done synthesizing module 'FIFO_SYNC_MACRO' (4#1) [C:/Xilinx/Vivado/2016.2/data/verilog/src/unimacro/FIFO_SYNC_MACRO.v:25]
+INFO: [Synth 8-256] done synthesizing module 'knnTop' (5#1) [C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0/hdl/knnTop.v:3]
+INFO: [Synth 8-256] done synthesizing module 'KNN_accelerator_v1_0_S00_AXI' (6#1) [C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0/hdl/KNN_accelerator_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-256] done synthesizing module 'KNN_accelerator_v1_0' (7#1) [C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0/hdl/KNN_accelerator_v1_0.v:4]
+WARNING: [Synth 8-3331] design KNN_accelerator_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design KNN_accelerator_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design KNN_accelerator_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design KNN_accelerator_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design KNN_accelerator_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design KNN_accelerator_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 375.859 ; gain = 167.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 375.859 ; gain = 167.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 375.859 ; gain = 167.496
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 470.305 ; gain = 261.941
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   3 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 268   
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Multipliers : 
+	                32x32  Multipliers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 261   
+	   8 Input     32 Bit        Muxes := 5     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 132   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module kSorting 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 256   
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 254   
+	   2 Input      1 Bit        Muxes := 127   
+Module distanceCalculationAccumulator 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   3 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	                1 Bit    Registers := 1     
++---Multipliers : 
+	                32x32  Multipliers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module knnTop 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module KNN_accelerator_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   8 Input     32 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 497.949 ; gain = 289.586
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0.
+DSP Report: register A is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0.
+DSP Report: operator KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0 is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0.
+DSP Report: operator KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0 is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0.
+DSP Report: Generating DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg.
+DSP Report: register A is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg.
+DSP Report: register KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg.
+DSP Report: operator KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0 is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg.
+DSP Report: operator KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0 is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg.
+DSP Report: Generating DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0.
+DSP Report: register A is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0.
+DSP Report: operator KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0 is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0.
+DSP Report: operator KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0 is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0.
+DSP Report: Generating DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg.
+DSP Report: register A is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg.
+DSP Report: register KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg.
+DSP Report: operator KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0 is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg.
+DSP Report: operator KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared0 is absorbed into DSP KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg.
+WARNING: [Synth 8-3331] design KNN_accelerator_v1_0 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design KNN_accelerator_v1_0 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design KNN_accelerator_v1_0 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design KNN_accelerator_v1_0 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design KNN_accelerator_v1_0 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design KNN_accelerator_v1_0 has unconnected port s00_axi_arprot[0]
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 503.645 ; gain = 295.281
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 503.645 ; gain = 295.281
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++---------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name          | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|KNN_accelerator_v1_0 | A2*B2            | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|KNN_accelerator_v1_0 | (PCIN>>17)+A2*B2 | 16     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|KNN_accelerator_v1_0 | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|KNN_accelerator_v1_0 | (PCIN>>17)+A2*B2 | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++---------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'KNN_accelerator_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'KNN_accelerator_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\KNN_accelerator_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'KNN_accelerator_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'KNN_accelerator_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\KNN_accelerator_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/axi_awaddr_reg[1]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/axi_awaddr_reg[0]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[47]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[46]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[45]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[44]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[43]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[42]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[41]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[40]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[39]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[38]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[37]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[36]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[35]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[34]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[33]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[32]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[31]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[30]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[29]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[28]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[27]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[26]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[25]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[24]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[23]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[22]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[21]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[20]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[19]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[18]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[17]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[16]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[15]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[47]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[46]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[45]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[44]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[43]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[42]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[41]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[40]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[39]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[38]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[37]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[36]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[35]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[34]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[33]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[32]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[31]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[30]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[29]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[28]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[27]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[26]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[25]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[24]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[23]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[22]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[21]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[20]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[19]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[18]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dist/squared_reg[17]__0) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/axi_bresp_reg[1]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/axi_bresp_reg[0]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/axi_araddr_reg[1]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/axi_araddr_reg[0]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/axi_rresp_reg[1]) is unused and will be removed from module KNN_accelerator_v1_0.
+WARNING: [Synth 8-3332] Sequential element (KNN_accelerator_v1_0_S00_AXI_inst/axi_rresp_reg[0]) is unused and will be removed from module KNN_accelerator_v1_0.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 885.699 ; gain = 677.336
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 885.699 ; gain = 677.336
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 885.699 ; gain = 677.336
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 885.699 ; gain = 677.336
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 885.699 ; gain = 677.336
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 885.699 ; gain = 677.336
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:01 . Memory (MB): peak = 885.699 ; gain = 677.336
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 885.699 ; gain = 677.336
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 885.699 ; gain = 677.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 885.699 ; gain = 677.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:20 ; elapsed = 00:01:21 . Memory (MB): peak = 885.699 ; gain = 677.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:20 ; elapsed = 00:01:21 . Memory (MB): peak = 885.699 ; gain = 677.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |   556|
+|3     |DSP48E1  |     3|
+|4     |FIFO36E1 |     1|
+|5     |LUT1     |    66|
+|6     |LUT2     |   273|
+|7     |LUT3     |    38|
+|8     |LUT4     |  4130|
+|9     |LUT5     |  8180|
+|10    |LUT6     |  2209|
+|11    |MUXF7    |  1120|
+|12    |MUXF8    |   512|
+|13    |FDRE     |   468|
+|14    |FDSE     |  8223|
+|15    |IBUF     |    49|
+|16    |OBUF     |    41|
++------+---------+------+
+
+Report Instance Areas: 
++------+------------------------------------+-------------------------------+------+
+|      |Instance                            |Module                         |Cells |
++------+------------------------------------+-------------------------------+------+
+|1     |top                                 |                               | 25870|
+|2     |  KNN_accelerator_v1_0_S00_AXI_inst |KNN_accelerator_v1_0_S00_AXI   | 25779|
+|3     |    knnTop                          |knnTop                         | 25516|
+|4     |      FIFO_SYNC_MACRO_inst          |FIFO_SYNC_MACRO                |    34|
+|5     |      dist                          |distanceCalculationAccumulator |   366|
+|6     |      sort                          |kSorting                       | 25052|
++------+------------------------------------+-------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:20 ; elapsed = 00:01:21 . Memory (MB): peak = 885.699 ; gain = 677.336
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 84 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:17 ; elapsed = 00:01:18 . Memory (MB): peak = 885.699 ; gain = 649.484
+Synthesis Optimization Complete : Time (s): cpu = 00:01:20 ; elapsed = 00:01:21 . Memory (MB): peak = 885.699 ; gain = 677.336
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 609 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'KNN_accelerator_v1_0' is not ideal for floorplanning, since the cellview 'kSorting' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+27 Infos, 85 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:22 ; elapsed = 00:01:23 . Memory (MB): peak = 885.699 ; gain = 651.008
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.085 . Memory (MB): peak = 885.699 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 20 16:36:50 2016...
