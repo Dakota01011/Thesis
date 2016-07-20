@@ -1,0 +1,19 @@
+src/KNN.o src/KNN.o: ../src/KNN.cpp ../src/KNN.h ../src/DataPoint.h \
+ ../src/DistanceComparator.h ../src/FPGAHelper.h \
+ ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/include/xbasic_types.h \
+ ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/include/xparameters.h \
+ ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/include/xparameters_ps.h
+
+../src/KNN.h:
+
+../src/DataPoint.h:
+
+../src/DistanceComparator.h:
+
+../src/FPGAHelper.h:
+
+../../KNN_AXI_Test_bsp/ps7_cortexa9_0/include/xbasic_types.h:
+
+../../KNN_AXI_Test_bsp/ps7_cortexa9_0/include/xparameters.h:
+
+../../KNN_AXI_Test_bsp/ps7_cortexa9_0/include/xparameters_ps.h:

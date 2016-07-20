@@ -1,0 +1,16 @@
+src/FPGAHelper.o src/FPGAHelper.o: ../src/FPGAHelper.cpp \
+ ../src/FPGAHelper.h \
+ ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/include/xbasic_types.h \
+ ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/include/xparameters.h \
+ ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/include/xparameters_ps.h \
+ ../src/platform.h
+
+../src/FPGAHelper.h:
+
+../../KNN_AXI_Test_bsp/ps7_cortexa9_0/include/xbasic_types.h:
+
+../../KNN_AXI_Test_bsp/ps7_cortexa9_0/include/xparameters.h:
+
+../../KNN_AXI_Test_bsp/ps7_cortexa9_0/include/xparameters_ps.h:
+
+../src/platform.h:

@@ -1,0 +1,7 @@
+src/DistanceComparator.o src/DistanceComparator.o: \
+ ../src/DistanceComparator.cpp ../src/DistanceComparator.h \
+ ../src/DataPoint.h
+
+../src/DistanceComparator.h:
+
+../src/DataPoint.h:

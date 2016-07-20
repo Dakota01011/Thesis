@@ -22,8 +22,8 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
-			<item value="C:\Users\dkoellin\Documents\GitHub\Thesis\zybo_customip_tutorial_project\zybo_customip_tutorial_project.sdk\PWM_AXI_tutorial\src"/>
 			<item value="C:\Users\dkoellin\Documents\GitHub\Thesis\KNN-SW"/>
+			<item value="C:\Users\dkoellin\Documents\GitHub\Thesis\zybo_customip_tutorial_project\zybo_customip_tutorial_project.sdk\PWM_AXI_tutorial\src"/>
 		</list>
 	</section>
 </section>

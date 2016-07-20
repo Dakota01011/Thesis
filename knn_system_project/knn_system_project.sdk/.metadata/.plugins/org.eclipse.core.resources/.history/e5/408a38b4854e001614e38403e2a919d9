@@ -1,0 +1,3 @@
+src/DataPoint.o src/DataPoint.o: ../src/DataPoint.cpp ../src/DataPoint.h
+
+../src/DataPoint.h:
