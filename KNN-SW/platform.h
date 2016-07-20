@@ -33,7 +33,8 @@
 #ifndef __PLATFORM_H_
 #define __PLATFORM_H_
 
-#include "platform_config.h"
+#define STDOUT_IS_PS7_UART
+#define UART_DEVICE_ID 0
 
 void init_platform();
 void cleanup_platform();
