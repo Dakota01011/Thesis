@@ -1,0 +1,21 @@
+/*
+ * DataSet.h
+ *
+ *  Created on: Jul 20, 2016
+ *      Author: dkoellin
+ */
+
+#ifndef SRC_DATASET_H_
+#define SRC_DATASET_H_
+
+#define NUM_FEATURES 10
+#define NUM_POINTS 10
+
+class DataSet {
+public:
+	DataSet();
+	static void getMyIntDataSet(int pArray[NUM_FEATURES][NUM_POINTS]);
+	virtual ~DataSet();
+};
+
+#endif /* SRC_DATASET_H_ */

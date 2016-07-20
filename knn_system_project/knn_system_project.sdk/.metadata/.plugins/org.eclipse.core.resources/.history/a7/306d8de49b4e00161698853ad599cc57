@@ -1,0 +1,25 @@
+/*
+ * DataSet.cpp
+ *
+ *  Created on: Jul 20, 2016
+ *      Author: dkoellin
+ */
+
+#include "DataSet.h"
+
+DataSet::DataSet()
+{
+
+}
+
+const int* DataSet::getMyIntDataSet() const
+{
+	int myIntDataSet[] = {};
+	return myIntDataSet;
+}
+
+DataSet::~DataSet()
+{
+	// TODO Auto-generated destructor stub
+}
+

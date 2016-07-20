@@ -1,5 +1,14 @@
 #include "DataPoint.h"
 
+void DataPoint::setPoint(int new_points[], int num_features)
+{
+	id = new_points[0];
+	for (int i = 1; i < num_features; ++i)
+	{
+		points.push_back(new_points[i]);
+	}
+}
+
 std::istream &operator>>(std::istream &is, DataPoint &dataPoint) {
     // get whole line
     std::string line;

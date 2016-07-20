@@ -1,0 +1,17 @@
+/*
+ * DataSet.h
+ *
+ *  Created on: Jul 20, 2016
+ *      Author: dkoellin
+ */
+
+#ifndef SRC_DATASET_H_
+#define SRC_DATASET_H_
+
+class DataSet {
+public:
+	DataSet();
+	virtual ~DataSet();
+};
+
+#endif /* SRC_DATASET_H_ */

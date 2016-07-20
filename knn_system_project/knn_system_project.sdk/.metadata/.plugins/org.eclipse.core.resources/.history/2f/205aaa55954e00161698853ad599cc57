@@ -1,0 +1,18 @@
+/*
+ * DataSet.cpp
+ *
+ *  Created on: Jul 20, 2016
+ *      Author: dkoellin
+ */
+
+#include "DataSet.h"
+
+DataSet::DataSet() {
+	// TODO Auto-generated constructor stub
+
+}
+
+DataSet::~DataSet() {
+	// TODO Auto-generated destructor stub
+}
+

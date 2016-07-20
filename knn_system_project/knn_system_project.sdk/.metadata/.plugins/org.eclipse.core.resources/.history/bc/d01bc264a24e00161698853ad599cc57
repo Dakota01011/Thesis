@@ -1,0 +1,31 @@
+/*
+ * DataSet.cpp
+ *
+ *  Created on: Jul 20, 2016
+ *      Author: dkoellin
+ */
+
+#include "DataSet.h"
+
+DataSet::DataSet()
+{
+
+}
+
+static void getMyIntDataSet(int pArray[NUM_FEATURES][NUM_POINTS])
+{
+	int myIntDataSet[NUM_FEATURES][NUM_POINTS] = {};
+	for (int i = 0; i < NUM_FEATURES; i++)
+	{
+		for (int j = 0; j < NUM_POINTS; j++)
+		{
+			pArray[i][j] = myIntDataSet[i][j];
+		}
+	}
+}
+
+DataSet::~DataSet()
+{
+	// TODO Auto-generated destructor stub
+}
+
