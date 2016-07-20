@@ -51,9 +51,12 @@ int main() {
 
 	// k = 3
 	KNN::kNNClassify(testPoint, trainingData, 3);
-
-
-	KNN::kNNFPGAClassify(testPoint, trainingData, 3);
+	cout << "[Standard] K returns: " << endl;
+	for(uint i = 0; i < trainingData.size(); i++)
+	{
+		cout << trainingData[i].id << endl;
+	}
+	cout << "[FPGA] Classified as: " << KNN::kNNFPGAClassify(testPoint, trainingData, 3) << endl;
 
 	while(1)
 	{

@@ -59,8 +59,6 @@ void KNN::kNNFPGAClassify(DataPoint dataPoint, std::vector<DataPoint> trainingDa
         results[fpga.readDataName()] = fpga.readDataValue();
     }
 
-    cout << "[FPGA] K returns: " << endl;
-
 }
 
 

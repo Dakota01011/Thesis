@@ -53,7 +53,7 @@ int main() {
 	KNN::kNNClassify(testPoint, trainingData, 3);
 
 
-	KNN::kNNFPGAClassify(testPoint, trainingData, 3);
+	//cout << "[FPGA] Classified as: " << KNN::kNNFPGAClassify(testPoint, trainingData, 3) << endl;
 
 	while(1)
 	{

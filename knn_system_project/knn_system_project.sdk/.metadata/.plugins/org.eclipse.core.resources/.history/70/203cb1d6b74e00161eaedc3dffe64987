@@ -47,13 +47,16 @@ int main() {
 	testPoint.points.push_back(2);
 
 	print("Created data set...\n\r");
-	print("Now calculating...\n\r");
+	print("Now calulating...\n\r");
 
 	// k = 3
 	KNN::kNNClassify(testPoint, trainingData, 3);
-
-
-	KNN::kNNFPGAClassify(testPoint, trainingData, 3);
+	cout << "[Standard] K returns: " << endl;
+	for (DataPoint i : trainingData)
+	{
+		cout << i << endl;
+	}
+	cout << "[FPGA] Classified as: " << KNN::kNNFPGAClassify(testPoint, trainingData, 3) << endl;
 
 	while(1)
 	{

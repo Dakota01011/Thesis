@@ -8,6 +8,9 @@ class KNN {
 public:
     static void kNNClassify(DataPoint dataPoint, std::vector<DataPoint> trainingData, unsigned long k);
     static void kNNFPGAClassify(DataPoint dataPoint, std::vector<DataPoint> trainingData, int k);
+
+private:
+    static std::string maxClassification(std::map<int, int> neighborMap, std::vector<DataPoint> &points);
 };
 
 #endif //KNN_KNN_H

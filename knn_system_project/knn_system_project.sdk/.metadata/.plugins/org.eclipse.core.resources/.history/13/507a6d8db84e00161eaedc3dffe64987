@@ -1,9 +1,9 @@
 #include "KNN.h"
 #include "DistanceComparator.h"
 #include "FPGAHelper.h"
-using namespace std;
+#include "xil_printf.h"
 
-void KNN::kNNClassify(DataPoint dataPoint, std::vector<DataPoint> trainingData, unsigned long k) {
+std::string KNN::kNNClassify(DataPoint dataPoint, std::vector<DataPoint> trainingData, unsigned long k) {
 	DistanceComparator comparator(dataPoint);
 	sort(trainingData.begin(), trainingData.end(), comparator);
 	trainingData.resize(k);
@@ -13,9 +13,11 @@ void KNN::kNNClassify(DataPoint dataPoint, std::vector<DataPoint> trainingData, 
 	{
 		cout << trainingData[i].id << endl;
 	}
+
+	return maxClassification(trainingData);
 }
 
-void KNN::kNNFPGAClassify(DataPoint dataPoint, std::vector<DataPoint> trainingData, int k) {
+std::string KNN::kNNFPGAClassify(DataPoint dataPoint, std::vector<DataPoint> trainingData, int k) {
     FPGAHelper fpga;
 
     // reset it by writing a 1 and then a 0 to the reset bit in the control reg
@@ -59,8 +61,44 @@ void KNN::kNNFPGAClassify(DataPoint dataPoint, std::vector<DataPoint> trainingDa
         results[fpga.readDataName()] = fpga.readDataValue();
     }
 
-    cout << "[FPGA] K returns: " << endl;
-
+    // Below is not related to FPGA, just the classification logic
+    return maxClassification(results, trainingData);
 }
 
+std::string KNN::maxClassification(std::map<int, int> neighborMap, std::vector<DataPoint> &points) {
+    std::vector<DataPoint> found;
 
+    for (uint i = 0; i < points.size(); i++) {
+        DataPoint current = points[i];
+
+        std::map<int, int>::iterator iter = neighborMap.find(current.id);
+        if (iter != neighborMap.end()) {
+            // found DataPoint that is in the neighborMap so add to found vector
+            found.push_back(current);
+        }
+    }
+
+    return maxClassification(found);
+}
+
+std::string KNN::maxClassification(std::vector<DataPoint> &points) {
+    std::map<std::string, int> classes = classFrequencies(points);
+
+    std::string maxKey = "";
+    int maxValue = -1;
+    for (std::map<std::string, int>::iterator it = classes.begin(); it != classes.end(); ++it) {
+        if (it->second > maxValue) {
+            maxKey = it->first;
+            maxValue = it->second;
+        }
+    }
+    return maxKey;
+}
+
+std::map<std::string, int> KNN::classFrequencies(std::vector<DataPoint> &points) {
+    std::map<std::string, int> classes;
+    for (uint i = 0; i < points.size(); i++) {
+        classes[points[i].classification]++;
+    }
+    return classes;
+}
