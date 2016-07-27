@@ -2,7 +2,6 @@
 #define KNN_FPGAHELPER_H
 
 #include "xbasic_types.h"
-#include "xparameters.h"
 
 class FPGAHelper {
 public:
@@ -20,9 +19,6 @@ public:
 
     int readDataName();
     int readDataValue();
-
-private:
-    Xuint32 *baseaddr_p = (Xuint32 *)XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR;
 };
 
 
