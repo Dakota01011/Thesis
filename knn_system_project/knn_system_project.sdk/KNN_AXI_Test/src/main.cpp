@@ -22,7 +22,7 @@ int main() {
 	DataSet set;
 	set.getMyIntDataSet(myIntDataSet);
 
-	//print("Finished making stuff\n\r");
+	print("Finished making stuff\n\r");
 	DataPoint tmp;
 
 	for (int i = 0; i < NUM_POINTS; ++i)
@@ -35,7 +35,7 @@ int main() {
 		tmp.clear();
 		//print("4\n\r");
 	}
-	//print("got data from file\n\r");
+	print("got data from file\n\r");
 
 	// testPoint at location (2, 2, 2, 2, 2)
 	DataPoint testPoint;

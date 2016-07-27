@@ -1,7 +1,7 @@
 #ifndef KNN_FPGAHELPER_H
 #define KNN_FPGAHELPER_H
 
-#include "xbasic_types.h"
+#include "xil_types.h"
 
 class FPGAHelper {
 public:
@@ -17,8 +17,8 @@ public:
     void writeDataValue(int i);
     void writeDataName(int i);
 
-    int readDataName();
-    int readDataValue();
+    void readDataName();
+    void readDataValue();
 };
 
 

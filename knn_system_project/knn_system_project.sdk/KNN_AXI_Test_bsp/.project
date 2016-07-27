@@ -3,7 +3,6 @@
 	<name>KNN_AXI_Test_bsp</name>
 	<comment>Created by SDK v2016.2</comment>
 	<projects>
-		<project>KNN_AXI_Test</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

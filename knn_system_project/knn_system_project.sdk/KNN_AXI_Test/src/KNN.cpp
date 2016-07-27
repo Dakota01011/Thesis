@@ -54,12 +54,13 @@ void KNN::kNNFPGAClassify(DataPoint dataPoint, std::vector<DataPoint> trainingDa
     // read the datanameout and datavalueout reg k time and that will return
     // the name and square distances of the k nearest neighbors
     // storing the results in a map (mapping id of test point to its distance from the reference)
-    std::map<int, int> results;
+    cout << "[FPGA] K returns: " << endl;
     for (int i = 0; i < k; i++) {
-        results[fpga.readDataName()] = fpga.readDataValue();
+        fpga.readDataName();
+        fpga.readDataValue();
     }
 
-    cout << "[FPGA] K returns: " << endl;
+
 
 }
 

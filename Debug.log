@@ -1,0 +1,11 @@
+Log of stuff I did
+
+KNN_accelerator.h driver in the design_1_wrapper_hw_platform_0 project had a macro call to Xil_Out21().
+This function needs xil_io.h included but the design_1_wrapper_hw_platform_0 project forgot to add this.
+BSP project generates code from wrapper_hw project and that is where is error is shown to be when it is really in wrapper_hw, NOT BSP.
+Fix issue in wrapper_hw then use system.mss in BSP to Re-generate BSP sources.
+Clean and rebuild.
+
+Agent Ransack is a very helpful program for windows.
+
+Currently having issues with bad_alloc when program is trying to fetch data from Dataset
