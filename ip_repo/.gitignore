@@ -1,4 +1,4 @@
-zybo_customip_tutorial_project.runs/
-zybo_customip_tutorial_project.cache/
+*.runs/
+*.cache/
 *.log
 *.jou
