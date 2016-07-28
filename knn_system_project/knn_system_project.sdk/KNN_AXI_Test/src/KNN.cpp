@@ -1,21 +1,53 @@
 #include "KNN.h"
-#include "DistanceComparator.h"
-#include "FPGAHelper.h"
-using namespace std;
 
-void KNN::kNNClassify(DataPoint dataPoint, std::vector<DataPoint> trainingData, unsigned long k) {
-	DistanceComparator comparator(dataPoint);
-	sort(trainingData.begin(), trainingData.end(), comparator);
-	trainingData.resize(k);
+void KNN::kNNClassify(int dataPoint[NUM_FEATURES], int trainingData[NUM_POINTS][NUM_FEATURES], int k) {
 
-	cout << "[Standard] K returns: " << endl;
-	for(uint i = 0; i < trainingData.size(); i++)
+	int idList[NUM_POINTS] = {0};
+	double distanceList[NUM_POINTS] = {0};
+
+	// Calculate distances
+	for (int point = 0; point < NUM_POINTS; ++point)
 	{
-		cout << trainingData[i].id << endl;
+		// Grab ID
+		idList[point] = trainingData[point][0];
+		for (int feature = 1; feature < NUM_FEATURES; ++feature)
+		{
+			distanceList[point] += pow(dataPoint[feature] - trainingData[point][feature], 2);
+		}
+		distanceList[point] = sqrt(distanceList[point]);
 	}
+
+	// Find K min distances
+	int min_index = 0;
+	for (int var = 0; var < k; ++var)
+	{
+		min_index = var;
+		for (int i = var; i < NUM_POINTS; ++i)
+		{
+			if (distanceList[i] < distanceList[min_index])
+			{
+				min_index = i;
+			}
+		}
+		//swap
+		double tempdouble = distanceList[min_index];
+		distanceList[min_index] = distanceList[var];
+		distanceList[var] = tempdouble;
+		int tempint = idList[min_index];
+		idList[min_index] = idList[var];
+		idList[var] = tempint;
+	}
+
+	// Print out data
+	cout << "[Standard] K returns: " << endl;
+	for(int i = 0; i < k; i++)
+	{
+		cout << "id: " << idList[i] << " dist: " << distanceList[i] << endl;
+	}
+
 }
 
-void KNN::kNNFPGAClassify(DataPoint dataPoint, std::vector<DataPoint> trainingData, int k) {
+void KNN::kNNFPGAClassify(int dataPoint[NUM_FEATURES], int trainingData[NUM_POINTS][NUM_FEATURES], int k) {
     FPGAHelper fpga;
 
     // reset it by writing a 1 and then a 0 to the reset bit in the control reg
@@ -28,24 +60,26 @@ void KNN::kNNFPGAClassify(DataPoint dataPoint, std::vector<DataPoint> trainingDa
     fpga.writeLoadBit(1);
 
     // write the dimensions of the reference point into the refdatain reg 1 dimension at a time
-    for (uint i = 0; i < dataPoint.points.size(); i++) {
-        fpga.writeRefData(dataPoint.points[i]);
+    for (int i = 1; i < NUM_FEATURES; i++)
+    {
+        fpga.writeRefData(dataPoint[i]);
     }
+
 
     // clear the load bit in the control reg
     fpga.writeLoadBit(0);
 
     // load all of the training data to FPGA
-    for (uint i = 0; i < trainingData.size(); i++) {
-        DataPoint current = trainingData[i];
-
+    for (int i = 0; i < NUM_POINTS; i++)
+    {
         // write the dimensions of the data point to calculate into the datavaluein reg 1 dimension at a time.
-        for (uint j = 0; j < current.points.size(); j++) {
-            fpga.writeDataValue(current.points[j]);
+        for (int j = 1; j < NUM_FEATURES; j++)
+        {
+            fpga.writeDataValue(trainingData[i][j]);
         }
 
         // after all dimensions of point i are written in, write the points name/id number to the datanamein reg
-        fpga.writeDataName(current.id);
+        fpga.writeDataName(trainingData[i][0]);
     }
 
     // set readEn bit in the control reg
@@ -60,8 +94,4 @@ void KNN::kNNFPGAClassify(DataPoint dataPoint, std::vector<DataPoint> trainingDa
         fpga.readDataValue();
     }
 
-
-
 }
-
-

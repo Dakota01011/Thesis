@@ -9,3 +9,5 @@ Clean and rebuild.
 Agent Ransack is a very helpful program for windows.
 
 Currently having issues with bad_alloc when program is trying to fetch data from Dataset
+
+cpp vectors seem to be throwing "terminate called after throwing an instance of 'St9bad_alloc' what():  std::bad_alloc"

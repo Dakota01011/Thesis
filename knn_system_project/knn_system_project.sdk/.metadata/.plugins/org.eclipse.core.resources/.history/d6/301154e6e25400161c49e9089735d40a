@@ -1,0 +1,14 @@
+#ifndef KNN_KNN_H
+#define KNN_KNN_H
+
+#include "DataPoint.h"
+#include "DataSet.h"
+
+class KNN {
+
+public:
+    static void kNNClassify(DataPoint dataPoint, int trainingData[NUM_POINTS][NUM_FEATURES], unsigned long k);
+    static void kNNFPGAClassify(DataPoint dataPoint, int trainingData[NUM_POINTS][NUM_FEATURES], int k);
+};
+
+#endif //KNN_KNN_H

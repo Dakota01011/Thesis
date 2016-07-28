@@ -1,11 +1,11 @@
 #include "DataPoint.h"
 
-void DataPoint::setPoint(int new_points[], int num_features)
+void DataPoint::setPoint(int new_points[NUM_POINTS][NUM_FEATURES], int dataPointNumber)
 {
-	id = new_points[0];
-	for (int i = 1; i < num_features; ++i)
+	id = new_points[dataPointNumber][0];
+	for (int i = 1; i < NUM_FEATURES; ++i)
 	{
-		points.push_back(new_points[i]);
+		points.push_back(new_points[dataPointNumber][i]);
 	}
 }
 
