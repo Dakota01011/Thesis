@@ -1,5 +1,6 @@
 *.runs/
 *.cache/
 *.hw/
+*.sim/
 *.log
 *.jou
