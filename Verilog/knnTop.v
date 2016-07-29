@@ -7,7 +7,7 @@ module knnTop #(
 	input 					clk,
 	input 					reset,
 	input 					done,
-	input [31:0] k,
+	input [31:0] 			k,
 	input [dataWidth-1:0] 	refDataIn,
 	input 					loadRef,
 	input [31:0] 			dataNameIn,
@@ -16,6 +16,7 @@ module knnTop #(
 	output [dataWidth-1:0] 	dataValueOut
 	);
 
+	wire almost_empty;
 	wire [dataWidth-1:0] distance;
 	reg [dataWidth-1:0] currentRefPoint;
 	reg [dataWidth-1:0] currentDataPoint;
@@ -84,7 +85,7 @@ module knnTop #(
 		.DO_REG(0), // Optional output register (0 or 1)
 		.FIFO_SIZE ("36Kb") // Target BRAM: "18Kb" or "36Kb"
 	) FIFO_SYNC_MACRO_inst (
-		.ALMOSTEMPTY(ALMOSTEMPTY), // 1-bit output almost empty
+		.ALMOSTEMPTY(almost_empty), // 1-bit output almost empty
 		.ALMOSTFULL(), // 1-bit output almost full
 		.DO(FIFOout), // Output data, width defined by DATA_WIDTH parameter
 		.EMPTY(), // 1-bit output empty
@@ -95,7 +96,7 @@ module knnTop #(
 		.WRERR(), // 1-bit output write error
 		.CLK(clk), // 1-bit input clock
 		.DI(currentRefPoint), // Input data, width defined by DATA_WIDTH parameter
-		.RDEN(~ALMOSTEMPTY), // 1-bit input read enable
+		.RDEN(~almost_empty), // 1-bit input read enable
 		.RST(reset), // 1-bit input reset
 		.WREN(1'b1) // 1-bit input write enable
 	);

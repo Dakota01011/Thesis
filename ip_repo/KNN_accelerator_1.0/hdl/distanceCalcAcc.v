@@ -1,16 +1,17 @@
 // Dakota Koelling
 
-module distanceCalculationAccumulator(clk, reset, data1, data2, distance, distanceValid);
-
-	parameter dataWidth = 32;
-	parameter numberOfDimensions = 32;
-
-	input clk;
-	input reset;
-	input [dataWidth-1:0] data1;
-	input [dataWidth-1:0] data2;
-	output reg [dataWidth-1:0] distance;
-	output reg distanceValid;
+module distanceCalculationAccumulator #(
+	parameter dataWidth = 32,
+	parameter numberOfDimensions = 32
+	) (
+	input clk,
+	input reset,
+	input data_valid,
+	input [dataWidth-1:0] data1,
+	input [dataWidth-1:0] data2,
+	output reg [dataWidth-1:0] distance,
+	output reg distanceValid
+	);
 
 	reg [dataWidth-1:0] difference;
 	reg [dataWidth-1:0] squared;
@@ -26,23 +27,25 @@ module distanceCalculationAccumulator(clk, reset, data1, data2, distance, distan
 			accumulator <= 0;
 			i <= -3;
 			distanceValid <= 0;
+			distance <= 0;
 		end
-		else if (i >= numberOfDimensions)
-		begin
+		else 
+		begin 
 			difference <= data1 - data2;
 			squared <= difference * difference;
-			accumulator <= 0;
-			distance <= accumulator + squared;
-			i <= 0;
-			distanceValid <= 1;
-		end
-		else
-		begin
-			difference <= data1 - data2;
-			squared <= difference * difference;
-			accumulator <= accumulator + squared;
-			i <= i + 1;
-			distanceValid <= 0;
+			if (i >= numberOfDimensions)
+			begin
+				accumulator <= 0;
+				i <= 0;
+				distanceValid <= 1;
+				distance <= accumulator + squared;
+			end
+			else
+			begin
+				accumulator <= accumulator + squared;
+				i <= i + 1;
+				distanceValid <= 0;
+			end
 		end
 	end
 
