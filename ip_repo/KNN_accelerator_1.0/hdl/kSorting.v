@@ -1,19 +1,20 @@
 // Dakota Koelling
 
-module kSorting(clk, reset, valid, done, k, dataNameIn, dataValueIn, dataNameOut, dataValueOut);
-
-	parameter dataWidth = 32;
-	parameter maxMemory = 128;
-
-	input clk;
-	input reset;
-	input valid;
-	input done;
-	input [31:0] k;
-	input [31:0] dataNameIn;
-	input [dataWidth-1:0] dataValueIn;
-	output [31:0] dataNameOut;
-	output [dataWidth-1:0] dataValueOut;
+module kSorting #(
+	parameter dataWidth = 32,
+	parameter maxMemory = 128,
+	parameter pass_thoo_debug = 0
+) (
+	input clk,
+	input reset,
+	input valid,
+	input done,
+	input [31:0] k,
+	input [31:0] dataNameIn,
+	input [dataWidth-1:0] dataValueIn,
+	output [31:0] dataNameOut,
+	output [dataWidth-1:0] dataValueOut
+);
 
 	reg [dataWidth-1:0] nameMem [maxMemory-1:0];
 	reg [dataWidth-1:0] valueMem [maxMemory-1:0];
@@ -86,7 +87,17 @@ module kSorting(clk, reset, valid, done, k, dataNameIn, dataValueIn, dataNameOut
 		end
 	end
 
-	assign dataNameOut = nameMem[outputPointer];
-	assign dataValueOut = valueMem[outputPointer];
+	generate
+		if(pass_thoo_debug)
+		begin
+			assign dataNameOut = dataNameIn;
+			assign dataValueOut = dataValueIn;
+		end
+		else
+		begin
+			assign dataNameOut = nameMem[outputPointer];
+			assign dataValueOut = valueMem[outputPointer];
+		end
+	endgenerate
 
 endmodule

@@ -11,11 +11,11 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="243030000fs"></ZoomStartTime>
-      <ZoomEndTime time="312630001fs"></ZoomEndTime>
-      <Cursor1Time time="275930000fs"></Cursor1Time>
+      <ZoomStartTime time="68020000fs"></ZoomStartTime>
+      <ZoomEndTime time="290220001fs"></ZoomEndTime>
+      <Cursor1Time time="452842000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="22" />
+   <WVObjectSize size="15" />
    <wvobject fp_name="/knnTop_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -67,44 +67,17 @@
       <obj_property name="ObjectShortName">currentDataPoint[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/dist/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
+   <wvobject fp_name="/knnTop_tb/uut/dataIn_Valid" type="logic">
+      <obj_property name="ElementShortName">dataIn_Valid</obj_property>
+      <obj_property name="ObjectShortName">dataIn_Valid</obj_property>
    </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/dist/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
+   <wvobject fp_name="/knnTop_tb/uut/fifo/mem" type="array">
+      <obj_property name="ElementShortName">mem[4:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem[4:0][31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/dist/data1" type="array">
-      <obj_property name="ElementShortName">data1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">data1[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/dist/data2" type="array">
-      <obj_property name="ElementShortName">data2[31:0]</obj_property>
-      <obj_property name="ObjectShortName">data2[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/dist/distance" type="array">
-      <obj_property name="ElementShortName">distance[31:0]</obj_property>
-      <obj_property name="ObjectShortName">distance[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/dist/distanceValid" type="logic">
-      <obj_property name="ElementShortName">distanceValid</obj_property>
-      <obj_property name="ObjectShortName">distanceValid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/dist/difference" type="array">
-      <obj_property name="ElementShortName">difference[31:0]</obj_property>
-      <obj_property name="ObjectShortName">difference[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/dist/squared" type="array">
-      <obj_property name="ElementShortName">squared[31:0]</obj_property>
-      <obj_property name="ObjectShortName">squared[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/dist/accumulator" type="array">
-      <obj_property name="ElementShortName">accumulator[31:0]</obj_property>
-      <obj_property name="ObjectShortName">accumulator[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/dist/i" type="array">
-      <obj_property name="ElementShortName">i[31:0]</obj_property>
-      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   <wvobject fp_name="/knnTop_tb/uut/fifo/counter" type="array">
+      <obj_property name="ElementShortName">counter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

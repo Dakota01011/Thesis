@@ -47,8 +47,8 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: Dakota:user:KNN_accelerator:1.1
-// IP Revision: 3
+// IP VLNV: Dakota:user:KNN_accelerator:1.2
+// IP Revision: 5
 
 `timescale 1ns/1ps
 

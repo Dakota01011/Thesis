@@ -449,7 +449,15 @@
         .dataNameIn(slv_reg3),
         .dataValueIn(slv_reg4),
         .dataNameOut(dataNameOut),
-        .dataValueOut(dataValueOut)
+        .dataValueOut(dataValueOut),
+        .clk_out(clk_out),
+		.reset_out(reset_out),
+		.done_out(done_out),
+		.k_out(k_out),
+		.refDataIn_out(refDataIn_out),
+		.loadRef_out(loadRef_out),
+		.dataNameIn_out(dataNameIn_out),
+		.dataValueIn_out(dataValueIn_out)
 	);
 
 	// User logic ends
