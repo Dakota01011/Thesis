@@ -16,7 +16,14 @@
 	)
 	(
 		// Users to add ports here
-
+		output				clk_out,
+		output				reset_out,
+		output				done_out,
+		output [3:0] 		k_out,
+		output [3:0] 		refDataIn_out,
+		output				loadRef_out,
+		output [3:0] 		dataNameIn_out,
+		output [3:0] 		dataValueIn_out,
 		// User ports ends
 		// Do not modify the ports beyond this line
 

@@ -50,12 +50,12 @@ vlog -work processing_system7_bfm_v2_0_5 -64 -incr "+incdir+../../../ipstatic/ax
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
-"../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_2/hdl/distanceCalcAcc.v" \
-"../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_2/hdl/kSorting.v" \
-"../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_2/hdl/fifo.v" \
-"../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_2/hdl/knnTop.v" \
-"../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_2/hdl/KNN_accelerator_v1_0_S00_AXI.v" \
-"../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_2/hdl/KNN_accelerator_v1_0.v" \
+"../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_22/hdl/distanceCalcAcc.v" \
+"../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_22/hdl/kSorting.v" \
+"../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_22/hdl/fifo.v" \
+"../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_22/hdl/knnTop.v" \
+"../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_22/hdl/KNN_accelerator_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_22/hdl/KNN_accelerator_v1_0.v" \
 "../../../bd/design_1/ip/design_1_KNN_accelerator_0_0/sim/design_1_KNN_accelerator_0_0.v" \
 
 vcom -work lib_cdc_v1_0_2 -64 -93 \

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Aug 01 14:07:42 2016" VIVADOVERSION="2016.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Aug 01 16:59:36 2016" VIVADOVERSION="2016.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo:part0:1.0" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -25,6 +25,46 @@
     <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef"/>
     <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef"/>
     <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef"/>
+    <PORT DIR="O" NAME="clk_out" SIGIS="undef" SIGNAME="KNN_accelerator_0_clk_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="KNN_accelerator_0" PORT="clk_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="reset_out" SIGIS="undef" SIGNAME="KNN_accelerator_0_reset_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="KNN_accelerator_0" PORT="reset_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="done_out" SIGIS="undef" SIGNAME="KNN_accelerator_0_done_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="KNN_accelerator_0" PORT="done_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="k_out" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_k_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="KNN_accelerator_0" PORT="k_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="refDataIn_out" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_refDataIn_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="KNN_accelerator_0" PORT="refDataIn_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="loadRef_out" SIGIS="undef" SIGNAME="KNN_accelerator_0_loadRef_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="KNN_accelerator_0" PORT="loadRef_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="dataNameIn_out" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_dataNameIn_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="KNN_accelerator_0" PORT="dataNameIn_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="dataValueIn_out" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_dataValueIn_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="KNN_accelerator_0" PORT="dataValueIn_out"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -73,7 +113,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE FULLNAME="/KNN_accelerator_0" HWVERSION="1.2" INSTANCE="KNN_accelerator_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="KNN_accelerator" VLNV="Dakota:user:KNN_accelerator:1.2">
+    <MODULE FULLNAME="/KNN_accelerator_0" HWVERSION="1.22" INSTANCE="KNN_accelerator_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="KNN_accelerator" VLNV="Dakota:user:KNN_accelerator:1.22">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -87,6 +127,46 @@
         <PARAMETER NAME="C_S00_AXI_HIGHADDR" VALUE="0x43C0FFFF"/>
       </PARAMETERS>
       <PORTS>
+        <PORT DIR="O" NAME="clk_out" SIGIS="undef" SIGNAME="KNN_accelerator_0_clk_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="reset_out" SIGIS="undef" SIGNAME="KNN_accelerator_0_reset_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="done_out" SIGIS="undef" SIGNAME="KNN_accelerator_0_done_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="done_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="k_out" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_k_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="k_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="refDataIn_out" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_refDataIn_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="refDataIn_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="loadRef_out" SIGIS="undef" SIGNAME="KNN_accelerator_0_loadRef_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="loadRef_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="dataNameIn_out" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_dataNameIn_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dataNameIn_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="dataValueIn_out" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_dataValueIn_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dataValueIn_out"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="4" NAME="s00_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_AXI_awaddr"/>

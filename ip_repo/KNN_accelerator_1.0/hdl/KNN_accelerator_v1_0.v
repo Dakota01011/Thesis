@@ -15,7 +15,14 @@
 	)
 	(
 		// Users to add ports here
-
+		output				clk_out,
+		output				reset_out,
+		output				done_out,
+		output [3:0] 		k_out,
+		output [3:0] 		refDataIn_out,
+		output				loadRef_out,
+		output [3:0] 		dataNameIn_out,
+		output [3:0] 		dataValueIn_out,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -48,6 +55,14 @@
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) KNN_accelerator_v1_0_S00_AXI_inst (
+		.clk_out(clk_out),
+		.reset_out(reset_out),
+		.done_out(done_out),
+		.k_out(k_out),
+		.refDataIn_out(refDataIn_out),
+		.loadRef_out(loadRef_out),
+		.dataNameIn_out(dataNameIn_out),
+		.dataValueIn_out(dataValueIn_out),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),

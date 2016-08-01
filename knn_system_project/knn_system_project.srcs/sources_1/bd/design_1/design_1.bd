@@ -135,7 +135,72 @@
           <spirit:hierarchyRef spirit:library="BlockDiagram" spirit:name="design_1_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
-      <spirit:ports/>
+      <spirit:ports>
+        <spirit:port>
+          <spirit:name>clk_out</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>reset_out</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>done_out</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>k_out</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+            <spirit:vector>
+              <spirit:left>3</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>refDataIn_out</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+            <spirit:vector>
+              <spirit:left>3</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>loadRef_out</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>dataNameIn_out</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+            <spirit:vector>
+              <spirit:left>3</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>dataValueIn_out</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+            <spirit:vector>
+              <spirit:left>3</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+      </spirit:ports>
     </spirit:model>
   </spirit:component>
 
@@ -299,7 +364,7 @@
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>KNN_accelerator_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="Dakota" spirit:version="1.2"/>
+        <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="Dakota" spirit:version="1.22"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_KNN_accelerator_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -344,6 +409,46 @@
         <spirit:name>rst_processing_system7_0_100M_interconnect_aresetn</spirit:name>
         <spirit:internalPortReference spirit:componentRef="rst_processing_system7_0_100M" spirit:portRef="interconnect_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="ARESETN"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>KNN_accelerator_0_clk_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="clk_out"/>
+        <spirit:externalPortReference spirit:portRef="clk_out"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>KNN_accelerator_0_reset_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="reset_out"/>
+        <spirit:externalPortReference spirit:portRef="reset_out"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>KNN_accelerator_0_done_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="done_out"/>
+        <spirit:externalPortReference spirit:portRef="done_out"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>KNN_accelerator_0_k_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="k_out"/>
+        <spirit:externalPortReference spirit:portRef="k_out"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>KNN_accelerator_0_refDataIn_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="refDataIn_out"/>
+        <spirit:externalPortReference spirit:portRef="refDataIn_out"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>KNN_accelerator_0_loadRef_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="loadRef_out"/>
+        <spirit:externalPortReference spirit:portRef="loadRef_out"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>KNN_accelerator_0_dataNameIn_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="dataNameIn_out"/>
+        <spirit:externalPortReference spirit:portRef="dataNameIn_out"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>KNN_accelerator_0_dataValueIn_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="dataValueIn_out"/>
+        <spirit:externalPortReference spirit:portRef="dataValueIn_out"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
