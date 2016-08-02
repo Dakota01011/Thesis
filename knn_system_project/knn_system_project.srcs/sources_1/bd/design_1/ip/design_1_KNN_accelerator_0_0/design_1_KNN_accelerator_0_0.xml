@@ -377,11 +377,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Aug 01 21:59:36 UTC 2016</spirit:value>
+            <spirit:value>Tue Aug 02 16:44:33 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>60c0968b</spirit:value>
+            <spirit:value>bd6fa30d</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -389,7 +389,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>76eb91ed</spirit:value>
+            <spirit:value>3e748d37</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -408,11 +408,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Aug 01 21:59:36 UTC 2016</spirit:value>
+            <spirit:value>Tue Aug 02 16:44:33 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>60c0968b</spirit:value>
+            <spirit:value>bd6fa30d</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -420,7 +420,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>76eb91ed</spirit:value>
+            <spirit:value>3e748d37</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -439,11 +439,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Aug 01 21:59:36 UTC 2016</spirit:value>
+            <spirit:value>Tue Aug 02 16:44:33 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>60c0968b</spirit:value>
+            <spirit:value>bd6fa30d</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -451,7 +451,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>cf8a9ab9</spirit:value>
+            <spirit:value>c76706c5</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -470,11 +470,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Aug 01 21:59:36 UTC 2016</spirit:value>
+            <spirit:value>Tue Aug 02 16:44:33 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>60c0968b</spirit:value>
+            <spirit:value>bd6fa30d</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -482,7 +482,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>cf8a9ab9</spirit:value>
+            <spirit:value>c76706c5</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -492,126 +492,6 @@
       </spirit:view>
     </spirit:views>
     <spirit:ports>
-      <spirit:port>
-        <spirit:name>clk_out</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>reset_out</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>done_out</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>k_out</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long">3</spirit:left>
-            <spirit:right spirit:format="long">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>refDataIn_out</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long">3</spirit:left>
-            <spirit:right spirit:format="long">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>loadRef_out</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>dataNameIn_out</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long">3</spirit:left>
-            <spirit:right spirit:format="long">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>dataValueIn_out</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long">3</spirit:left>
-            <spirit:right spirit:format="long">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
       <spirit:port>
         <spirit:name>s00_axi_awaddr</spirit:name>
         <spirit:wire>
@@ -952,27 +832,27 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_22/hdl/distanceCalcAcc.v</spirit:name>
+        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_23/hdl/distanceCalcAcc.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_22/hdl/kSorting.v</spirit:name>
+        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_23/hdl/kSorting.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_22/hdl/fifo.v</spirit:name>
+        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_23/hdl/fifo.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_22/hdl/knnTop.v</spirit:name>
+        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_23/hdl/knnTop.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_22/hdl/KNN_accelerator_v1_0_S00_AXI.v</spirit:name>
+        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_23/hdl/KNN_accelerator_v1_0_S00_AXI.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_22/hdl/KNN_accelerator_v1_0.v</spirit:name>
+        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_23/hdl/KNN_accelerator_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -987,27 +867,27 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_22/hdl/distanceCalcAcc.v</spirit:name>
+        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_23/hdl/distanceCalcAcc.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_22/hdl/kSorting.v</spirit:name>
+        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_23/hdl/kSorting.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_22/hdl/fifo.v</spirit:name>
+        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_23/hdl/fifo.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_22/hdl/knnTop.v</spirit:name>
+        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_23/hdl/knnTop.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_22/hdl/KNN_accelerator_v1_0_S00_AXI.v</spirit:name>
+        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_23/hdl/KNN_accelerator_v1_0_S00_AXI.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_22/hdl/KNN_accelerator_v1_0.v</spirit:name>
+        <spirit:name>../../ipshared/dakota/knn_accelerator_v1_23/hdl/KNN_accelerator_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1079,8 +959,8 @@
   </spirit:parameters>
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
-      <xilinx:displayName>KNN_accelerator_v1.22</xilinx:displayName>
-      <xilinx:coreRevision>7</xilinx:coreRevision>
+      <xilinx:displayName>KNN_accelerator_v1.23</xilinx:displayName>
+      <xilinx:coreRevision>8</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="cirrus.com:user:KNN_accelerator:1.0_ARCHIVE_LOCATION">C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="Dakota:user:KNN_accelerator:1.0_ARCHIVE_LOCATION">C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0</xilinx:tag>
@@ -1088,6 +968,7 @@
         <xilinx:tag xilinx:name="Dakota:user:KNN_accelerator:1.2_ARCHIVE_LOCATION">C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="Dakota:user:KNN_accelerator:1.21_ARCHIVE_LOCATION">C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="Dakota:user:KNN_accelerator:1.22_ARCHIVE_LOCATION">C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="Dakota:user:KNN_accelerator:1.23_ARCHIVE_LOCATION">C:/Users/dkoellin/Documents/GitHub/Thesis/ip_repo/KNN_accelerator_1.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ADDR_WIDTH" xilinx:valueSource="user"/>
@@ -1122,8 +1003,8 @@
       <xilinx:xilinxVersion>2016.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="28b08447"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="493665f4"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="babacfca"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="6416e99b"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="717f664e"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="0f49d921"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="ce3109b2"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="26f20f6d"/>
     </xilinx:packagingInfo>

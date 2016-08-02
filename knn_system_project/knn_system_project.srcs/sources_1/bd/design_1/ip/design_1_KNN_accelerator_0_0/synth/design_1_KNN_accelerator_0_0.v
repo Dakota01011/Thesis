@@ -47,21 +47,13 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: Dakota:user:KNN_accelerator:1.22
-// IP Revision: 7
+// IP VLNV: Dakota:user:KNN_accelerator:1.23
+// IP Revision: 8
 
 (* X_CORE_INFO = "KNN_accelerator_v1_0,Vivado 2016.2" *)
 (* CHECK_LICENSE_TYPE = "design_1_KNN_accelerator_0_0,KNN_accelerator_v1_0,{}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_KNN_accelerator_0_0 (
-  clk_out,
-  reset_out,
-  done_out,
-  k_out,
-  refDataIn_out,
-  loadRef_out,
-  dataNameIn_out,
-  dataValueIn_out,
   s00_axi_awaddr,
   s00_axi_awprot,
   s00_axi_awvalid,
@@ -85,14 +77,6 @@ module design_1_KNN_accelerator_0_0 (
   s00_axi_aresetn
 );
 
-output wire clk_out;
-output wire reset_out;
-output wire done_out;
-output wire [3 : 0] k_out;
-output wire [3 : 0] refDataIn_out;
-output wire loadRef_out;
-output wire [3 : 0] dataNameIn_out;
-output wire [3 : 0] dataValueIn_out;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
 input wire [4 : 0] s00_axi_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *)
@@ -140,14 +124,6 @@ input wire s00_axi_aresetn;
     .C_S00_AXI_DATA_WIDTH(32),  // Width of S_AXI data bus
     .C_S00_AXI_ADDR_WIDTH(5)  // Width of S_AXI address bus
   ) inst (
-    .clk_out(clk_out),
-    .reset_out(reset_out),
-    .done_out(done_out),
-    .k_out(k_out),
-    .refDataIn_out(refDataIn_out),
-    .loadRef_out(loadRef_out),
-    .dataNameIn_out(dataNameIn_out),
-    .dataValueIn_out(dataValueIn_out),
     .s00_axi_awaddr(s00_axi_awaddr),
     .s00_axi_awprot(s00_axi_awprot),
     .s00_axi_awvalid(s00_axi_awvalid),

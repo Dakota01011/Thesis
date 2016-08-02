@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Mon Aug 01 16:59:36 2016
+//Date        : Tue Aug 02 11:47:22 2016
 //Host        : AUSLAB-749807 running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -31,15 +31,7 @@ module design_1
     FIXED_IO_mio,
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
-    FIXED_IO_ps_srstb,
-    clk_out,
-    dataNameIn_out,
-    dataValueIn_out,
-    done_out,
-    k_out,
-    loadRef_out,
-    refDataIn_out,
-    reset_out);
+    FIXED_IO_ps_srstb);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -61,23 +53,7 @@ module design_1
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  output clk_out;
-  output [3:0]dataNameIn_out;
-  output [3:0]dataValueIn_out;
-  output done_out;
-  output [3:0]k_out;
-  output loadRef_out;
-  output [3:0]refDataIn_out;
-  output reset_out;
 
-  wire KNN_accelerator_0_clk_out;
-  wire [3:0]KNN_accelerator_0_dataNameIn_out;
-  wire [3:0]KNN_accelerator_0_dataValueIn_out;
-  wire KNN_accelerator_0_done_out;
-  wire [3:0]KNN_accelerator_0_k_out;
-  wire KNN_accelerator_0_loadRef_out;
-  wire [3:0]KNN_accelerator_0_refDataIn_out;
-  wire KNN_accelerator_0_reset_out;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -161,24 +137,8 @@ module design_1
   wire [0:0]rst_processing_system7_0_100M_interconnect_aresetn;
   wire [0:0]rst_processing_system7_0_100M_peripheral_aresetn;
 
-  assign clk_out = KNN_accelerator_0_clk_out;
-  assign dataNameIn_out[3:0] = KNN_accelerator_0_dataNameIn_out;
-  assign dataValueIn_out[3:0] = KNN_accelerator_0_dataValueIn_out;
-  assign done_out = KNN_accelerator_0_done_out;
-  assign k_out[3:0] = KNN_accelerator_0_k_out;
-  assign loadRef_out = KNN_accelerator_0_loadRef_out;
-  assign refDataIn_out[3:0] = KNN_accelerator_0_refDataIn_out;
-  assign reset_out = KNN_accelerator_0_reset_out;
   design_1_KNN_accelerator_0_0 KNN_accelerator_0
-       (.clk_out(KNN_accelerator_0_clk_out),
-        .dataNameIn_out(KNN_accelerator_0_dataNameIn_out),
-        .dataValueIn_out(KNN_accelerator_0_dataValueIn_out),
-        .done_out(KNN_accelerator_0_done_out),
-        .k_out(KNN_accelerator_0_k_out),
-        .loadRef_out(KNN_accelerator_0_loadRef_out),
-        .refDataIn_out(KNN_accelerator_0_refDataIn_out),
-        .reset_out(KNN_accelerator_0_reset_out),
-        .s00_axi_aclk(processing_system7_0_FCLK_CLK0),
+       (.s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(processing_system7_0_axi_periph_M00_AXI_ARADDR[4:0]),
         .s00_axi_aresetn(rst_processing_system7_0_100M_peripheral_aresetn),
         .s00_axi_arprot(processing_system7_0_axi_periph_M00_AXI_ARPROT),

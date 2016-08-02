@@ -16,14 +16,7 @@
 	)
 	(
 		// Users to add ports here
-		output				clk_out,
-		output				reset_out,
-		output				done_out,
-		output [3:0] 		k_out,
-		output [3:0] 		refDataIn_out,
-		output				loadRef_out,
-		output [3:0] 		dataNameIn_out,
-		output [3:0] 		dataValueIn_out,
+		
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -447,8 +440,8 @@
 	   .dataWidth(WIDTH),
 	   .numberOfDimensions(NUM_DIM)
 	) knnTop (
-        .clk(S_AXI_ACLK),
-        .reset(~S_AXI_ARESETN || slv_reg0[0]),
+        .clk(axi_bvalid),
+        .reset(slv_reg0[0]),
         .done(slv_reg0[1]),
         .k(slv_reg1),
         .refDataIn(slv_reg2),
@@ -456,15 +449,7 @@
         .dataNameIn(slv_reg3),
         .dataValueIn(slv_reg4),
         .dataNameOut(dataNameOut),
-        .dataValueOut(dataValueOut),
-        .clk_out(clk_out),
-		.reset_out(reset_out),
-		.done_out(done_out),
-		.k_out(k_out),
-		.refDataIn_out(refDataIn_out),
-		.loadRef_out(loadRef_out),
-		.dataNameIn_out(dataNameIn_out),
-		.dataValueIn_out(dataValueIn_out)
+        .dataValueOut(dataValueOut)
 	);
 
 	// User logic ends

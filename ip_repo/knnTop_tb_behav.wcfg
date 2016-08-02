@@ -11,11 +11,11 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="68020000fs"></ZoomStartTime>
-      <ZoomEndTime time="290220001fs"></ZoomEndTime>
-      <Cursor1Time time="452842000fs"></Cursor1Time>
+      <ZoomStartTime time="116400000fs"></ZoomStartTime>
+      <ZoomEndTime time="352400001fs"></ZoomEndTime>
+      <Cursor1Time time="194000000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="15" />
+   <WVObjectSize size="9" />
    <wvobject fp_name="/knnTop_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -24,47 +24,13 @@
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/knnTop_tb/done" type="logic">
-      <obj_property name="ElementShortName">done</obj_property>
-      <obj_property name="ObjectShortName">done</obj_property>
-   </wvobject>
    <wvobject fp_name="/knnTop_tb/loadRef" type="logic">
       <obj_property name="ElementShortName">loadRef</obj_property>
       <obj_property name="ObjectShortName">loadRef</obj_property>
    </wvobject>
-   <wvobject fp_name="/knnTop_tb/k" type="array">
-      <obj_property name="ElementShortName">k[31:0]</obj_property>
-      <obj_property name="ObjectShortName">k[31:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/knnTop_tb/refDataIn" type="array">
       <obj_property name="ElementShortName">refDataIn[31:0]</obj_property>
       <obj_property name="ObjectShortName">refDataIn[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/dataNameIn" type="array">
-      <obj_property name="ElementShortName">dataNameIn[31:0]</obj_property>
-      <obj_property name="ObjectShortName">dataNameIn[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/dataValueIn" type="array">
-      <obj_property name="ElementShortName">dataValueIn[31:0]</obj_property>
-      <obj_property name="ObjectShortName">dataValueIn[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/dataNameOut" type="array">
-      <obj_property name="ElementShortName">dataNameOut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">dataNameOut[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/dataValueOut" type="array">
-      <obj_property name="ElementShortName">dataValueOut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">dataValueOut[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/currentRefPoint" type="array">
-      <obj_property name="ElementShortName">currentRefPoint[31:0]</obj_property>
-      <obj_property name="ObjectShortName">currentRefPoint[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/currentDataPoint" type="array">
-      <obj_property name="ElementShortName">currentDataPoint[31:0]</obj_property>
-      <obj_property name="ObjectShortName">currentDataPoint[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/knnTop_tb/uut/dataIn_Valid" type="logic">
@@ -74,10 +40,21 @@
    <wvobject fp_name="/knnTop_tb/uut/fifo/mem" type="array">
       <obj_property name="ElementShortName">mem[4:0][31:0]</obj_property>
       <obj_property name="ObjectShortName">mem[4:0][31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/knnTop_tb/uut/fifo/counter" type="array">
       <obj_property name="ElementShortName">counter[31:0]</obj_property>
       <obj_property name="ObjectShortName">counter[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/uut/currentDataPoint" type="array">
+      <obj_property name="ElementShortName">currentDataPoint[31:0]</obj_property>
+      <obj_property name="ObjectShortName">currentDataPoint[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/uut/currentRefPoint" type="array">
+      <obj_property name="ElementShortName">currentRefPoint[31:0]</obj_property>
+      <obj_property name="ObjectShortName">currentRefPoint[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

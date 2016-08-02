@@ -4,26 +4,16 @@ module knnTop #(
 	parameter dataWidth = 32,
 	parameter numberOfDimensions = 32
 ) (
-							input 					clk,
-							input 					reset,
-							input 					done,
-							input [31:0] 			k,
-							input [dataWidth-1:0] 	refDataIn,
-							input 					loadRef,
-							input [31:0] 			dataNameIn,
-							input [dataWidth-1:0] 	dataValueIn,
-							output [31:0] 			dataNameOut,
-							output [dataWidth-1:0] 	dataValueOut,
-							
-							// scope debug
-							output					clk_out,
-							output					reset_out,
-							output					done_out,
-							output [3:0] 			k_out,
-							output [3:0] 			refDataIn_out,
-							output					loadRef_out,
-							output [3:0] 			dataNameIn_out,
-							output [3:0] 			dataValueIn_out
+(* mark_debug = "true" *)	input 					clk,
+(* mark_debug = "true" *)	input 					reset,
+(* mark_debug = "true" *)	input 					done,
+(* mark_debug = "true" *)	input [31:0] 			k,
+(* mark_debug = "true" *)	input [dataWidth-1:0] 	refDataIn,
+(* mark_debug = "true" *)	input 					loadRef,
+(* mark_debug = "true" *)	input [31:0] 			dataNameIn,
+(* mark_debug = "true" *)	input [dataWidth-1:0] 	dataValueIn,
+(* mark_debug = "true" *)	output [31:0] 			dataNameOut,
+(* mark_debug = "true" *)	output [dataWidth-1:0] 	dataValueOut
 );
 
 	wire [dataWidth-1:0] distance;
@@ -31,16 +21,6 @@ module knnTop #(
 	reg [dataWidth-1:0] currentDataPoint;
 	reg dataIn_Valid;
 	integer i;
-
-	// debug AXI on scope
-	assign clk_out = clk;
-	assign reset_out = reset;
-	assign done_out = done;
-	assign k_out = k[3:0];
-	assign refDataIn_out = refDataIn[3:0];
-	assign loadRef_out = loadRef;
-	assign dataNameIn_out = dataNameIn[3:0];
-	assign dataValueIn_out = dataValueIn[3:0];
 
 	always @(posedge clk)
 	begin

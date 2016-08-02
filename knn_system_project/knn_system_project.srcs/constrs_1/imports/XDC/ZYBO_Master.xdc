@@ -193,88 +193,88 @@
 #set_property PACKAGE_PIN K14 [get_ports {ja_p[3]}]
 #set_property IOSTANDARD LVCMOS33 [get_ports {ja_p[3]}]
 
-#Pmod Header JB
-#IO_L15N_T2_DQS_34
-set_property PACKAGE_PIN U20 [get_ports clk_out]
-set_property IOSTANDARD LVCMOS33 [get_ports clk_out]
+##Pmod Header JB
+##IO_L15N_T2_DQS_34
+#set_property PACKAGE_PIN U20 [get_ports clk_out]
+#set_property IOSTANDARD LVCMOS33 [get_ports clk_out]
 
-#IO_L15P_T2_DQS_34
-set_property PACKAGE_PIN T20 [get_ports reset_out]
-set_property IOSTANDARD LVCMOS33 [get_ports reset_out]
+# #IO_L15P_T2_DQS_34
+# set_property PACKAGE_PIN T20 [get_ports reset_out]
+# set_property IOSTANDARD LVCMOS33 [get_ports reset_out]
 
-#IO_L16N_T2_34
-set_property PACKAGE_PIN W20 [get_ports done_out]
-set_property IOSTANDARD LVCMOS33 [get_ports done_out]
+# #IO_L16N_T2_34
+# set_property PACKAGE_PIN W20 [get_ports done_out]
+# set_property IOSTANDARD LVCMOS33 [get_ports done_out]
 
-#IO_L16P_T2_34
-set_property PACKAGE_PIN V20 [get_ports loadRef_out]
-set_property IOSTANDARD LVCMOS33 [get_ports loadRef_out]
+# #IO_L16P_T2_34
+# set_property PACKAGE_PIN V20 [get_ports loadRef_out]
+# set_property IOSTANDARD LVCMOS33 [get_ports loadRef_out]
 
-#IO_L17N_T2_34
-set_property PACKAGE_PIN Y19 [get_ports {k_out[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {k_out[0]}]
+# #IO_L17N_T2_34
+# set_property PACKAGE_PIN Y19 [get_ports {k_out[0]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {k_out[0]}]
 
-#IO_L17P_T2_34
-set_property PACKAGE_PIN Y18 [get_ports {k_out[1]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {k_out[1]}]
+# #IO_L17P_T2_34
+# set_property PACKAGE_PIN Y18 [get_ports {k_out[1]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {k_out[1]}]
 
-#IO_L22N_T3_34
-set_property PACKAGE_PIN W19 [get_ports {k_out[2]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {k_out[2]}]
+# #IO_L22N_T3_34
+# set_property PACKAGE_PIN W19 [get_ports {k_out[2]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {k_out[2]}]
 
-#IO_L22P_T3_34
-set_property PACKAGE_PIN W18 [get_ports {k_out[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {k_out[3]}]
+# #IO_L22P_T3_34
+# set_property PACKAGE_PIN W18 [get_ports {k_out[3]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {k_out[3]}]
 
-#Pmod Header JC
-#IO_L10N_T1_34
-set_property PACKAGE_PIN W15 [get_ports {refDataIn_out[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {refDataIn_out[0]}]
+# #Pmod Header JC
+# #IO_L10N_T1_34
+# set_property PACKAGE_PIN W15 [get_ports {refDataIn_out[0]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {refDataIn_out[0]}]
 
-#IO_L10P_T1_34
-set_property PACKAGE_PIN V15 [get_ports {refDataIn_out[1]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {refDataIn_out[1]}]
+# #IO_L10P_T1_34
+# set_property PACKAGE_PIN V15 [get_ports {refDataIn_out[1]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {refDataIn_out[1]}]
 
-#IO_L1N_T0_34
-set_property PACKAGE_PIN T10 [get_ports {refDataIn_out[2]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {refDataIn_out[2]}]
+# #IO_L1N_T0_34
+# set_property PACKAGE_PIN T10 [get_ports {refDataIn_out[2]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {refDataIn_out[2]}]
 
-#IO_L1P_T0_34
-set_property PACKAGE_PIN T11 [get_ports {refDataIn_out[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {refDataIn_out[3]}]
+# #IO_L1P_T0_34
+# set_property PACKAGE_PIN T11 [get_ports {refDataIn_out[3]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {refDataIn_out[3]}]
 
-#IO_L8N_T1_34
-set_property PACKAGE_PIN Y14 [get_ports {dataValueIn_out[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {dataValueIn_out[0]}]
+# #IO_L8N_T1_34
+# set_property PACKAGE_PIN Y14 [get_ports {dataValueIn_out[0]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {dataValueIn_out[0]}]
 
-#IO_L8P_T1_34
-set_property PACKAGE_PIN W14 [get_ports {dataValueIn_out[1]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {dataValueIn_out[1]}]
+# #IO_L8P_T1_34
+# set_property PACKAGE_PIN W14 [get_ports {dataValueIn_out[1]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {dataValueIn_out[1]}]
 
-#IO_L2N_T0_34
-set_property PACKAGE_PIN U12 [get_ports {dataValueIn_out[2]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {dataValueIn_out[2]}]
+# #IO_L2N_T0_34
+# set_property PACKAGE_PIN U12 [get_ports {dataValueIn_out[2]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {dataValueIn_out[2]}]
 
-#IO_L2P_T0_34
-set_property PACKAGE_PIN T12 [get_ports {dataValueIn_out[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {dataValueIn_out[3]}]
+# #IO_L2P_T0_34
+# set_property PACKAGE_PIN T12 [get_ports {dataValueIn_out[3]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {dataValueIn_out[3]}]
 
-#Pmod Header JD
-#IO_L5N_T0_34
-set_property PACKAGE_PIN T15 [get_ports {dataNameIn_out[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {dataNameIn_out[0]}]
+# #Pmod Header JD
+# #IO_L5N_T0_34
+# set_property PACKAGE_PIN T15 [get_ports {dataNameIn_out[0]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {dataNameIn_out[0]}]
 
-#IO_L5P_T0_34
-set_property PACKAGE_PIN T14 [get_ports {dataNameIn_out[1]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {dataNameIn_out[1]}]
+# #IO_L5P_T0_34
+# set_property PACKAGE_PIN T14 [get_ports {dataNameIn_out[1]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {dataNameIn_out[1]}]
 
-#IO_L6N_T0_VREF_34
-set_property PACKAGE_PIN R14 [get_ports {dataNameIn_out[2]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {dataNameIn_out[2]}]
+# #IO_L6N_T0_VREF_34
+# set_property PACKAGE_PIN R14 [get_ports {dataNameIn_out[2]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {dataNameIn_out[2]}]
 
-#IO_L6P_T0_34
-set_property PACKAGE_PIN P14 [get_ports {dataNameIn_out[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {dataNameIn_out[3]}]
+# #IO_L6P_T0_34
+# set_property PACKAGE_PIN P14 [get_ports {dataNameIn_out[3]}]
+# set_property IOSTANDARD LVCMOS33 [get_ports {dataNameIn_out[3]}]
 
 ##IO_L11N_T1_SRCC_34
 #set_property PACKAGE_PIN U15 [get_ports {jd_n[2]}]
@@ -294,8 +294,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports {dataNameIn_out[3]}]
 
 ##Pmod Header JE
 ##IO_L4P_T0_34
-#set_property PACKAGE_PIN V12 [get_ports {je[0]}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {je[0]}]
+#set_property PACKAGE_PIN V12 [get_ports {clk_out}]
+#set_property IOSTANDARD LVCMOS33 [get_ports {clk_out}]
 
 ##IO_L18N_T2_34
 #set_property PACKAGE_PIN W16 [get_ports {je[1]}]
@@ -405,3 +405,58 @@ set_property IOSTANDARD LVCMOS33 [get_ports {dataNameIn_out[3]}]
 #set_property PACKAGE_PIN R19 [get_ports vga_vs]
 #set_property IOSTANDARD LVCMOS33 [get_ports vga_vs]
 
+
+create_debug_core u_ila_0 ila
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU_CNT 4 [get_debug_cores u_ila_0]
+set_property C_ADV_TRIGGER true [get_debug_cores u_ila_0]
+set_property C_DATA_DEPTH 1024 [get_debug_cores u_ila_0]
+set_property C_EN_STRG_QUAL true [get_debug_cores u_ila_0]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
+set_property port_width 1 [get_debug_ports u_ila_0/clk]
+connect_debug_port u_ila_0/clk [get_nets [list design_1_i/processing_system7_0/inst/FCLK_CLK0]]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
+set_property port_width 32 [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[0]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[1]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[2]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[3]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[4]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[5]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[6]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[7]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[8]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[9]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[10]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[11]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[12]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[13]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[14]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[15]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[16]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[17]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[18]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[19]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[20]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[21]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[22]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[23]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[24]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[25]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[26]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[27]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[28]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[29]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[30]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/refDataIn[31]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
+set_property port_width 32 [get_debug_ports u_ila_0/probe1]
+connect_debug_port u_ila_0/probe1 [get_nets [list {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[0]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[1]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[2]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[3]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[4]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[5]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[6]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[7]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[8]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[9]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[10]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[11]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[12]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[13]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[14]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[15]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[16]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[17]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[18]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[19]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[20]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[21]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[22]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[23]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[24]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[25]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[26]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[27]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[28]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[29]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[30]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/k[31]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+set_property port_width 32 [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[0]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[1]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[2]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[3]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[4]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[5]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[6]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[7]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[8]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[9]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[10]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[11]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[12]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[13]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[14]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[15]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[16]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[17]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[18]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[19]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[20]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[21]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[22]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[23]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[24]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[25]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[26]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[27]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[28]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[29]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[30]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueIn[31]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
+set_property port_width 32 [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[0]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[1]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[2]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[3]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[4]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[5]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[6]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[7]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[8]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[9]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[10]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[11]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[12]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[13]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[14]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[15]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[16]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[17]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[18]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[19]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[20]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[21]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[22]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[23]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[24]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[25]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[26]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[27]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[28]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[29]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[30]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameIn[31]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
+set_property port_width 32 [get_debug_ports u_ila_0/probe4]
+connect_debug_port u_ila_0/probe4 [get_nets [list {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[0]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[1]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[2]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[3]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[4]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[5]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[6]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[7]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[8]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[9]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[10]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[11]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[12]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[13]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[14]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[15]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[16]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[17]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[18]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[19]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[20]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[21]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[22]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[23]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[24]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[25]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[26]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[27]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[28]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[29]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[30]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataNameOut[31]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
+set_property port_width 32 [get_debug_ports u_ila_0/probe5]
+connect_debug_port u_ila_0/probe5 [get_nets [list {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[0]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[1]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[2]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[3]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[4]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[5]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[6]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[7]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[8]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[9]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[10]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[11]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[12]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[13]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[14]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[15]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[16]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[17]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[18]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[19]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[20]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[21]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[22]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[23]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[24]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[25]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[26]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[27]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[28]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[29]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[30]} {design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/dataValueOut[31]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe6]
+set_property port_width 1 [get_debug_ports u_ila_0/probe6]
+connect_debug_port u_ila_0/probe6 [get_nets [list design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/clk]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe7]
+set_property port_width 1 [get_debug_ports u_ila_0/probe7]
+connect_debug_port u_ila_0/probe7 [get_nets [list design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/done]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe8]
+set_property port_width 1 [get_debug_ports u_ila_0/probe8]
+connect_debug_port u_ila_0/probe8 [get_nets [list design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/loadRef]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe9]
+set_property port_width 1 [get_debug_ports u_ila_0/probe9]
+connect_debug_port u_ila_0/probe9 [get_nets [list design_1_i/KNN_accelerator_0/inst/KNN_accelerator_v1_0_S00_AXI_inst/knnTop/reset]]
+set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
+set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
+set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets u_ila_0_FCLK_CLK0]

@@ -18,7 +18,7 @@ int main() {
 	set.getMyIntDataSet(myIntDataSet);
 
 	// testPoint at location (2, 2, 2, 2, 2)
-	int testPoint[NUM_FEATURES] = {-1, 1, 2, 2, 2, 3};
+	int testPoint[NUM_FEATURES] = {-1, 2, 2, 2, 2, 2};
 
 	print("Now calculating...\n\r");
 

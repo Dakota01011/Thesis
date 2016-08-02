@@ -158,17 +158,9 @@ proc create_root_design { parentCell } {
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
 
   # Create ports
-  set clk_out [ create_bd_port -dir O clk_out ]
-  set dataNameIn_out [ create_bd_port -dir O -from 3 -to 0 dataNameIn_out ]
-  set dataValueIn_out [ create_bd_port -dir O -from 3 -to 0 dataValueIn_out ]
-  set done_out [ create_bd_port -dir O done_out ]
-  set k_out [ create_bd_port -dir O -from 3 -to 0 k_out ]
-  set loadRef_out [ create_bd_port -dir O loadRef_out ]
-  set refDataIn_out [ create_bd_port -dir O -from 3 -to 0 refDataIn_out ]
-  set reset_out [ create_bd_port -dir O reset_out ]
 
   # Create instance: KNN_accelerator_0, and set properties
-  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv Dakota:user:KNN_accelerator:1.22 KNN_accelerator_0 ]
+  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv Dakota:user:KNN_accelerator:1.23 KNN_accelerator_0 ]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -1344,14 +1336,6 @@ CONFIG.NUM_MI {1} \
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M00_AXI [get_bd_intf_pins KNN_accelerator_0/S00_AXI] [get_bd_intf_pins processing_system7_0_axi_periph/M00_AXI]
 
   # Create port connections
-  connect_bd_net -net KNN_accelerator_0_clk_out [get_bd_ports clk_out] [get_bd_pins KNN_accelerator_0/clk_out]
-  connect_bd_net -net KNN_accelerator_0_dataNameIn_out [get_bd_ports dataNameIn_out] [get_bd_pins KNN_accelerator_0/dataNameIn_out]
-  connect_bd_net -net KNN_accelerator_0_dataValueIn_out [get_bd_ports dataValueIn_out] [get_bd_pins KNN_accelerator_0/dataValueIn_out]
-  connect_bd_net -net KNN_accelerator_0_done_out [get_bd_ports done_out] [get_bd_pins KNN_accelerator_0/done_out]
-  connect_bd_net -net KNN_accelerator_0_k_out [get_bd_ports k_out] [get_bd_pins KNN_accelerator_0/k_out]
-  connect_bd_net -net KNN_accelerator_0_loadRef_out [get_bd_ports loadRef_out] [get_bd_pins KNN_accelerator_0/loadRef_out]
-  connect_bd_net -net KNN_accelerator_0_refDataIn_out [get_bd_ports refDataIn_out] [get_bd_pins KNN_accelerator_0/refDataIn_out]
-  connect_bd_net -net KNN_accelerator_0_reset_out [get_bd_ports reset_out] [get_bd_pins KNN_accelerator_0/reset_out]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins KNN_accelerator_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_100M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_100M/ext_reset_in]
   connect_bd_net -net rst_processing_system7_0_100M_interconnect_aresetn [get_bd_pins processing_system7_0_axi_periph/ARESETN] [get_bd_pins rst_processing_system7_0_100M/interconnect_aresetn]
@@ -1364,37 +1348,21 @@ CONFIG.NUM_MI {1} \
   regenerate_bd_layout -layout_string {
    guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
-preplace port done_out -pg 1 -y 100 -defaultsOSRD
 preplace port DDR -pg 1 -y 250 -defaultsOSRD
-preplace port loadRef_out -pg 1 -y 160 -defaultsOSRD
-preplace port clk_out -pg 1 -y 60 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 270 -defaultsOSRD
-preplace port reset_out -pg 1 -y 80 -defaultsOSRD
-preplace portBus dataValueIn_out -pg 1 -y 200 -defaultsOSRD
-preplace portBus dataNameIn_out -pg 1 -y 180 -defaultsOSRD
-preplace portBus refDataIn_out -pg 1 -y 140 -defaultsOSRD
-preplace portBus k_out -pg 1 -y 120 -defaultsOSRD
 preplace inst rst_processing_system7_0_100M -pg 1 -lvl 1 -y 130 -defaultsOSRD
 preplace inst KNN_accelerator_0 -pg 1 -lvl 3 -y 130 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 110 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -y 340 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 1 3 NJ 250 NJ 250 NJ
-preplace netloc KNN_accelerator_0_refDataIn_out 1 3 1 N
-preplace netloc KNN_accelerator_0_k_out 1 3 1 N
 preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 1 N
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 440
-preplace netloc KNN_accelerator_0_reset_out 1 3 1 N
-preplace netloc KNN_accelerator_0_dataNameIn_out 1 3 1 N
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 40 410
 preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 2 450 230 NJ
-preplace netloc KNN_accelerator_0_loadRef_out 1 3 1 N
 preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 270 NJ 270 NJ
-preplace netloc KNN_accelerator_0_done_out 1 3 1 N
-preplace netloc KNN_accelerator_0_clk_out 1 3 1 N
 preplace netloc rst_processing_system7_0_100M_interconnect_aresetn 1 1 1 420
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 30 430 240 NJ
-preplace netloc KNN_accelerator_0_dataValueIn_out 1 3 1 N
-levelinfo -pg 1 0 220 600 900 1070 -top 0 -bot 480
+levelinfo -pg 1 0 220 600 850 960 -top 0 -bot 480
 ",
 }
 
