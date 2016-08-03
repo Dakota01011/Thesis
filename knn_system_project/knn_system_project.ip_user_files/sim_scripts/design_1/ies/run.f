@@ -25,13 +25,6 @@
 -endlib
 -makelib ies/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
-  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_23/hdl/distanceCalcAcc.v" \
-  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_23/hdl/kSorting.v" \
-  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_23/hdl/fifo.v" \
-  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_23/hdl/knnTop.v" \
-  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_23/hdl/KNN_accelerator_v1_0_S00_AXI.v" \
-  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_23/hdl/KNN_accelerator_v1_0.v" \
-  "../../../bd/design_1/ip/design_1_KNN_accelerator_0_0/sim/design_1_KNN_accelerator_0_0.v" \
 -endlib
 -makelib ies/lib_cdc_v1_0_2 \
   "../../../ipstatic/lib_cdc_v1_0/hdl/src/vhdl/cdc_sync.vhd" \
@@ -47,6 +40,13 @@
 -endlib
 -makelib ies/xil_defaultlib \
   "../../../bd/design_1/hdl/design_1.v" \
+  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_32/hdl/distanceCalcAcc.v" \
+  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_32/hdl/kSorting.v" \
+  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_32/hdl/fifo.v" \
+  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_32/hdl/knnTop.v" \
+  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_32/hdl/KNN_accelerator_v1_0_S00_AXI.v" \
+  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_32/hdl/KNN_accelerator_v1_0.v" \
+  "../../../bd/design_1/ip/design_1_KNN_accelerator_0_1/sim/design_1_KNN_accelerator_0_1.v" \
 -endlib
 -makelib ies/generic_baseblocks_v2_1_0 \
   "../../../ipstatic/generic_baseblocks_v2_1/hdl/verilog/generic_baseblocks_v2_1_carry_and.v" \

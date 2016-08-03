@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Dakota Koelling
+// Engineer: Dakota Koelling
 // 
 // Create Date: 07/29/2016 09:50:48 AM
 // Design Name: 
@@ -23,10 +23,11 @@
 module knnTop_tb();
 
 	reg clk;
-	reg rd_clk;
 	reg reset;
-	reg done;
+	reg wr_en;
+	reg rd_en;
 	reg start;
+	reg done;
 	reg [31:0] k;
 	reg [31:0] dataValueIn;
 	wire [31:0] dataNameOut;
@@ -37,11 +38,12 @@ module knnTop_tb();
 		.numberOfDimensions(5)
 	) uut (
 		.clk 			(clk),
-		.rd_clk 		(rd_clk),
 		.reset 			(reset),
+		.wr_en 			(wr_en),
+		.rd_en 			(rd_en),
+		.start 			(start),
 		.done 			(done),
 		.k 				(k),
-		.start 			(start),
 		.dataValueIn 	(dataValueIn),
 		.dataNameOut 	(dataNameOut),
 		.dataValueOut 	(dataValueOut)
@@ -62,7 +64,8 @@ module knnTop_tb();
 		start = 0;
 		k = 0;
 		dataValueIn = 0;
-		rd_clk = 0;
+		wr_en = 1;
+		rd_en = 0;
 		#90;
 		reset = 0;
 		#20;
@@ -132,17 +135,8 @@ module knnTop_tb();
 		#20;
 		done = 1;
 		#200;
-		rd_clk = 1; // read 1 of k
-		#20;
-		rd_clk = 0;
-		#20;
-		rd_clk = 1; // read 2 of k
-		#20;
-		rd_clk = 0;
-		#20;
-		rd_clk = 1; // read 3 of k
-		#20;
-		rd_clk = 0;
+		wr_en = 0;
+		rd_en = 1;
 	end
 
 endmodule

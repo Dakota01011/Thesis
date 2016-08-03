@@ -60,14 +60,10 @@ void KNN::kNNFPGAClassify(int dataPoint[NUM_FEATURES], int trainingData[NUM_POIN
     fpga.writeLoadBit(1);
 
     // write the dimensions of the reference point into the refdatain reg 1 dimension at a time
-    for (int i = 1; i < NUM_FEATURES; i++)
-    {
-        fpga.writeRefData(dataPoint[i]);
-    }
-
-
-    // clear the load bit in the control reg
-    fpga.writeLoadBit(0);
+	for (int i = 1; i < NUM_FEATURES; i++)
+	{
+		fpga.writeDataValue(dataPoint[i]);
+	}
 
     // load all of the training data to FPGA
     for (int i = 0; i < NUM_POINTS; i++)
@@ -79,7 +75,7 @@ void KNN::kNNFPGAClassify(int dataPoint[NUM_FEATURES], int trainingData[NUM_POIN
         }
 
         // after all dimensions of point i are written in, write the points name/id number to the datanamein reg
-        fpga.writeDataName(trainingData[i][0]);
+        //fpga.writeDataName(trainingData[i][0]);
     }
 
     // set readEn bit in the control reg

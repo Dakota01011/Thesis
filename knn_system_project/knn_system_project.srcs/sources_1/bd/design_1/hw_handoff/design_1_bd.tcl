@@ -160,7 +160,10 @@ proc create_root_design { parentCell } {
   # Create ports
 
   # Create instance: KNN_accelerator_0, and set properties
-  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv Dakota:user:KNN_accelerator:1.23 KNN_accelerator_0 ]
+  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv Dakota:user:KNN_accelerator:1.32 KNN_accelerator_0 ]
+  set_property -dict [ list \
+CONFIG.KNN_DEBUG {1} \
+ ] $KNN_accelerator_0
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -1334,6 +1337,9 @@ CONFIG.NUM_MI {1} \
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins processing_system7_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M00_AXI [get_bd_intf_pins KNN_accelerator_0/S00_AXI] [get_bd_intf_pins processing_system7_0_axi_periph/M00_AXI]
+  set_property -dict [ list \
+HDL_ATTRIBUTE.MARK_DEBUG {true} \
+ ] [get_bd_intf_nets processing_system7_0_axi_periph_M00_AXI]
 
   # Create port connections
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins KNN_accelerator_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_100M/slowest_sync_clk]
@@ -1362,7 +1368,7 @@ preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 2 450 230 N
 preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 270 NJ 270 NJ
 preplace netloc rst_processing_system7_0_100M_interconnect_aresetn 1 1 1 420
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 30 430 240 NJ
-levelinfo -pg 1 0 220 600 850 960 -top 0 -bot 480
+levelinfo -pg 1 0 220 600 850 970 -top 0 -bot 480
 ",
 }
 
