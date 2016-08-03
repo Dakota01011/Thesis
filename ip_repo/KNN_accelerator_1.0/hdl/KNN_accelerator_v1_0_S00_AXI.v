@@ -441,12 +441,11 @@
 	   .numberOfDimensions(NUM_DIM)
 	) knnTop (
         .clk(axi_bvalid),
+        .rd_clk(axi_rvalid),
         .reset(slv_reg0[0]),
         .done(slv_reg0[1]),
         .k(slv_reg1),
-        .refDataIn(slv_reg2),
-        .loadRef(slv_reg0[2]),
-        .dataNameIn(slv_reg3),
+        .start(slv_reg0[2]),
         .dataValueIn(slv_reg4),
         .dataNameOut(dataNameOut),
         .dataValueOut(dataValueOut)

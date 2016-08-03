@@ -5,44 +5,21 @@ module knnTop #(
 	parameter numberOfDimensions = 32
 ) (
 (* mark_debug = "true" *)	input 					clk,
+(* mark_debug = "true" *)	input 					rd_clk,
 (* mark_debug = "true" *)	input 					reset,
 (* mark_debug = "true" *)	input 					done,
 (* mark_debug = "true" *)	input [31:0] 			k,
-(* mark_debug = "true" *)	input [dataWidth-1:0] 	refDataIn,
-(* mark_debug = "true" *)	input 					loadRef,
-(* mark_debug = "true" *)	input [31:0] 			dataNameIn,
+(* mark_debug = "true" *)	input 					start,
 (* mark_debug = "true" *)	input [dataWidth-1:0] 	dataValueIn,
 (* mark_debug = "true" *)	output [31:0] 			dataNameOut,
 (* mark_debug = "true" *)	output [dataWidth-1:0] 	dataValueOut
 );
-
+	
+	wire dataValid;
+	wire distanceValid;
 	wire [dataWidth-1:0] distance;
 	wire [dataWidth-1:0] currentRefPoint;
 	wire [dataWidth-1:0] currentDataPoint;
-	reg dataIn_Valid;
-	reg reset_sync;
-	integer i;
-
-	always @(negedge clk)
-	begin
-		reset_sync <= reset;
-	end
-
-	assign currentDataPoint = dataValueIn;
-
-	always @(negedge clk or posedge reset_sync)
-	begin : proc_dataIn_Valid
-		if(reset_sync || i >= numberOfDimensions)
-		begin
-			dataIn_Valid <= 0;
-			i <= 0;
-		end
-		else
-		begin
-			dataIn_Valid <= 1;
-			i <= i + 1;
-		end
-	end
 
 	fifo #(
 		.NUM_DIMENSIONS(numberOfDimensions),
@@ -50,10 +27,11 @@ module knnTop #(
 	) fifo (
 		.clk(clk),
 		.rst(reset),
-		.load(loadRef),
-		.dataIn_Valid(dataIn_Valid),
-		.dataIn(refDataIn),
-		.dataOut(currentRefPoint)
+		.start(start),
+		.dataIn(dataValueIn),
+		.currentRefPoint(currentRefPoint),
+		.currentDataPoint(currentDataPoint),
+		.dataOut_Valid(dataValid)
 	);
 	
 	distanceCalculationAccumulator #(
@@ -62,23 +40,23 @@ module knnTop #(
 	) dist(
 		.clk(clk),
 		.reset(reset),
-		.dataIn_Valid(dataIn_Valid),
+		.dataIn_Valid(dataValid),
+		.done(done),
 		.data1(currentRefPoint),
 		.data2(currentDataPoint),
 		.distance(distance),
-		.distanceValid(valid)
+		.distanceValid(distanceValid)
 	);
 
 	kSorting #(
-		.dataWidth(dataWidth),
-		.pass_thoo_debug(1)
+		.dataWidth(dataWidth)
 	) sort (
 		.clk(clk),
+		.rd_clk(rd_clk),
 		.reset(reset),
-		.valid(valid),
+		.valid(distanceValid),
 		.done(done),
 		.k(k),
-		.dataNameIn(dataNameIn),
 		.dataValueIn(distance),
 		.dataNameOut(dataNameOut),
 		.dataValueOut(dataValueOut)

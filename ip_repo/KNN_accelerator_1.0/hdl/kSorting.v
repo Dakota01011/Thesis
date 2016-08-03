@@ -6,11 +6,11 @@ module kSorting #(
 	parameter pass_thoo_debug = 0
 ) (
 	input clk,
+	input rd_clk,
 	input reset,
 	input valid,
 	input done,
 	input [31:0] k,
-	input [31:0] dataNameIn,
 	input [dataWidth-1:0] dataValueIn,
 	output [31:0] dataNameOut,
 	output [dataWidth-1:0] dataValueOut
@@ -19,8 +19,8 @@ module kSorting #(
 	reg [dataWidth-1:0] nameMem [maxMemory-1:0];
 	reg [dataWidth-1:0] valueMem [maxMemory-1:0];
 	wire [maxMemory-1:0] comparator;
-	reg [31:0] kMem;
 	reg [31:0] outputPointer;
+	reg [31:0] entryId;
 
 	generate
 		genvar i;
@@ -42,7 +42,7 @@ module kSorting #(
 					end
 					else if (valid & comparator[i] & ~comparator[i-1]) // put new
 					begin
-						nameMem[i] <= dataNameIn;
+						nameMem[i] <= entryId;
 						valueMem[i] <= dataValueIn;
 					end
 				end
@@ -58,7 +58,7 @@ module kSorting #(
 					end
 					else if (valid & comparator[i])
 					begin
-						nameMem[i] <= dataNameIn;
+						nameMem[i] <= entryId;
 						valueMem[i] <= dataValueIn;
 					end
 				end
@@ -67,6 +67,7 @@ module kSorting #(
 		end
 	endgenerate
 
+	// Comparators
 	generate
 		genvar j;
 		for (j = 0; j < maxMemory; j = j + 1)
@@ -75,22 +76,38 @@ module kSorting #(
 		end
 	endgenerate
 
+
 	always @(posedge clk)
 	begin
+		//Outputing stuff
 		if (reset)
 		begin
 			outputPointer <= 0;
 		end
-		else if (done & outputPointer < k)
+		else if (rd_clk & outputPointer < k-1)
 		begin
 			outputPointer <= outputPointer + 1;
 		end
 	end
 
+	always @(posedge clk)
+	begin
+		// internal ID tag generation
+		if (reset)
+		begin
+			entryId <= 0;
+		end
+		else if (valid)
+		begin
+			entryId <= entryId + 1;
+		end
+	end
+
+	// Debug junk
 	generate
 		if(pass_thoo_debug)
 		begin
-			assign dataNameOut = dataNameIn;
+			assign dataNameOut = 0;
 			assign dataValueOut = dataValueIn;
 		end
 		else

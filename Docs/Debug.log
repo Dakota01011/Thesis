@@ -15,5 +15,5 @@ cpp vectors seem to be throwing "terminate called after throwing an instance of 
 Timing is making the current design difficult to get working.
 New design idea:
 Remove dataNameIn and use index to be decoded by ARM core
-Remove loadRef
+Rename loadRef to start
 Remove refDataIn and shift all data using dataValueIn

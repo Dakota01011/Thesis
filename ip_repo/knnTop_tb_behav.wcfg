@@ -11,50 +11,69 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="116400000fs"></ZoomStartTime>
-      <ZoomEndTime time="352400001fs"></ZoomEndTime>
-      <Cursor1Time time="194000000fs"></Cursor1Time>
+      <ZoomStartTime time="805680000fs"></ZoomStartTime>
+      <ZoomEndTime time="1153680001fs"></ZoomEndTime>
+      <Cursor1Time time="957680000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="9" />
-   <wvobject fp_name="/knnTop_tb/clk" type="logic">
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/knnTop_tb/reset" type="logic">
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/rd_clk" type="logic">
+      <obj_property name="ElementShortName">rd_clk</obj_property>
+      <obj_property name="ObjectShortName">rd_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/knnTop_tb/loadRef" type="logic">
-      <obj_property name="ElementShortName">loadRef</obj_property>
-      <obj_property name="ObjectShortName">loadRef</obj_property>
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/valid" type="logic">
+      <obj_property name="ElementShortName">valid</obj_property>
+      <obj_property name="ObjectShortName">valid</obj_property>
    </wvobject>
-   <wvobject fp_name="/knnTop_tb/refDataIn" type="array">
-      <obj_property name="ElementShortName">refDataIn[31:0]</obj_property>
-      <obj_property name="ObjectShortName">refDataIn[31:0]</obj_property>
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/k" type="array">
+      <obj_property name="ElementShortName">k[31:0]</obj_property>
+      <obj_property name="ObjectShortName">k[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/dataIn_Valid" type="logic">
-      <obj_property name="ElementShortName">dataIn_Valid</obj_property>
-      <obj_property name="ObjectShortName">dataIn_Valid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/fifo/mem" type="array">
-      <obj_property name="ElementShortName">mem[4:0][31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem[4:0][31:0]</obj_property>
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/dataValueIn" type="array">
+      <obj_property name="ElementShortName">dataValueIn[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataValueIn[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/fifo/counter" type="array">
-      <obj_property name="ElementShortName">counter[31:0]</obj_property>
-      <obj_property name="ObjectShortName">counter[31:0]</obj_property>
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/dataNameOut" type="array">
+      <obj_property name="ElementShortName">dataNameOut[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataNameOut[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/currentDataPoint" type="array">
-      <obj_property name="ElementShortName">currentDataPoint[31:0]</obj_property>
-      <obj_property name="ObjectShortName">currentDataPoint[31:0]</obj_property>
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/dataValueOut" type="array">
+      <obj_property name="ElementShortName">dataValueOut[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataValueOut[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/knnTop_tb/uut/currentRefPoint" type="array">
-      <obj_property name="ElementShortName">currentRefPoint[31:0]</obj_property>
-      <obj_property name="ObjectShortName">currentRefPoint[31:0]</obj_property>
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/nameMem" type="array">
+      <obj_property name="ElementShortName">nameMem[127:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">nameMem[127:0][31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/valueMem" type="array">
+      <obj_property name="ElementShortName">valueMem[127:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">valueMem[127:0][31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/comparator" type="array">
+      <obj_property name="ElementShortName">comparator[127:0]</obj_property>
+      <obj_property name="ObjectShortName">comparator[127:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/uut/top/sort/outputPointer" type="array">
+      <obj_property name="ElementShortName">outputPointer[31:0]</obj_property>
+      <obj_property name="ObjectShortName">outputPointer[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

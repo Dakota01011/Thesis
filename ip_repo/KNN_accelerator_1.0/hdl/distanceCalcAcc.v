@@ -7,6 +7,7 @@ module distanceCalculationAccumulator #(
 	input clk,
 	input reset,
 	input dataIn_Valid,
+	input done, 
 	input [dataWidth-1:0] data1,
 	input [dataWidth-1:0] data2,
 	output reg [dataWidth-1:0] distance,
@@ -16,11 +17,28 @@ module distanceCalculationAccumulator #(
 	reg [dataWidth-1:0] difference;
 	reg [dataWidth-1:0] squared;
 	reg [dataWidth-1:0] accumulator;
+	reg stop;
 	integer i;
 
 	always @(posedge clk)
+	begin : proc_stop
+		if(reset)
+		begin
+			stop <= 0;
+		end
+		else
+		begin
+			if(done && distanceValid)
+			begin
+				// distanceValid can go high once after done then it will stop
+				stop <= 1;
+			end
+		end
+	end
+
+	always @(posedge clk)
 	begin
-		if (reset)
+		if (reset || stop)
 		begin
 			difference <= 0;
 			squared <= 0;
@@ -35,12 +53,12 @@ module distanceCalculationAccumulator #(
 			begin
 				difference <= data1 - data2;
 				squared <= difference * difference;
-				if (i >= numberOfDimensions)
+				if (i >= numberOfDimensions-1)
 				begin
-					accumulator <= 0;
+					accumulator <= squared;
 					i <= 0;
 					distanceValid <= 1;
-					distance <= accumulator + squared;
+					distance <= accumulator;
 				end
 				else
 				begin
