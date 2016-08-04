@@ -4,6 +4,8 @@
 	module KNN_accelerator_v1_0 #
 	(
 		// Users to add parameters here
+		parameter WIDTH = 32,
+		parameter NUM_DIM = 32,
 		parameter KNN_DEBUG = 0,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
@@ -45,6 +47,8 @@
 	);
 // Instantiation of Axi Bus Interface S00_AXI
 	KNN_accelerator_v1_0_S00_AXI # ( 
+		.WIDTH(WIDTH),
+		.NUM_DIM(NUM_DIM),
 		.KNN_DEBUG(KNN_DEBUG),
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)

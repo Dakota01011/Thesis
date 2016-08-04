@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Wed Aug 03 16:43:54 2016
+//Date        : Thu Aug 04 14:36:17 2016
 //Host        : AUSLAB-749807 running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -115,25 +115,25 @@ module design_1
   wire processing_system7_0_M_AXI_GP0_WREADY;
   wire [3:0]processing_system7_0_M_AXI_GP0_WSTRB;
   wire processing_system7_0_M_AXI_GP0_WVALID;
-  (* MARK_DEBUG *) wire [31:0]processing_system7_0_axi_periph_M00_AXI_ARADDR;
-  (* MARK_DEBUG *) wire [2:0]processing_system7_0_axi_periph_M00_AXI_ARPROT;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M00_AXI_ARREADY;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M00_AXI_ARVALID;
-  (* MARK_DEBUG *) wire [31:0]processing_system7_0_axi_periph_M00_AXI_AWADDR;
-  (* MARK_DEBUG *) wire [2:0]processing_system7_0_axi_periph_M00_AXI_AWPROT;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M00_AXI_AWREADY;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M00_AXI_AWVALID;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M00_AXI_BREADY;
-  (* MARK_DEBUG *) wire [1:0]processing_system7_0_axi_periph_M00_AXI_BRESP;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M00_AXI_BVALID;
-  (* MARK_DEBUG *) wire [31:0]processing_system7_0_axi_periph_M00_AXI_RDATA;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M00_AXI_RREADY;
-  (* MARK_DEBUG *) wire [1:0]processing_system7_0_axi_periph_M00_AXI_RRESP;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M00_AXI_RVALID;
-  (* MARK_DEBUG *) wire [31:0]processing_system7_0_axi_periph_M00_AXI_WDATA;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M00_AXI_WREADY;
-  (* MARK_DEBUG *) wire [3:0]processing_system7_0_axi_periph_M00_AXI_WSTRB;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M00_AXI_WVALID;
+  wire [31:0]processing_system7_0_axi_periph_M00_AXI_ARADDR;
+  wire [2:0]processing_system7_0_axi_periph_M00_AXI_ARPROT;
+  wire processing_system7_0_axi_periph_M00_AXI_ARREADY;
+  wire processing_system7_0_axi_periph_M00_AXI_ARVALID;
+  wire [31:0]processing_system7_0_axi_periph_M00_AXI_AWADDR;
+  wire [2:0]processing_system7_0_axi_periph_M00_AXI_AWPROT;
+  wire processing_system7_0_axi_periph_M00_AXI_AWREADY;
+  wire processing_system7_0_axi_periph_M00_AXI_AWVALID;
+  wire processing_system7_0_axi_periph_M00_AXI_BREADY;
+  wire [1:0]processing_system7_0_axi_periph_M00_AXI_BRESP;
+  wire processing_system7_0_axi_periph_M00_AXI_BVALID;
+  wire [31:0]processing_system7_0_axi_periph_M00_AXI_RDATA;
+  wire processing_system7_0_axi_periph_M00_AXI_RREADY;
+  wire [1:0]processing_system7_0_axi_periph_M00_AXI_RRESP;
+  wire processing_system7_0_axi_periph_M00_AXI_RVALID;
+  wire [31:0]processing_system7_0_axi_periph_M00_AXI_WDATA;
+  wire processing_system7_0_axi_periph_M00_AXI_WREADY;
+  wire [3:0]processing_system7_0_axi_periph_M00_AXI_WSTRB;
+  wire processing_system7_0_axi_periph_M00_AXI_WVALID;
   wire [0:0]rst_processing_system7_0_100M_interconnect_aresetn;
   wire [0:0]rst_processing_system7_0_100M_peripheral_aresetn;
 

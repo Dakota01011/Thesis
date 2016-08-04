@@ -3,6 +3,8 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
+  ipgui::add_param $IPINST -name "NUM_DIM" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "WIDTH" -parent ${Page_0}
   ipgui::add_param $IPINST -name "KNN_DEBUG" -parent ${Page_0}
   set C_S00_AXI_DATA_WIDTH [ipgui::add_param $IPINST -name "C_S00_AXI_DATA_WIDTH" -parent ${Page_0} -widget comboBox]
   set_property tooltip {Width of S_AXI data bus} ${C_S00_AXI_DATA_WIDTH}
@@ -20,6 +22,24 @@ proc update_PARAM_VALUE.KNN_DEBUG { PARAM_VALUE.KNN_DEBUG } {
 
 proc validate_PARAM_VALUE.KNN_DEBUG { PARAM_VALUE.KNN_DEBUG } {
 	# Procedure called to validate KNN_DEBUG
+	return true
+}
+
+proc update_PARAM_VALUE.NUM_DIM { PARAM_VALUE.NUM_DIM } {
+	# Procedure called to update NUM_DIM when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.NUM_DIM { PARAM_VALUE.NUM_DIM } {
+	# Procedure called to validate NUM_DIM
+	return true
+}
+
+proc update_PARAM_VALUE.WIDTH { PARAM_VALUE.WIDTH } {
+	# Procedure called to update WIDTH when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.WIDTH { PARAM_VALUE.WIDTH } {
+	# Procedure called to validate WIDTH
 	return true
 }
 
@@ -73,5 +93,15 @@ proc update_MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH { MODELPARAM_VALUE.C_S00_AXI_A
 proc update_MODELPARAM_VALUE.KNN_DEBUG { MODELPARAM_VALUE.KNN_DEBUG PARAM_VALUE.KNN_DEBUG } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.KNN_DEBUG}] ${MODELPARAM_VALUE.KNN_DEBUG}
+}
+
+proc update_MODELPARAM_VALUE.WIDTH { MODELPARAM_VALUE.WIDTH PARAM_VALUE.WIDTH } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.WIDTH}] ${MODELPARAM_VALUE.WIDTH}
+}
+
+proc update_MODELPARAM_VALUE.NUM_DIM { MODELPARAM_VALUE.NUM_DIM PARAM_VALUE.NUM_DIM } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.NUM_DIM}] ${MODELPARAM_VALUE.NUM_DIM}
 }
 

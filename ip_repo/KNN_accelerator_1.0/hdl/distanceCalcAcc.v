@@ -15,11 +15,11 @@ module distanceCalculationAccumulator #(
 	output reg distanceValid
 );
 
-	reg [dataWidth-1:0] difference;
-	reg [dataWidth-1:0] squared;
-	reg [dataWidth-1:0] accumulator;
-	reg stop;
-	integer i;
+(* mark_debug = "true" *)	reg [dataWidth-1:0] difference;
+(* mark_debug = "true" *)	reg [dataWidth-1:0] squared;
+(* mark_debug = "true" *)	reg [dataWidth-1:0] accumulator;
+(* mark_debug = "true" *)	reg stop;
+(* mark_debug = "true" *)	integer i;
 
 	always @(posedge clk)
 	begin : proc_stop

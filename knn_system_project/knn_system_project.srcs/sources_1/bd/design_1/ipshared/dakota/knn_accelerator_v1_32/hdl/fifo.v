@@ -15,8 +15,8 @@ module fifo #(
 );
 
 	reg [DATA_WIDTH-1:0] mem [NUM_DIMENSIONS-1:0];
-	reg firstTime;
-	integer counter;
+(* mark_debug = "true" *)	reg firstTime;
+(* mark_debug = "true" *)	integer counter;
 	integer i;
 
 	always @(posedge clk)

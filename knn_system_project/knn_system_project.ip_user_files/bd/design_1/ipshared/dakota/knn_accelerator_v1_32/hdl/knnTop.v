@@ -17,11 +17,11 @@ module knnTop #(
 (* mark_debug = "true" *)	output [dataWidth-1:0] 	dataValueOut
 );
 	
-	wire dataValid;
-	wire distanceValid;
-	wire [dataWidth-1:0] distance;
-	wire [dataWidth-1:0] currentRefPoint;
-	wire [dataWidth-1:0] currentDataPoint;
+(* mark_debug = "true" *)	wire dataValid;
+(* mark_debug = "true" *)	wire distanceValid;
+(* mark_debug = "true" *)	wire [dataWidth-1:0] distance;
+(* mark_debug = "true" *)	wire [dataWidth-1:0] currentRefPoint;
+(* mark_debug = "true" *)	wire [dataWidth-1:0] currentDataPoint;
 
 	fifo #(
 		.NUM_DIMENSIONS(numberOfDimensions),

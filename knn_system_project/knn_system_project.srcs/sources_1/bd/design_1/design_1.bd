@@ -302,7 +302,8 @@
         <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="Dakota" spirit:version="1.32"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_KNN_accelerator_0_1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="KNN_DEBUG">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="KNN_DEBUG">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="NUM_DIM">5</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -316,9 +317,6 @@
         <spirit:name>processing_system7_0_axi_periph_M00_AXI</spirit:name>
         <spirit:activeInterface spirit:busRef="M00_AXI" spirit:componentRef="processing_system7_0_axi_periph"/>
         <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="KNN_accelerator_0"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>

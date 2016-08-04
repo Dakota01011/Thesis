@@ -48,7 +48,7 @@
 
 
 // IP VLNV: Dakota:user:KNN_accelerator:1.32
-// IP Revision: 12
+// IP Revision: 15
 
 `timescale 1ns/1ps
 
@@ -123,7 +123,9 @@ input wire s00_axi_aresetn;
   KNN_accelerator_v1_0 #(
     .C_S00_AXI_DATA_WIDTH(32),  // Width of S_AXI data bus
     .C_S00_AXI_ADDR_WIDTH(5),  // Width of S_AXI address bus
-    .KNN_DEBUG(1)
+    .KNN_DEBUG(1),
+    .WIDTH(32),
+    .NUM_DIM(32)
   ) inst (
     .s00_axi_awaddr(s00_axi_awaddr),
     .s00_axi_awprot(s00_axi_awprot),
