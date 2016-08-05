@@ -40,12 +40,12 @@
 -endlib
 -makelib ies/xil_defaultlib \
   "../../../bd/design_1/hdl/design_1.v" \
-  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_32/hdl/distanceCalcAcc.v" \
-  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_32/hdl/kSorting.v" \
-  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_32/hdl/fifo.v" \
-  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_32/hdl/knnTop.v" \
-  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_32/hdl/KNN_accelerator_v1_0_S00_AXI.v" \
-  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_32/hdl/KNN_accelerator_v1_0.v" \
+  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_33/hdl/distanceCalcAcc.v" \
+  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_33/hdl/kSorting.v" \
+  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_33/hdl/fifo.v" \
+  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_33/hdl/knnTop.v" \
+  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_33/hdl/KNN_accelerator_v1_0_S00_AXI.v" \
+  "../../../bd/design_1/ipshared/dakota/knn_accelerator_v1_33/hdl/KNN_accelerator_v1_0.v" \
   "../../../bd/design_1/ip/design_1_KNN_accelerator_0_1/sim/design_1_KNN_accelerator_0_1.v" \
 -endlib
 -makelib ies/generic_baseblocks_v2_1_0 \

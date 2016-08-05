@@ -47,8 +47,8 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: Dakota:user:KNN_accelerator:1.32
-// IP Revision: 15
+// IP VLNV: Dakota:user:KNN_accelerator:1.33
+// IP Revision: 17
 
 (* X_CORE_INFO = "KNN_accelerator_v1_0,Vivado 2016.2" *)
 (* CHECK_LICENSE_TYPE = "design_1_KNN_accelerator_0_1,KNN_accelerator_v1_0,{}" *)

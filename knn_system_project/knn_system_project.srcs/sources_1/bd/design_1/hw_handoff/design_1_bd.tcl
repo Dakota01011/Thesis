@@ -160,7 +160,7 @@ proc create_root_design { parentCell } {
   # Create ports
 
   # Create instance: KNN_accelerator_0, and set properties
-  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv Dakota:user:KNN_accelerator:1.32 KNN_accelerator_0 ]
+  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv Dakota:user:KNN_accelerator:1.33 KNN_accelerator_0 ]
   set_property -dict [ list \
 CONFIG.KNN_DEBUG {0} \
 CONFIG.NUM_DIM {5} \

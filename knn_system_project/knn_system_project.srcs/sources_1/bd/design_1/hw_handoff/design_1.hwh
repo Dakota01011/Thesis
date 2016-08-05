@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Aug 04 14:36:17 2016" VIVADOVERSION="2016.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Aug 05 09:28:31 2016" VIVADOVERSION="2016.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo:part0:1.0" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -73,7 +73,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE FULLNAME="/KNN_accelerator_0" HWVERSION="1.32" INSTANCE="KNN_accelerator_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="KNN_accelerator" VLNV="Dakota:user:KNN_accelerator:1.32">
+    <MODULE FULLNAME="/KNN_accelerator_0" HWVERSION="1.33" INSTANCE="KNN_accelerator_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="KNN_accelerator" VLNV="Dakota:user:KNN_accelerator:1.33">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -1386,10 +1386,10 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="rst_processing_system7_0_100M" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ACLK"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -2300,9 +2300,9 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" RIGHT="0" SIGIS="rst" SIGNAME="rst_processing_system7_0_100M_peripheral_aresetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ARESETN"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

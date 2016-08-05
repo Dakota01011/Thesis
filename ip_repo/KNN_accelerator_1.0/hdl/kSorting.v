@@ -20,8 +20,9 @@ module kSorting #(
 	reg [dataWidth-1:0] nameMem [maxMemory-1:0];
 	reg [dataWidth-1:0] valueMem [maxMemory-1:0];
 	wire [maxMemory-1:0] comparator;
-	reg [31:0] outputPointer;
+(* mark_debug = "true" *)	reg [31:0] outputPointer;
 	reg [31:0] entryId;
+(* mark_debug = "true" *)	reg changeOutputPointer;
 
 	generate
 		genvar i;
@@ -84,10 +85,19 @@ module kSorting #(
 		if (reset)
 		begin
 			outputPointer <= 0;
+			changeOutputPointer <= 0;
 		end
-		else if (rd_en && outputPointer < k-1)
+		else if (rd_en && done)
 		begin
-			outputPointer <= outputPointer + 1;
+			if (outputPointer < k-1 && changeOutputPointer)
+			begin
+				outputPointer <= outputPointer + 1;
+				changeOutputPointer <= 0;
+			end
+			else
+			begin
+				changeOutputPointer <= 1;
+			end
 		end
 	end
 
