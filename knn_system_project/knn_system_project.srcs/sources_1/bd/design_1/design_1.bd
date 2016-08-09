@@ -299,10 +299,9 @@
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>KNN_accelerator_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="Dakota" spirit:version="1.33"/>
+        <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="Dakota" spirit:version="1.4"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_KNN_accelerator_0_1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="KNN_DEBUG">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_KNN_accelerator_0_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="NUM_DIM">5</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>

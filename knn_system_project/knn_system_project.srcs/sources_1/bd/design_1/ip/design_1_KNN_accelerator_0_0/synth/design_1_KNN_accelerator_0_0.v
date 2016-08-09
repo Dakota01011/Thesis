@@ -47,13 +47,13 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: Dakota:user:KNN_accelerator:1.33
-// IP Revision: 17
+// IP VLNV: Dakota:user:KNN_accelerator:1.4
+// IP Revision: 18
 
 (* X_CORE_INFO = "KNN_accelerator_v1_0,Vivado 2016.2" *)
-(* CHECK_LICENSE_TYPE = "design_1_KNN_accelerator_0_1,KNN_accelerator_v1_0,{}" *)
+(* CHECK_LICENSE_TYPE = "design_1_KNN_accelerator_0_0,KNN_accelerator_v1_0,{}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module design_1_KNN_accelerator_0_1 (
+module design_1_KNN_accelerator_0_0 (
   s00_axi_awaddr,
   s00_axi_awprot,
   s00_axi_awvalid,

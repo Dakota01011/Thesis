@@ -1,105 +1,71 @@
 // Dakota Koelling
-
+// (* mark_debug = "true" *)
 module knnTop #(
 	parameter dataWidth = 32,
-	parameter numberOfDimensions = 32
-	) (
-	input 					clk,
-	input 					reset,
-	input 					done,
-	input [31:0] 			k,
-	input [dataWidth-1:0] 	refDataIn,
-	input 					loadRef,
-	input [31:0] 			dataNameIn,
-	input [dataWidth-1:0] 	dataValueIn,
-	output [31:0] 			dataNameOut,
-	output [dataWidth-1:0] 	dataValueOut
-	);
+	parameter numberOfDimensions = 32,
+	parameter debug = 0
+) (
+(* mark_debug = "true" *)	input 					mclk,
+(* mark_debug = "true" *)	input 					reset,
+(* mark_debug = "true" *)	input 					wr_en,
+(* mark_debug = "true" *)	input 					rd_en,
+(* mark_debug = "true" *)	input 					start,
+(* mark_debug = "true" *)	input 					done,
+(* mark_debug = "true" *)	input [31:0] 			k,
+(* mark_debug = "true" *)	input [dataWidth-1:0] 	dataValueIn,
+(* mark_debug = "true" *)	output [31:0] 			dataNameOut,
+(* mark_debug = "true" *)	output [dataWidth-1:0] 	dataValueOut
+);
+	
+(* mark_debug = "true" *)	wire dataValid;
+(* mark_debug = "true" *)	wire distanceValid;
+(* mark_debug = "true" *)	wire [dataWidth-1:0] distance;
+(* mark_debug = "true" *)	wire [dataWidth-1:0] currentRefPoint;
+(* mark_debug = "true" *)	wire [dataWidth-1:0] currentDataPoint;
 
-	wire almost_empty;
-	wire [dataWidth-1:0] distance;
-	reg [dataWidth-1:0] currentRefPoint;
-	reg [dataWidth-1:0] currentDataPoint;
-	wire [dataWidth-1:0] FIFOout;
-
-	always @(posedge clk)
-	begin
-		currentDataPoint <= dataValueIn;
-		if (loadRef)
-		begin
-			currentRefPoint <= refDataIn;
-		end
-		else
-		begin
-			currentRefPoint <= FIFOout;
-		end
-	end
-
-	kSorting #(
-		.dataWidth(dataWidth)
-	) sort(
-		.clk(clk),
-		.reset(reset),
-		.valid(valid),
-		.done(done),
-		.k(k),
-		.dataNameIn(dataNameIn),
-		.dataValueIn(distance),
-		.dataNameOut(dataNameOut),
-		.dataValueOut(dataValueOut)
+	fifo #(
+		.NUM_DIMENSIONS(numberOfDimensions),
+		.DATA_WIDTH(dataWidth)
+	) fifo (
+		.clk(mclk),
+		.rst(reset),
+		.wr_en(wr_en),
+		.start(start),
+		.dataIn(dataValueIn),
+		.currentRefPoint(currentRefPoint),
+		.currentDataPoint(currentDataPoint),
+		.dataOut_Valid(dataValid)
 	);
 	
 	distanceCalculationAccumulator #(
 		.dataWidth(dataWidth),
 		.numberOfDimensions(numberOfDimensions)
 	) dist(
-		.clk(clk),
+		.clk(mclk),
 		.reset(reset),
+		.wr_en(wr_en),
+		.dataIn_Valid(dataValid),
+		.done(done),
 		.data1(currentRefPoint),
 		.data2(currentDataPoint),
 		.distance(distance),
-		.distanceValid(valid)
+		.distanceValid(distanceValid)
 	);
 
-	// FIFO_SYNC_MACRO: Synchronous First-In, First-Out (FIfor) RAM Buffer
-	// 7 Series
-	// Xilinx HDL Libraries Guide, version 14.7
-	/////////////////////////////////////////////////////////////////
-	// DATA_WIDTH | FIFO_SIZE | FIfor Depth | RDCOUNT/WRCOUNT Width //
-	// ===========|===========|============|=======================//
-	// 		37-72 |    "36Kb" |        512 | 9-bit //
-	// 		19-36 |    "36Kb" |       1024 | 10-bit //
-	// 		19-36 |    "18Kb" |        512 | 9-bit //
-	// 		10-18 |    "36Kb" |       2048 | 11-bit //
-	// 		10-18 |    "18Kb" |       1024 | 10-bit //
-	// 		  5-9 |    "36Kb" |       4096 | 12-bit //
-	// 		  5-9 |    "18Kb" |       2048 | 11-bit //
-	// 		  1-4 |    "36Kb" |       8192 | 13-bit //
-	// 		  1-4 |    "18Kb" |       4096 | 12-bit //
-	/////////////////////////////////////////////////////////////////
-	FIFO_SYNC_MACRO #(
-		.DEVICE("7SERIES"), // Target Device: "VIRTEX5", "VIRTEX6", "7SERIES"
-		.ALMOST_EMPTY_OFFSET(numberOfDimensions), // Sets the almost empty threshold
-		.ALMOST_FULL_OFFSET(9'h100), // Sets almost full threshold
-		.DATA_WIDTH(dataWidth), // Valid values are 1-72 (37-72 only valid when FIFO_SIZE="36Kb")
-		.DO_REG(0), // Optional output register (0 or 1)
-		.FIFO_SIZE ("36Kb") // Target BRAM: "18Kb" or "36Kb"
-	) FIFO_SYNC_MACRO_inst (
-		.ALMOSTEMPTY(almost_empty), // 1-bit output almost empty
-		.ALMOSTFULL(), // 1-bit output almost full
-		.DO(FIFOout), // Output data, width defined by DATA_WIDTH parameter
-		.EMPTY(), // 1-bit output empty
-		.FULL(), // 1-bit output full
-		.RDCOUNT(), // Output read count, width determined by FIfor depth
-		.RDERR(), // 1-bit output read error
-		.WRCOUNT(), // Output write count, width determined by FIfor depth
-		.WRERR(), // 1-bit output write error
-		.CLK(clk), // 1-bit input clock
-		.DI(currentRefPoint), // Input data, width defined by DATA_WIDTH parameter
-		.RDEN(~almost_empty), // 1-bit input read enable
-		.RST(reset), // 1-bit input reset
-		.WREN(1'b1) // 1-bit input write enable
+	kSorting #(
+		.dataWidth(dataWidth),
+		.pass_thoo_debug(debug)
+	) sort (
+		.clk(mclk),
+		.reset(reset),
+		.wr_en(wr_en),
+		.rd_en(rd_en),
+		.valid(distanceValid),
+		.done(done),
+		.k(k),
+		.dataValueIn(distance),
+		.dataNameOut(dataNameOut),
+		.dataValueOut(dataValueOut)
 	);
-	// End of FIFO_SYNC_MACRO_inst instantiation
 
 endmodule

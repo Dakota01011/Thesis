@@ -47,13 +47,13 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: Dakota:user:KNN_accelerator:1.33
-// IP Revision: 17
+// IP VLNV: Dakota:user:KNN_accelerator:1.4
+// IP Revision: 18
 
 `timescale 1ns/1ps
 
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module design_1_KNN_accelerator_0_1 (
+module design_1_KNN_accelerator_0_0 (
   s00_axi_awaddr,
   s00_axi_awprot,
   s00_axi_awvalid,

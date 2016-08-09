@@ -396,8 +396,8 @@
 		  case ( axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] )
 			3'h0   : reg_data_out <= slv_reg0;
 			3'h1   : reg_data_out <= slv_reg1;
-			3'h2   : reg_data_out <= slv_reg2;
-			3'h3   : reg_data_out <= slv_reg3;
+			3'h2   : reg_data_out <= counter[31:0];
+			3'h3   : reg_data_out <= counter[63:32];
 			3'h4   : reg_data_out <= slv_reg4;
 			3'h5   : reg_data_out <= dataNameOut;
 			3'h6   : reg_data_out <= dataValueOut;
@@ -428,14 +428,27 @@
 
 	//slv_reg0 = loadRef, done, reset
 	//slv_reg1 = k
-	//slv_reg2 = refDataIn
-	//slv_reg3 = dataNameIn
+	//slv_reg2 = count low
+	//slv_reg3 = count high
 	//slv_reg4 = dataValueIn
 	//slv_reg5 = out dataNameOut
 	//slv_reg6 = out dataValueOut
 
 	wire [31:0]	dataNameOut;
 	wire [WIDTH-1:0] dataValueOut;
+	reg [63:0] counter;
+
+	always @(posedge S_AXI_ACLK or negedge S_AXI_ARESETN)
+	begin : proc_counter
+		if(~S_AXI_ARESETN)
+		begin
+			counter <= 0;
+		end
+		else
+		begin
+			counter <= counter + 1;
+		end
+	end
 
 	knnTop #(
 		.dataWidth(WIDTH),

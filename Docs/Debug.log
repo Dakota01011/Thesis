@@ -17,3 +17,7 @@ New design idea:
 Remove dataNameIn and use index to be decoded by ARM core
 Rename loadRef to start
 Remove refDataIn and shift all data using dataValueIn
+
+ACLK is 100MHz so 10ns period.
+32bit is 21.47 sec
+64bit is years
