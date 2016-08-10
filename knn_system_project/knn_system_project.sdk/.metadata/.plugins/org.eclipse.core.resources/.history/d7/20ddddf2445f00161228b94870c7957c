@@ -21,7 +21,7 @@ FPGAHelper::~FPGAHelper() {
 }
 
 void FPGAHelper::reset() {
-    //printf("[FPGA] Write to reset bit\n\r");
+    printf("[FPGA] Write to reset bit\n\r");
     //cout << "[FPGA] Write to reset bit" << endl;
     KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 1);
     sleep(0.5);
@@ -29,7 +29,7 @@ void FPGAHelper::reset() {
 }
 
 void FPGAHelper::writeK(int k) {
-    //printf("[FPGA] Write to k register: %i \n\r", k);
+    printf("[FPGA] Write to k register: %i \n\r", k);
     //cout << "[FPGA] Write to k register: " << k << endl;
     KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG1_OFFSET, k);
 }
@@ -44,7 +44,7 @@ void FPGAHelper::writeLoadBit(int i) {
     {
     	regval = regval & ~4;
 	}
-    //printf("[FPGA] Write to load bit: %i \n\r", regval);
+    printf("[FPGA] Write to load bit: %i \n\r", regval);
     //cout << "[FPGA] Write to load bit: " << regval << endl;
 	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, regval);
 }
@@ -59,7 +59,7 @@ void FPGAHelper::writeReadEn(int i) {
     {
     	regval = regval & ~2;
 	}
-    //printf("[FPGA] Writing to readEn bit: %i \n\r", regval);
+    printf("[FPGA] Writing to readEn bit: %i \n\r", regval);
     //cout << "[FPGA] Writing to readEn bit: " << regval << endl;
 	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, regval);
 }
@@ -73,7 +73,7 @@ void FPGAHelper::writeRefData(int i) {
 */
 
 void FPGAHelper::writeDataValue(int i) {
-    //printf("[FPGA] Writing to datavaluein register: %i \n\r", i);
+    printf("[FPGA] Writing to datavaluein register: %i \n\r", i);
     //cout << "[FPGA] Writing to datavaluein register: " << i << endl;
     KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG4_OFFSET, i);
 }

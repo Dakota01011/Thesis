@@ -2,8 +2,8 @@
 #define KNN_KNN_H
 
 #include <iostream>
-#include <stdio.h>
 #include <math.h>
+#include "xil_printf.h"
 #include "DataSet.h"
 #include "FPGAHelper.h"
 using namespace std;

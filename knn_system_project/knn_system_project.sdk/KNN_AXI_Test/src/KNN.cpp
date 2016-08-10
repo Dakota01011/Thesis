@@ -39,10 +39,12 @@ void KNN::kNNClassify(int dataPoint[NUM_FEATURES], int trainingData[NUM_POINTS][
 	}
 
 	// Print out data
-	cout << "[Standard] K returns: " << endl;
+	printf("[Standard] K returns: \n\r");
+	//cout << "[Standard] K returns: " << endl;
 	for(int i = 0; i < k; i++)
 	{
-		cout << "id: " << idList[i] << " dist: " << distanceList[i] << endl;
+		printf("id: %i dist: %6.6f \n\r", idList[i], distanceList[i]);
+		//cout << "id: " << idList[i] << " dist: " << distanceList[i] << endl;
 	}
 
 }
@@ -84,7 +86,8 @@ void KNN::kNNFPGAClassify(int dataPoint[NUM_FEATURES], int trainingData[NUM_POIN
     // read the datanameout and datavalueout reg k time and that will return
     // the name and square distances of the k nearest neighbors
     // storing the results in a map (mapping id of test point to its distance from the reference)
-    cout << "[FPGA] K returns: " << endl;
+    printf("[FPGA] K returns: \n\r");
+    //cout << "[FPGA] K returns: " << endl;
     for (int i = 0; i < k; i++) {
         fpga.readDataName();
         fpga.readDataValue();
