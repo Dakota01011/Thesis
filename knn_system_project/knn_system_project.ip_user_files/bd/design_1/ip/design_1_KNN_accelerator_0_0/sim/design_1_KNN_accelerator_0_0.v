@@ -47,13 +47,13 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: Dakota:user:KNN_accelerator:1.33
-// IP Revision: 17
+// IP VLNV: Dakota:user:KNN_accelerator:1.4
+// IP Revision: 19
 
 `timescale 1ns/1ps
 
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module design_1_KNN_accelerator_0_1 (
+module design_1_KNN_accelerator_0_0 (
   s00_axi_awaddr,
   s00_axi_awprot,
   s00_axi_awvalid,
@@ -125,7 +125,7 @@ input wire s00_axi_aresetn;
     .C_S00_AXI_ADDR_WIDTH(5),  // Width of S_AXI address bus
     .KNN_DEBUG(0),
     .WIDTH(32),
-    .NUM_DIM(5)
+    .NUM_DIM(10)
   ) inst (
     .s00_axi_awaddr(s00_axi_awaddr),
     .s00_axi_awprot(s00_axi_awprot),

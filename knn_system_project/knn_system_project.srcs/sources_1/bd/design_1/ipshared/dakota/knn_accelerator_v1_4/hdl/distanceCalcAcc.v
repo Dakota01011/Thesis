@@ -1,23 +1,28 @@
 // Dakota Koelling
 
 module distanceCalculationAccumulator #(
-	parameter dataWidth = 32,
-	parameter numberOfDimensions = 32
+	parameter DATA_WIDTH = 32,
+	parameter DIMENSIONS = 32,
+	parameter VAL_WIDTH = 32
 ) (
 	input clk,
 	input reset,
 	input wr_en,
 	input dataIn_Valid,
 	input done, 
-	input [dataWidth-1:0] data1,
-	input [dataWidth-1:0] data2,
-	output reg [dataWidth-1:0] distance,
+	input [DATA_WIDTH-1:0] data1,
+	input [DATA_WIDTH-1:0] data2,
+	output reg [VAL_WIDTH-1:0] distance,
 	output reg distanceValid
 );
 
-(* mark_debug = "true" *)	reg [dataWidth-1:0] difference;
-(* mark_debug = "true" *)	reg [dataWidth-1:0] squared;
-(* mark_debug = "true" *)	reg [dataWidth-1:0] accumulator;
+localparam dif_width = DATA_WIDTH+1;
+localparam sqr_width = dif_width*2;
+localparam acc_width = sqr_width+DIMENSIONS;
+
+(* mark_debug = "true" *)	reg [dif_width-1:0] difference;
+(* mark_debug = "true" *)	reg [sqr_width-1:0] squared;
+(* mark_debug = "true" *)	reg [acc_width-1:0] accumulator;
 (* mark_debug = "true" *)	reg stop;
 (* mark_debug = "true" *)	integer i;
 
@@ -54,7 +59,7 @@ module distanceCalculationAccumulator #(
 			begin
 				difference <= data1 - data2;
 				squared <= difference * difference;
-				if (i >= numberOfDimensions-1)
+				if (i >= DIMENSIONS-1)
 				begin
 					accumulator <= squared;
 					i <= 0;

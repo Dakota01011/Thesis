@@ -1,8 +1,8 @@
 //Dakota Koelling
 
 module fifo #(
-	parameter NUM_DIMENSIONS = 32,
-	parameter DATA_WIDTH = 32
+	parameter DATA_WIDTH = 32,
+	parameter DIMENSIONS = 32
 ) (
 	input 					clk,
 	input 					rst,
@@ -14,7 +14,7 @@ module fifo #(
 	output reg				dataOut_Valid
 );
 
-	reg [DATA_WIDTH-1:0] mem [NUM_DIMENSIONS-1:0];
+	reg [DATA_WIDTH-1:0] mem [DIMENSIONS-1:0];
 (* mark_debug = "true" *)	reg firstTime;
 (* mark_debug = "true" *)	integer counter;
 	integer i;
@@ -22,7 +22,7 @@ module fifo #(
 	always @(posedge clk)
 	begin : proc_mem
 		if(rst) begin
-			for (i = 0; i < NUM_DIMENSIONS; i = i + 1)
+			for (i = 0; i < DIMENSIONS; i = i + 1)
 			begin
 				mem[i] <= 0;
 			end
@@ -48,7 +48,7 @@ module fifo #(
 		begin
 			if(wr_en && start)
 			begin
-				if(counter < NUM_DIMENSIONS-1)
+				if(counter < DIMENSIONS-1)
 				begin
 					counter <= counter + 1;
 				end

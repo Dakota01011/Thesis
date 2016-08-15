@@ -451,9 +451,9 @@
 	end
 
 	knnTop #(
-		.dataWidth(WIDTH),
-		.numberOfDimensions(NUM_DIM),
-		.debug(KNN_DEBUG)
+		.DATA_WIDTH(WIDTH),
+		.DIMENSIONS(NUM_DIM),
+		.DEBUG(KNN_DEBUG)
 	) knnTop (
 		.mclk(S_AXI_ACLK),
 		.reset(slv_reg0[0]),

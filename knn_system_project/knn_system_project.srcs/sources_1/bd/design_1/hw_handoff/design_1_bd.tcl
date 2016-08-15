@@ -162,7 +162,7 @@ proc create_root_design { parentCell } {
   # Create instance: KNN_accelerator_0, and set properties
   set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv Dakota:user:KNN_accelerator:1.4 KNN_accelerator_0 ]
   set_property -dict [ list \
-CONFIG.NUM_DIM {5} \
+CONFIG.NUM_DIM {10} \
  ] $KNN_accelerator_0
 
   # Create instance: processing_system7_0, and set properties
@@ -1365,7 +1365,7 @@ preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 2 450 230 N
 preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 270 NJ 270 NJ
 preplace netloc rst_processing_system7_0_100M_interconnect_aresetn 1 1 1 420
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 30 430 240 NJ
-levelinfo -pg 1 0 220 600 850 960 -top 0 -bot 480
+levelinfo -pg 1 0 220 600 850 970 -top 0 -bot 480
 ",
 }
 

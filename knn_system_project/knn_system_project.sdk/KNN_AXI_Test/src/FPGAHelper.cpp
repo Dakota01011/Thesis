@@ -88,12 +88,12 @@ void FPGAHelper::writeDataName(int i) {
 
 void FPGAHelper::readDataName() {
 	u32 num = KNN_ACCELERATOR_mReadReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG5_OFFSET);
-    printf("[FPGA] Reading from datanameout: %i \n\r", num);
+    printf("[FPGA] Reading from datanameout: %i \n\r", (int)num);
     //cout << "[FPGA] Reading from datanameout: " << num << endl;
 }
 
 void FPGAHelper::readDataValue() {
 	u32 num = KNN_ACCELERATOR_mReadReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG6_OFFSET);
-    printf("[FPGA] Reading from datavalueout: %i \n\r", num);
+    printf("[FPGA] Reading from datavalueout: %i \n\r", (int)num);
     //cout << "[FPGA] Reading from datavalueout: " << num << endl;
 }

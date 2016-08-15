@@ -1,9 +1,11 @@
 // Dakota Koelling
 
 module kSorting #(
-	parameter dataWidth = 32,
-	parameter maxMemory = 128,
-	parameter pass_thoo_debug = 0
+	parameter DATA_WIDTH = 32,
+	parameter DIMENSIONS = 32,
+	parameter VAL_WIDTH = 32,
+	parameter MAX_MEMORY = 64,
+	parameter PASS_THOO_DEBUG = 0
 ) (
 	input clk,
 	input reset,
@@ -12,21 +14,21 @@ module kSorting #(
 	input valid,
 	input done,
 	input [31:0] k,
-	input [dataWidth-1:0] dataValueIn,
+	input [VAL_WIDTH-1:0] dataValueIn,
 	output [31:0] dataNameOut,
-	output [dataWidth-1:0] dataValueOut
+	output [DATA_WIDTH-1:0] dataValueOut
 );
 
-	reg [dataWidth-1:0] nameMem [maxMemory-1:0];
-	reg [dataWidth-1:0] valueMem [maxMemory-1:0];
-	wire [maxMemory-1:0] comparator;
+	reg [DATA_WIDTH-1:0] nameMem [MAX_MEMORY-1:0];
+	reg [VAL_WIDTH-1:0] valueMem [MAX_MEMORY-1:0];
+	wire [MAX_MEMORY-1:0] comparator;
 (* mark_debug = "true" *)	reg [31:0] outputPointer;
-	reg [31:0] entryId;
+(* mark_debug = "true" *)	reg [31:0] entryId;
 (* mark_debug = "true" *)	reg changeOutputPointer;
 
 	generate
 		genvar i;
-		for (i = maxMemory-1; i >= 0; i = i - 1)
+		for (i = MAX_MEMORY-1; i >= 0; i = i - 1)
 		begin:memory
 			if (i > 0)
 			begin
@@ -35,7 +37,7 @@ module kSorting #(
 					if (reset)
 					begin
 						nameMem[i] <= 32'hFFFFFFFF; //all 1s
-						valueMem[i] <= 32'hFFFFFFFF; //all 1s
+						valueMem[i] <= {VAL_WIDTH{1'b1}}; //all 1s
 					end
 					else if (wr_en && valid & comparator[i] & comparator[i-1]) // shift
 					begin
@@ -56,7 +58,7 @@ module kSorting #(
 					if (reset)
 					begin
 						nameMem[i] <= 32'hFFFFFFFF; //all 1s
-						valueMem[i] <= 32'hFFFFFFFF; //all 1s
+						valueMem[i] <= {VAL_WIDTH{1'b1}}; //all 1s
 					end
 					else if (wr_en && valid & comparator[i])
 					begin
@@ -72,7 +74,7 @@ module kSorting #(
 	// Comparators
 	generate
 		genvar j;
-		for (j = 0; j < maxMemory; j = j + 1)
+		for (j = 0; j < MAX_MEMORY; j = j + 1)
 		begin:comparing
 			assign comparator[j] = valueMem[j] >= dataValueIn ? 1 : 0;
 		end
@@ -116,7 +118,7 @@ module kSorting #(
 
 	// Debug junk
 	generate
-		if(pass_thoo_debug)
+		if(PASS_THOO_DEBUG)
 		begin
 			assign dataNameOut = entryId;
 			assign dataValueOut = dataValueIn;
