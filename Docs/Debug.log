@@ -24,3 +24,8 @@ ACLK is 100MHz so 10ns period.
 
 large data sets cause cout to stop working.
 switch to printf for all couts.
+
+Dataset with 0:99 points with 10 dim. Results are all wrong. No obvious pattern.
+
+Dataset with 0:10 points with 10 dim. Point #10 is not getting loaded into sort buffer before readout.
+The rest of the readout seems to be correct, just shifted.

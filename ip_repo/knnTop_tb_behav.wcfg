@@ -11,11 +11,11 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="928880000fs"></ZoomStartTime>
-      <ZoomEndTime time="1046880001fs"></ZoomEndTime>
-      <Cursor1Time time="970000000fs"></Cursor1Time>
+      <ZoomStartTime time="737950000fs"></ZoomStartTime>
+      <ZoomEndTime time="877150002fs"></ZoomEndTime>
+      <Cursor1Time time="935000000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="10" />
+   <WVObjectSize size="16" />
    <wvobject fp_name="/knnTop_tb/uut/top/mclk" type="logic">
       <obj_property name="ElementShortName">mclk</obj_property>
       <obj_property name="ObjectShortName">mclk</obj_property>
@@ -45,8 +45,8 @@
       <obj_property name="ObjectShortName">distanceValid</obj_property>
    </wvobject>
    <wvobject fp_name="/knnTop_tb/uut/top/distance" type="array">
-      <obj_property name="ElementShortName">distance[31:0]</obj_property>
-      <obj_property name="ObjectShortName">distance[31:0]</obj_property>
+      <obj_property name="ElementShortName">distance[97:0]</obj_property>
+      <obj_property name="ObjectShortName">distance[97:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/knnTop_tb/uut/top/dataNameOut" type="array">
@@ -57,6 +57,36 @@
    <wvobject fp_name="/knnTop_tb/uut/top/dataValueOut" type="array">
       <obj_property name="ElementShortName">dataValueOut[31:0]</obj_property>
       <obj_property name="ObjectShortName">dataValueOut[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/dataValueIn" type="array">
+      <obj_property name="ElementShortName">dataValueIn[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataValueIn[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/uut/top/dist/data1" type="array">
+      <obj_property name="ElementShortName">data1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data1[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/uut/top/dist/data2" type="array">
+      <obj_property name="ElementShortName">data2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data2[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/uut/top/dist/difference" type="array">
+      <obj_property name="ElementShortName">difference[32:0]</obj_property>
+      <obj_property name="ObjectShortName">difference[32:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/uut/top/dist/squared" type="array">
+      <obj_property name="ElementShortName">squared[65:0]</obj_property>
+      <obj_property name="ObjectShortName">squared[65:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/knnTop_tb/uut/top/dist/accumulator" type="array">
+      <obj_property name="ElementShortName">accumulator[97:0]</obj_property>
+      <obj_property name="ObjectShortName">accumulator[97:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

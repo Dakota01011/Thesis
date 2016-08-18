@@ -75,11 +75,11 @@ module knnTop_tb();
 		#20;
 		dataValueIn = 1; // ref start
 		#20;
-		dataValueIn = 2;
+		dataValueIn = -2;
 		#20;
 		dataValueIn = 2;
 		#20;
-		dataValueIn = 2;
+		dataValueIn = -2;
 		#20;
 		dataValueIn = 3; // ref end
 		#20;
