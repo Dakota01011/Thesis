@@ -29,3 +29,6 @@ Dataset with 0:99 points with 10 dim. Results are all wrong. No obvious pattern.
 
 Dataset with 0:10 points with 10 dim. Point #10 is not getting loaded into sort buffer before readout.
 The rest of the readout seems to be correct, just shifted.
+
+Last data point does not get put in sort because calculation stops after the last write because of the wr_en.
+Need to continue calculations after last write.
