@@ -82,6 +82,7 @@ void KNN::kNNFPGAClassify(int dataPoint[NUM_FEATURES], int trainingData[NUM_POIN
 
     // set readEn bit in the control reg
     fpga.writeReadEn(1);
+    fpga.writeReadEn(1); //dummy write
 
     // read the datanameout and datavalueout reg k time and that will return
     // the name and square distances of the k nearest neighbors

@@ -34,8 +34,8 @@ module knnTop_regwrap #(
 	end
 
 	knnTop #(
-		.dataWidth(32),
-		.numberOfDimensions(5)
+		.DATA_WIDTH(dataWidth),
+		.DIMENSIONS(numberOfDimensions)
 	) top (
 		.mclk 			(clk),
 		.reset 			(reset_reg),

@@ -160,7 +160,7 @@ proc create_root_design { parentCell } {
   # Create ports
 
   # Create instance: KNN_accelerator_0, and set properties
-  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv Dakota:user:KNN_accelerator:1.41 KNN_accelerator_0 ]
+  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv Dakota:user:KNN_accelerator:1.42 KNN_accelerator_0 ]
   set_property -dict [ list \
 CONFIG.NUM_DIM {10} \
  ] $KNN_accelerator_0
@@ -280,7 +280,7 @@ CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1 {1} \
 CONFIG.PCW_FCLK_CLK0_BUF {true} \
 CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
 CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {150.000000} \
-CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {50.000000} \
+CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {50} \
 CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {50} \
 CONFIG.PCW_FPGA_FCLK0_ENABLE {1} \
 CONFIG.PCW_GPIO_EMIO_GPIO_ENABLE {0} \
@@ -605,7 +605,7 @@ CONFIG.PCW_QSPI_GRP_SS1_IO {<Select>} \
 CONFIG.PCW_QSPI_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_QSPI_PERIPHERAL_DIVISOR0 {5} \
 CONFIG.PCW_QSPI_PERIPHERAL_ENABLE {1} \
-CONFIG.PCW_QSPI_PERIPHERAL_FREQMHZ {200.000000} \
+CONFIG.PCW_QSPI_PERIPHERAL_FREQMHZ {200} \
 CONFIG.PCW_QSPI_QSPI_IO {MIO 1 .. 6} \
 CONFIG.PCW_SD0_GRP_CD_ENABLE {1} \
 CONFIG.PCW_SD0_GRP_CD_IO {MIO 47} \
@@ -1475,7 +1475,7 @@ preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 2 450 230 N
 preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 270 NJ 270 NJ
 preplace netloc rst_processing_system7_0_100M_interconnect_aresetn 1 1 1 420
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 30 430 240 NJ
-levelinfo -pg 1 0 220 580 810 920 -top 0 -bot 460
+levelinfo -pg 1 0 220 600 850 970 -top 0 -bot 460
 ",
 }
 

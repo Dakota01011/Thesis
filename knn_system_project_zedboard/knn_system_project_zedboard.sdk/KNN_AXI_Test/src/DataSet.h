@@ -9,7 +9,7 @@
 #define SRC_DATASET_H_
 
 #define NUM_FEATURES 11
-#define NUM_POINTS 11
+#define NUM_POINTS 100
 
 class DataSet {
 public:
