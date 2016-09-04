@@ -1,7 +1,8 @@
 # convert data from .dat into a cpp file for compile into zynq
-import re
+import re, binascii
 
-data_file = open('training-data1.dat', 'r')
+data_file = open('training-data2.dat', 'r')
+hex_file = open('training-data2-hex.dat', 'wb')
 h_file = open('DataSet.h', 'w')
 cpp_file = open('DataSet.cpp', 'w')
 
@@ -51,6 +52,7 @@ for line in data_file.readlines():
 	first_inline = True
 	for num in nums_inline:
 		num_features = num_features + 1
+		hex_file.write(binascii.unhexlify('{0:08X}'.format(int(num))))
 		if first_inline:
 			cpp_file.write(num)
 			first_inline = False
@@ -92,6 +94,7 @@ DataSet::~DataSet()
 ''')
 
 data_file.close()
+hex_file.close()
 h_file.close()
 cpp_file.close()
 

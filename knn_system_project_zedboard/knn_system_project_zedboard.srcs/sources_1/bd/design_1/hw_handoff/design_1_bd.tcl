@@ -162,7 +162,7 @@ proc create_root_design { parentCell } {
   # Create instance: KNN_accelerator_0, and set properties
   set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv Dakota:user:KNN_accelerator:1.42 KNN_accelerator_0 ]
   set_property -dict [ list \
-CONFIG.NUM_DIM {10} \
+CONFIG.NUM_DIM {30} \
  ] $KNN_accelerator_0
 
   # Create instance: processing_system7_0, and set properties

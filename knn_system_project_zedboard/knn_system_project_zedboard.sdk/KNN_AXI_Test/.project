@@ -24,4 +24,15 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 		<nature>org.eclipse.cdt.core.ccnature</nature>
 	</natures>
+	<filteredResources>
+		<filter>
+			<id>1472941070565</id>
+			<name></name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-training-data2-hex.dat</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
 </projectDescription>

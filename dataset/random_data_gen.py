@@ -2,9 +2,9 @@
 
 from random import randint
 
-setNumber = 1
-numberPoints = 100
-numberDim = 10
+setNumber = 2
+numberPoints = 10000
+numberDim = 30
 
 data_file = open('training-data' + str(setNumber) + '.dat', 'w')
 

@@ -8,8 +8,8 @@
 #ifndef SRC_DATASET_H_
 #define SRC_DATASET_H_
 
-#define NUM_FEATURES 11
-#define NUM_POINTS 100
+#define NUM_FEATURES 31
+#define NUM_POINTS 10000
 
 class DataSet {
 public:
