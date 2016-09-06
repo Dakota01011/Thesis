@@ -34,6 +34,9 @@ int main() {
 	printf("[FPGA] Time: %4.6f sec\n\r", diff*pow(10,-8));
 	//cout << "[FPGA] Time: " << diff*pow(10,-8) << "sec" << endl;
 
-	return 0;
+	while(1)
+	{
+
+	}
 }
 

@@ -32,3 +32,7 @@ The rest of the readout seems to be correct, just shifted.
 
 Last data point does not get put in sort because calculation stops after the last write because of the wr_en.
 Need to continue calculations after last write.
+
+Need to convert data file to hex(?) file to be added to project and hopefully dumped into readonly section of ram automatically.
+Then look at memory view, if there is one, to make sure the values are loaded correctly. 
+Then use DMA to pull data from memory and probe it on the AXI stream

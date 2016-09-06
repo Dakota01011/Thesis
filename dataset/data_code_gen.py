@@ -1,10 +1,21 @@
 # convert data from .dat into a cpp file for compile into zynq
-import re, binascii
+import re
 
-data_file = open('training-data2.dat', 'r')
-hex_file = open('training-data2-hex.dat', 'wb')
+data_file_name = 'training-data2.dat'
+
+data_file = open(data_file_name, 'r')
+num_points = 0
+num_features = 0
+for line in data_file.readlines():
+	num_points = num_points + 1
+	nums_inline = re.split('\t', line)
+	num_features = 0
+	for num in nums_inline:
+		num_features = num_features + 1
+data_file.close()
+
+data_file = open(data_file_name, 'r')
 h_file = open('DataSet.h', 'w')
-cpp_file = open('DataSet.cpp', 'w')
 
 h_file.write('''/*
  * DataSet.h
@@ -18,24 +29,10 @@ h_file.write('''/*
 
 ''')
 
-cpp_file.write('''/*
- * DataSet.cpp
- *
- *  Created on: Jul 20, 2016
- *      Author: dkoellin
- */
+h_file.write('#define NUM_FEATURES ' + str(num_features) + '\n')
+h_file.write('#define NUM_POINTS ' + str(num_points) + '\n\n')
 
-#include "DataSet.h"
-
-DataSet::DataSet()
-{
-
-}
-
-void DataSet::getMyIntDataSet(int pArray[NUM_POINTS][NUM_FEATURES])
-{
-	int myIntDataSet[NUM_POINTS][NUM_FEATURES] = {
-''')
+h_file.write('''const int myIntDataSet[NUM_POINTS][NUM_FEATURES] = {\n''')
 
 num_points = 0
 num_features = 0
@@ -45,56 +42,28 @@ for line in data_file.readlines():
 	nums_inline = re.split('\t', line)
 	num_features = 0
 	if first_start:
-		cpp_file.write('\t\t{')
+		h_file.write('\t{')
 		first_start = False
 	else:
-		cpp_file.write(',\n\t\t{')
+		h_file.write(',\n\t{')
 	first_inline = True
 	for num in nums_inline:
 		num_features = num_features + 1
-		hex_file.write(binascii.unhexlify('{0:08X}'.format(int(num))))
 		if first_inline:
-			cpp_file.write(num)
+			h_file.write(num)
 			first_inline = False
 		else:
 			if num[-1:]== '\n': # Check last char
 				num = num[:-1] # Remove last char
-			cpp_file.write(', ' + num)
-	cpp_file.write('}')
-
-h_file.write('#define NUM_FEATURES ' + str(num_features) + '\n')
-h_file.write('#define NUM_POINTS ' + str(num_points) + '\n')
+			h_file.write(', ' + num)
+	h_file.write('}')
 
 h_file.write('''
-class DataSet {
-public:
-	DataSet();
-	void getMyIntDataSet(int pArray[NUM_POINTS][NUM_FEATURES]);
-	virtual ~DataSet();
 };
 
 #endif /* SRC_DATASET_H_ */
 ''')
 
-cpp_file.write('''\n\t};
-	for (int i = 0; i < NUM_POINTS; i++)
-	{
-		for (int j = 0; j < NUM_FEATURES; j++)
-		{
-			pArray[i][j] = myIntDataSet[i][j];
-		}
-	}
-}
-
-DataSet::~DataSet()
-{
-	// TODO Auto-generated destructor stub
-}
-
-''')
-
 data_file.close()
-hex_file.close()
 h_file.close()
-cpp_file.close()
 

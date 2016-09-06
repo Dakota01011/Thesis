@@ -1,6 +1,6 @@
 #include "KNN.h"
 
-void KNN::kNNClassify(int dataPoint[NUM_FEATURES], int trainingData[NUM_POINTS][NUM_FEATURES], int k) {
+void KNN::kNNClassify(int dataPoint[NUM_FEATURES], const int trainingData[NUM_POINTS][NUM_FEATURES], int k) {
 
 	int idList[NUM_POINTS] = {0};
 	double distanceList[NUM_POINTS] = {0};
@@ -49,7 +49,7 @@ void KNN::kNNClassify(int dataPoint[NUM_FEATURES], int trainingData[NUM_POINTS][
 
 }
 
-void KNN::kNNFPGAClassify(int dataPoint[NUM_FEATURES], int trainingData[NUM_POINTS][NUM_FEATURES], int k) {
+void KNN::kNNFPGAClassify(int dataPoint[NUM_FEATURES], const int trainingData[NUM_POINTS][NUM_FEATURES], int k) {
     FPGAHelper fpga;
 
     // reset it by writing a 1 and then a 0 to the reset bit in the control reg
