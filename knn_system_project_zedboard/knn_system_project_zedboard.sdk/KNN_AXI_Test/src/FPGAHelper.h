@@ -5,10 +5,18 @@
 #include <stdio.h>
 #include <unistd.h>
 #include "xil_types.h"
+#include "xil_io.h"
 #include "xparameters.h"
 #include "platform.h"
 #include "KNN_accelerator.h"
+#include "xaxidma_hw.h"
 using namespace std;
+
+#define WriteReg(BaseAddress, RegOffset, Data) \
+  	Xil_Out32((BaseAddress) + (RegOffset), (u32)(Data))
+
+#define ReadReg(BaseAddress, RegOffset) \
+    Xil_In32((BaseAddress) + (RegOffset))
 
 class FPGAHelper {
 public:
@@ -21,8 +29,7 @@ public:
     void writeLoadBit(int i);
     void writeReadEn(int i);
     void writeRefData(int i);
-    void writeDataValue(int i);
-    void writeDataName(int i);
+    bool activateDMA(UINTPTR BuffAddr, u32 Length);
 
     void readDataName();
     void readDataValue();

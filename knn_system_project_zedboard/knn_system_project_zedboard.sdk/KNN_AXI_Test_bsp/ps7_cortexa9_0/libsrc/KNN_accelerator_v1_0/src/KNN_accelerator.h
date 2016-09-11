@@ -6,7 +6,6 @@
 /****************** Include Files ********************/
 #include "xil_types.h"
 #include "xstatus.h"
-#include "xil_io.h"
 
 #define KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET 0
 #define KNN_ACCELERATOR_S00_AXI_SLV_REG1_OFFSET 4
@@ -14,7 +13,6 @@
 #define KNN_ACCELERATOR_S00_AXI_SLV_REG3_OFFSET 12
 #define KNN_ACCELERATOR_S00_AXI_SLV_REG4_OFFSET 16
 #define KNN_ACCELERATOR_S00_AXI_SLV_REG5_OFFSET 20
-#define KNN_ACCELERATOR_S00_AXI_SLV_REG6_OFFSET 24
 
 
 /**************************** Type Definitions *****************************/

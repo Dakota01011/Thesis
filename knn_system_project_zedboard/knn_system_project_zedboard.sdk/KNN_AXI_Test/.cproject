@@ -156,11 +156,9 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="KNN_AXI_Test.xilinx.gnu.armv7.exe.1233858674" name="Xilinx ARM v7 Executable" projectType="xilinx.gnu.armv7.exe"/>
 	</storageModule>
+	<storageModule moduleId="refreshScope"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="xilinx.gnu.armv7.exe.debug.1356799564;xilinx.gnu.armv7.exe.debug.1356799564.;xilinx.gnu.armv7.c.toolchain.compiler.debug.2082726290;xilinx.gnu.armv7.c.compiler.input.1816627235">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.xilinx.managedbuilder.ui.ARMA53X32GCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="xilinx.gnu.armv7.exe.debug.1356799564;xilinx.gnu.armv7.exe.debug.1356799564.">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.xilinx.managedbuilder.ui.ARMA53X32GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
@@ -170,6 +168,9 @@
 		<scannerConfigBuildInfo instanceId="xilinx.gnu.armv7.exe.release.605653912;xilinx.gnu.armv7.exe.release.605653912.;xilinx.gnu.armv7.c.toolchain.compiler.release.1246167252;xilinx.gnu.armv7.c.compiler.input.1102758728">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.xilinx.managedbuilder.ui.ARMA53X32GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="xilinx.gnu.armv7.exe.debug.1356799564;xilinx.gnu.armv7.exe.debug.1356799564.;xilinx.gnu.armv7.cxx.toolchain.compiler.debug.1867084774;xilinx.gnu.armv7.cxx.compiler.input.99177865">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.xilinx.managedbuilder.ui.ARMA53X32GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

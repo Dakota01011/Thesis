@@ -23,19 +23,19 @@ FPGAHelper::~FPGAHelper() {
 void FPGAHelper::reset() {
     //printf("[FPGA] Write to reset bit\n\r");
     //cout << "[FPGA] Write to reset bit" << endl;
-    KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 1);
+    WriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 1);
     sleep(0.5);
-	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 0);
+	WriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 0);
 }
 
 void FPGAHelper::writeK(int k) {
     //printf("[FPGA] Write to k register: %i \n\r", k);
     //cout << "[FPGA] Write to k register: " << k << endl;
-    KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG1_OFFSET, k);
+    WriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG1_OFFSET, k);
 }
 
 void FPGAHelper::writeLoadBit(int i) {
-    u32 regval = KNN_ACCELERATOR_mReadReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET);
+    u32 regval = ReadReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET);
     if (i)
     {
     	regval = regval | 4;
@@ -46,7 +46,7 @@ void FPGAHelper::writeLoadBit(int i) {
 	}
     //printf("[FPGA] Write to load bit: %i \n\r", regval);
     //cout << "[FPGA] Write to load bit: " << regval << endl;
-	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, regval);
+	WriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, regval);
 }
 
 void FPGAHelper::writeReadEn(int i) {
@@ -61,39 +61,38 @@ void FPGAHelper::writeReadEn(int i) {
 	}
     //printf("[FPGA] Writing to readEn bit: %i \n\r", regval);
     //cout << "[FPGA] Writing to readEn bit: " << regval << endl;
-	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, regval);
+	WriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, regval);
 }
 
-/*
- * removed register
-void FPGAHelper::writeRefData(int i) {
-    cout << "[FPGA] Writing to refdatain register: " << i << endl;
-    KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG2_OFFSET, i);
-}
-*/
+bool FPGAHelper::activateDMA(UINTPTR BuffAddr, u32 Length) {
 
-void FPGAHelper::writeDataValue(int i) {
-    //printf("[FPGA] Writing to datavaluein register: %i \n\r", i);
-    //cout << "[FPGA] Writing to datavaluein register: " << i << endl;
-    KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG4_OFFSET, i);
-}
+	bool flag = true;
 
-/*
- * Removed register
-void FPGAHelper::writeDataName(int i) {
-    cout << "[FPGA] Writing to datanamein register: " << i << endl;
-    KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG3_OFFSET, i);
+	u32 reg = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_CR_OFFSET);
+	XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_CR_OFFSET, reg | XAXIDMA_CR_RUNSTOP_MASK);
+
+	XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_SRCADDR_OFFSET, BuffAddr);
+
+	XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_BUFFLEN_OFFSET, Length);
+
+	while(!XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_SR_OFFSET) & XAXIDMA_HALTED_MASK)
+	{
+		flag = true;
+	}
+
+	flag = true;
+
+	return flag;
 }
-*/
 
 void FPGAHelper::readDataName() {
-	u32 num = KNN_ACCELERATOR_mReadReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG5_OFFSET);
+	u32 num = ReadReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG4_OFFSET);
     printf("[FPGA] Reading from datanameout: %i \n\r", (int)num);
     //cout << "[FPGA] Reading from datanameout: " << num << endl;
 }
 
 void FPGAHelper::readDataValue() {
-	u32 num = KNN_ACCELERATOR_mReadReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG6_OFFSET);
+	u32 num = ReadReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG5_OFFSET);
     printf("[FPGA] Reading from datavalueout: %i \n\r", (int)num);
     //cout << "[FPGA] Reading from datavalueout: " << num << endl;
 }
