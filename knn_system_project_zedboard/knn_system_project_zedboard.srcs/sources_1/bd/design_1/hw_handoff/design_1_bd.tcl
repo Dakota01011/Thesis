@@ -171,6 +171,8 @@ CONFIG.NUM_DIM {30} \
 CONFIG.c_enable_multi_channel {0} \
 CONFIG.c_include_s2mm {0} \
 CONFIG.c_include_sg {0} \
+CONFIG.c_m_axi_mm2s_data_width {64} \
+CONFIG.c_m_axis_mm2s_tdata_width {64} \
 CONFIG.c_mm2s_burst_size {256} \
 CONFIG.c_num_mm2s_channels {1} \
 CONFIG.c_sg_include_stscntrl_strm {0} \
@@ -1472,6 +1474,9 @@ CONFIG.CONST_WIDTH {4} \
 
   # Create interface connections
   connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins KNN_accelerator_0/S00_AXIS] [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S]
+  set_property -dict [ list \
+HDL_ATTRIBUTE.MARK_DEBUG {true} \
+ ] [get_bd_intf_nets axi_dma_0_M_AXIS_MM2S]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXI_MM2S [get_bd_intf_pins axi_dma_0/M_AXI_MM2S] [get_bd_intf_pins axi_mem_intercon/S00_AXI]
   connect_bd_intf_net -intf_net axi_mem_intercon_M00_AXI [get_bd_intf_pins axi_mem_intercon/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
