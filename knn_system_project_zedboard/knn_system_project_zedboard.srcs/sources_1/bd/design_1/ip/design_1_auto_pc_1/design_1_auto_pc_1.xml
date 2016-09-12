@@ -2,7 +2,7 @@
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>xilinx.com</spirit:vendor>
   <spirit:library>customized_ip</spirit:library>
-  <spirit:name>design_1_auto_pc_2</spirit:name>
+  <spirit:name>design_1_auto_pc_1</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
@@ -1055,7 +1055,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Sep 11 01:46:56 UTC 2016</spirit:value>
+            <spirit:value>Mon Sep 12 18:07:24 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -1085,7 +1085,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Sep 11 01:46:57 UTC 2016</spirit:value>
+            <spirit:value>Mon Sep 12 18:07:25 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -1116,7 +1116,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Sep 11 01:46:57 UTC 2016</spirit:value>
+            <spirit:value>Mon Sep 12 18:07:25 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -1162,7 +1162,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Sep 11 01:46:56 UTC 2016</spirit:value>
+            <spirit:value>Mon Sep 12 18:07:24 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -1193,7 +1193,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Sep 11 01:46:57 UTC 2016</spirit:value>
+            <spirit:value>Mon Sep 12 18:07:25 UTC 2016</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -3861,7 +3861,7 @@
         <spirit:logicalName>axi_protocol_converter_v2_1_9</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>design_1_auto_pc_2_ooc.xdc</spirit:name>
+        <spirit:name>design_1_auto_pc_1_ooc.xdc</spirit:name>
         <spirit:userFileType>xdc</spirit:userFileType>
         <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
@@ -3876,7 +3876,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_synthesisconstraints_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>design_1_auto_pc_2_ooc.xdc</spirit:name>
+        <spirit:name>design_1_auto_pc_1_ooc.xdc</spirit:name>
         <spirit:userFileType>xdc</spirit:userFileType>
         <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
@@ -3886,7 +3886,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesiswrapper_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>synth/design_1_auto_pc_2.v</spirit:name>
+        <spirit:name>synth/design_1_auto_pc_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
@@ -4255,7 +4255,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsimulationwrapper_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>sim/design_1_auto_pc_2.v</spirit:name>
+        <spirit:name>sim/design_1_auto_pc_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
@@ -4325,7 +4325,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">design_1_auto_pc_2</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">design_1_auto_pc_1</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>

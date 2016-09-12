@@ -286,15 +286,14 @@ vlog -work axi_crossbar_v2_1_10 -64 "+incdir+../../../ipstatic/axi_infrastructur
 
 vlog -work xil_defaultlib -64 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../bd/design_1/ip/design_1_xbar_0_1/sim/design_1_xbar_0.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_02/hdl/distanceCalcAcc.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_02/hdl/kSorting.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_02/hdl/fifo.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_02/hdl/knnTop.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_02/hdl/KNN_accelerator_v2_0_S00_AXI.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_02/hdl/KNN_accelerator_v2_0_S00_AXIS.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_02/hdl/KNN_accelerator_v2_0.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_03/hdl/distanceCalcAcc.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_03/hdl/kSorting.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_03/hdl/fifo.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_03/hdl/knnTop.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_03/hdl/KNN_accelerator_v2_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_03/hdl/KNN_accelerator_v2_0_S00_AXIS.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_03/hdl/KNN_accelerator_v2_0.v" \
 "../../../bd/design_1/ip/design_1_KNN_accelerator_0_1/sim/design_1_KNN_accelerator_0_1.v" \
-"../../../bd/design_1/ip/design_1_xbar_1/sim/design_1_xbar_1.v" \
 "../../../bd/design_1/ipshared/xilinx.com/xlconstant_v1_1/xlconstant.v" \
 "../../../bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.v" \
 
@@ -349,7 +348,6 @@ vlog -work axi_dwidth_converter_v2_1_9 -64 "+incdir+../../../ipstatic/axi_infras
 
 vlog -work xil_defaultlib -64 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../bd/design_1/ip/design_1_auto_us_0/sim/design_1_auto_us_0.v" \
-"../../../bd/design_1/ip/design_1_auto_us_1/sim/design_1_auto_us_1.v" \
 
 vlog -work xil_defaultlib "glbl.v"
 

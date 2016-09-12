@@ -1,5 +1,5 @@
 ###############################################################################################################
-# Core-Level Timing Constraints for axi_dwidth_converter Component "design_1_auto_us_1"
+# Core-Level Timing Constraints for axi_dwidth_converter Component "design_1_auto_us_0"
 ###############################################################################################################
 #
 # This component is not configured to perform asynchronous clock-domain-crossing.

@@ -53,7 +53,7 @@
 `timescale 1ns/1ps
 
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module design_1_auto_pc_2 (
+module design_1_auto_pc_1 (
   aclk,
   aresetn,
   s_axi_araddr,

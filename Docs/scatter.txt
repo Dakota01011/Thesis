@@ -1,0 +1,1 @@
+ -Wl, -scatter C:\Users\Dakota\Documents\Github\Thesis\knn_system_project_zedboard\knn_system_project_zedboard.sdk\KNN_AXI_Test\src\scatter.txt

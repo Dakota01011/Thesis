@@ -6,8 +6,8 @@ preplace port FIXED_IO -pg 1 -y 290 -defaultsOSRD
 preplace inst axi_dma_0 -pg 1 -lvl 3 -y 220 -defaultsOSRD
 preplace inst xlconstant_0 -pg 1 -lvl 3 -y 110 -defaultsOSRD
 preplace inst rst_processing_system7_0_100M -pg 1 -lvl 1 -y 290 -defaultsOSRD
-preplace inst axi_mem_intercon -pg 1 -lvl 4 -y 330 -defaultsOSRD
 preplace inst KNN_accelerator_0 -pg 1 -lvl 4 -y 120 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 4 -y 330 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 150 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 5 -y 350 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 5 1 NJ

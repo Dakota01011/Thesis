@@ -160,7 +160,7 @@ proc create_root_design { parentCell } {
   # Create ports
 
   # Create instance: KNN_accelerator_0, and set properties
-  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:KNN_accelerator:2.02 KNN_accelerator_0 ]
+  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:KNN_accelerator:2.03 KNN_accelerator_0 ]
   set_property -dict [ list \
 CONFIG.NUM_DIM {30} \
  ] $KNN_accelerator_0
@@ -174,6 +174,7 @@ CONFIG.c_include_sg {0} \
 CONFIG.c_mm2s_burst_size {256} \
 CONFIG.c_num_mm2s_channels {1} \
 CONFIG.c_sg_include_stscntrl_strm {0} \
+CONFIG.c_sg_length_width {23} \
  ] $axi_dma_0
 
   # Create instance: axi_mem_intercon, and set properties
@@ -1501,8 +1502,8 @@ preplace port FIXED_IO -pg 1 -y 290 -defaultsOSRD
 preplace inst axi_dma_0 -pg 1 -lvl 3 -y 220 -defaultsOSRD
 preplace inst xlconstant_0 -pg 1 -lvl 3 -y 110 -defaultsOSRD
 preplace inst rst_processing_system7_0_100M -pg 1 -lvl 1 -y 290 -defaultsOSRD
-preplace inst axi_mem_intercon -pg 1 -lvl 4 -y 330 -defaultsOSRD
 preplace inst KNN_accelerator_0 -pg 1 -lvl 4 -y 120 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 4 -y 330 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 150 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 5 -y 350 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 5 1 NJ

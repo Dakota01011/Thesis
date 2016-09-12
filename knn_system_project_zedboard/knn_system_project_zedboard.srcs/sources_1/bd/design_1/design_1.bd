@@ -178,6 +178,7 @@
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi_dma_0_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="c_include_sg">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="c_sg_length_width">23</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="c_mm2s_burst_size">256</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="c_include_s2mm">0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -192,20 +193,20 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>KNN_accelerator_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="xilinx.com" spirit:version="2.02"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_KNN_accelerator_0_1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="NUM_DIM">30</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>axi_mem_intercon</spirit:instanceName>
         <spirit:componentRef spirit:library="BlockDiagram/design_1_imp" spirit:name="axi_mem_intercon" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi_mem_intercon_1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="NUM_MI">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="appcore">xilinx.com:ip:axi_interconnect:2.1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>KNN_accelerator_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="xilinx.com" spirit:version="2.03"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_KNN_accelerator_0_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="NUM_DIM">30</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -250,8 +251,6 @@
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="s_axi_lite_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="m_axi_mm2s_aclk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="S_AXI_HP0_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axi_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M00_ACLK"/>
@@ -259,6 +258,8 @@
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="M00_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axis_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_RESET0_N</spirit:name>
@@ -269,13 +270,13 @@
         <spirit:name>rst_processing_system7_0_100M_peripheral_aresetn</spirit:name>
         <spirit:internalPortReference spirit:componentRef="rst_processing_system7_0_100M" spirit:portRef="peripheral_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="axi_resetn"/>
-        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axi_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axis_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M01_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="M00_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axis_aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_processing_system7_0_100M_interconnect_aresetn</spirit:name>
@@ -762,7 +763,7 @@
         <spirit:instanceName>auto_pc</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="axi_protocol_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_auto_pc_2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_auto_pc_1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="SI_PROTOCOL">AXI4</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI3</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -771,7 +772,7 @@
         <spirit:instanceName>auto_us</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="axi_dwidth_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_auto_us_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_auto_us_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="SI_DATA_WIDTH">32</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="MI_DATA_WIDTH">64</spirit:configurableElementValue>
         </spirit:configurableElementValues>

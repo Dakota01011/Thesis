@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Sat Sep 10 20:46:35 2016
+//Date        : Mon Sep 12 13:07:23 2016
 //Host        : Dakota-PC running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -1940,7 +1940,7 @@ module s00_couplers_imp_7HNO1D
   assign s00_couplers_to_auto_pc_ARSIZE = S_AXI_arsize[2:0];
   assign s00_couplers_to_auto_pc_ARVALID = S_AXI_arvalid;
   assign s00_couplers_to_auto_pc_RREADY = S_AXI_rready;
-  design_1_auto_pc_2 auto_pc
+  design_1_auto_pc_1 auto_pc
        (.aclk(S_ACLK_1),
         .aresetn(S_ARESETN_1),
         .m_axi_araddr(auto_pc_to_auto_us_ARADDR),
@@ -1974,7 +1974,7 @@ module s00_couplers_imp_7HNO1D
         .s_axi_rready(s00_couplers_to_auto_pc_RREADY),
         .s_axi_rresp(s00_couplers_to_auto_pc_RRESP),
         .s_axi_rvalid(s00_couplers_to_auto_pc_RVALID));
-  design_1_auto_us_1 auto_us
+  design_1_auto_us_0 auto_us
        (.m_axi_araddr(auto_us_to_s00_couplers_ARADDR),
         .m_axi_arburst(auto_us_to_s00_couplers_ARBURST),
         .m_axi_arcache(auto_us_to_s00_couplers_ARCACHE),

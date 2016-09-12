@@ -47,8 +47,8 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:user:KNN_accelerator:2.02
-// IP Revision: 8
+// IP VLNV: xilinx.com:user:KNN_accelerator:2.03
+// IP Revision: 9
 
 `timescale 1ns/1ps
 

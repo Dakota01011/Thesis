@@ -18,6 +18,8 @@ using namespace std;
 #define ReadReg(BaseAddress, RegOffset) \
     Xil_In32((BaseAddress) + (RegOffset))
 
+#define MaxLength 16777215 // 0xFF_FFFF
+
 class FPGAHelper {
 public:
     FPGAHelper();

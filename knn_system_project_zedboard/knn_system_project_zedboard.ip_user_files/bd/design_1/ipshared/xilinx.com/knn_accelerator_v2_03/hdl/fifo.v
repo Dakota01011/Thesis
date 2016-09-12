@@ -40,7 +40,7 @@ module fifo #(
 	begin : proc_counter
 		if(rst)
 		begin
-			counter <= -1; // account for delay between rise of start and dataIn being ready
+			counter <= 0;
 			firstTime <= 1;
 		end
 		else

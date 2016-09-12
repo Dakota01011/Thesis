@@ -12,7 +12,7 @@ class KNN {
 
 public:
     static void kNNClassify(int dataPoint[NUM_FEATURES], const int trainingData[NUM_POINTS][NUM_FEATURES], int k);
-    static void kNNFPGAClassify(int dataPoint[NUM_FEATURES], const int trainingData[NUM_POINTS][NUM_FEATURES], int k);
+    static void kNNFPGAClassify(const int trainingData[NUM_POINTS][NUM_FEATURES], int k);
 };
 
 #endif //KNN_KNN_H

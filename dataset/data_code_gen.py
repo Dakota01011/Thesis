@@ -42,15 +42,20 @@ for line in data_file.readlines():
 	else:
 		cpp_file.write(',\n\t{')
 	first_inline = True
+	second_inline = True
 	for num in nums_inline:
-		num_features = num_features + 1
 		if first_inline:
-			cpp_file.write(num)
+			#cpp_file.write(num)
 			first_inline = False
+		elif second_inline:
+			cpp_file.write(num)
+			num_features = num_features + 1
+			second_inline = False
 		else:
 			if num[-1:]== '\n': # Check last char
 				num = num[:-1] # Remove last char
 			cpp_file.write(', ' + num)
+			num_features = num_features + 1
 	cpp_file.write('}')
 
 h_file.write('#define NUM_FEATURES ' + str(num_features) + '\n')
