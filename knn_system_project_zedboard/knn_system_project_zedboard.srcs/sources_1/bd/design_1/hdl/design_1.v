@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Mon Sep 12 14:14:20 2016
+//Date        : Thu Sep 15 20:11:34 2016
 //Host        : Dakota-PC running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=14,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_ps7_cnt=1,synth_mode=Global}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=14,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=9,da_ps7_cnt=1,synth_mode=Global}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR_addr,
     DDR_ba,
@@ -54,10 +54,10 @@ module design_1
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
 
-  (* MARK_DEBUG *) wire [63:0]axi_dma_0_M_AXIS_MM2S_TDATA;
-  (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S_TLAST;
-  (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S_TREADY;
-  (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S_TVALID;
+  wire [63:0]axi_dma_0_M_AXIS_MM2S_TDATA;
+  wire axi_dma_0_M_AXIS_MM2S_TLAST;
+  wire axi_dma_0_M_AXIS_MM2S_TREADY;
+  wire axi_dma_0_M_AXIS_MM2S_TVALID;
   wire [31:0]axi_dma_0_M_AXI_MM2S_ARADDR;
   wire [1:0]axi_dma_0_M_AXI_MM2S_ARBURST;
   wire [3:0]axi_dma_0_M_AXI_MM2S_ARCACHE;
@@ -185,9 +185,9 @@ module design_1
   wire processing_system7_0_axi_periph_M01_AXI_WVALID;
   wire [0:0]rst_processing_system7_0_100M_interconnect_aresetn;
   wire [0:0]rst_processing_system7_0_100M_peripheral_aresetn;
-  wire [3:0]xlconstant_0_dout;
+  wire [7:0]xlconstant_0_dout;
 
-  design_1_KNN_accelerator_0_1 KNN_accelerator_0
+  design_1_KNN_accelerator_0_0 KNN_accelerator_0
        (.s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(processing_system7_0_axi_periph_M01_AXI_ARADDR[4:0]),
         .s00_axi_aresetn(rst_processing_system7_0_100M_peripheral_aresetn),
@@ -211,7 +211,7 @@ module design_1
         .s00_axi_wvalid(processing_system7_0_axi_periph_M01_AXI_WVALID),
         .s00_axis_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axis_aresetn(rst_processing_system7_0_100M_peripheral_aresetn),
-        .s00_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA[31:0]),
+        .s00_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
         .s00_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
         .s00_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
         .s00_axis_tstrb(xlconstant_0_dout),

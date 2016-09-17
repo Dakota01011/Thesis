@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Sep 12 14:14:40 2016" VIVADOVERSION="2016.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Sep 15 20:11:35 2016" VIVADOVERSION="2016.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zedboard:part0:1.0" DEVICE="7z020" NAME="design_1" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -73,19 +73,20 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE FULLNAME="/KNN_accelerator_0" HWVERSION="2.03" INSTANCE="KNN_accelerator_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="KNN_accelerator" VLNV="xilinx.com:user:KNN_accelerator:2.03">
+    <MODULE FULLNAME="/KNN_accelerator_0" HWVERSION="2.1" INSTANCE="KNN_accelerator_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="KNN_accelerator" VLNV="xilinx.com:user:KNN_accelerator:2.1">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
+        <PARAMETER NAME="WIDTH" VALUE="32"/>
+        <PARAMETER NAME="NUM_DIM" VALUE="32"/>
+        <PARAMETER NAME="KNN_DEBUG" VALUE="0"/>
+        <PARAMETER NAME="NUM_CH" VALUE="2"/>
         <PARAMETER NAME="C_S00_AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S00_AXI_ADDR_WIDTH" VALUE="5"/>
-        <PARAMETER NAME="C_S00_AXIS_TDATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="WIDTH" VALUE="32"/>
-        <PARAMETER NAME="NUM_DIM" VALUE="30"/>
-        <PARAMETER NAME="KNN_DEBUG" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_KNN_accelerator_0_1"/>
+        <PARAMETER NAME="C_S00_AXIS_TDATA_WIDTH" VALUE="64"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_KNN_accelerator_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S00_AXI_BASEADDR" VALUE="0x43C00000"/>
         <PARAMETER NAME="C_S00_AXI_HIGHADDR" VALUE="0x43C0FFFF"/>
@@ -196,12 +197,12 @@
             <CONNECTION INSTANCE="rst_processing_system7_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s00_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axis_tdata">
+        <PORT DIR="I" LEFT="63" NAME="s00_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axis_tdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_0" PORT="m_axis_mm2s_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s00_axis_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+        <PORT DIR="I" LEFT="7" NAME="s00_axis_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
           </CONNECTIONS>
@@ -286,7 +287,7 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axi_dma_0_M_AXIS_MM2S" NAME="S00_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="WIZ_DATA_WIDTH" VALUE="32"/>
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="8"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
@@ -4636,13 +4637,13 @@
     <MODULE FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="CONST_VAL" VALUE="1111"/>
-        <PARAMETER NAME="CONST_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="00001111"/>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="8"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_xlconstant_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="3" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+        <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axis_tstrb"/>
           </CONNECTIONS>

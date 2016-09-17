@@ -190,7 +190,7 @@
         <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlconstant_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="CONST_WIDTH">4</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CONST_WIDTH">8</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="CONST_VAL">15</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
@@ -205,10 +205,9 @@
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>KNN_accelerator_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="xilinx.com" spirit:version="2.03"/>
+        <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="xilinx.com" spirit:version="2.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_KNN_accelerator_0_1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="NUM_DIM">30</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_KNN_accelerator_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -224,19 +223,6 @@
         <spirit:activeInterface spirit:busRef="S_AXI_LITE" spirit:componentRef="axi_dma_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
-        <spirit:name>processing_system7_0_axi_periph_M01_AXI</spirit:name>
-        <spirit:activeInterface spirit:busRef="M01_AXI" spirit:componentRef="processing_system7_0_axi_periph"/>
-        <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="KNN_accelerator_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>axi_dma_0_M_AXIS_MM2S</spirit:name>
-        <spirit:activeInterface spirit:busRef="M_AXIS_MM2S" spirit:componentRef="axi_dma_0"/>
-        <spirit:activeInterface spirit:busRef="S00_AXIS" spirit:componentRef="KNN_accelerator_0"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
-      </spirit:interconnection>
-      <spirit:interconnection>
         <spirit:name>axi_dma_0_M_AXI_MM2S</spirit:name>
         <spirit:activeInterface spirit:busRef="M_AXI_MM2S" spirit:componentRef="axi_dma_0"/>
         <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="axi_mem_intercon"/>
@@ -245,6 +231,16 @@
         <spirit:name>axi_mem_intercon_M00_AXI</spirit:name>
         <spirit:activeInterface spirit:busRef="M00_AXI" spirit:componentRef="axi_mem_intercon"/>
         <spirit:activeInterface spirit:busRef="S_AXI_HP0" spirit:componentRef="processing_system7_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>processing_system7_0_axi_periph_M01_AXI</spirit:name>
+        <spirit:activeInterface spirit:busRef="M01_AXI" spirit:componentRef="processing_system7_0_axi_periph"/>
+        <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="KNN_accelerator_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>axi_dma_0_M_AXIS_MM2S</spirit:name>
+        <spirit:activeInterface spirit:busRef="M_AXIS_MM2S" spirit:componentRef="axi_dma_0"/>
+        <spirit:activeInterface spirit:busRef="S00_AXIS" spirit:componentRef="KNN_accelerator_0"/>
       </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>

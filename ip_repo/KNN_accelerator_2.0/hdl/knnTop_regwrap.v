@@ -1,6 +1,28 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: Dakota Koelling
+// Engineer: Dakota Koelling
+// 
+// Create Date: 07/29/2016 09:50:48 AM
+// Design Name: KNN Top Register Wrapper
+// Module Name: knnTop_regwrap
+// Project Name: KNN Hardware Accelerator
+// Target Devices: Zedboard, Zybo
+// Tool Versions: Vivado 2016.2
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
 module knnTop_regwrap #(
 	parameter dataWidth = 32,
-	parameter numberOfDimensions = 32
+	parameter numberOfDimensions = 32,
+	parameter numberOfChannels = 1
 ) (
 	input 					clk,
 	input 					reset,
@@ -9,7 +31,7 @@ module knnTop_regwrap #(
 	input 					start,
 	input 					done,
 	input [31:0] 			k,
-	input [dataWidth-1:0] 	dataValueIn,
+	input [(numberOfChannels*dataWidth)-1:0] 	dataValueIn,
 	output [31:0] 			dataNameOut,
 	output [dataWidth-1:0] 	dataValueOut
 );
@@ -20,7 +42,7 @@ module knnTop_regwrap #(
 	reg 				start_reg;
 	reg 				done_reg;
 	reg [31:0] 			k_reg;
-	reg [dataWidth-1:0] dataValueIn_reg;
+	reg [(numberOfChannels*dataWidth)-1:0] dataValueIn_reg;
 
 	always @(posedge clk)
 	begin
@@ -35,7 +57,8 @@ module knnTop_regwrap #(
 
 	knnTop #(
 		.DATA_WIDTH(dataWidth),
-		.DIMENSIONS(numberOfDimensions)
+		.DIMENSIONS(numberOfDimensions),
+		.NUM_CH(numberOfChannels)
 	) top (
 		.mclk 			(clk),
 		.reset 			(reset_reg),

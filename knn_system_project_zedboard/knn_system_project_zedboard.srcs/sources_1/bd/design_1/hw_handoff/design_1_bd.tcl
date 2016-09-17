@@ -160,10 +160,7 @@ proc create_root_design { parentCell } {
   # Create ports
 
   # Create instance: KNN_accelerator_0, and set properties
-  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:KNN_accelerator:2.03 KNN_accelerator_0 ]
-  set_property -dict [ list \
-CONFIG.NUM_DIM {30} \
- ] $KNN_accelerator_0
+  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:KNN_accelerator:2.1 KNN_accelerator_0 ]
 
   # Create instance: axi_dma_0, and set properties
   set axi_dma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0 ]
@@ -1469,14 +1466,11 @@ CONFIG.NUM_MI {2} \
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
   set_property -dict [ list \
 CONFIG.CONST_VAL {15} \
-CONFIG.CONST_WIDTH {4} \
+CONFIG.CONST_WIDTH {8} \
  ] $xlconstant_0
 
   # Create interface connections
   connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins KNN_accelerator_0/S00_AXIS] [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S]
-  set_property -dict [ list \
-HDL_ATTRIBUTE.MARK_DEBUG {true} \
- ] [get_bd_intf_nets axi_dma_0_M_AXIS_MM2S]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXI_MM2S [get_bd_intf_pins axi_dma_0/M_AXI_MM2S] [get_bd_intf_pins axi_mem_intercon/S00_AXI]
   connect_bd_intf_net -intf_net axi_mem_intercon_M00_AXI [get_bd_intf_pins axi_mem_intercon/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
@@ -1505,27 +1499,27 @@ HDL_ATTRIBUTE.MARK_DEBUG {true} \
 preplace port DDR -pg 1 -y 270 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 290 -defaultsOSRD
 preplace inst axi_dma_0 -pg 1 -lvl 3 -y 220 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 3 -y 110 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 3 -y 70 -defaultsOSRD
 preplace inst rst_processing_system7_0_100M -pg 1 -lvl 1 -y 290 -defaultsOSRD
-preplace inst KNN_accelerator_0 -pg 1 -lvl 4 -y 120 -defaultsOSRD
-preplace inst axi_mem_intercon -pg 1 -lvl 4 -y 330 -defaultsOSRD
+preplace inst KNN_accelerator_0 -pg 1 -lvl 4 -y 170 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 4 -y 430 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 150 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 5 -y 350 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 5 1 NJ
-preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 1 680
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 340 10 NJ 10 NJ 10 NJ 10 1780
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 20 490 NJ 490 NJ 490 NJ 490 NJ 490 1770
-preplace netloc axi_mem_intercon_M00_AXI 1 4 1 N
-preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 3 350 300 670 300 1040
-preplace netloc axi_dma_0_M_AXI_MM2S 1 3 1 1030
-preplace netloc xlconstant_0_dout 1 3 1 NJ
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 1 670
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 330 10 NJ 10 NJ 10 NJ 10 1820
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 0 550 NJ 550 NJ 550 NJ 550 NJ 550 1810
+preplace netloc axi_mem_intercon_M00_AXI 1 4 1 1380
+preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 3 350 300 690 140 1030
+preplace netloc axi_dma_0_M_AXI_MM2S 1 3 1 1020
+preplace netloc xlconstant_0_dout 1 3 1 1070
 preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ
-preplace netloc axi_dma_0_mm2s_introut 1 3 2 1000 450 NJ
-preplace netloc rst_processing_system7_0_100M_interconnect_aresetn 1 1 3 360 310 NJ 310 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 10 380 340 290 660 50 1010 460 1340 480 1780
-preplace netloc axi_dma_0_M_AXIS_MM2S 1 3 1 1020
-preplace netloc processing_system7_0_axi_periph_M01_AXI 1 2 2 670 60 NJ
-levelinfo -pg 1 -10 180 510 840 1190 1560 1800 -top 0 -bot 500
+preplace netloc axi_dma_0_mm2s_introut 1 3 2 1040 280 NJ
+preplace netloc rst_processing_system7_0_100M_interconnect_aresetn 1 1 3 340 310 NJ 310 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 0 200 330 290 680 130 1050 310 1370 480 1820
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 3 1 1060
+preplace netloc processing_system7_0_axi_periph_M01_AXI 1 2 2 660 120 NJ
+levelinfo -pg 1 -20 170 510 850 1220 1600 1850 -top 0 -bot 590
 ",
 }
 
