@@ -85,14 +85,14 @@ ENTITY design_1_axi_dma_0_0 IS
     m_axi_mm2s_arcache : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     m_axi_mm2s_arvalid : OUT STD_LOGIC;
     m_axi_mm2s_arready : IN STD_LOGIC;
-    m_axi_mm2s_rdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    m_axi_mm2s_rdata : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
     m_axi_mm2s_rresp : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
     m_axi_mm2s_rlast : IN STD_LOGIC;
     m_axi_mm2s_rvalid : IN STD_LOGIC;
     m_axi_mm2s_rready : OUT STD_LOGIC;
     mm2s_prmry_reset_out_n : OUT STD_LOGIC;
-    m_axis_mm2s_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    m_axis_mm2s_tkeep : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+    m_axis_mm2s_tdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+    m_axis_mm2s_tkeep : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     m_axis_mm2s_tvalid : OUT STD_LOGIC;
     m_axis_mm2s_tready : IN STD_LOGIC;
     m_axis_mm2s_tlast : OUT STD_LOGIC;
@@ -200,14 +200,14 @@ ARCHITECTURE design_1_axi_dma_0_0_arch OF design_1_axi_dma_0_0 IS
       m_axi_mm2s_aruser : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
       m_axi_mm2s_arvalid : OUT STD_LOGIC;
       m_axi_mm2s_arready : IN STD_LOGIC;
-      m_axi_mm2s_rdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      m_axi_mm2s_rdata : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
       m_axi_mm2s_rresp : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
       m_axi_mm2s_rlast : IN STD_LOGIC;
       m_axi_mm2s_rvalid : IN STD_LOGIC;
       m_axi_mm2s_rready : OUT STD_LOGIC;
       mm2s_prmry_reset_out_n : OUT STD_LOGIC;
-      m_axis_mm2s_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      m_axis_mm2s_tkeep : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+      m_axis_mm2s_tdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+      m_axis_mm2s_tkeep : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       m_axis_mm2s_tvalid : OUT STD_LOGIC;
       m_axis_mm2s_tready : IN STD_LOGIC;
       m_axis_mm2s_tlast : OUT STD_LOGIC;
@@ -320,8 +320,8 @@ BEGIN
       C_INCLUDE_MM2S_SF => 1,
       C_MM2S_BURST_SIZE => 256,
       C_M_AXI_MM2S_ADDR_WIDTH => 32,
-      C_M_AXI_MM2S_DATA_WIDTH => 32,
-      C_M_AXIS_MM2S_TDATA_WIDTH => 32,
+      C_M_AXI_MM2S_DATA_WIDTH => 64,
+      C_M_AXIS_MM2S_TDATA_WIDTH => 64,
       C_INCLUDE_MM2S_DRE => 0,
       C_INCLUDE_S2MM => 0,
       C_INCLUDE_S2MM_SF => 1,

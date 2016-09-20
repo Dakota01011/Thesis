@@ -1,7 +1,7 @@
 # convert data from .dat into a cpp file for compile into zynq
 import re
 
-data_file = open('training-data2.dat', 'r')
+data_file = open('training-data2-channels.dat', 'r')
 h_file = open('DataSet.h', 'w')
 cpp_file = open('DataSet.cpp', 'w')
 

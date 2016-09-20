@@ -47,8 +47,8 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:user:KNN_accelerator:2.1
-// IP Revision: 11
+// IP VLNV: xilinx.com:user:KNN_accelerator:2.11
+// IP Revision: 12
 
 `timescale 1ns/1ps
 
@@ -143,7 +143,7 @@ input wire s00_axis_aresetn;
 
   KNN_accelerator_v2_0 #(
     .WIDTH(32),
-    .NUM_DIM(32),
+    .NUM_DIM(30),
     .KNN_DEBUG(0),
     .NUM_CH(2),
     .C_S00_AXI_DATA_WIDTH(32),
