@@ -36,7 +36,6 @@
 		output [31:0] 	control,
 		output 			AXI_wr_en,
 		output 			AXI_rd_en,
-		output [31:0] 	k,
 		input [31:0] 	dataName,
 		input [31:0] 	dataValue,
 		// User ports ends
@@ -439,7 +438,6 @@
 	reg [63:0] counter;
 
 	assign control = slv_reg0;
-	assign k = slv_reg1;
 	assign AXI_wr_en = axi_bvalid;
 	assign AXI_rd_en = axi_rvalid;
 

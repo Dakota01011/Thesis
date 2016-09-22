@@ -19,6 +19,9 @@ vlib activehdl/axi_register_slice_v2_1_9
 vlib activehdl/axi_data_fifo_v2_1_8
 vlib activehdl/axi_crossbar_v2_1_10
 vlib activehdl/axi_protocol_converter_v2_1_9
+vlib activehdl/axi_clock_converter_v2_1_8
+vlib activehdl/blk_mem_gen_v8_3_3
+vlib activehdl/axi_dwidth_converter_v2_1_9
 
 vmap xil_defaultlib activehdl/xil_defaultlib
 vmap xpm activehdl/xpm
@@ -38,6 +41,9 @@ vmap axi_register_slice_v2_1_9 activehdl/axi_register_slice_v2_1_9
 vmap axi_data_fifo_v2_1_8 activehdl/axi_data_fifo_v2_1_8
 vmap axi_crossbar_v2_1_10 activehdl/axi_crossbar_v2_1_10
 vmap axi_protocol_converter_v2_1_9 activehdl/axi_protocol_converter_v2_1_9
+vmap axi_clock_converter_v2_1_8 activehdl/axi_clock_converter_v2_1_8
+vmap blk_mem_gen_v8_3_3 activehdl/blk_mem_gen_v8_3_3
+vmap axi_dwidth_converter_v2_1_9 activehdl/axi_dwidth_converter_v2_1_9
 
 vlog -work xil_defaultlib -v2k5 -sv "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "C:/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
@@ -282,16 +288,18 @@ vlog -work xil_defaultlib -v2k5 "+incdir+../../../ipstatic/axi_infrastructure_v1
 "../../../bd/design_1/ip/design_1_xbar_0_1/sim/design_1_xbar_0.v" \
 "../../../bd/design_1/ipshared/xilinx.com/xlconstant_v1_1/xlconstant.v" \
 "../../../bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_11/hdl/kSortingP2.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_11/hdl/kSortingP1.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_11/hdl/distanceCalcAcc.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_11/hdl/kSortingTop.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_11/hdl/fifo.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_11/hdl/knnTop.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_11/hdl/KNN_accelerator_v2_0_S00_AXI.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_11/hdl/KNN_accelerator_v2_0_S00_AXIS.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v2_11/hdl/KNN_accelerator_v2_0.v" \
-"../../../bd/design_1/ip/design_1_KNN_accelerator_0_0/sim/design_1_KNN_accelerator_0_0.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_12/hdl/kSortingP2.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_12/hdl/kSortingP1.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_12/hdl/distanceCalcAcc.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_12/hdl/fifo.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_12/hdl/kSortingTop.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_12/hdl/KNN_accelerator_v3_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_12/hdl/KNN_accelerator_v3_0_S00_AXIS.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_12/hdl/KNN_accelerator_v3_0_M00_AXIS.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_12/hdl/knnTop.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_12/hdl/KNN_accelerator_v3_0.v" \
+"../../../bd/design_1/ip/design_1_KNN_accelerator_1_0_1/sim/design_1_KNN_accelerator_1_0.v" \
+"../../../bd/design_1/ip/design_1_xbar_1/sim/design_1_xbar_1.v" \
 
 vlog -work axi_protocol_converter_v2_1_9 -v2k5 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../ipstatic/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_a_axi3_conv.v" \
@@ -317,6 +325,33 @@ vlog -work axi_protocol_converter_v2_1_9 -v2k5 "+incdir+../../../ipstatic/axi_in
 vlog -work xil_defaultlib -v2k5 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
 "../../../bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
+
+vlog -work axi_clock_converter_v2_1_8 -v2k5 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
+"../../../ipstatic/axi_clock_converter_v2_1/hdl/verilog/axi_clock_converter_v2_1_axic_sync_clock_converter.v" \
+"../../../ipstatic/axi_clock_converter_v2_1/hdl/verilog/axi_clock_converter_v2_1_axic_sample_cycle_ratio.v" \
+"../../../ipstatic/axi_clock_converter_v2_1/hdl/verilog/axi_clock_converter_v2_1_axi_clock_converter.v" \
+
+vlog -work blk_mem_gen_v8_3_3 -v2k5 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
+"../../../ipstatic/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v" \
+
+vlog -work axi_dwidth_converter_v2_1_9 -v2k5 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_a_downsizer.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_b_downsizer.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_r_downsizer.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_w_downsizer.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_axi_downsizer.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_axi4lite_downsizer.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_axi4lite_upsizer.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_a_upsizer.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_r_upsizer.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_w_upsizer.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_w_upsizer_pktfifo.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_r_upsizer_pktfifo.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_axi_upsizer.v" \
+"../../../ipstatic/axi_dwidth_converter_v2_1/hdl/verilog/axi_dwidth_converter_v2_1_top.v" \
+
+vlog -work xil_defaultlib -v2k5 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
+"../../../bd/design_1/ip/design_1_auto_us_0/sim/design_1_auto_us_0.v" \
 
 vlog -work xil_defaultlib "glbl.v"
 

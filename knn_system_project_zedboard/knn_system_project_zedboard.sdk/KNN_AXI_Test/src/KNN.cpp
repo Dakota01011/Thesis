@@ -49,7 +49,7 @@ void KNN::kNNClassify(int dataPoint[NUM_FEATURES], const int trainingData[NUM_PO
 
 }
 
-void KNN::kNNFPGAClassify(const int trainingData[NUM_POINTS][NUM_FEATURES], int k) {
+void KNN::kNNFPGAClassify(const int trainingData[NUM_POINTS][NUM_FEATURES], int outputData[], int k) {
     FPGAHelper fpga;
 
     // reset it by writing a 1 and then a 0 to the reset bit in the control reg
@@ -61,22 +61,13 @@ void KNN::kNNFPGAClassify(const int trainingData[NUM_POINTS][NUM_FEATURES], int 
     // write a 1 to the load bit in the control reg
     fpga.writeLoadBit(1);
 
-    UINTPTR BuffAddr = (UINTPTR)trainingData;
+    UINTPTR BuffInAddr = (UINTPTR)trainingData;
+    UINTPTR BuffOutAddr = (UINTPTR)outputData;
     u32 Length = NUM_FEATURES * NUM_POINTS * 4;
-    fpga.activateDMA(BuffAddr, Length);
+    fpga.activateDMA(BuffInAddr, BuffOutAddr, Length, k);
 
     // set readEn bit in the control reg
     fpga.writeReadEn(1);
     fpga.writeReadEn(1); //dummy write
-
-    // read the datanameout and datavalueout reg k time and that will return
-    // the name and square distances of the k nearest neighbors
-    // storing the results in a map (mapping id of test point to its distance from the reference)
-    printf("[FPGA] K returns: \n\r");
-    //cout << "[FPGA] K returns: " << endl;
-    for (int i = 0; i < k; i++) {
-        fpga.readDataName();
-        fpga.readDataValue();
-    }
 
 }

@@ -31,7 +31,7 @@ public:
     void writeLoadBit(int i);
     void writeReadEn(int i);
     void writeRefData(int i);
-    bool activateDMA(UINTPTR BuffAddr, u32 Length);
+    bool activateDMA(UINTPTR BuffInAddr, UINTPTR BuffOutAddr, u32 Length, u32 k);
 
     void readDataName();
     void readDataValue();

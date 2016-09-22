@@ -26,8 +26,8 @@ module kSortingTop #(
 	parameter DIMENSIONS = 32,
 	parameter VAL_WIDTH = 32,
 	parameter NUM_CH = 1,
-	parameter MAX_MEMORY = 20, //64
-	parameter PASS_THOO_DEBUG = 0
+	parameter PASS_THOO_DEBUG = 0,
+	parameter K = 1
 ) (
 	input clk,
 	input reset,
@@ -35,7 +35,6 @@ module kSortingTop #(
 	input rd_en,
 	input [NUM_CH-1:0] valid,
 	input done,
-	input [31:0] k,
 	input [(NUM_CH*VAL_WIDTH)-1:0] dataValueIn,
 	output [31:0] dataNameOut,
 	output [DATA_WIDTH-1:0] dataValueOut
@@ -60,8 +59,8 @@ module kSortingTop #(
 				.VAL_WIDTH(VAL_WIDTH),
 				.NUM_CH(NUM_CH),
 				.INSTANCE(channel),
-				.MAX_MEMORY(MAX_MEMORY),
-				.PASS_THOO_DEBUG(PASS_THOO_DEBUG)
+				.PASS_THOO_DEBUG(PASS_THOO_DEBUG),
+				.K(K)
 			) P1 (
 				.clk(clk),
 				.reset(reset),
@@ -69,7 +68,6 @@ module kSortingTop #(
 				.valid(valid[channel]),
 				.done(done),
 				.outEn(channelOutEnable[channel]),
-				.k(k),
 				.dataValueIn(dataValueIn[((channel)*VAL_WIDTH) +: VAL_WIDTH]),
 				.dataNameOut(dataNameP1[channel]),
 				.dataValueOut(dataValueP1[channel])
@@ -81,8 +79,8 @@ module kSortingTop #(
 		.DATA_WIDTH(DATA_WIDTH),
 		.DIMENSIONS(DIMENSIONS),
 		.VAL_WIDTH(VAL_WIDTH),
-		.MAX_MEMORY(MAX_MEMORY),
-		.PASS_THOO_DEBUG(PASS_THOO_DEBUG)
+		.PASS_THOO_DEBUG(PASS_THOO_DEBUG),
+		.K(K)
 	) P2 (
 		.clk(clk),
 		.reset(reset),
@@ -90,7 +88,6 @@ module kSortingTop #(
 		.valid(validP2),
 		.done(done),
 		.outEn(finalOutEnable),
-		.k(k),
 		.dataNameIn(dataNameP1[channelSelect]),
 		.dataValueIn(dataValueP1[channelSelect]),
 		.dataNameOut(dataNameOut),
@@ -140,7 +137,7 @@ module kSortingTop #(
 				begin
 					finalOutEnable <= 1'b1;
 				end
-				else if (transferCounter < k)
+				else if (transferCounter < K)
 				begin
 					transferCounter <= transferCounter + 1;
 				end

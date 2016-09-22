@@ -24,7 +24,8 @@ module knnTop #(
 	parameter DATA_WIDTH = 32,
 	parameter DIMENSIONS = 32,
 	parameter DEBUG = 0,
-	parameter NUM_CH = 1
+	parameter NUM_CH = 1,
+	parameter K = 1
 ) (
 (* mark_debug = "true" *)	input 							mclk,
 (* mark_debug = "true" *)	input 							reset,
@@ -32,7 +33,6 @@ module knnTop #(
 (* mark_debug = "true" *)	input 							rd_en,
 (* mark_debug = "true" *)	input 							start,
 (* mark_debug = "true" *)	input 							done,
-(* mark_debug = "true" *)	input [31:0] 					k,
 (* mark_debug = "true" *)	input [(NUM_CH*DATA_WIDTH)-1:0] dataValueIn,
 (* mark_debug = "true" *)	output [31:0] 					dataNameOut,
 (* mark_debug = "true" *)	output [DATA_WIDTH-1:0] 		dataValueOut
@@ -94,7 +94,8 @@ module knnTop #(
 		.DIMENSIONS(DIMENSIONS),
 		.VAL_WIDTH(VAL_WIDTH),
 		.NUM_CH(NUM_CH),
-		.PASS_THOO_DEBUG(DEBUG)
+		.PASS_THOO_DEBUG(DEBUG),
+		.K(K)
 	) sort (
 		.clk(mclk),
 		.reset(reset),
@@ -102,7 +103,6 @@ module knnTop #(
 		.rd_en(rd_en),
 		.valid(distanceValid),
 		.done(done),
-		.k(k),
 		.dataValueIn(distance),
 		.dataNameOut(dataNameOut),
 		.dataValueOut(dataValueOut)

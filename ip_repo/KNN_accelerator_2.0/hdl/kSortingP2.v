@@ -25,8 +25,8 @@ module kSortingP2 #(
 	parameter DATA_WIDTH = 32,
 	parameter DIMENSIONS = 32,
 	parameter VAL_WIDTH = 32,
-	parameter MAX_MEMORY = 20, //64
-	parameter PASS_THOO_DEBUG = 0
+	parameter PASS_THOO_DEBUG = 0,
+	parameter K = 1
 ) (
 	input clk,
 	input reset,
@@ -34,22 +34,21 @@ module kSortingP2 #(
 	input valid,
 	input done,
 	input outEn,
-	input [31:0] k,
 	input [31:0] dataNameIn,
 	input [VAL_WIDTH-1:0] dataValueIn,
 	output [31:0] dataNameOut,
 	output [DATA_WIDTH-1:0] dataValueOut
 );
 
-(* mark_debug = "true" *)	reg [DATA_WIDTH-1:0] nameMem [MAX_MEMORY-1:0];
-(* mark_debug = "true" *)	reg [VAL_WIDTH-1:0] valueMem [MAX_MEMORY-1:0];
-	wire [MAX_MEMORY-1:0] comparator;
+(* mark_debug = "true" *)	reg [DATA_WIDTH-1:0] nameMem [K-1:0];
+(* mark_debug = "true" *)	reg [VAL_WIDTH-1:0] valueMem [K-1:0];
+	wire [K-1:0] comparator;
 (* mark_debug = "true" *)	reg [31:0] outputPointer;
 (* mark_debug = "true" *)	reg changeOutputPointer;
 
 	generate
 		genvar i;
-		for (i = MAX_MEMORY-1; i >= 0; i = i - 1)
+		for (i = K-1; i >= 0; i = i - 1)
 		begin:memory
 			if (i > 0)
 			begin
@@ -95,7 +94,7 @@ module kSortingP2 #(
 	// Comparators
 	generate
 		genvar j;
-		for (j = 0; j < MAX_MEMORY; j = j + 1)
+		for (j = 0; j < K; j = j + 1)
 		begin:comparing
 			assign comparator[j] = valueMem[j] >= dataValueIn ? 1 : 0;
 		end
@@ -112,7 +111,7 @@ module kSortingP2 #(
 		end
 		else if (rd_en && done && outEn)
 		begin
-			if (outputPointer < k-1 && changeOutputPointer)
+			if (outputPointer < K-1 && changeOutputPointer)
 			begin
 				outputPointer <= outputPointer + 1;
 				changeOutputPointer <= 0;
