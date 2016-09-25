@@ -9,7 +9,7 @@
 
 //const int k = 10;
 
-int myOutputArray[K];
+//int myOutputArray[K];
 
 const int myIntDataSet[NUM_POINTS][NUM_FEATURES] = {
 	{1, 0, 2, 0, 2, 0, 2, 0, 3, 0, 4, 0, 5, 0, 5, 0, 5, 0, 6, 0, 1, 0, 2, 0, 2, 0, 2, 0, 3, 0, 4, 0, 5, 0, 5, 0, 5, 0, 6, 0, 1, 0, 2, 0, 2, 0, 2, 0, 3, 0, 4, 0, 5, 0, 5, 0, 5, 0, 6, 0},

@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Wed Sep 21 19:52:21 2016
+//Date        : Sat Sep 24 19:39:16 2016
 //Host        : Dakota-PC running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -93,24 +93,24 @@ module design_1
   (* MARK_DEBUG *) wire axi_dma_0_M_AXI_S2MM_WVALID;
   wire axi_dma_0_mm2s_introut;
   (* MARK_DEBUG *) wire axi_dma_0_s_axis_s2mm_tready;
-  (* MARK_DEBUG *) wire [31:0]axi_mem_intercon_1_M00_AXI_AWADDR;
-  (* MARK_DEBUG *) wire [1:0]axi_mem_intercon_1_M00_AXI_AWBURST;
-  (* MARK_DEBUG *) wire [3:0]axi_mem_intercon_1_M00_AXI_AWCACHE;
-  (* MARK_DEBUG *) wire [3:0]axi_mem_intercon_1_M00_AXI_AWLEN;
-  (* MARK_DEBUG *) wire [1:0]axi_mem_intercon_1_M00_AXI_AWLOCK;
-  (* MARK_DEBUG *) wire [2:0]axi_mem_intercon_1_M00_AXI_AWPROT;
-  (* MARK_DEBUG *) wire [3:0]axi_mem_intercon_1_M00_AXI_AWQOS;
-  (* MARK_DEBUG *) wire axi_mem_intercon_1_M00_AXI_AWREADY;
-  (* MARK_DEBUG *) wire [2:0]axi_mem_intercon_1_M00_AXI_AWSIZE;
-  (* MARK_DEBUG *) wire axi_mem_intercon_1_M00_AXI_AWVALID;
-  (* MARK_DEBUG *) wire axi_mem_intercon_1_M00_AXI_BREADY;
-  (* MARK_DEBUG *) wire [1:0]axi_mem_intercon_1_M00_AXI_BRESP;
-  (* MARK_DEBUG *) wire axi_mem_intercon_1_M00_AXI_BVALID;
-  (* MARK_DEBUG *) wire [31:0]axi_mem_intercon_1_M00_AXI_WDATA;
-  (* MARK_DEBUG *) wire axi_mem_intercon_1_M00_AXI_WLAST;
-  (* MARK_DEBUG *) wire axi_mem_intercon_1_M00_AXI_WREADY;
-  (* MARK_DEBUG *) wire [3:0]axi_mem_intercon_1_M00_AXI_WSTRB;
-  (* MARK_DEBUG *) wire axi_mem_intercon_1_M00_AXI_WVALID;
+  wire [31:0]axi_mem_intercon_1_M00_AXI_AWADDR;
+  wire [1:0]axi_mem_intercon_1_M00_AXI_AWBURST;
+  wire [3:0]axi_mem_intercon_1_M00_AXI_AWCACHE;
+  wire [3:0]axi_mem_intercon_1_M00_AXI_AWLEN;
+  wire [1:0]axi_mem_intercon_1_M00_AXI_AWLOCK;
+  wire [2:0]axi_mem_intercon_1_M00_AXI_AWPROT;
+  wire [3:0]axi_mem_intercon_1_M00_AXI_AWQOS;
+  wire axi_mem_intercon_1_M00_AXI_AWREADY;
+  wire [2:0]axi_mem_intercon_1_M00_AXI_AWSIZE;
+  wire axi_mem_intercon_1_M00_AXI_AWVALID;
+  wire axi_mem_intercon_1_M00_AXI_BREADY;
+  wire [1:0]axi_mem_intercon_1_M00_AXI_BRESP;
+  wire axi_mem_intercon_1_M00_AXI_BVALID;
+  wire [31:0]axi_mem_intercon_1_M00_AXI_WDATA;
+  wire axi_mem_intercon_1_M00_AXI_WLAST;
+  wire axi_mem_intercon_1_M00_AXI_WREADY;
+  wire [3:0]axi_mem_intercon_1_M00_AXI_WSTRB;
+  wire axi_mem_intercon_1_M00_AXI_WVALID;
   wire [31:0]axi_mem_intercon_M00_AXI_ARADDR;
   wire [1:0]axi_mem_intercon_M00_AXI_ARBURST;
   wire [3:0]axi_mem_intercon_M00_AXI_ARCACHE;

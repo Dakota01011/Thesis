@@ -10,18 +10,17 @@
 #include "DataSet.h"
 using namespace std;
 
+#define RX_BUFFER_BASE 0x00500000
+
+u32 *myOutputArray = (u32 *) RX_BUFFER_BASE;
+
 int main() {
 
 	init_platform();
 	print("Now calculating...\n\r");
 
-	//const int k = 10;
-	//extern int myOutputArray[k];
-	for (int i = 0; i < K; i++) {
-		myOutputArray[i] = -1;
-	}
 	printf("Input Array Address: %p\n\r", myIntDataSet);
-	printf("Output Array Address: %p\n\r", myOutputArray);
+	printf("Output Array Address: %i\n\r", RX_BUFFER_BASE);
 
 	u32 count1_low = KNN_ACCELERATOR_mReadReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG2_OFFSET);
 	u32 count1_high = KNN_ACCELERATOR_mReadReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG3_OFFSET);
@@ -36,7 +35,14 @@ int main() {
 	u64 diff = count2 - count1;
 	printf("[FPGA] Time: %4.6f sec\n\r", diff*pow(10,-8));
 
-	Xil_DCacheFlush();
+	//Xil_DCacheFlush();
+	//Xil_DCacheInvalidateRange((u32)myOutputArray, K*4);
+
+	/*
+	for (int i = 0; i < K; i++) {
+		XAxiDma_Out32(((UINTPTR)myOutputArray) + (4*i), (i));
+	}
+	*/
 
 	printf("[FPGA] K returns: \n\r");
 	for (int i = 0; i < K; i++) {

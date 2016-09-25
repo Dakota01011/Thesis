@@ -14,6 +14,6 @@
 
 extern const int myIntDataSet[NUM_POINTS][NUM_FEATURES];
 //extern const int k;
-extern int myOutputArray[K];
+//extern int myOutputArray[K];
 
 #endif /* SRC_DATASET_H_ */

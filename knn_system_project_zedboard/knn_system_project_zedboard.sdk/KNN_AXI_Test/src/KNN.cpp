@@ -49,7 +49,7 @@ void KNN::kNNClassify(int dataPoint[NUM_FEATURES], const int trainingData[NUM_PO
 
 }
 
-void KNN::kNNFPGAClassify(const int trainingData[NUM_POINTS][NUM_FEATURES], int outputData[], int k) {
+void KNN::kNNFPGAClassify(const int trainingData[NUM_POINTS][NUM_FEATURES], u32 outputData[], int k) {
     FPGAHelper fpga;
 
     // reset it by writing a 1 and then a 0 to the reset bit in the control reg
