@@ -94,9 +94,7 @@
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) KNN_accelerator_v3_0_S00_AXI_inst (
-		.control(control),
-		.AXI_wr_en(AXI_wr_en),
-		.AXI_rd_en(),
+		.control_reset(control_reset),
 		.dataName(AXIS_dataOut),
 		.dataValue(dataValueOut),
 		.S_AXI_ACLK(s00_axi_aclk),
@@ -145,7 +143,7 @@
 		.AXIS_data(AXIS_dataOut),
 		.wr_en(AXIS_out_wr_en),
 		.M_AXIS_ACLK(m00_axis_aclk),
-		.M_AXIS_ARESETN(m00_axis_aresetn && ~control[0]),
+		.M_AXIS_ARESETN(m00_axis_aresetn && ~control_reset),
 		.M_AXIS_TVALID(m00_axis_tvalid),
 		.M_AXIS_TDATA(m00_axis_tdata),
 		.M_AXIS_TSTRB(m00_axis_tstrb),
@@ -155,7 +153,7 @@
 
 	// Add user logic here
 
-	//slv_reg0 = loadRef, done, reset
+	//slv_reg0 = reset
 	//slv_reg1 = NULL
 	//slv_reg2 = count low
 	//slv_reg3 = count high
@@ -164,14 +162,12 @@
 
 	//stream = dataValueIn
 
-	wire [31:0] control;
-	wire AXI_wr_en; // not used
-	wire [WIDTH-1:0] dataValueOut;
-
+	wire control_reset;
 	wire AXIS_in_wr_en;
-	wire AXIS_out_wr_en;
 	wire [C_S00_AXIS_TDATA_WIDTH-1:0] AXIS_dataIn;
+	wire AXIS_out_wr_en;
 	wire [C_M00_AXIS_TDATA_WIDTH-1:0] AXIS_dataOut;
+	wire [WIDTH-1:0] dataValueOut;
 
 	knnTop #(
 		.DATA_WIDTH(WIDTH),
@@ -181,10 +177,9 @@
 		.K(K)
 	) knnTop (
 		.mclk(s00_axi_aclk),
-		.reset(control[0]),
-		.wr_en(AXIS_in_wr_en),
-		.start(control[2]),
-		.done(control[1]),
+		.reset(control_reset),
+		.AXI_last(s00_axis_tlast),
+		.AXIS_in_wr_en(AXIS_in_wr_en),
 		.dataValueIn(AXIS_dataIn),
 		.AXIS_out_wr_en(AXIS_out_wr_en),
 		.dataNameOut(AXIS_dataOut),

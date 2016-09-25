@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Sat Sep 24 19:39:16 2016
+//Date        : Sat Sep 24 22:56:36 2016
 //Host        : Dakota-PC running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -54,10 +54,10 @@ module design_1
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
 
-  (* MARK_DEBUG *) wire [31:0]KNN_accelerator_1_m00_axis_tdata;
-  (* MARK_DEBUG *) wire KNN_accelerator_1_m00_axis_tlast;
-  (* MARK_DEBUG *) wire [3:0]KNN_accelerator_1_m00_axis_tstrb;
-  (* MARK_DEBUG *) wire KNN_accelerator_1_m00_axis_tvalid;
+  wire [31:0]KNN_accelerator_1_m00_axis_tdata;
+  wire KNN_accelerator_1_m00_axis_tlast;
+  wire [3:0]KNN_accelerator_1_m00_axis_tstrb;
+  wire KNN_accelerator_1_m00_axis_tvalid;
   wire [63:0]axi_dma_0_M_AXIS_MM2S_TDATA;
   wire axi_dma_0_M_AXIS_MM2S_TLAST;
   wire axi_dma_0_M_AXIS_MM2S_TREADY;
@@ -75,24 +75,24 @@ module design_1
   wire axi_dma_0_M_AXI_MM2S_RREADY;
   wire [1:0]axi_dma_0_M_AXI_MM2S_RRESP;
   wire axi_dma_0_M_AXI_MM2S_RVALID;
-  (* MARK_DEBUG *) wire [31:0]axi_dma_0_M_AXI_S2MM_AWADDR;
-  (* MARK_DEBUG *) wire [1:0]axi_dma_0_M_AXI_S2MM_AWBURST;
-  (* MARK_DEBUG *) wire [3:0]axi_dma_0_M_AXI_S2MM_AWCACHE;
-  (* MARK_DEBUG *) wire [7:0]axi_dma_0_M_AXI_S2MM_AWLEN;
-  (* MARK_DEBUG *) wire [2:0]axi_dma_0_M_AXI_S2MM_AWPROT;
-  (* MARK_DEBUG *) wire axi_dma_0_M_AXI_S2MM_AWREADY;
-  (* MARK_DEBUG *) wire [2:0]axi_dma_0_M_AXI_S2MM_AWSIZE;
-  (* MARK_DEBUG *) wire axi_dma_0_M_AXI_S2MM_AWVALID;
-  (* MARK_DEBUG *) wire axi_dma_0_M_AXI_S2MM_BREADY;
-  (* MARK_DEBUG *) wire [1:0]axi_dma_0_M_AXI_S2MM_BRESP;
-  (* MARK_DEBUG *) wire axi_dma_0_M_AXI_S2MM_BVALID;
-  (* MARK_DEBUG *) wire [31:0]axi_dma_0_M_AXI_S2MM_WDATA;
-  (* MARK_DEBUG *) wire axi_dma_0_M_AXI_S2MM_WLAST;
-  (* MARK_DEBUG *) wire axi_dma_0_M_AXI_S2MM_WREADY;
-  (* MARK_DEBUG *) wire [3:0]axi_dma_0_M_AXI_S2MM_WSTRB;
-  (* MARK_DEBUG *) wire axi_dma_0_M_AXI_S2MM_WVALID;
+  wire [31:0]axi_dma_0_M_AXI_S2MM_AWADDR;
+  wire [1:0]axi_dma_0_M_AXI_S2MM_AWBURST;
+  wire [3:0]axi_dma_0_M_AXI_S2MM_AWCACHE;
+  wire [7:0]axi_dma_0_M_AXI_S2MM_AWLEN;
+  wire [2:0]axi_dma_0_M_AXI_S2MM_AWPROT;
+  wire axi_dma_0_M_AXI_S2MM_AWREADY;
+  wire [2:0]axi_dma_0_M_AXI_S2MM_AWSIZE;
+  wire axi_dma_0_M_AXI_S2MM_AWVALID;
+  wire axi_dma_0_M_AXI_S2MM_BREADY;
+  wire [1:0]axi_dma_0_M_AXI_S2MM_BRESP;
+  wire axi_dma_0_M_AXI_S2MM_BVALID;
+  wire [31:0]axi_dma_0_M_AXI_S2MM_WDATA;
+  wire axi_dma_0_M_AXI_S2MM_WLAST;
+  wire axi_dma_0_M_AXI_S2MM_WREADY;
+  wire [3:0]axi_dma_0_M_AXI_S2MM_WSTRB;
+  wire axi_dma_0_M_AXI_S2MM_WVALID;
   wire axi_dma_0_mm2s_introut;
-  (* MARK_DEBUG *) wire axi_dma_0_s_axis_s2mm_tready;
+  wire axi_dma_0_s_axis_s2mm_tready;
   wire [31:0]axi_mem_intercon_1_M00_AXI_AWADDR;
   wire [1:0]axi_mem_intercon_1_M00_AXI_AWBURST;
   wire [3:0]axi_mem_intercon_1_M00_AXI_AWCACHE;

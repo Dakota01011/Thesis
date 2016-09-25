@@ -217,7 +217,7 @@
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>KNN_accelerator_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="xilinx.com" spirit:version="3.13"/>
+        <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="xilinx.com" spirit:version="3.14"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_KNN_accelerator_1_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="NUM_DIM">30</spirit:configurableElementValue>
@@ -260,9 +260,6 @@
         <spirit:name>axi_dma_0_M_AXI_S2MM</spirit:name>
         <spirit:activeInterface spirit:busRef="M_AXI_S2MM" spirit:componentRef="axi_dma_0"/>
         <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="axi_mem_intercon_1"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>axi_mem_intercon_1_M00_AXI</spirit:name>
@@ -336,41 +333,26 @@
         <spirit:name>KNN_accelerator_1_m00_axis_tdata</spirit:name>
         <spirit:internalPortReference spirit:componentRef="KNN_accelerator_1" spirit:portRef="m00_axis_tdata"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="s_axis_s2mm_tdata"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>KNN_accelerator_1_m00_axis_tvalid</spirit:name>
         <spirit:internalPortReference spirit:componentRef="KNN_accelerator_1" spirit:portRef="m00_axis_tvalid"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="s_axis_s2mm_tvalid"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>axi_dma_0_s_axis_s2mm_tready</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="s_axis_s2mm_tready"/>
         <spirit:internalPortReference spirit:componentRef="KNN_accelerator_1" spirit:portRef="m00_axis_tready"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>KNN_accelerator_1_m00_axis_tlast</spirit:name>
         <spirit:internalPortReference spirit:componentRef="KNN_accelerator_1" spirit:portRef="m00_axis_tlast"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="s_axis_s2mm_tlast"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>KNN_accelerator_1_m00_axis_tstrb</spirit:name>
         <spirit:internalPortReference spirit:componentRef="KNN_accelerator_1" spirit:portRef="m00_axis_tstrb"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="s_axis_s2mm_tkeep"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

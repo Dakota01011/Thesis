@@ -3,8 +3,8 @@ import re
 
 numberOfChannels = 2 # change for different channels
 
-data_file = open('training-data2.dat', 'r')
-data_file_out = open('training-data2-channels.dat', 'w')
+data_file = open('training-data4.dat', 'r')
+data_file_out = open('training-data4-channels.dat', 'w')
 
 numbers = []
 pointCounter = 0

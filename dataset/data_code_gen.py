@@ -1,7 +1,8 @@
 # convert data from .dat into a cpp file for compile into zynq
 import re
 
-data_file = open('training-data2-channels.dat', 'r')
+K = 10
+data_file = open('training-data3.dat', 'r')
 h_file = open('DataSet.h', 'w')
 cpp_file = open('DataSet.cpp', 'w')
 
@@ -60,6 +61,7 @@ for line in data_file.readlines():
 
 h_file.write('#define NUM_FEATURES ' + str(num_features) + '\n')
 h_file.write('#define NUM_POINTS ' + str(num_points) + '\n')
+h_file.write('#define K ' + str(K) + '\n')
 
 h_file.write('''
 extern const int myIntDataSet[NUM_POINTS][NUM_FEATURES];
