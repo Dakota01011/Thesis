@@ -95,6 +95,7 @@
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) KNN_accelerator_v3_0_S00_AXI_inst (
 		.control_reset(control_reset),
+		.control_done(control_done),
 		.dataName(AXIS_dataOut),
 		.dataValue(dataValueOut),
 		.S_AXI_ACLK(s00_axi_aclk),
@@ -153,7 +154,7 @@
 
 	// Add user logic here
 
-	//slv_reg0 = reset
+	//slv_reg0 = done, reset
 	//slv_reg1 = NULL
 	//slv_reg2 = count low
 	//slv_reg3 = count high
@@ -163,6 +164,7 @@
 	//stream = dataValueIn
 
 	wire control_reset;
+	wire control_done;
 	wire AXIS_in_wr_en;
 	wire [C_S00_AXIS_TDATA_WIDTH-1:0] AXIS_dataIn;
 	wire AXIS_out_wr_en;
@@ -178,7 +180,7 @@
 	) knnTop (
 		.mclk(s00_axi_aclk),
 		.reset(control_reset),
-		.AXI_last(s00_axis_tlast),
+		.done(control_done),
 		.AXIS_in_wr_en(AXIS_in_wr_en),
 		.dataValueIn(AXIS_dataIn),
 		.AXIS_out_wr_en(AXIS_out_wr_en),

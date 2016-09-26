@@ -29,7 +29,7 @@ module knnTop #(
 ) (
 	input 							mclk,
 	input 							reset,
-	input 							AXI_last,
+	input 							done,
 	input 							AXIS_in_wr_en,
 	input [(NUM_CH*DATA_WIDTH)-1:0] dataValueIn,
 	output 							AXIS_out_wr_en,
@@ -38,38 +38,10 @@ module knnTop #(
 );
 
 	localparam VAL_WIDTH = 2*(DATA_WIDTH+1)+DIMENSIONS;
-	parameter S_RESET = 2'b00;
-	parameter S_RX = 2'b01;
-	parameter S_TX = 2'b11;
 
 	wire [DATA_WIDTH-1:0] currentRefPoint;
 	wire [NUM_CH-1:0] distanceValid;
 	wire [(NUM_CH*VAL_WIDTH)-1:0] distance;
-	wire start;
-	wire done;
-
-	reg [1:0] state;
-
-	assign {done, start} = state;
-
-	always @(posedge mclk)
-	begin
-		if (reset)
-		begin
-			state <= S_RESET;
-		end
-		else
-		begin
-			if (state == S_RESET)
-			begin
-				state <= S_RX;
-			end
-			else if (state == S_RX && AXI_last)
-			begin // & last sig from stream
-				state <= S_TX;
-			end
-		end
-	end
 
 	generate
 		genvar channel;
@@ -91,7 +63,7 @@ module knnTop #(
 				.clk(mclk),
 				.rst(reset),
 				.wr_en(AXIS_in_wr_en),
-				.start(start),
+				.start(~reset),
 				.dataIn(dataValueIn[((channel)*DATA_WIDTH) +: DATA_WIDTH]),
 				.currentRefPoint(currentRefPoint_int),
 				.currentDataPoint(currentDataPoint),

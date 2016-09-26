@@ -2,7 +2,7 @@
 import re
 
 K = 10
-data_file = open('training-data3.dat', 'r')
+data_file = open('training-data4-channels.dat', 'r')
 h_file = open('DataSet.h', 'w')
 cpp_file = open('DataSet.cpp', 'w')
 

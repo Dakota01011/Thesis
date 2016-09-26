@@ -34,6 +34,7 @@
 	(
 		// Users to add ports here
 		output 		 	control_reset,
+		output 			control_done,
 		input [31:0] 	dataName,
 		input [31:0] 	dataValue,
 		// User ports ends
@@ -436,6 +437,7 @@
 	reg [63:0] counter;
 
 	assign control_reset = slv_reg0[0];
+	assign control_done = slv_reg0[1];
 
 	always @(posedge S_AXI_ACLK or negedge S_AXI_ARESETN)
 	begin : proc_counter

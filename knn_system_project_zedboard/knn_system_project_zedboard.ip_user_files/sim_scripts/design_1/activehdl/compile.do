@@ -282,16 +282,16 @@ vlog -work xil_defaultlib -v2k5 "+incdir+../../../ipstatic/axi_infrastructure_v1
 "../../../bd/design_1/ip/design_1_xbar_0_1/sim/design_1_xbar_0.v" \
 "../../../bd/design_1/ipshared/xilinx.com/xlconstant_v1_1/xlconstant.v" \
 "../../../bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_14/hdl/kSortingP2.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_14/hdl/kSortingP1.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_14/hdl/distanceCalcAcc.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_14/hdl/fifo.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_14/hdl/kSortingTop.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_14/hdl/KNN_accelerator_v3_0_S00_AXI.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_14/hdl/KNN_accelerator_v3_0_S00_AXIS.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_14/hdl/KNN_accelerator_v3_0_M00_AXIS.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_14/hdl/knnTop.v" \
-"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_14/hdl/KNN_accelerator_v3_0.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_15/hdl/kSortingP2.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_15/hdl/kSortingP1.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_15/hdl/distanceCalcAcc.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_15/hdl/fifo.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_15/hdl/kSortingTop.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_15/hdl/KNN_accelerator_v3_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_15/hdl/KNN_accelerator_v3_0_S00_AXIS.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_15/hdl/KNN_accelerator_v3_0_M00_AXIS.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_15/hdl/knnTop.v" \
+"../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_15/hdl/KNN_accelerator_v3_0.v" \
 "../../../bd/design_1/ip/design_1_KNN_accelerator_1_0_1/sim/design_1_KNN_accelerator_1_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_9 -v2k5 "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \

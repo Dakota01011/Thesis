@@ -33,9 +33,8 @@
 	)
 	(
 		// Users to add ports here
-		output [31:0] 	control,
-		output 			AXI_wr_en,
-		output 			AXI_rd_en,
+		output 		 	control_reset,
+		output 			control_done,
 		input [31:0] 	dataName,
 		input [31:0] 	dataValue,
 		// User ports ends
@@ -437,9 +436,8 @@
 
 	reg [63:0] counter;
 
-	assign control = slv_reg0;
-	assign AXI_wr_en = axi_bvalid;
-	assign AXI_rd_en = axi_rvalid;
+	assign control_reset = slv_reg0[0];
+	assign control_done = slv_reg0[1];
 
 	always @(posedge S_AXI_ACLK or negedge S_AXI_ARESETN)
 	begin : proc_counter

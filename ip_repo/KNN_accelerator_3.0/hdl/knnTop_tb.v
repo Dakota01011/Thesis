@@ -30,10 +30,7 @@ module knnTop_tb();
 	reg clk;
 	reg reset;
 	reg wr_en;
-	reg rd_en;
-	reg start;
 	reg done;
-	reg [31:0] k;
 	reg [(ch*32)-1:0] dataValueIn;
 	wire [31:0] dataNameOut;
 	wire [31:0] dataValueOut;
@@ -47,8 +44,6 @@ module knnTop_tb();
 		.clk 			(clk),
 		.reset 			(reset),
 		.wr_en 			(wr_en),
-		.rd_en 			(rd_en),
-		.start 			(start),
 		.done 			(done),
 		.dataValueIn 	(dataValueIn),
 		.dataNameOut 	(dataNameOut),
@@ -67,14 +62,10 @@ module knnTop_tb();
 	begin
 		reset = 1;
 		done = 0;
-		start = 0;
 		dataValueIn = 0;
 		wr_en = 0;
-		rd_en = 0;
 		#90;
 		reset = 0;
-		#20;
-		start = 1;
 		#20;
 		wr_en = 1;
 		dataValueIn = {32'd0, 32'd1}; // ref start
@@ -101,6 +92,9 @@ module knnTop_tb();
 		#20;
 		dataValueIn = {32'd2, 32'd2};
 		#20;
+		wr_en = 0;
+		#2000;
+		wr_en = 1;
 		dataValueIn = {32'd2, 32'd2};
 		#20;
 		dataValueIn = {32'd2, 32'd2};
@@ -121,7 +115,6 @@ module knnTop_tb();
 		#200;
 		done = 1;
 		#200;
-		rd_en = 1;
 	end
 
 endmodule

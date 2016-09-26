@@ -28,27 +28,22 @@ module knnTop_regwrap #(
 	input 					clk,
 	input 					reset,
 	input 					wr_en,
-	input 					rd_en,
-	input 					start,
 	input 					done,
 	input [(numberOfChannels*dataWidth)-1:0] 	dataValueIn,
+	output                  AXIS_out_wr_en,
 	output [31:0] 			dataNameOut,
 	output [dataWidth-1:0] 	dataValueOut
 );
 	
 	reg 				reset_reg;
-	reg 				wr_en_reg;
-	reg 				rd_en_reg;
-	reg 				start_reg;
+	reg 				AXIS_in_wr_en_reg;
 	reg 				done_reg;
 	reg [(numberOfChannels*dataWidth)-1:0] dataValueIn_reg;
 
 	always @(posedge clk)
 	begin
 		reset_reg <= reset;
-		wr_en_reg <= wr_en;
-		rd_en_reg <= rd_en;
-		start_reg <= start;
+		AXIS_in_wr_en_reg <= wr_en;
 		done_reg <= done;
 		dataValueIn_reg <= dataValueIn;
 	end
@@ -61,11 +56,10 @@ module knnTop_regwrap #(
 	) top (
 		.mclk 			(clk),
 		.reset 			(reset_reg),
-		.wr_en 			(wr_en_reg),
-		.rd_en 			(rd_en_reg),
-		.start 			(start_reg),
+		.AXIS_in_wr_en	(AXIS_in_wr_en_reg),
 		.done 			(done_reg),
 		.dataValueIn 	(dataValueIn_reg),
+		.AXIS_out_wr_en (AXIS_out_wr_en),
 		.dataNameOut 	(dataNameOut),
 		.dataValueOut 	(dataValueOut)
 	);

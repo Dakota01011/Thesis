@@ -36,12 +36,12 @@ int main() {
 	// Activate DMA
 	bool isMoreToTx = true;
 	u32 currentLength = 0;
-	BuffInAddr -= (MaxLength + 1);
+	BuffInAddr -= MaxLength;
 	while (isMoreToTx)
 	{
-		BuffInAddr += (MaxLength + 1);
 		if (Length >= MaxLength)
 		{
+			BuffInAddr += MaxLength;
 			currentLength = MaxLength;
 			Length -= MaxLength;
 		}

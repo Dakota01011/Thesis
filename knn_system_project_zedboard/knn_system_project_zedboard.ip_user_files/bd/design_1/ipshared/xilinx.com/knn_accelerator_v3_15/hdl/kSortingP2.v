@@ -4,8 +4,8 @@
 // Engineer: Dakota Koelling
 // 
 // Create Date: 09/14/2016 12:50:48 PM
-// Design Name: Sorting Phase 1
-// Module Name: kSortingP1
+// Design Name: Sorting Phase 2
+// Module Name: kSortingP2
 // Project Name: KNN Hardware Accelerator
 // Target Devices: Zedboard, Zybo
 // Tool Versions: Vivado 2016.2
@@ -19,14 +19,12 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-// Phase 1 Sorting
+// Phase 2 Sorting
 
-module kSortingP1 #(
+module kSortingP2 #(
 	parameter DATA_WIDTH = 32,
 	parameter DIMENSIONS = 32,
 	parameter VAL_WIDTH = 32,
-	parameter NUM_CH = 1,
-	parameter INSTANCE = 0,
 	parameter PASS_THOO_DEBUG = 0,
 	parameter K = 1
 ) (
@@ -35,16 +33,17 @@ module kSortingP1 #(
 	input valid,
 	input done,
 	input outEn,
+	input [31:0] dataNameIn,
 	input [VAL_WIDTH-1:0] dataValueIn,
+	output reg transferDone,
 	output [31:0] dataNameOut,
-	output [VAL_WIDTH-1:0] dataValueOut
+	output [DATA_WIDTH-1:0] dataValueOut
 );
 
-	reg [DATA_WIDTH-1:0] nameMem [K-1:0];
-	reg [VAL_WIDTH-1:0] valueMem [K-1:0];
+(* mark_debug = "true" *)	reg [DATA_WIDTH-1:0] nameMem [K-1:0];
+(* mark_debug = "true" *)	reg [VAL_WIDTH-1:0] valueMem [K-1:0];
 	wire [K-1:0] comparator;
 	reg [31:0] outputPointer;
-	reg [31:0] entryId;
 
 	generate
 		genvar i;
@@ -66,7 +65,7 @@ module kSortingP1 #(
 					end
 					else if (valid & comparator[i] & ~comparator[i-1]) // put new
 					begin
-						nameMem[i] <= entryId;
+						nameMem[i] <= dataNameIn;
 						valueMem[i] <= dataValueIn;
 					end
 				end
@@ -82,7 +81,7 @@ module kSortingP1 #(
 					end
 					else if (valid & comparator[i])
 					begin
-						nameMem[i] <= entryId;
+						nameMem[i] <= dataNameIn;
 						valueMem[i] <= dataValueIn;
 					end
 				end
@@ -107,23 +106,18 @@ module kSortingP1 #(
 		if (reset)
 		begin
 			outputPointer <= 0;
+			transferDone <= 0;
 		end
-		else if (done && outEn && outputPointer < K-1)
+		else if (done && outEn)
 		begin
-			outputPointer <= outputPointer + 1;
-		end
-	end
-
-	always @(posedge clk)
-	begin
-		// internal ID tag generation
-		if (reset)
-		begin
-			entryId <= INSTANCE;
-		end
-		else if (valid)
-		begin
-			entryId <= entryId + NUM_CH;
+			if (outputPointer < K-1)
+			begin
+				outputPointer <= outputPointer + 1;
+			end
+			else
+			begin
+				transferDone <= 1;
+			end
 		end
 	end
 
@@ -131,7 +125,7 @@ module kSortingP1 #(
 	generate
 		if(PASS_THOO_DEBUG)
 		begin
-			assign dataNameOut = entryId;
+			assign dataNameOut = dataNameIn;
 			assign dataValueOut = dataValueIn;
 		end
 		else

@@ -27,49 +27,21 @@ module knnTop #(
 	parameter NUM_CH = 1,
 	parameter K = 1
 ) (
-(* mark_debug = "true" *)	input 							mclk,
-(* mark_debug = "true" *)	input 							reset,
-(* mark_debug = "true" *)	input 							wr_en,
-(* mark_debug = "true" *)	input 							AXI_last,
-(* mark_debug = "true" *)	input [(NUM_CH*DATA_WIDTH)-1:0] dataValueIn,
-(* mark_debug = "true" *)	output 							AXIS_out_wr_en,
-(* mark_debug = "true" *)	output [31:0] 					dataNameOut,
-(* mark_debug = "true" *)	output [DATA_WIDTH-1:0] 		dataValueOut
+	input 							mclk,
+	input 							reset,
+	input 							done,
+	input 							AXIS_in_wr_en,
+	input [(NUM_CH*DATA_WIDTH)-1:0] dataValueIn,
+	output 							AXIS_out_wr_en,
+	output [31:0] 					dataNameOut,
+	output [DATA_WIDTH-1:0] 		dataValueOut
 );
 
 	localparam VAL_WIDTH = 2*(DATA_WIDTH+1)+DIMENSIONS;
-	parameter S_RESET = 2'b00;
-	parameter S_RX = 2'b01;
-	parameter S_TX = 2'b11;
 
-(* mark_debug = "true" *)	wire [DATA_WIDTH-1:0] currentRefPoint;
-(* mark_debug = "true" *)	wire [NUM_CH-1:0] distanceValid;
-(* mark_debug = "true" *)	wire [(NUM_CH*VAL_WIDTH)-1:0] distance;
-(* mark_debug = "true" *)	wire start;
-(* mark_debug = "true" *)	wire done;
-
-(* mark_debug = "true" *)	reg [1:0] state;
-
-	assign {done, start} = state;
-
-	always @(posedge mclk)
-	begin
-		if (reset)
-		begin
-			state <= S_RESET;
-		end
-		else
-		begin
-			if (state == S_RESET)
-			begin
-				state <= S_RX;
-			end
-			else if (state == S_RX && AXI_last)
-			begin // & last sig from stream
-				state <= S_TX;
-			end
-		end
-	end
+	wire [DATA_WIDTH-1:0] currentRefPoint;
+	wire [NUM_CH-1:0] distanceValid;
+	wire [(NUM_CH*VAL_WIDTH)-1:0] distance;
 
 	generate
 		genvar channel;
@@ -90,8 +62,8 @@ module knnTop #(
 			) fifo (
 				.clk(mclk),
 				.rst(reset),
-				.wr_en(wr_en),
-				.start(start),
+				.wr_en(AXIS_in_wr_en),
+				.start(~reset),
 				.dataIn(dataValueIn[((channel)*DATA_WIDTH) +: DATA_WIDTH]),
 				.currentRefPoint(currentRefPoint_int),
 				.currentDataPoint(currentDataPoint),
@@ -105,7 +77,7 @@ module knnTop #(
 			) dist(
 				.clk(mclk),
 				.reset(reset),
-				.wr_en(wr_en),
+				.wr_en(AXIS_in_wr_en),
 				.dataIn_Valid(dataValid),
 				.done(done),
 				.data1(currentRefPoint),
@@ -126,7 +98,7 @@ module knnTop #(
 	) sort (
 		.clk(mclk),
 		.reset(reset),
-		.wr_en(wr_en),
+		.wr_en(AXIS_in_wr_en),
 		.valid(distanceValid),
 		.done(done),
 		.dataValueIn(distance),

@@ -14,7 +14,7 @@ int main() {
 	init_platform();
 	print("Now calculating...\n\r");
 
-	u32 MaxLength = 8388607; // 0x7F_FFFF
+	u32 MaxLength = 16777215; // 0xFF_FFFF
 	u32 RX_BUFFER_BASE = 0x00500000;
 	u32 *myOutputArray = (u32 *) RX_BUFFER_BASE;
 	UINTPTR BuffInAddr = (UINTPTR)myIntDataSet;
@@ -34,23 +34,8 @@ int main() {
 	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 0);
 
 	// Activate DMA
-	bool isMoreToTx = true;
-	u32 currentLength = 0;
-	BuffInAddr -= (MaxLength + 1);
-	while (isMoreToTx)
+	if (Length <= MaxLength)
 	{
-		BuffInAddr += (MaxLength + 1);
-		if (Length >= MaxLength)
-		{
-			currentLength = MaxLength;
-			Length -= MaxLength;
-		}
-		else
-		{
-			currentLength = Length;
-			isMoreToTx = false;
-		}
-
 		//Reset
 		XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_CR_OFFSET, XAXIDMA_CR_RESET_MASK);
 		while((XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_CR_OFFSET) & XAXIDMA_CR_RESET_MASK) == 1) {}
@@ -61,7 +46,7 @@ int main() {
 		u32 reg = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_CR_OFFSET);
 		XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_CR_OFFSET, reg | XAXIDMA_CR_RUNSTOP_MASK);
 		XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SRCADDR_OFFSET, BuffInAddr);
-		XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_BUFFLEN_OFFSET, currentLength);
+		XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_BUFFLEN_OFFSET, Length);
 
 		//S2MM
 		reg = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_RX_OFFSET + XAXIDMA_CR_OFFSET);
@@ -72,8 +57,11 @@ int main() {
 		while((XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) & XAXIDMA_IDLE_MASK) == 0)
 			{}
 	}
+	else
+	{
+		printf("[FPGA] Transfer Length too long!!! \n\r");
+	}
 
-	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 2);
 	while(XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_RX_OFFSET + XAXIDMA_SR_OFFSET) != 4098)
 	{}
 	
