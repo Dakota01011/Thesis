@@ -1,0 +1,351 @@
+
+`timescale 1 ns / 1 ps
+
+	module KNN_DMA_v1_0 #
+	(
+		// Users to add parameters here
+
+		// User parameters ends
+		// Do not modify the parameters beyond this line
+
+
+		// Parameters of Axi Slave Bus Interface S_AXI_LITE
+		parameter integer C_S_AXI_LITE_DATA_WIDTH	= 32,
+		parameter integer C_S_AXI_LITE_ADDR_WIDTH	= 6,
+
+		// Parameters of Axi Master Bus Interface M_AXIS_MM2S
+		parameter integer C_M_AXIS_MM2S_TDATA_WIDTH	= 32,
+		parameter integer C_M_AXIS_MM2S_START_COUNT	= 32,
+
+		// Parameters of Axi Master Bus Interface M00_AXI_MM2S
+		parameter  C_M00_AXI_MM2S_TARGET_SLAVE_BASE_ADDR	= 32'h40000000,
+		parameter integer C_M00_AXI_MM2S_BURST_LEN	= 16,
+		parameter integer C_M00_AXI_MM2S_ID_WIDTH	= 1,
+		parameter integer C_M00_AXI_MM2S_ADDR_WIDTH	= 32,
+		parameter integer C_M00_AXI_MM2S_DATA_WIDTH	= 32,
+		parameter integer C_M00_AXI_MM2S_AWUSER_WIDTH	= 0,
+		parameter integer C_M00_AXI_MM2S_ARUSER_WIDTH	= 0,
+		parameter integer C_M00_AXI_MM2S_WUSER_WIDTH	= 0,
+		parameter integer C_M00_AXI_MM2S_RUSER_WIDTH	= 0,
+		parameter integer C_M00_AXI_MM2S_BUSER_WIDTH	= 0,
+
+		// Parameters of Axi Master Bus Interface M01_AXI_MM2S
+		parameter  C_M01_AXI_MM2S_TARGET_SLAVE_BASE_ADDR	= 32'h40000000,
+		parameter integer C_M01_AXI_MM2S_BURST_LEN	= 16,
+		parameter integer C_M01_AXI_MM2S_ID_WIDTH	= 1,
+		parameter integer C_M01_AXI_MM2S_ADDR_WIDTH	= 32,
+		parameter integer C_M01_AXI_MM2S_DATA_WIDTH	= 32,
+		parameter integer C_M01_AXI_MM2S_AWUSER_WIDTH	= 0,
+		parameter integer C_M01_AXI_MM2S_ARUSER_WIDTH	= 0,
+		parameter integer C_M01_AXI_MM2S_WUSER_WIDTH	= 0,
+		parameter integer C_M01_AXI_MM2S_RUSER_WIDTH	= 0,
+		parameter integer C_M01_AXI_MM2S_BUSER_WIDTH	= 0
+	)
+	(
+		// Users to add ports here
+
+		// User ports ends
+		// Do not modify the ports beyond this line
+
+
+		// Ports of Axi Slave Bus Interface S_AXI_LITE
+		input wire  s_axi_lite_aclk,
+		input wire  s_axi_lite_aresetn,
+		input wire [C_S_AXI_LITE_ADDR_WIDTH-1 : 0] s_axi_lite_awaddr,
+		input wire [2 : 0] s_axi_lite_awprot,
+		input wire  s_axi_lite_awvalid,
+		output wire  s_axi_lite_awready,
+		input wire [C_S_AXI_LITE_DATA_WIDTH-1 : 0] s_axi_lite_wdata,
+		input wire [(C_S_AXI_LITE_DATA_WIDTH/8)-1 : 0] s_axi_lite_wstrb,
+		input wire  s_axi_lite_wvalid,
+		output wire  s_axi_lite_wready,
+		output wire [1 : 0] s_axi_lite_bresp,
+		output wire  s_axi_lite_bvalid,
+		input wire  s_axi_lite_bready,
+		input wire [C_S_AXI_LITE_ADDR_WIDTH-1 : 0] s_axi_lite_araddr,
+		input wire [2 : 0] s_axi_lite_arprot,
+		input wire  s_axi_lite_arvalid,
+		output wire  s_axi_lite_arready,
+		output wire [C_S_AXI_LITE_DATA_WIDTH-1 : 0] s_axi_lite_rdata,
+		output wire [1 : 0] s_axi_lite_rresp,
+		output wire  s_axi_lite_rvalid,
+		input wire  s_axi_lite_rready,
+
+		// Ports of Axi Master Bus Interface M_AXIS_MM2S
+		input wire  m_axis_mm2s_aclk,
+		input wire  m_axis_mm2s_aresetn,
+		output wire  m_axis_mm2s_tvalid,
+		output wire [C_M_AXIS_MM2S_TDATA_WIDTH-1 : 0] m_axis_mm2s_tdata,
+		output wire [(C_M_AXIS_MM2S_TDATA_WIDTH/8)-1 : 0] m_axis_mm2s_tstrb,
+		output wire  m_axis_mm2s_tlast,
+		input wire  m_axis_mm2s_tready,
+
+		// Ports of Axi Master Bus Interface M00_AXI_MM2S
+		input wire  m00_axi_mm2s_init_axi_txn,
+		output wire  m00_axi_mm2s_txn_done,
+		output wire  m00_axi_mm2s_error,
+		input wire  m00_axi_mm2s_aclk,
+		input wire  m00_axi_mm2s_aresetn,
+		output wire [C_M00_AXI_MM2S_ID_WIDTH-1 : 0] m00_axi_mm2s_awid,
+		output wire [C_M00_AXI_MM2S_ADDR_WIDTH-1 : 0] m00_axi_mm2s_awaddr,
+		output wire [7 : 0] m00_axi_mm2s_awlen,
+		output wire [2 : 0] m00_axi_mm2s_awsize,
+		output wire [1 : 0] m00_axi_mm2s_awburst,
+		output wire  m00_axi_mm2s_awlock,
+		output wire [3 : 0] m00_axi_mm2s_awcache,
+		output wire [2 : 0] m00_axi_mm2s_awprot,
+		output wire [3 : 0] m00_axi_mm2s_awqos,
+		output wire [C_M00_AXI_MM2S_AWUSER_WIDTH-1 : 0] m00_axi_mm2s_awuser,
+		output wire  m00_axi_mm2s_awvalid,
+		input wire  m00_axi_mm2s_awready,
+		output wire [C_M00_AXI_MM2S_DATA_WIDTH-1 : 0] m00_axi_mm2s_wdata,
+		output wire [C_M00_AXI_MM2S_DATA_WIDTH/8-1 : 0] m00_axi_mm2s_wstrb,
+		output wire  m00_axi_mm2s_wlast,
+		output wire [C_M00_AXI_MM2S_WUSER_WIDTH-1 : 0] m00_axi_mm2s_wuser,
+		output wire  m00_axi_mm2s_wvalid,
+		input wire  m00_axi_mm2s_wready,
+		input wire [C_M00_AXI_MM2S_ID_WIDTH-1 : 0] m00_axi_mm2s_bid,
+		input wire [1 : 0] m00_axi_mm2s_bresp,
+		input wire [C_M00_AXI_MM2S_BUSER_WIDTH-1 : 0] m00_axi_mm2s_buser,
+		input wire  m00_axi_mm2s_bvalid,
+		output wire  m00_axi_mm2s_bready,
+		output wire [C_M00_AXI_MM2S_ID_WIDTH-1 : 0] m00_axi_mm2s_arid,
+		output wire [C_M00_AXI_MM2S_ADDR_WIDTH-1 : 0] m00_axi_mm2s_araddr,
+		output wire [7 : 0] m00_axi_mm2s_arlen,
+		output wire [2 : 0] m00_axi_mm2s_arsize,
+		output wire [1 : 0] m00_axi_mm2s_arburst,
+		output wire  m00_axi_mm2s_arlock,
+		output wire [3 : 0] m00_axi_mm2s_arcache,
+		output wire [2 : 0] m00_axi_mm2s_arprot,
+		output wire [3 : 0] m00_axi_mm2s_arqos,
+		output wire [C_M00_AXI_MM2S_ARUSER_WIDTH-1 : 0] m00_axi_mm2s_aruser,
+		output wire  m00_axi_mm2s_arvalid,
+		input wire  m00_axi_mm2s_arready,
+		input wire [C_M00_AXI_MM2S_ID_WIDTH-1 : 0] m00_axi_mm2s_rid,
+		input wire [C_M00_AXI_MM2S_DATA_WIDTH-1 : 0] m00_axi_mm2s_rdata,
+		input wire [1 : 0] m00_axi_mm2s_rresp,
+		input wire  m00_axi_mm2s_rlast,
+		input wire [C_M00_AXI_MM2S_RUSER_WIDTH-1 : 0] m00_axi_mm2s_ruser,
+		input wire  m00_axi_mm2s_rvalid,
+		output wire  m00_axi_mm2s_rready,
+
+		// Ports of Axi Master Bus Interface M01_AXI_MM2S
+		input wire  m01_axi_mm2s_init_axi_txn,
+		output wire  m01_axi_mm2s_txn_done,
+		output wire  m01_axi_mm2s_error,
+		input wire  m01_axi_mm2s_aclk,
+		input wire  m01_axi_mm2s_aresetn,
+		output wire [C_M01_AXI_MM2S_ID_WIDTH-1 : 0] m01_axi_mm2s_awid,
+		output wire [C_M01_AXI_MM2S_ADDR_WIDTH-1 : 0] m01_axi_mm2s_awaddr,
+		output wire [7 : 0] m01_axi_mm2s_awlen,
+		output wire [2 : 0] m01_axi_mm2s_awsize,
+		output wire [1 : 0] m01_axi_mm2s_awburst,
+		output wire  m01_axi_mm2s_awlock,
+		output wire [3 : 0] m01_axi_mm2s_awcache,
+		output wire [2 : 0] m01_axi_mm2s_awprot,
+		output wire [3 : 0] m01_axi_mm2s_awqos,
+		output wire [C_M01_AXI_MM2S_AWUSER_WIDTH-1 : 0] m01_axi_mm2s_awuser,
+		output wire  m01_axi_mm2s_awvalid,
+		input wire  m01_axi_mm2s_awready,
+		output wire [C_M01_AXI_MM2S_DATA_WIDTH-1 : 0] m01_axi_mm2s_wdata,
+		output wire [C_M01_AXI_MM2S_DATA_WIDTH/8-1 : 0] m01_axi_mm2s_wstrb,
+		output wire  m01_axi_mm2s_wlast,
+		output wire [C_M01_AXI_MM2S_WUSER_WIDTH-1 : 0] m01_axi_mm2s_wuser,
+		output wire  m01_axi_mm2s_wvalid,
+		input wire  m01_axi_mm2s_wready,
+		input wire [C_M01_AXI_MM2S_ID_WIDTH-1 : 0] m01_axi_mm2s_bid,
+		input wire [1 : 0] m01_axi_mm2s_bresp,
+		input wire [C_M01_AXI_MM2S_BUSER_WIDTH-1 : 0] m01_axi_mm2s_buser,
+		input wire  m01_axi_mm2s_bvalid,
+		output wire  m01_axi_mm2s_bready,
+		output wire [C_M01_AXI_MM2S_ID_WIDTH-1 : 0] m01_axi_mm2s_arid,
+		output wire [C_M01_AXI_MM2S_ADDR_WIDTH-1 : 0] m01_axi_mm2s_araddr,
+		output wire [7 : 0] m01_axi_mm2s_arlen,
+		output wire [2 : 0] m01_axi_mm2s_arsize,
+		output wire [1 : 0] m01_axi_mm2s_arburst,
+		output wire  m01_axi_mm2s_arlock,
+		output wire [3 : 0] m01_axi_mm2s_arcache,
+		output wire [2 : 0] m01_axi_mm2s_arprot,
+		output wire [3 : 0] m01_axi_mm2s_arqos,
+		output wire [C_M01_AXI_MM2S_ARUSER_WIDTH-1 : 0] m01_axi_mm2s_aruser,
+		output wire  m01_axi_mm2s_arvalid,
+		input wire  m01_axi_mm2s_arready,
+		input wire [C_M01_AXI_MM2S_ID_WIDTH-1 : 0] m01_axi_mm2s_rid,
+		input wire [C_M01_AXI_MM2S_DATA_WIDTH-1 : 0] m01_axi_mm2s_rdata,
+		input wire [1 : 0] m01_axi_mm2s_rresp,
+		input wire  m01_axi_mm2s_rlast,
+		input wire [C_M01_AXI_MM2S_RUSER_WIDTH-1 : 0] m01_axi_mm2s_ruser,
+		input wire  m01_axi_mm2s_rvalid,
+		output wire  m01_axi_mm2s_rready
+	);
+// Instantiation of Axi Bus Interface S_AXI_LITE
+	KNN_DMA_v1_0_S_AXI_LITE # ( 
+		.C_S_AXI_DATA_WIDTH(C_S_AXI_LITE_DATA_WIDTH),
+		.C_S_AXI_ADDR_WIDTH(C_S_AXI_LITE_ADDR_WIDTH)
+	) KNN_DMA_v1_0_S_AXI_LITE_inst (
+		.S_AXI_ACLK(s_axi_lite_aclk),
+		.S_AXI_ARESETN(s_axi_lite_aresetn),
+		.S_AXI_AWADDR(s_axi_lite_awaddr),
+		.S_AXI_AWPROT(s_axi_lite_awprot),
+		.S_AXI_AWVALID(s_axi_lite_awvalid),
+		.S_AXI_AWREADY(s_axi_lite_awready),
+		.S_AXI_WDATA(s_axi_lite_wdata),
+		.S_AXI_WSTRB(s_axi_lite_wstrb),
+		.S_AXI_WVALID(s_axi_lite_wvalid),
+		.S_AXI_WREADY(s_axi_lite_wready),
+		.S_AXI_BRESP(s_axi_lite_bresp),
+		.S_AXI_BVALID(s_axi_lite_bvalid),
+		.S_AXI_BREADY(s_axi_lite_bready),
+		.S_AXI_ARADDR(s_axi_lite_araddr),
+		.S_AXI_ARPROT(s_axi_lite_arprot),
+		.S_AXI_ARVALID(s_axi_lite_arvalid),
+		.S_AXI_ARREADY(s_axi_lite_arready),
+		.S_AXI_RDATA(s_axi_lite_rdata),
+		.S_AXI_RRESP(s_axi_lite_rresp),
+		.S_AXI_RVALID(s_axi_lite_rvalid),
+		.S_AXI_RREADY(s_axi_lite_rready)
+	);
+
+// Instantiation of Axi Bus Interface M_AXIS_MM2S
+	KNN_DMA_v1_0_M_AXIS_MM2S # ( 
+		.C_M_AXIS_TDATA_WIDTH(C_M_AXIS_MM2S_TDATA_WIDTH),
+		.C_M_START_COUNT(C_M_AXIS_MM2S_START_COUNT)
+	) KNN_DMA_v1_0_M_AXIS_MM2S_inst (
+		.M_AXIS_ACLK(m_axis_mm2s_aclk),
+		.M_AXIS_ARESETN(m_axis_mm2s_aresetn),
+		.M_AXIS_TVALID(m_axis_mm2s_tvalid),
+		.M_AXIS_TDATA(m_axis_mm2s_tdata),
+		.M_AXIS_TSTRB(m_axis_mm2s_tstrb),
+		.M_AXIS_TLAST(m_axis_mm2s_tlast),
+		.M_AXIS_TREADY(m_axis_mm2s_tready)
+	);
+
+// Instantiation of Axi Bus Interface M00_AXI_MM2S
+	KNN_DMA_v1_0_M00_AXI_MM2S # ( 
+		.C_M_TARGET_SLAVE_BASE_ADDR(C_M00_AXI_MM2S_TARGET_SLAVE_BASE_ADDR),
+		.C_M_AXI_BURST_LEN(C_M00_AXI_MM2S_BURST_LEN),
+		.C_M_AXI_ID_WIDTH(C_M00_AXI_MM2S_ID_WIDTH),
+		.C_M_AXI_ADDR_WIDTH(C_M00_AXI_MM2S_ADDR_WIDTH),
+		.C_M_AXI_DATA_WIDTH(C_M00_AXI_MM2S_DATA_WIDTH),
+		.C_M_AXI_AWUSER_WIDTH(C_M00_AXI_MM2S_AWUSER_WIDTH),
+		.C_M_AXI_ARUSER_WIDTH(C_M00_AXI_MM2S_ARUSER_WIDTH),
+		.C_M_AXI_WUSER_WIDTH(C_M00_AXI_MM2S_WUSER_WIDTH),
+		.C_M_AXI_RUSER_WIDTH(C_M00_AXI_MM2S_RUSER_WIDTH),
+		.C_M_AXI_BUSER_WIDTH(C_M00_AXI_MM2S_BUSER_WIDTH)
+	) KNN_DMA_v1_0_M00_AXI_MM2S_inst (
+		.INIT_AXI_TXN(m00_axi_mm2s_init_axi_txn),
+		.TXN_DONE(m00_axi_mm2s_txn_done),
+		.ERROR(m00_axi_mm2s_error),
+		.M_AXI_ACLK(m00_axi_mm2s_aclk),
+		.M_AXI_ARESETN(m00_axi_mm2s_aresetn),
+		.M_AXI_AWID(m00_axi_mm2s_awid),
+		.M_AXI_AWADDR(m00_axi_mm2s_awaddr),
+		.M_AXI_AWLEN(m00_axi_mm2s_awlen),
+		.M_AXI_AWSIZE(m00_axi_mm2s_awsize),
+		.M_AXI_AWBURST(m00_axi_mm2s_awburst),
+		.M_AXI_AWLOCK(m00_axi_mm2s_awlock),
+		.M_AXI_AWCACHE(m00_axi_mm2s_awcache),
+		.M_AXI_AWPROT(m00_axi_mm2s_awprot),
+		.M_AXI_AWQOS(m00_axi_mm2s_awqos),
+		.M_AXI_AWUSER(m00_axi_mm2s_awuser),
+		.M_AXI_AWVALID(m00_axi_mm2s_awvalid),
+		.M_AXI_AWREADY(m00_axi_mm2s_awready),
+		.M_AXI_WDATA(m00_axi_mm2s_wdata),
+		.M_AXI_WSTRB(m00_axi_mm2s_wstrb),
+		.M_AXI_WLAST(m00_axi_mm2s_wlast),
+		.M_AXI_WUSER(m00_axi_mm2s_wuser),
+		.M_AXI_WVALID(m00_axi_mm2s_wvalid),
+		.M_AXI_WREADY(m00_axi_mm2s_wready),
+		.M_AXI_BID(m00_axi_mm2s_bid),
+		.M_AXI_BRESP(m00_axi_mm2s_bresp),
+		.M_AXI_BUSER(m00_axi_mm2s_buser),
+		.M_AXI_BVALID(m00_axi_mm2s_bvalid),
+		.M_AXI_BREADY(m00_axi_mm2s_bready),
+		.M_AXI_ARID(m00_axi_mm2s_arid),
+		.M_AXI_ARADDR(m00_axi_mm2s_araddr),
+		.M_AXI_ARLEN(m00_axi_mm2s_arlen),
+		.M_AXI_ARSIZE(m00_axi_mm2s_arsize),
+		.M_AXI_ARBURST(m00_axi_mm2s_arburst),
+		.M_AXI_ARLOCK(m00_axi_mm2s_arlock),
+		.M_AXI_ARCACHE(m00_axi_mm2s_arcache),
+		.M_AXI_ARPROT(m00_axi_mm2s_arprot),
+		.M_AXI_ARQOS(m00_axi_mm2s_arqos),
+		.M_AXI_ARUSER(m00_axi_mm2s_aruser),
+		.M_AXI_ARVALID(m00_axi_mm2s_arvalid),
+		.M_AXI_ARREADY(m00_axi_mm2s_arready),
+		.M_AXI_RID(m00_axi_mm2s_rid),
+		.M_AXI_RDATA(m00_axi_mm2s_rdata),
+		.M_AXI_RRESP(m00_axi_mm2s_rresp),
+		.M_AXI_RLAST(m00_axi_mm2s_rlast),
+		.M_AXI_RUSER(m00_axi_mm2s_ruser),
+		.M_AXI_RVALID(m00_axi_mm2s_rvalid),
+		.M_AXI_RREADY(m00_axi_mm2s_rready)
+	);
+
+// Instantiation of Axi Bus Interface M01_AXI_MM2S
+	KNN_DMA_v1_0_M01_AXI_MM2S # ( 
+		.C_M_TARGET_SLAVE_BASE_ADDR(C_M01_AXI_MM2S_TARGET_SLAVE_BASE_ADDR),
+		.C_M_AXI_BURST_LEN(C_M01_AXI_MM2S_BURST_LEN),
+		.C_M_AXI_ID_WIDTH(C_M01_AXI_MM2S_ID_WIDTH),
+		.C_M_AXI_ADDR_WIDTH(C_M01_AXI_MM2S_ADDR_WIDTH),
+		.C_M_AXI_DATA_WIDTH(C_M01_AXI_MM2S_DATA_WIDTH),
+		.C_M_AXI_AWUSER_WIDTH(C_M01_AXI_MM2S_AWUSER_WIDTH),
+		.C_M_AXI_ARUSER_WIDTH(C_M01_AXI_MM2S_ARUSER_WIDTH),
+		.C_M_AXI_WUSER_WIDTH(C_M01_AXI_MM2S_WUSER_WIDTH),
+		.C_M_AXI_RUSER_WIDTH(C_M01_AXI_MM2S_RUSER_WIDTH),
+		.C_M_AXI_BUSER_WIDTH(C_M01_AXI_MM2S_BUSER_WIDTH)
+	) KNN_DMA_v1_0_M01_AXI_MM2S_inst (
+		.INIT_AXI_TXN(m01_axi_mm2s_init_axi_txn),
+		.TXN_DONE(m01_axi_mm2s_txn_done),
+		.ERROR(m01_axi_mm2s_error),
+		.M_AXI_ACLK(m01_axi_mm2s_aclk),
+		.M_AXI_ARESETN(m01_axi_mm2s_aresetn),
+		.M_AXI_AWID(m01_axi_mm2s_awid),
+		.M_AXI_AWADDR(m01_axi_mm2s_awaddr),
+		.M_AXI_AWLEN(m01_axi_mm2s_awlen),
+		.M_AXI_AWSIZE(m01_axi_mm2s_awsize),
+		.M_AXI_AWBURST(m01_axi_mm2s_awburst),
+		.M_AXI_AWLOCK(m01_axi_mm2s_awlock),
+		.M_AXI_AWCACHE(m01_axi_mm2s_awcache),
+		.M_AXI_AWPROT(m01_axi_mm2s_awprot),
+		.M_AXI_AWQOS(m01_axi_mm2s_awqos),
+		.M_AXI_AWUSER(m01_axi_mm2s_awuser),
+		.M_AXI_AWVALID(m01_axi_mm2s_awvalid),
+		.M_AXI_AWREADY(m01_axi_mm2s_awready),
+		.M_AXI_WDATA(m01_axi_mm2s_wdata),
+		.M_AXI_WSTRB(m01_axi_mm2s_wstrb),
+		.M_AXI_WLAST(m01_axi_mm2s_wlast),
+		.M_AXI_WUSER(m01_axi_mm2s_wuser),
+		.M_AXI_WVALID(m01_axi_mm2s_wvalid),
+		.M_AXI_WREADY(m01_axi_mm2s_wready),
+		.M_AXI_BID(m01_axi_mm2s_bid),
+		.M_AXI_BRESP(m01_axi_mm2s_bresp),
+		.M_AXI_BUSER(m01_axi_mm2s_buser),
+		.M_AXI_BVALID(m01_axi_mm2s_bvalid),
+		.M_AXI_BREADY(m01_axi_mm2s_bready),
+		.M_AXI_ARID(m01_axi_mm2s_arid),
+		.M_AXI_ARADDR(m01_axi_mm2s_araddr),
+		.M_AXI_ARLEN(m01_axi_mm2s_arlen),
+		.M_AXI_ARSIZE(m01_axi_mm2s_arsize),
+		.M_AXI_ARBURST(m01_axi_mm2s_arburst),
+		.M_AXI_ARLOCK(m01_axi_mm2s_arlock),
+		.M_AXI_ARCACHE(m01_axi_mm2s_arcache),
+		.M_AXI_ARPROT(m01_axi_mm2s_arprot),
+		.M_AXI_ARQOS(m01_axi_mm2s_arqos),
+		.M_AXI_ARUSER(m01_axi_mm2s_aruser),
+		.M_AXI_ARVALID(m01_axi_mm2s_arvalid),
+		.M_AXI_ARREADY(m01_axi_mm2s_arready),
+		.M_AXI_RID(m01_axi_mm2s_rid),
+		.M_AXI_RDATA(m01_axi_mm2s_rdata),
+		.M_AXI_RRESP(m01_axi_mm2s_rresp),
+		.M_AXI_RLAST(m01_axi_mm2s_rlast),
+		.M_AXI_RUSER(m01_axi_mm2s_ruser),
+		.M_AXI_RVALID(m01_axi_mm2s_rvalid),
+		.M_AXI_RREADY(m01_axi_mm2s_rready)
+	);
+
+	// Add user logic here
+
+	// User logic ends
+
+	endmodule

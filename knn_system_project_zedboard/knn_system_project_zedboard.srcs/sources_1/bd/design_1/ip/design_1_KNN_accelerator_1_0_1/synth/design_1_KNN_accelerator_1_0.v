@@ -47,12 +47,12 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:user:KNN_accelerator:3.15
-// IP Revision: 19
+// IP VLNV: xilinx.com:user:KNN_accelerator:3.16
+// IP Revision: 20
 
 (* X_CORE_INFO = "KNN_accelerator_v3_0,Vivado 2016.2" *)
 (* CHECK_LICENSE_TYPE = "design_1_KNN_accelerator_1_0,KNN_accelerator_v3_0,{}" *)
-(* CORE_GENERATION_INFO = "design_1_KNN_accelerator_1_0,KNN_accelerator_v3_0,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=KNN_accelerator,x_ipVersion=3.15,x_ipCoreRevision=19,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,WIDTH=32,NUM_DIM=78,KNN_DEBUG=0,NUM_CH=2,K=10,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5,C_S00_AXIS_TDATA_WIDTH=64,C_M00_AXIS_TDATA_WIDTH=32}" *)
+(* CORE_GENERATION_INFO = "design_1_KNN_accelerator_1_0,KNN_accelerator_v3_0,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=KNN_accelerator,x_ipVersion=3.16,x_ipCoreRevision=20,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,WIDTH=32,NUM_DIM=30,KNN_DEBUG=0,NUM_CH=2,K=10,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5,C_S00_AXIS_TDATA_WIDTH=64,C_M00_AXIS_TDATA_WIDTH=32}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_KNN_accelerator_1_0 (
   s00_axis_tdata,
@@ -165,7 +165,7 @@ input wire m00_axis_aresetn;
 
   KNN_accelerator_v3_0 #(
     .WIDTH(32),
-    .NUM_DIM(78),
+    .NUM_DIM(30),
     .KNN_DEBUG(0),
     .NUM_CH(2),
     .K(10),
