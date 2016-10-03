@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Oct 03 00:12:56 2016" VIVADOVERSION="2016.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Oct 03 01:08:51 2016" VIVADOVERSION="2016.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zedboard:part0:1.0" DEVICE="7z020" NAME="design_1" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -312,27 +312,27 @@
         </PORT>
         <PORT DIR="O" LEFT="127" NAME="m_axis_mm2s_tdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_DMA_0_m_axis_mm2s_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axis_tdata"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="m_axis_mm2s_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="KNN_DMA_0_m_axis_mm2s_tstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axis_tstrb"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axis_tstrb"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axis_mm2s_tlast" SIGIS="undef" SIGNAME="KNN_DMA_0_m_axis_mm2s_tlast">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axis_tlast"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axis_tlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axis_mm2s_tvalid" SIGIS="undef" SIGNAME="KNN_DMA_0_m_axis_mm2s_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axis_tvalid"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="m_axis_mm2s_tready" SIGIS="undef" SIGNAME="KNN_DMA_0_m_axis_mm2s_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axis_tready"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axis_tready"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="m_axis_mm2s_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
@@ -632,10 +632,10 @@
       </MEMORYMAP>
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="processing_system7_0"/>
-        <PERIPHERAL INSTANCE="KNN_accelerator_1"/>
+        <PERIPHERAL INSTANCE="KNN_accelerator_0"/>
       </PERIPHERALS>
     </MODULE>
-    <MODULE FULLNAME="/KNN_accelerator_1" HWVERSION="3.17" INSTANCE="KNN_accelerator_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="KNN_accelerator" VLNV="xilinx.com:user:KNN_accelerator:3.17">
+    <MODULE FULLNAME="/KNN_accelerator_0" HWVERSION="3.17" INSTANCE="KNN_accelerator_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="KNN_accelerator" VLNV="xilinx.com:user:KNN_accelerator:3.17">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -692,97 +692,97 @@
             <CONNECTION INSTANCE="rst_processing_system7_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="s00_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_awaddr">
+        <PORT DIR="I" LEFT="4" NAME="s00_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="s00_axi_awprot" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_awprot">
+        <PORT DIR="I" LEFT="2" NAME="s00_axi_awprot" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_awprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s00_axi_awvalid" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_awvalid">
+        <PORT DIR="I" NAME="s00_axi_awvalid" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s00_axi_awready" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_awready">
+        <PORT DIR="O" NAME="s00_axi_awready" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s00_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_wdata">
+        <PORT DIR="I" LEFT="31" NAME="s00_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s00_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_wstrb">
+        <PORT DIR="I" LEFT="3" NAME="s00_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s00_axi_wvalid" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_wvalid">
+        <PORT DIR="I" NAME="s00_axi_wvalid" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s00_axi_wready" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_wready">
+        <PORT DIR="O" NAME="s00_axi_wready" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s00_axi_bresp" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_bresp">
+        <PORT DIR="O" LEFT="1" NAME="s00_axi_bresp" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s00_axi_bvalid" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_bvalid">
+        <PORT DIR="O" NAME="s00_axi_bvalid" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s00_axi_bready" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_bready">
+        <PORT DIR="I" NAME="s00_axi_bready" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="s00_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_araddr">
+        <PORT DIR="I" LEFT="4" NAME="s00_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="s00_axi_arprot" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_arprot">
+        <PORT DIR="I" LEFT="2" NAME="s00_axi_arprot" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_arprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s00_axi_arvalid" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_arvalid">
+        <PORT DIR="I" NAME="s00_axi_arvalid" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s00_axi_arready" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_arready">
+        <PORT DIR="O" NAME="s00_axi_arready" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s00_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_rdata">
+        <PORT DIR="O" LEFT="31" NAME="s00_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s00_axi_rresp" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_rresp">
+        <PORT DIR="O" LEFT="1" NAME="s00_axi_rresp" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_rresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s00_axi_rvalid" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_rvalid">
+        <PORT DIR="O" NAME="s00_axi_rvalid" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s00_axi_rready" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_rready">
+        <PORT DIR="I" NAME="s00_axi_rready" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_rready"/>
           </CONNECTIONS>
@@ -797,22 +797,22 @@
             <CONNECTION INSTANCE="rst_processing_system7_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="m00_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_m00_axis_tdata">
+        <PORT DIR="O" LEFT="31" NAME="m00_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_m00_axis_tdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_0" PORT="s_axis_s2mm_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="m00_axis_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_m00_axis_tstrb">
+        <PORT DIR="O" LEFT="3" NAME="m00_axis_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_m00_axis_tstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_0" PORT="s_axis_s2mm_tkeep"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="m00_axis_tlast" SIGIS="undef" SIGNAME="KNN_accelerator_1_m00_axis_tlast">
+        <PORT DIR="O" NAME="m00_axis_tlast" SIGIS="undef" SIGNAME="KNN_accelerator_0_m00_axis_tlast">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_0" PORT="s_axis_s2mm_tlast"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="m00_axis_tvalid" SIGIS="undef" SIGNAME="KNN_accelerator_1_m00_axis_tvalid">
+        <PORT DIR="O" NAME="m00_axis_tvalid" SIGIS="undef" SIGNAME="KNN_accelerator_0_m00_axis_tvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_0" PORT="s_axis_s2mm_tvalid"/>
           </CONNECTIONS>
@@ -1988,29 +1988,29 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="s2mm_prmry_reset_out_n" SIGIS="rst"/>
-        <PORT DIR="I" LEFT="31" NAME="s_axis_s2mm_tdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_m00_axis_tdata">
+        <PORT DIR="I" LEFT="31" NAME="s_axis_s2mm_tdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_m00_axis_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="m00_axis_tdata"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="m00_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axis_s2mm_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_m00_axis_tstrb">
+        <PORT DIR="I" LEFT="3" NAME="s_axis_s2mm_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_m00_axis_tstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="m00_axis_tstrb"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="m00_axis_tstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axis_s2mm_tvalid" SIGIS="undef" SIGNAME="KNN_accelerator_1_m00_axis_tvalid">
+        <PORT DIR="I" NAME="s_axis_s2mm_tvalid" SIGIS="undef" SIGNAME="KNN_accelerator_0_m00_axis_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="m00_axis_tvalid"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="m00_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="s_axis_s2mm_tready" SIGIS="undef" SIGNAME="axi_dma_0_s_axis_s2mm_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="m00_axis_tready"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="m00_axis_tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axis_s2mm_tlast" SIGIS="undef" SIGNAME="KNN_accelerator_1_m00_axis_tlast">
+        <PORT DIR="I" NAME="s_axis_s2mm_tlast" SIGIS="undef" SIGNAME="KNN_accelerator_0_m00_axis_tlast">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="m00_axis_tlast"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="m00_axis_tlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="s2mm_introut" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT"/>
@@ -5989,9 +5989,13 @@
             <CONNECTION INSTANCE="axi_dma_0" PORT="m_axi_s2mm_aclk"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP1_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP2_ACLK"/>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axis_aclk"/>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_aclk"/>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="m00_axis_aclk"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axis_aclk"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_aclk"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="m00_axis_aclk"/>
+            <CONNECTION INSTANCE="KNN_DMA_0" PORT="m00_axi_mm2s_aclk"/>
+            <CONNECTION INSTANCE="KNN_DMA_0" PORT="m01_axi_mm2s_aclk"/>
+            <CONNECTION INSTANCE="KNN_DMA_0" PORT="m_axis_mm2s_aclk"/>
+            <CONNECTION INSTANCE="KNN_DMA_0" PORT="s_axi_lite_aclk"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ACLK"/>
@@ -6006,10 +6010,6 @@
             <CONNECTION INSTANCE="axi_mem_intercon_2" PORT="ACLK"/>
             <CONNECTION INSTANCE="axi_mem_intercon_2" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M02_ACLK"/>
-            <CONNECTION INSTANCE="KNN_DMA_0" PORT="m00_axi_mm2s_aclk"/>
-            <CONNECTION INSTANCE="KNN_DMA_0" PORT="m01_axi_mm2s_aclk"/>
-            <CONNECTION INSTANCE="KNN_DMA_0" PORT="m_axis_mm2s_aclk"/>
-            <CONNECTION INSTANCE="KNN_DMA_0" PORT="s_axi_lite_aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -6394,12 +6394,12 @@
       </BUSINTERFACES>
       <MEMORYMAP>
         <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x40400000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x4040FFFF" INSTANCE="axi_dma_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_LITE"/>
-        <MEMRANGE ADDRESSBLOCK="S00_AXI_reg" BASENAME="C_S00_AXI_BASEADDR" BASEVALUE="0x43C00000" HIGHNAME="C_S00_AXI_HIGHADDR" HIGHVALUE="0x43C0FFFF" INSTANCE="KNN_accelerator_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S00_AXI"/>
+        <MEMRANGE ADDRESSBLOCK="S00_AXI_reg" BASENAME="C_S00_AXI_BASEADDR" BASEVALUE="0x43C00000" HIGHNAME="C_S00_AXI_HIGHADDR" HIGHVALUE="0x43C0FFFF" INSTANCE="KNN_accelerator_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S00_AXI"/>
         <MEMRANGE ADDRESSBLOCK="S_AXI_LITE_reg" BASENAME="C_S_AXI_LITE_BASEADDR" BASEVALUE="0x43C10000" HIGHNAME="C_S_AXI_LITE_HIGHADDR" HIGHVALUE="0x43C1FFFF" INSTANCE="KNN_DMA_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_LITE"/>
       </MEMORYMAP>
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="axi_dma_0"/>
-        <PERIPHERAL INSTANCE="KNN_accelerator_1"/>
+        <PERIPHERAL INSTANCE="KNN_accelerator_0"/>
         <PERIPHERAL INSTANCE="KNN_DMA_0"/>
       </PERIPHERALS>
     </MODULE>
@@ -7046,99 +7046,99 @@
             <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_awaddr"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M01_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_awprot">
+        <PORT DIR="O" LEFT="2" NAME="M01_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_awprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_awprot"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_awvalid">
+        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_awvalid"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_awready">
+        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_awready"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_wdata"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_wstrb"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_wvalid">
+        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_wvalid"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_wready">
+        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_wready"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_bresp"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_bvalid">
+        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_bvalid"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_bready">
+        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_bready"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_araddr"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M01_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_arprot">
+        <PORT DIR="O" LEFT="2" NAME="M01_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_arprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_arprot"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_arvalid">
+        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_arvalid"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_arready">
+        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_arready"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_rdata"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_rresp"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_rvalid">
+        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_rvalid"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="KNN_accelerator_1_s00_axi_rready">
+        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="KNN_accelerator_0_s00_axi_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_rready"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="KNN_DMA_0_s_axi_lite_awaddr">
@@ -7395,9 +7395,13 @@
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" RIGHT="0" SIGIS="rst" SIGNAME="rst_processing_system7_0_100M_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_0" PORT="axi_resetn"/>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axis_aresetn"/>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="s00_axi_aresetn"/>
-            <CONNECTION INSTANCE="KNN_accelerator_1" PORT="m00_axis_aresetn"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axis_aresetn"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_aresetn"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="m00_axis_aresetn"/>
+            <CONNECTION INSTANCE="KNN_DMA_0" PORT="m00_axi_mm2s_aresetn"/>
+            <CONNECTION INSTANCE="KNN_DMA_0" PORT="m01_axi_mm2s_aresetn"/>
+            <CONNECTION INSTANCE="KNN_DMA_0" PORT="m_axis_mm2s_aresetn"/>
+            <CONNECTION INSTANCE="KNN_DMA_0" PORT="s_axi_lite_aresetn"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_ARESETN"/>
@@ -7408,10 +7412,6 @@
             <CONNECTION INSTANCE="axi_mem_intercon_2" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon_2" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M02_ARESETN"/>
-            <CONNECTION INSTANCE="KNN_DMA_0" PORT="m00_axi_mm2s_aresetn"/>
-            <CONNECTION INSTANCE="KNN_DMA_0" PORT="m01_axi_mm2s_aresetn"/>
-            <CONNECTION INSTANCE="KNN_DMA_0" PORT="m_axis_mm2s_aresetn"/>
-            <CONNECTION INSTANCE="KNN_DMA_0" PORT="s_axi_lite_aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

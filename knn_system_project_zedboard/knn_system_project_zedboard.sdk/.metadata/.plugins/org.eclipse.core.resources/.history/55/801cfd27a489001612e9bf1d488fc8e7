@@ -5,7 +5,6 @@
 #include "xparameters.h"
 #include "xaxidma_hw.h"
 #include "KNN_accelerator.h"
-#include "KNN_DMA.h"
 #include "platform.h"
 #include "DataSet.h"
 using namespace std;
@@ -34,11 +33,6 @@ int main() {
 	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 0);
 
 	// Activate DMA
-	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG2_OFFSET, BuffInAddr); // addr0
-	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG3_OFFSET, Length); // len0
-	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG4_OFFSET, BuffInAddr); // addr1
-	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG5_OFFSET, Length); // len1
-	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG0_OFFSET, 1); // control
 
 	//Reset
 	XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_RX_OFFSET + XAXIDMA_CR_OFFSET, XAXIDMA_CR_RESET_MASK);

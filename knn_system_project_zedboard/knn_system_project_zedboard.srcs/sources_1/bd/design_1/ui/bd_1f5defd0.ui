@@ -8,8 +8,8 @@ preplace inst axi_mem_intercon_1 -pg 1 -lvl 4 -y 1020 -defaultsOSRD
 preplace inst rst_processing_system7_0_100M -pg 1 -lvl 1 -y 430 -defaultsOSRD
 preplace inst KNN_DMA_0 -pg 1 -lvl 3 -y 470 -defaultsOSRD
 preplace inst axi_mem_intercon_2 -pg 1 -lvl 4 -y 770 -defaultsOSRD
+preplace inst KNN_accelerator_0 -pg 1 -lvl 4 -y 260 -defaultsOSRD
 preplace inst axi_mem_intercon -pg 1 -lvl 4 -y 530 -defaultsOSRD
-preplace inst KNN_accelerator_1 -pg 1 -lvl 4 -y 260 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 370 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 5 -y 800 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 5 1 NJ

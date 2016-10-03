@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Mon Oct 03 00:12:53 2016
+//Date        : Mon Oct 03 01:08:49 2016
 //Host        : Dakota-PC running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -359,7 +359,7 @@ module design_1
         .s_axi_lite_wready(processing_system7_0_axi_periph_M02_AXI_WREADY),
         .s_axi_lite_wstrb(processing_system7_0_axi_periph_M02_AXI_WSTRB),
         .s_axi_lite_wvalid(processing_system7_0_axi_periph_M02_AXI_WVALID));
-  design_1_KNN_accelerator_1_0 KNN_accelerator_1
+  design_1_KNN_accelerator_1_0 KNN_accelerator_0
        (.m00_axis_aclk(processing_system7_0_FCLK_CLK0),
         .m00_axis_aresetn(rst_processing_system7_0_100M_peripheral_aresetn),
         .m00_axis_tdata(KNN_accelerator_1_m00_axis_tdata),
