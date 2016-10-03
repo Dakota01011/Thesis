@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="M_AXI_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="M_AXI_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="96476334fs"></ZoomStartTime>
+      <ZoomEndTime time="460476335fs"></ZoomEndTime>
+      <Cursor1Time time="251276000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/M_AXI_tb/uut/uut/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/M_AXI_tb/uut/uut/M_AXI_ACLK" type="logic">
+      <obj_property name="ElementShortName">M_AXI_ACLK</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_ACLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/M_AXI_tb/uut/uut/M_AXI_ARADDR" type="array">
+      <obj_property name="ElementShortName">M_AXI_ARADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_ARADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/M_AXI_tb/uut/uut/M_AXI_ARLEN" type="array">
+      <obj_property name="ElementShortName">M_AXI_ARLEN[7:0]</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_ARLEN[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/M_AXI_tb/uut/uut/M_AXI_ARSIZE" type="array">
+      <obj_property name="ElementShortName">M_AXI_ARSIZE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_ARSIZE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/M_AXI_tb/uut/uut/M_AXI_ARBURST" type="array">
+      <obj_property name="ElementShortName">M_AXI_ARBURST[1:0]</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_ARBURST[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/M_AXI_tb/uut/uut/M_AXI_ARVALID" type="logic">
+      <obj_property name="ElementShortName">M_AXI_ARVALID</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_ARVALID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/M_AXI_tb/uut/uut/addr_use" type="array">
+      <obj_property name="ElementShortName">addr_use[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_use[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/M_AXI_tb/uut/uut/length_remaining" type="array">
+      <obj_property name="ElementShortName">length_remaining[31:0]</obj_property>
+      <obj_property name="ObjectShortName">length_remaining[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/M_AXI_tb/uut/uut/length_use" type="array">
+      <obj_property name="ElementShortName">length_use[31:0]</obj_property>
+      <obj_property name="ObjectShortName">length_use[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/M_AXI_tb/uut/uut/max_burst_len" type="array">
+      <obj_property name="ElementShortName">max_burst_len[31:0]</obj_property>
+      <obj_property name="ObjectShortName">max_burst_len[31:0]</obj_property>
+   </wvobject>
+</wave_config>

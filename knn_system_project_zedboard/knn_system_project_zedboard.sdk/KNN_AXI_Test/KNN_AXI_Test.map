@@ -300,7 +300,7 @@ LOAD c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-no
                 0x00000400                _FIQ_STACK_SIZE = DEFINED (_FIQ_STACK_SIZE)?_FIQ_STACK_SIZE:0x400
                 0x00000400                _UNDEF_STACK_SIZE = DEFINED (_UNDEF_STACK_SIZE)?_UNDEF_STACK_SIZE:0x400
 
-.text           0x00100000    0x10388
+.text           0x00100000    0x10288
  *(.vectors)
  .vectors       0x00100000      0x12c ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(asm_vectors.o)
                 0x00100000                _vector_table
@@ -313,425 +313,425 @@ LOAD c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-no
  .text          0x0010049c      0x108 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtbegin.o
  .text          0x001005a4        0x0 ./src/DataSet.o
  *fill*         0x001005a4        0x4 
- .text          0x001005a8      0x408 ./src/main.o
+ .text          0x001005a8      0x2e8 ./src/main.o
                 0x001005a8                main
- .text          0x001009b0       0x5c ./src/platform.o
-                0x001009b0                _Z13enable_cachesv
-                0x001009c4                _Z14disable_cachesv
-                0x001009d4                _Z9init_uartv
-                0x001009e8                _Z13init_platformv
-                0x001009fc                _Z16cleanup_platformv
- .text          0x00100a0c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(asm_vectors.o)
- .text          0x00100a0c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(boot.o)
- .text          0x00100a0c       0x28 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(print.o)
-                0x00100a0c                print
- .text          0x00100a34        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(translation_table.o)
- .text          0x00100a34       0x78 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(vectors.o)
-                0x00100a34                UndefinedException
-                0x00100a48                FIQInterrupt
-                0x00100a5c                IRQInterrupt
-                0x00100a70                SWInterrupt
-                0x00100a84                DataAbortInterrupt
-                0x00100a98                PrefetchAbortInterrupt
- .text          0x00100aac       0x78 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o)
-                0x00100ac0                _start
- .text          0x00100b24      0x9fc ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_cache.o)
-                0x00100b24                Xil_DCacheInvalidateLine
-                0x00100b68                Xil_DCacheFlushRange
-                0x00100bc8                Xil_DCacheStoreLine
-                0x00100c08                Xil_ICacheInvalidateLine
-                0x00100c4c                Xil_ICacheInvalidateRange
-                0x00100ca4                Xil_L1DCacheInvalidate
-                0x00100d4c                Xil_L1DCacheEnable
-                0x00100d6c                Xil_L1DCacheInvalidateLine
-                0x00100d84                Xil_L1DCacheInvalidateRange
-                0x00100dcc                Xil_L1DCacheFlush
-                0x00100e5c                Xil_L1DCacheDisable
-                0x00100e74                Xil_L1DCacheFlushLine
-                0x00100e8c                Xil_L1DCacheFlushRange
-                0x00100ed4                Xil_L1DCacheStoreLine
-                0x00100eec                Xil_L1ICacheEnable
-                0x00100f08                Xil_L1ICacheDisable
-                0x00100f24                Xil_L1ICacheInvalidate
-                0x00100f3c                Xil_L1ICacheInvalidateLine
-                0x00100f54                Xil_L1ICacheInvalidateRange
-                0x00100f9c                Xil_L2CacheInvalidate
-                0x00100ff8                Xil_DCacheInvalidate
-                0x00101018                Xil_ICacheInvalidate
-                0x00101048                Xil_L2CacheEnable
-                0x001010f8                Xil_DCacheEnable
-                0x00101108                Xil_ICacheEnable
-                0x00101124                Xil_L2CacheInvalidateLine
-                0x00101140                Xil_L2CacheInvalidateRange
-                0x001011c4                Xil_L2CacheFlush
-                0x00101228                Xil_DCacheFlush
-                0x00101248                Xil_L2CacheDisable
-                0x00101288                Xil_DCacheDisable
-                0x001012a4                Xil_ICacheDisable
-                0x001012c8                Xil_L2CacheFlushLine
-                0x001012f8                Xil_DCacheInvalidateRange
-                0x00101418                Xil_DCacheFlushLine
-                0x00101480                Xil_L2CacheFlushRange
-                0x00101504                Xil_L2CacheStoreLine
- .text          0x00101520       0x58 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_exception.o)
-                0x00101524                Xil_DataAbortHandler
-                0x0010152c                Xil_PrefetchAbortHandler
-                0x00101534                Xil_UndefinedExceptionHandler
-                0x00101538                Xil_ExceptionInit
-                0x0010153c                Xil_ExceptionRegisterHandler
-                0x00101554                Xil_ExceptionRemoveHandler
- .text          0x00101578       0x88 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_io.o)
-                0x00101578                Xil_In8
-                0x00101580                Xil_In16
-                0x00101588                Xil_In32
-                0x00101590                Xil_Out8
-                0x00101598                Xil_Out16
-                0x001015a0                Xil_Out32
-                0x001015a8                Xil_In16BE
-                0x001015bc                Xil_In32BE
-                0x001015c8                Xil_Out16BE
-                0x001015dc                Xil_Out32BE
-                0x001015e8                Xil_EndianSwap16
-                0x001015f8                Xil_EndianSwap32
- .text          0x00101600       0xa0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xtime_l.o)
-                0x00101600                XTime_SetTime
-                0x00101650                XTime_GetTime
- .text          0x001016a0       0x3c ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(cpu_init.o)
-                0x001016a0                __cpu_init
- .text          0x001016dc       0x10 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(outbyte.o)
-                0x001016dc                outbyte
- .text          0x001016ec       0xec ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xuartps_hw.o)
-                0x001016ec                XUartPs_SendByte
-                0x0010171c                XUartPs_RecvByte
-                0x00101748                XUartPs_ResetHw
- .text          0x001017d8      0x20c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_udivsi3.o)
-                0x001017d8                __aeabi_uidiv
-                0x001017d8                __udivsi3
-                0x001019c4                __aeabi_uidivmod
- .text          0x001019e4        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_dvmd_tls.o)
-                0x001019e4                __aeabi_idiv0
-                0x001019e4                __aeabi_ldiv0
- .text          0x001019e8      0x3b8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_arm_addsubdf3.o)
-                0x001019e8                __aeabi_drsub
-                0x001019f0                __aeabi_dsub
-                0x001019f0                __subdf3
-                0x001019f4                __aeabi_dadd
-                0x001019f4                __adddf3
-                0x00101ca0                __floatunsidf
-                0x00101ca0                __aeabi_ui2d
-                0x00101cc4                __floatsidf
-                0x00101cc4                __aeabi_i2d
-                0x00101cec                __aeabi_f2d
-                0x00101cec                __extendsfdf2
-                0x00101d2c                __floatundidf
-                0x00101d2c                __aeabi_ul2d
-                0x00101d40                __floatdidf
-                0x00101d40                __aeabi_l2d
- .text          0x00101da0       0x50 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_fixunsdfdi.o)
-                0x00101da0                __fixunsdfdi
-                0x00101da0                __aeabi_d2ulz
- .text          0x00101df0     0x108c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(unwind-arm.o)
-                0x0010227c                _Unwind_GetCFA
-                0x00102284                __gnu_Unwind_RaiseException
-                0x0010232c                __gnu_Unwind_ForcedUnwind
-                0x00102350                __gnu_Unwind_Resume
-                0x001023c4                __gnu_Unwind_Resume_or_Rethrow
-                0x001023e4                _Unwind_Complete
-                0x001023e8                _Unwind_DeleteException
-                0x00102400                _Unwind_VRS_Get
-                0x00102488                _Unwind_VRS_Set
-                0x00102510                __gnu_Unwind_Backtrace
-                0x00102a38                __aeabi_unwind_cpp_pr0
-                0x00102a40                __aeabi_unwind_cpp_pr1
-                0x00102a48                __aeabi_unwind_cpp_pr2
-                0x00102a50                _Unwind_VRS_Pop
- .text          0x00102e7c      0x1a8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(libunwind.o)
-                0x00102e7c                __restore_core_regs
-                0x00102e7c                restore_core_regs
-                0x00102e90                __gnu_Unwind_Restore_VFP
-                0x00102e98                __gnu_Unwind_Save_VFP
-                0x00102ea0                __gnu_Unwind_Restore_VFP_D
-                0x00102ea8                __gnu_Unwind_Save_VFP_D
-                0x00102eb0                __gnu_Unwind_Restore_VFP_D_16_to_31
-                0x00102eb8                __gnu_Unwind_Save_VFP_D_16_to_31
-                0x00102ec0                __gnu_Unwind_Restore_WMMXD
-                0x00102f04                __gnu_Unwind_Save_WMMXD
-                0x00102f48                __gnu_Unwind_Restore_WMMXC
-                0x00102f5c                __gnu_Unwind_Save_WMMXC
-                0x00102f70                ___Unwind_RaiseException
-                0x00102f70                _Unwind_RaiseException
-                0x00102f94                _Unwind_Resume
-                0x00102f94                ___Unwind_Resume
-                0x00102fb8                _Unwind_Resume_or_Rethrow
-                0x00102fb8                ___Unwind_Resume_or_Rethrow
-                0x00102fdc                _Unwind_ForcedUnwind
-                0x00102fdc                ___Unwind_ForcedUnwind
-                0x00103000                ___Unwind_Backtrace
-                0x00103000                _Unwind_Backtrace
- .text          0x00103024      0x50c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(pr-support.o)
-                0x001030b8                __gnu_unwind_execute
-                0x001034b4                __gnu_unwind_frame
-                0x001034f4                _Unwind_GetRegionStart
-                0x00103504                _Unwind_GetLanguageSpecificData
-                0x00103520                _Unwind_GetDataRelBase
-                0x00103528                _Unwind_GetTextRelBase
- .text          0x00103530       0x14 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-abort.o)
-                0x00103530                abort
- .text          0x00103544       0x34 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-exit.o)
-                0x00103544                exit
- .text          0x00103578       0x40 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fini.o)
-                0x00103578                __libc_fini_array
- .text          0x001035b8        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-impure.o)
- .text          0x001035b8       0x78 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-init.o)
-                0x001035b8                __libc_init_array
- *fill*         0x00103630       0x10 
- .text          0x00103640      0x600 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memcpy.o)
-                0x00103640                memcpy
- .text          0x00103c40       0x74 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-printf.o)
-                0x00103c40                _printf_r
-                0x00103c74                printf
- .text          0x00103cb4      0x238 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-signal.o)
-                0x00103cb4                _init_signal_r
-                0x00103d14                _signal_r
-                0x00103d70                _raise_r
-                0x00103e08                __sigtramp_r
-                0x00103e9c                raise
-                0x00103eb0                signal
-                0x00103ec8                _init_signal
-                0x00103ed8                __sigtramp
- .text          0x00103eec       0x44 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-signalr.o)
-                0x00103eec                _kill_r
-                0x00103f2c                _getpid_r
- .text          0x00103f30     0x2b10 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfprintf.o)
-                0x00103f30                _vfprintf_r
-                0x00106978                vfprintf
- .text          0x00106a40      0x128 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wcrtomb.o)
-                0x00106a40                _wcrtomb_r
-                0x00106ad4                wcrtomb
- .text          0x00106b68       0x5c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wcsrtombs.o)
-                0x00106b68                _wcsrtombs_r
-                0x00106b8c                wcsrtombs
- .text          0x00106bc4      0x3a8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wctomb_r.o)
-                0x00106bc4                __ascii_wctomb
-                0x00106bec                _wctomb_r
-                0x00106c34                __utf8_wctomb
-                0x00106d38                __sjis_wctomb
-                0x00106dc4                __eucjp_wctomb
-                0x00106e94                __jis_wctomb
- .text          0x00106f6c      0x14c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wsetup.o)
-                0x00106f6c                __swsetup_r
- .text          0x001070b8      0x168 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-__call_atexit.o)
-                0x001070b8                __call_exitprocs
- .text          0x00107220       0x14 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-atexit.o)
-                0x00107220                atexit
- *fill*         0x00107234        0x4 
- .text          0x00107238     0x1488 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-dtoa.o)
-                0x001073fc                _dtoa_r
- .text          0x001086c0      0x2bc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fflush.o)
-                0x001086c0                __sflush_r
-                0x001088fc                _fflush_r
-                0x0010894c                fflush
- .text          0x0010897c      0x310 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-findfp.o)
-                0x0010898c                _cleanup_r
-                0x00108af4                __sfmoreglue
-                0x00108b3c                __sfp
-                0x00108c24                _cleanup
-                0x00108c3c                __sinit
-                0x00108c4c                __sfp_lock_acquire
-                0x00108c50                __sfp_lock_release
-                0x00108c54                __sinit_lock_acquire
-                0x00108c58                __sinit_lock_release
-                0x00108c5c                __fp_lock_all
-                0x00108c74                __fp_unlock_all
- .text          0x00108c8c      0x3ac c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-freer.o)
-                0x00108c8c                _malloc_trim_r
-                0x00108d88                _free_r
- .text          0x00109038       0xf8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fwalk.o)
-                0x00109038                _fwalk
-                0x001090b0                _fwalk_reent
- .text          0x00109130      0xd6c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-locale.o)
-                0x00109b2c                _setlocale_r
-                0x00109e34                __locale_charset
-                0x00109e40                __locale_mb_cur_max
-                0x00109e50                __locale_msgcharset
-                0x00109e5c                __locale_cjk_lang
-                0x00109e6c                _localeconv_r
-                0x00109e78                setlocale
-                0x00109e90                localeconv
- .text          0x00109e9c      0x16c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-makebuf.o)
-                0x00109e9c                __smakebuf_r
- .text          0x0010a008      0x768 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mallocr.o)
-                0x0010a008                _malloc_r
- .text          0x0010a770      0x748 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mbtowc_r.o)
-                0x0010a770                __ascii_mbtowc
-                0x0010a7bc                _mbtowc_r
-                0x0010a808                __utf8_mbtowc
-                0x0010ab04                __sjis_mbtowc
-                0x0010abd8                __eucjp_mbtowc
-                0x0010ad18                __jis_mbtowc
- *fill*         0x0010aeb8        0x8 
- .text          0x0010aec0       0xa0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memchr.o)
-                0x0010aec0                memchr
- .text          0x0010af60       0xf8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memset.o)
-                0x0010af60                memset
- .text          0x0010b058        0x8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mlock.o)
-                0x0010b058                __malloc_lock
-                0x0010b05c                __malloc_unlock
- .text          0x0010b060      0xcdc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mprec.o)
-                0x0010b060                _Balloc
-                0x0010b0ec                _Bfree
-                0x0010b108                __multadd
-                0x0010b1d8                __s2b
-                0x0010b2bc                __hi0bits
-                0x0010b320                __lo0bits
-                0x0010b3b0                __i2b
-                0x0010b3d0                __multiply
-                0x0010b5ac                __pow5mult
-                0x0010b6a8                __lshift
-                0x0010b7a4                __mcmp
-                0x0010b808                __mdiff
-                0x0010b948                __ulp
-                0x0010b9bc                __b2d
-                0x0010baa0                __d2b
-                0x0010bba0                __ratio
-                0x0010bc1c                _mprec_log10
-                0x0010bc50                __copybits
-                0x0010bcbc                __any_on
- .text          0x0010bd3c      0x11c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-reent.o)
-                0x0010bd3c                cleanup_glue
-                0x0010bd68                _reclaim_reent
- .text          0x0010be58       0x74 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-s_fpclassify.o)
-                0x0010be58                __fpclassifyd
- *fill*         0x0010becc        0x4 
- .text          0x0010bed0       0x90 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-s_frexp.o)
-                0x0010bed0                frexp
- .text          0x0010bf60       0x38 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-sbrkr.o)
-                0x0010bf60                _sbrk_r
- .text          0x0010bf98       0xc0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-stdio.o)
-                0x0010bf98                __sread
-                0x0010bfc8                __seofread
-                0x0010bfd0                __swrite
-                0x0010c024                __sseek
-                0x0010c050                __sclose
- .text          0x0010c058       0x6c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcasecmp.o)
-                0x0010c058                strcasecmp
- .text          0x0010c0c4       0x80 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcat.o)
-                0x0010c0c4                strcat
- .text          0x0010c144      0x178 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strchr.o)
-                0x0010c144                strchr
- *fill*         0x0010c2bc        0x4 
- .text          0x0010c2c0      0x2e0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcmp.o)
-                0x0010c2c8                strcmp
- .text          0x0010c5a0       0xf8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcpy.o)
-                0x0010c5a0                strcpy
- .text          0x0010c698       0x48 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strlcpy.o)
-                0x0010c698                strlcpy
- *fill*         0x0010c6e0       0x20 
- .text          0x0010c700      0x100 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strlen-armv7.o)
-                0x0010c700                strlen
- .text          0x0010c800       0x90 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strncasecmp.o)
-                0x0010c800                strncasecmp
- .text          0x0010c890      0x110 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strncmp.o)
-                0x0010c890                strncmp
- .text          0x0010c9a0       0xdc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strncpy.o)
-                0x0010c9a0                strncpy
- .text          0x0010ca7c      0x1fc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strtol.o)
-                0x0010ca7c                _strtol_r
-                0x0010cc5c                strtol
- .text          0x0010cc78     0x19ec c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfiprintf.o)
-                0x0010cd1c                __sprint_r
-                0x0010cd38                _vfiprintf_r
-                0x0010e5a0                vfiprintf
- .text          0x0010e664      0x1c8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wcsnrtombs.o)
-                0x0010e664                _wcsnrtombs_r
-                0x0010e7f0                wcsnrtombs
- .text          0x0010e82c       0x44 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-writer.o)
-                0x0010e82c                _write_r
- .text          0x0010e870       0xd8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-__atexit.o)
-                0x0010e870                __register_exitproc
- .text          0x0010e948       0x94 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-callocr.o)
-                0x0010e948                _calloc_r
- .text          0x0010e9dc       0x38 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-closer.o)
-                0x0010e9dc                _close_r
- .text          0x0010ea14       0x18 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-ctype_.o)
-                0x0010ea14                __set_ctype
- .text          0x0010ea2c      0x108 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fclose.o)
-                0x0010ea2c                _fclose_r
-                0x0010eb20                fclose
- .text          0x0010eb34      0x18c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fputwc.o)
-                0x0010eb34                _fputwc_r
-                0x0010ec78                fputwc
- .text          0x0010ecc0       0x40 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fstatr.o)
-                0x0010ecc0                _fstat_r
- .text          0x0010ed00      0x4c0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fvwrite.o)
-                0x0010ed00                __sfvwrite_r
- .text          0x0010f1c0       0xe0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-getenv_r.o)
-                0x0010f1c0                _findenv_r
-                0x0010f288                _getenv_r
- .text          0x0010f2a0       0x38 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-isattyr.o)
-                0x0010f2a0                _isatty_r
- .text          0x0010f2d8       0x44 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-lseekr.o)
-                0x0010f2d8                _lseek_r
- .text          0x0010f31c      0x128 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memmove.o)
-                0x0010f31c                memmove
- .text          0x0010f444       0x44 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-readr.o)
-                0x0010f444                _read_r
- .text          0x0010f488      0x568 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-reallocr.o)
-                0x0010f488                _realloc_r
- .text          0x0010f9f0      0x13c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wbuf.o)
-                0x0010f9f0                __swbuf_r
-                0x0010fb14                __swbuf
- .text          0x0010fb2c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-environ.o)
- .text          0x0010fb2c        0x8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-envlock.o)
-                0x0010fb2c                __env_lock
-                0x0010fb30                __env_unlock
- .text          0x0010fb34        0x4 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(_exit.o)
-                0x0010fb34                _exit
- .text          0x0010fb38       0x3c ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(_sbrk.o)
-                0x0010fb38                _sbrk
- .text          0x0010fb74        0x8 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(close.o)
-                0x0010fb74                _close
- .text          0x0010fb7c       0x10 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(fstat.o)
-                0x0010fb7c                _fstat
- .text          0x0010fb8c       0x10 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(getpid.o)
-                0x0010fb8c                getpid
-                0x0010fb94                _getpid
- .text          0x0010fb9c       0x10 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(isatty.o)
-                0x0010fb9c                isatty
-                0x0010fba4                _isatty
- .text          0x0010fbac       0x38 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(kill.o)
-                0x0010fbac                kill
-                0x0010fbc8                _kill
- .text          0x0010fbe4       0x30 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(lseek.o)
-                0x0010fbe4                lseek
-                0x0010fbfc                _lseek
- .text          0x0010fc14       0xc0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(read.o)
-                0x0010fc14                read
-                0x0010fc74                _read
- .text          0x0010fcd4       0xc0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(write.o)
-                0x0010fcd4                write
-                0x0010fd34                _write
- .text          0x0010fd94       0x10 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(errno.o)
-                0x0010fd94                __errno
- .text          0x0010fda4        0xc ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(inbyte.o)
-                0x0010fda4                inbyte
- .text          0x0010fdb0      0x240 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_divsi3.o)
-                0x0010fdb0                __divsi3
-                0x0010fdb0                __aeabi_idiv
-                0x0010ffd0                __aeabi_idivmod
- .text          0x0010fff0       0x3c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_aeabi_uldivmod.o)
-                0x0010fff0                __aeabi_uldivmod
- .text          0x0011002c       0x78 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(bpabi.o)
-                0x0011002c                __gnu_ldivmod_helper
-                0x00110068                __gnu_uldivmod_helper
- .text          0x001100a4      0x180 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_divdi3.o)
-                0x001100a4                __divdi3
- .text          0x00110224      0x124 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_udivdi3.o)
-                0x00110224                __udivdi3
- .text          0x00110348        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtend.o
- .text          0x00110348        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtn.o
+ .text          0x00100890       0x5c ./src/platform.o
+                0x00100890                _Z13enable_cachesv
+                0x001008a4                _Z14disable_cachesv
+                0x001008b4                _Z9init_uartv
+                0x001008c8                _Z13init_platformv
+                0x001008dc                _Z16cleanup_platformv
+ .text          0x001008ec        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(asm_vectors.o)
+ .text          0x001008ec        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(boot.o)
+ .text          0x001008ec       0x28 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(print.o)
+                0x001008ec                print
+ .text          0x00100914        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(translation_table.o)
+ .text          0x00100914       0x78 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(vectors.o)
+                0x00100914                UndefinedException
+                0x00100928                FIQInterrupt
+                0x0010093c                IRQInterrupt
+                0x00100950                SWInterrupt
+                0x00100964                DataAbortInterrupt
+                0x00100978                PrefetchAbortInterrupt
+ .text          0x0010098c       0x78 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o)
+                0x001009a0                _start
+ .text          0x00100a04      0x9fc ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_cache.o)
+                0x00100a04                Xil_DCacheInvalidateLine
+                0x00100a48                Xil_DCacheFlushRange
+                0x00100aa8                Xil_DCacheStoreLine
+                0x00100ae8                Xil_ICacheInvalidateLine
+                0x00100b2c                Xil_ICacheInvalidateRange
+                0x00100b84                Xil_L1DCacheInvalidate
+                0x00100c2c                Xil_L1DCacheEnable
+                0x00100c4c                Xil_L1DCacheInvalidateLine
+                0x00100c64                Xil_L1DCacheInvalidateRange
+                0x00100cac                Xil_L1DCacheFlush
+                0x00100d3c                Xil_L1DCacheDisable
+                0x00100d54                Xil_L1DCacheFlushLine
+                0x00100d6c                Xil_L1DCacheFlushRange
+                0x00100db4                Xil_L1DCacheStoreLine
+                0x00100dcc                Xil_L1ICacheEnable
+                0x00100de8                Xil_L1ICacheDisable
+                0x00100e04                Xil_L1ICacheInvalidate
+                0x00100e1c                Xil_L1ICacheInvalidateLine
+                0x00100e34                Xil_L1ICacheInvalidateRange
+                0x00100e7c                Xil_L2CacheInvalidate
+                0x00100ed8                Xil_DCacheInvalidate
+                0x00100ef8                Xil_ICacheInvalidate
+                0x00100f28                Xil_L2CacheEnable
+                0x00100fd8                Xil_DCacheEnable
+                0x00100fe8                Xil_ICacheEnable
+                0x00101004                Xil_L2CacheInvalidateLine
+                0x00101020                Xil_L2CacheInvalidateRange
+                0x001010a4                Xil_L2CacheFlush
+                0x00101108                Xil_DCacheFlush
+                0x00101128                Xil_L2CacheDisable
+                0x00101168                Xil_DCacheDisable
+                0x00101184                Xil_ICacheDisable
+                0x001011a8                Xil_L2CacheFlushLine
+                0x001011d8                Xil_DCacheInvalidateRange
+                0x001012f8                Xil_DCacheFlushLine
+                0x00101360                Xil_L2CacheFlushRange
+                0x001013e4                Xil_L2CacheStoreLine
+ .text          0x00101400       0x58 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_exception.o)
+                0x00101404                Xil_DataAbortHandler
+                0x0010140c                Xil_PrefetchAbortHandler
+                0x00101414                Xil_UndefinedExceptionHandler
+                0x00101418                Xil_ExceptionInit
+                0x0010141c                Xil_ExceptionRegisterHandler
+                0x00101434                Xil_ExceptionRemoveHandler
+ .text          0x00101458       0x88 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_io.o)
+                0x00101458                Xil_In8
+                0x00101460                Xil_In16
+                0x00101468                Xil_In32
+                0x00101470                Xil_Out8
+                0x00101478                Xil_Out16
+                0x00101480                Xil_Out32
+                0x00101488                Xil_In16BE
+                0x0010149c                Xil_In32BE
+                0x001014a8                Xil_Out16BE
+                0x001014bc                Xil_Out32BE
+                0x001014c8                Xil_EndianSwap16
+                0x001014d8                Xil_EndianSwap32
+ .text          0x001014e0       0xa0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xtime_l.o)
+                0x001014e0                XTime_SetTime
+                0x00101530                XTime_GetTime
+ .text          0x00101580       0x3c ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(cpu_init.o)
+                0x00101580                __cpu_init
+ .text          0x001015bc       0x10 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(outbyte.o)
+                0x001015bc                outbyte
+ .text          0x001015cc       0xec ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xuartps_hw.o)
+                0x001015cc                XUartPs_SendByte
+                0x001015fc                XUartPs_RecvByte
+                0x00101628                XUartPs_ResetHw
+ .text          0x001016b8      0x20c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_udivsi3.o)
+                0x001016b8                __aeabi_uidiv
+                0x001016b8                __udivsi3
+                0x001018a4                __aeabi_uidivmod
+ .text          0x001018c4        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_dvmd_tls.o)
+                0x001018c4                __aeabi_idiv0
+                0x001018c4                __aeabi_ldiv0
+ .text          0x001018c8      0x3b8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_arm_addsubdf3.o)
+                0x001018c8                __aeabi_drsub
+                0x001018d0                __aeabi_dsub
+                0x001018d0                __subdf3
+                0x001018d4                __aeabi_dadd
+                0x001018d4                __adddf3
+                0x00101b80                __floatunsidf
+                0x00101b80                __aeabi_ui2d
+                0x00101ba4                __floatsidf
+                0x00101ba4                __aeabi_i2d
+                0x00101bcc                __aeabi_f2d
+                0x00101bcc                __extendsfdf2
+                0x00101c0c                __floatundidf
+                0x00101c0c                __aeabi_ul2d
+                0x00101c20                __floatdidf
+                0x00101c20                __aeabi_l2d
+ .text          0x00101c80       0x50 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_fixunsdfdi.o)
+                0x00101c80                __fixunsdfdi
+                0x00101c80                __aeabi_d2ulz
+ .text          0x00101cd0     0x108c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(unwind-arm.o)
+                0x0010215c                _Unwind_GetCFA
+                0x00102164                __gnu_Unwind_RaiseException
+                0x0010220c                __gnu_Unwind_ForcedUnwind
+                0x00102230                __gnu_Unwind_Resume
+                0x001022a4                __gnu_Unwind_Resume_or_Rethrow
+                0x001022c4                _Unwind_Complete
+                0x001022c8                _Unwind_DeleteException
+                0x001022e0                _Unwind_VRS_Get
+                0x00102368                _Unwind_VRS_Set
+                0x001023f0                __gnu_Unwind_Backtrace
+                0x00102918                __aeabi_unwind_cpp_pr0
+                0x00102920                __aeabi_unwind_cpp_pr1
+                0x00102928                __aeabi_unwind_cpp_pr2
+                0x00102930                _Unwind_VRS_Pop
+ .text          0x00102d5c      0x1a8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(libunwind.o)
+                0x00102d5c                __restore_core_regs
+                0x00102d5c                restore_core_regs
+                0x00102d70                __gnu_Unwind_Restore_VFP
+                0x00102d78                __gnu_Unwind_Save_VFP
+                0x00102d80                __gnu_Unwind_Restore_VFP_D
+                0x00102d88                __gnu_Unwind_Save_VFP_D
+                0x00102d90                __gnu_Unwind_Restore_VFP_D_16_to_31
+                0x00102d98                __gnu_Unwind_Save_VFP_D_16_to_31
+                0x00102da0                __gnu_Unwind_Restore_WMMXD
+                0x00102de4                __gnu_Unwind_Save_WMMXD
+                0x00102e28                __gnu_Unwind_Restore_WMMXC
+                0x00102e3c                __gnu_Unwind_Save_WMMXC
+                0x00102e50                ___Unwind_RaiseException
+                0x00102e50                _Unwind_RaiseException
+                0x00102e74                _Unwind_Resume
+                0x00102e74                ___Unwind_Resume
+                0x00102e98                _Unwind_Resume_or_Rethrow
+                0x00102e98                ___Unwind_Resume_or_Rethrow
+                0x00102ebc                _Unwind_ForcedUnwind
+                0x00102ebc                ___Unwind_ForcedUnwind
+                0x00102ee0                ___Unwind_Backtrace
+                0x00102ee0                _Unwind_Backtrace
+ .text          0x00102f04      0x50c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(pr-support.o)
+                0x00102f98                __gnu_unwind_execute
+                0x00103394                __gnu_unwind_frame
+                0x001033d4                _Unwind_GetRegionStart
+                0x001033e4                _Unwind_GetLanguageSpecificData
+                0x00103400                _Unwind_GetDataRelBase
+                0x00103408                _Unwind_GetTextRelBase
+ .text          0x00103410       0x14 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-abort.o)
+                0x00103410                abort
+ .text          0x00103424       0x34 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-exit.o)
+                0x00103424                exit
+ .text          0x00103458       0x40 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fini.o)
+                0x00103458                __libc_fini_array
+ .text          0x00103498        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-impure.o)
+ .text          0x00103498       0x78 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-init.o)
+                0x00103498                __libc_init_array
+ *fill*         0x00103510       0x30 
+ .text          0x00103540      0x600 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memcpy.o)
+                0x00103540                memcpy
+ .text          0x00103b40       0x74 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-printf.o)
+                0x00103b40                _printf_r
+                0x00103b74                printf
+ .text          0x00103bb4      0x238 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-signal.o)
+                0x00103bb4                _init_signal_r
+                0x00103c14                _signal_r
+                0x00103c70                _raise_r
+                0x00103d08                __sigtramp_r
+                0x00103d9c                raise
+                0x00103db0                signal
+                0x00103dc8                _init_signal
+                0x00103dd8                __sigtramp
+ .text          0x00103dec       0x44 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-signalr.o)
+                0x00103dec                _kill_r
+                0x00103e2c                _getpid_r
+ .text          0x00103e30     0x2b10 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfprintf.o)
+                0x00103e30                _vfprintf_r
+                0x00106878                vfprintf
+ .text          0x00106940      0x128 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wcrtomb.o)
+                0x00106940                _wcrtomb_r
+                0x001069d4                wcrtomb
+ .text          0x00106a68       0x5c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wcsrtombs.o)
+                0x00106a68                _wcsrtombs_r
+                0x00106a8c                wcsrtombs
+ .text          0x00106ac4      0x3a8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wctomb_r.o)
+                0x00106ac4                __ascii_wctomb
+                0x00106aec                _wctomb_r
+                0x00106b34                __utf8_wctomb
+                0x00106c38                __sjis_wctomb
+                0x00106cc4                __eucjp_wctomb
+                0x00106d94                __jis_wctomb
+ .text          0x00106e6c      0x14c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wsetup.o)
+                0x00106e6c                __swsetup_r
+ .text          0x00106fb8      0x168 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-__call_atexit.o)
+                0x00106fb8                __call_exitprocs
+ .text          0x00107120       0x14 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-atexit.o)
+                0x00107120                atexit
+ *fill*         0x00107134        0x4 
+ .text          0x00107138     0x1488 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-dtoa.o)
+                0x001072fc                _dtoa_r
+ .text          0x001085c0      0x2bc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fflush.o)
+                0x001085c0                __sflush_r
+                0x001087fc                _fflush_r
+                0x0010884c                fflush
+ .text          0x0010887c      0x310 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-findfp.o)
+                0x0010888c                _cleanup_r
+                0x001089f4                __sfmoreglue
+                0x00108a3c                __sfp
+                0x00108b24                _cleanup
+                0x00108b3c                __sinit
+                0x00108b4c                __sfp_lock_acquire
+                0x00108b50                __sfp_lock_release
+                0x00108b54                __sinit_lock_acquire
+                0x00108b58                __sinit_lock_release
+                0x00108b5c                __fp_lock_all
+                0x00108b74                __fp_unlock_all
+ .text          0x00108b8c      0x3ac c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-freer.o)
+                0x00108b8c                _malloc_trim_r
+                0x00108c88                _free_r
+ .text          0x00108f38       0xf8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fwalk.o)
+                0x00108f38                _fwalk
+                0x00108fb0                _fwalk_reent
+ .text          0x00109030      0xd6c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-locale.o)
+                0x00109a2c                _setlocale_r
+                0x00109d34                __locale_charset
+                0x00109d40                __locale_mb_cur_max
+                0x00109d50                __locale_msgcharset
+                0x00109d5c                __locale_cjk_lang
+                0x00109d6c                _localeconv_r
+                0x00109d78                setlocale
+                0x00109d90                localeconv
+ .text          0x00109d9c      0x16c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-makebuf.o)
+                0x00109d9c                __smakebuf_r
+ .text          0x00109f08      0x768 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mallocr.o)
+                0x00109f08                _malloc_r
+ .text          0x0010a670      0x748 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mbtowc_r.o)
+                0x0010a670                __ascii_mbtowc
+                0x0010a6bc                _mbtowc_r
+                0x0010a708                __utf8_mbtowc
+                0x0010aa04                __sjis_mbtowc
+                0x0010aad8                __eucjp_mbtowc
+                0x0010ac18                __jis_mbtowc
+ *fill*         0x0010adb8        0x8 
+ .text          0x0010adc0       0xa0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memchr.o)
+                0x0010adc0                memchr
+ .text          0x0010ae60       0xf8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memset.o)
+                0x0010ae60                memset
+ .text          0x0010af58        0x8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mlock.o)
+                0x0010af58                __malloc_lock
+                0x0010af5c                __malloc_unlock
+ .text          0x0010af60      0xcdc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mprec.o)
+                0x0010af60                _Balloc
+                0x0010afec                _Bfree
+                0x0010b008                __multadd
+                0x0010b0d8                __s2b
+                0x0010b1bc                __hi0bits
+                0x0010b220                __lo0bits
+                0x0010b2b0                __i2b
+                0x0010b2d0                __multiply
+                0x0010b4ac                __pow5mult
+                0x0010b5a8                __lshift
+                0x0010b6a4                __mcmp
+                0x0010b708                __mdiff
+                0x0010b848                __ulp
+                0x0010b8bc                __b2d
+                0x0010b9a0                __d2b
+                0x0010baa0                __ratio
+                0x0010bb1c                _mprec_log10
+                0x0010bb50                __copybits
+                0x0010bbbc                __any_on
+ .text          0x0010bc3c      0x11c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-reent.o)
+                0x0010bc3c                cleanup_glue
+                0x0010bc68                _reclaim_reent
+ .text          0x0010bd58       0x74 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-s_fpclassify.o)
+                0x0010bd58                __fpclassifyd
+ *fill*         0x0010bdcc        0x4 
+ .text          0x0010bdd0       0x90 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-s_frexp.o)
+                0x0010bdd0                frexp
+ .text          0x0010be60       0x38 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-sbrkr.o)
+                0x0010be60                _sbrk_r
+ .text          0x0010be98       0xc0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-stdio.o)
+                0x0010be98                __sread
+                0x0010bec8                __seofread
+                0x0010bed0                __swrite
+                0x0010bf24                __sseek
+                0x0010bf50                __sclose
+ .text          0x0010bf58       0x6c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcasecmp.o)
+                0x0010bf58                strcasecmp
+ .text          0x0010bfc4       0x80 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcat.o)
+                0x0010bfc4                strcat
+ .text          0x0010c044      0x178 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strchr.o)
+                0x0010c044                strchr
+ *fill*         0x0010c1bc        0x4 
+ .text          0x0010c1c0      0x2e0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcmp.o)
+                0x0010c1c8                strcmp
+ .text          0x0010c4a0       0xf8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcpy.o)
+                0x0010c4a0                strcpy
+ .text          0x0010c598       0x48 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strlcpy.o)
+                0x0010c598                strlcpy
+ *fill*         0x0010c5e0       0x20 
+ .text          0x0010c600      0x100 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strlen-armv7.o)
+                0x0010c600                strlen
+ .text          0x0010c700       0x90 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strncasecmp.o)
+                0x0010c700                strncasecmp
+ .text          0x0010c790      0x110 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strncmp.o)
+                0x0010c790                strncmp
+ .text          0x0010c8a0       0xdc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strncpy.o)
+                0x0010c8a0                strncpy
+ .text          0x0010c97c      0x1fc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strtol.o)
+                0x0010c97c                _strtol_r
+                0x0010cb5c                strtol
+ .text          0x0010cb78     0x19ec c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfiprintf.o)
+                0x0010cc1c                __sprint_r
+                0x0010cc38                _vfiprintf_r
+                0x0010e4a0                vfiprintf
+ .text          0x0010e564      0x1c8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wcsnrtombs.o)
+                0x0010e564                _wcsnrtombs_r
+                0x0010e6f0                wcsnrtombs
+ .text          0x0010e72c       0x44 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-writer.o)
+                0x0010e72c                _write_r
+ .text          0x0010e770       0xd8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-__atexit.o)
+                0x0010e770                __register_exitproc
+ .text          0x0010e848       0x94 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-callocr.o)
+                0x0010e848                _calloc_r
+ .text          0x0010e8dc       0x38 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-closer.o)
+                0x0010e8dc                _close_r
+ .text          0x0010e914       0x18 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-ctype_.o)
+                0x0010e914                __set_ctype
+ .text          0x0010e92c      0x108 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fclose.o)
+                0x0010e92c                _fclose_r
+                0x0010ea20                fclose
+ .text          0x0010ea34      0x18c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fputwc.o)
+                0x0010ea34                _fputwc_r
+                0x0010eb78                fputwc
+ .text          0x0010ebc0       0x40 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fstatr.o)
+                0x0010ebc0                _fstat_r
+ .text          0x0010ec00      0x4c0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fvwrite.o)
+                0x0010ec00                __sfvwrite_r
+ .text          0x0010f0c0       0xe0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-getenv_r.o)
+                0x0010f0c0                _findenv_r
+                0x0010f188                _getenv_r
+ .text          0x0010f1a0       0x38 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-isattyr.o)
+                0x0010f1a0                _isatty_r
+ .text          0x0010f1d8       0x44 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-lseekr.o)
+                0x0010f1d8                _lseek_r
+ .text          0x0010f21c      0x128 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memmove.o)
+                0x0010f21c                memmove
+ .text          0x0010f344       0x44 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-readr.o)
+                0x0010f344                _read_r
+ .text          0x0010f388      0x568 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-reallocr.o)
+                0x0010f388                _realloc_r
+ .text          0x0010f8f0      0x13c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wbuf.o)
+                0x0010f8f0                __swbuf_r
+                0x0010fa14                __swbuf
+ .text          0x0010fa2c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-environ.o)
+ .text          0x0010fa2c        0x8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-envlock.o)
+                0x0010fa2c                __env_lock
+                0x0010fa30                __env_unlock
+ .text          0x0010fa34        0x4 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(_exit.o)
+                0x0010fa34                _exit
+ .text          0x0010fa38       0x3c ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(_sbrk.o)
+                0x0010fa38                _sbrk
+ .text          0x0010fa74        0x8 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(close.o)
+                0x0010fa74                _close
+ .text          0x0010fa7c       0x10 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(fstat.o)
+                0x0010fa7c                _fstat
+ .text          0x0010fa8c       0x10 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(getpid.o)
+                0x0010fa8c                getpid
+                0x0010fa94                _getpid
+ .text          0x0010fa9c       0x10 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(isatty.o)
+                0x0010fa9c                isatty
+                0x0010faa4                _isatty
+ .text          0x0010faac       0x38 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(kill.o)
+                0x0010faac                kill
+                0x0010fac8                _kill
+ .text          0x0010fae4       0x30 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(lseek.o)
+                0x0010fae4                lseek
+                0x0010fafc                _lseek
+ .text          0x0010fb14       0xc0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(read.o)
+                0x0010fb14                read
+                0x0010fb74                _read
+ .text          0x0010fbd4       0xc0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(write.o)
+                0x0010fbd4                write
+                0x0010fc34                _write
+ .text          0x0010fc94       0x10 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(errno.o)
+                0x0010fc94                __errno
+ .text          0x0010fca4        0xc ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(inbyte.o)
+                0x0010fca4                inbyte
+ .text          0x0010fcb0      0x240 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_divsi3.o)
+                0x0010fcb0                __divsi3
+                0x0010fcb0                __aeabi_idiv
+                0x0010fed0                __aeabi_idivmod
+ .text          0x0010fef0       0x3c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_aeabi_uldivmod.o)
+                0x0010fef0                __aeabi_uldivmod
+ .text          0x0010ff2c       0x78 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(bpabi.o)
+                0x0010ff2c                __gnu_ldivmod_helper
+                0x0010ff68                __gnu_uldivmod_helper
+ .text          0x0010ffa4      0x180 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_divdi3.o)
+                0x0010ffa4                __divdi3
+ .text          0x00110124      0x124 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_udivdi3.o)
+                0x00110124                __udivdi3
+ .text          0x00110248        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtend.o
+ .text          0x00110248        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtn.o
  *(.text.*)
- .text.startup  0x00110348       0x1c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-__call_atexit.o)
+ .text.startup  0x00110248       0x1c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-__call_atexit.o)
  *(.gnu.linkonce.t.*)
  *(.plt)
  *(.gnu_warning)
@@ -743,281 +743,281 @@ LOAD c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-no
  *(.vfp11_veneer)
  .vfp11_veneer  0x00000000        0x0 linker stubs
  *(.ARM.extab)
- .ARM.extab     0x00110364        0xc ./src/main.o
- .ARM.extab     0x00110370       0x18 ./src/platform.o
- .ARM.extab     0x00110388        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(unwind-arm.o)
- .ARM.extab     0x00110388        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(pr-support.o)
- .ARM.extab     0x00110388        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_divdi3.o)
- .ARM.extab     0x00110388        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_udivdi3.o)
+ .ARM.extab     0x00110264        0xc ./src/main.o
+ .ARM.extab     0x00110270       0x18 ./src/platform.o
+ .ARM.extab     0x00110288        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(unwind-arm.o)
+ .ARM.extab     0x00110288        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(pr-support.o)
+ .ARM.extab     0x00110288        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_divdi3.o)
+ .ARM.extab     0x00110288        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_udivdi3.o)
  *(.gnu.linkonce.armextab.*)
 
-.v4_bx          0x00110388        0x0
+.v4_bx          0x00110288        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00110388        0x0
+.iplt           0x00110288        0x0
  .iplt          0x00000000        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtbegin.o
 
-.init           0x00110388       0x18
+.init           0x00110288       0x18
  *(.init)
- .init          0x00110388        0xc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crti.o
-                0x00110388                _init
- .init          0x00110394        0xc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtn.o
+ .init          0x00110288        0xc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crti.o
+                0x00110288                _init
+ .init          0x00110294        0xc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtn.o
 
-.fini           0x001103a0       0x18
+.fini           0x001102a0       0x18
  *(.fini)
- .fini          0x001103a0        0xc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crti.o
-                0x001103a0                _fini
- .fini          0x001103ac        0xc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtn.o
+ .fini          0x001102a0        0xc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crti.o
+                0x001102a0                _fini
+ .fini          0x001102ac        0xc c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtn.o
 
-.rodata         0x001103b8   0x1255a4
-                0x001103b8                __rodata_start = .
+.rodata         0x001102b8   0x1255a4
+                0x001102b8                __rodata_start = .
  *(.rodata)
- .rodata        0x001103b8   0x125070 ./src/DataSet.o
-                0x001103b8                myIntDataSet
- .rodata        0x00235428       0x98 ./src/main.o
- .rodata        0x002354c0        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-impure.o)
-                0x002354c0                _global_impure_ptr
- .rodata        0x002354c4       0x20 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfprintf.o)
- .rodata        0x002354e4       0x1c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-locale.o)
- .rodata        0x00235500       0x90 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mbtowc_r.o)
- .rodata        0x00235590      0x128 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mprec.o)
-                0x002355a0                __mprec_tens
-                0x00235668                __mprec_tinytens
-                0x00235690                __mprec_bigtens
- .rodata        0x002356b8       0x20 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfiprintf.o)
- .rodata        0x002356d8      0x104 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-ctype_.o)
-                0x002356d8                _ctype_
+ .rodata        0x001102b8   0x125070 ./src/DataSet.o
+                0x001102b8                myIntDataSet
+ .rodata        0x00235328       0x98 ./src/main.o
+ .rodata        0x002353c0        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-impure.o)
+                0x002353c0                _global_impure_ptr
+ .rodata        0x002353c4       0x20 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfprintf.o)
+ .rodata        0x002353e4       0x1c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-locale.o)
+ .rodata        0x00235400       0x90 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mbtowc_r.o)
+ .rodata        0x00235490      0x128 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mprec.o)
+                0x002354a0                __mprec_tens
+                0x00235568                __mprec_tinytens
+                0x00235590                __mprec_bigtens
+ .rodata        0x002355b8       0x20 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfiprintf.o)
+ .rodata        0x002355d8      0x104 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-ctype_.o)
+                0x002355d8                _ctype_
  *(.rodata.*)
  .rodata.str1.4
-                0x002357dc        0x2 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-impure.o)
+                0x002356dc        0x2 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-impure.o)
                                   0x4 (size before relaxing)
- *fill*         0x002357de        0x2 
+ *fill*         0x002356de        0x2 
  .rodata.str1.4
-                0x002357e0       0x42 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfprintf.o)
+                0x002356e0       0x42 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfprintf.o)
                                  0x44 (size before relaxing)
- *fill*         0x00235822        0x2 
+ *fill*         0x00235722        0x2 
  .rodata.str1.4
-                0x00235824       0x10 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-dtoa.o)
+                0x00235724       0x10 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-dtoa.o)
                                  0x14 (size before relaxing)
  .rodata.str1.4
-                0x00235834      0x128 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-locale.o)
+                0x00235734      0x128 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-locale.o)
                                 0x130 (size before relaxing)
  .rodata.str1.4
                 0x00000000       0x30 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfiprintf.o)
  *(.gnu.linkonce.r.*)
-                0x0023595c                __rodata_end = .
+                0x0023585c                __rodata_end = .
 
-.rodata1        0x0023595c        0x0
-                0x0023595c                __rodata1_start = .
+.rodata1        0x0023585c        0x0
+                0x0023585c                __rodata1_start = .
  *(.rodata1)
  *(.rodata1.*)
-                0x0023595c                __rodata1_end = .
+                0x0023585c                __rodata1_end = .
 
-.sdata2         0x0023595c        0x0
-                0x0023595c                __sdata2_start = .
+.sdata2         0x0023585c        0x0
+                0x0023585c                __sdata2_start = .
  *(.sdata2)
  *(.sdata2.*)
  *(.gnu.linkonce.s2.*)
-                0x0023595c                __sdata2_end = .
+                0x0023585c                __sdata2_end = .
 
-.sbss2          0x0023595c        0x0
-                0x0023595c                __sbss2_start = .
+.sbss2          0x0023585c        0x0
+                0x0023585c                __sbss2_start = .
  *(.sbss2)
  *(.sbss2.*)
  *(.gnu.linkonce.sb2.*)
-                0x0023595c                __sbss2_end = .
+                0x0023585c                __sbss2_end = .
 
-.data           0x00235960      0xa10
-                0x00235960                __data_start = .
+.data           0x00235860      0xa10
+                0x00235860                __data_start = .
  *(.data)
- .data          0x00235960        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crti.o
- .data          0x00235960        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtbegin.o
-                0x00235960                __dso_handle
- .data          0x00235964        0x0 ./src/DataSet.o
- .data          0x00235964        0x0 ./src/main.o
- .data          0x00235964        0x0 ./src/platform.o
- .data          0x00235964        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(asm_vectors.o)
- .data          0x00235964        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(boot.o)
- .data          0x00235964        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(print.o)
- .data          0x00235964        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(translation_table.o)
- .data          0x00235964        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(vectors.o)
- .data          0x00235964        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o)
- .data          0x00235964        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_cache.o)
- .data          0x00235964       0x38 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_exception.o)
-                0x00235964                XExc_VectorTable
- .data          0x0023599c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_io.o)
- .data          0x0023599c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xtime_l.o)
- .data          0x0023599c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(cpu_init.o)
- .data          0x0023599c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(outbyte.o)
- .data          0x0023599c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xuartps_hw.o)
- .data          0x0023599c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_udivsi3.o)
- .data          0x0023599c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_dvmd_tls.o)
- .data          0x0023599c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_arm_addsubdf3.o)
- .data          0x0023599c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_fixunsdfdi.o)
- .data          0x0023599c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(unwind-arm.o)
- .data          0x0023599c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(libunwind.o)
- .data          0x0023599c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(pr-support.o)
- .data          0x0023599c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-abort.o)
- .data          0x0023599c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-exit.o)
- .data          0x0023599c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fini.o)
- *fill*         0x0023599c        0x4 
- .data          0x002359a0      0x430 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-impure.o)
-                0x002359a0                _impure_ptr
- .data          0x00235dd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-init.o)
- .data          0x00235dd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memcpy.o)
- .data          0x00235dd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-printf.o)
- .data          0x00235dd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-signal.o)
- .data          0x00235dd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-signalr.o)
- .data          0x00235dd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfprintf.o)
- .data          0x00235dd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wcrtomb.o)
- .data          0x00235dd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wcsrtombs.o)
- .data          0x00235dd0        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wctomb_r.o)
-                0x00235dd0                __wctomb
- .data          0x00235dd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wsetup.o)
- .data          0x00235dd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-__call_atexit.o)
- .data          0x00235dd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-atexit.o)
- .data          0x00235dd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-dtoa.o)
- .data          0x00235dd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fflush.o)
- .data          0x00235dd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-findfp.o)
- .data          0x00235dd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-freer.o)
- .data          0x00235dd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fwalk.o)
- .data          0x00235dd4      0x17c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-locale.o)
-                0x00235dd4                __default_locale
-                0x00235ef4                __mb_cur_max
- .data          0x00235f50        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-makebuf.o)
- .data          0x00235f50      0x410 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mallocr.o)
-                0x00235f50                __malloc_av_
-                0x00236358                __malloc_sbrk_base
-                0x0023635c                __malloc_trim_threshold
- .data          0x00236360        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mbtowc_r.o)
-                0x00236360                __mbtowc
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memchr.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memset.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mlock.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mprec.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-reent.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-s_fpclassify.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-s_frexp.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-sbrkr.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-stdio.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcasecmp.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcat.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strchr.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcmp.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcpy.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strlcpy.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strlen-armv7.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strncasecmp.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strncmp.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strncpy.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strtol.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfiprintf.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wcsnrtombs.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-writer.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-__atexit.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-callocr.o)
- .data          0x00236364        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-closer.o)
- .data          0x00236364        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-ctype_.o)
-                0x00236364                __ctype_ptr__
- .data          0x00236368        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fclose.o)
- .data          0x00236368        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fputwc.o)
- .data          0x00236368        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fstatr.o)
- .data          0x00236368        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fvwrite.o)
- .data          0x00236368        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-getenv_r.o)
- .data          0x00236368        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-isattyr.o)
- .data          0x00236368        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-lseekr.o)
- .data          0x00236368        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memmove.o)
- .data          0x00236368        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-readr.o)
- .data          0x00236368        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-reallocr.o)
- .data          0x00236368        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wbuf.o)
- .data          0x00236368        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-environ.o)
-                0x00236368                environ
- .data          0x0023636c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-envlock.o)
- .data          0x0023636c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(_exit.o)
- .data          0x0023636c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(_sbrk.o)
- .data          0x0023636c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(close.o)
- .data          0x0023636c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(fstat.o)
- .data          0x0023636c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(getpid.o)
- .data          0x0023636c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(isatty.o)
- .data          0x0023636c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(kill.o)
- .data          0x0023636c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(lseek.o)
- .data          0x0023636c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(read.o)
- .data          0x0023636c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(write.o)
- .data          0x0023636c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(errno.o)
- .data          0x0023636c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(inbyte.o)
- .data          0x0023636c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_divsi3.o)
- .data          0x0023636c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_aeabi_uldivmod.o)
- .data          0x0023636c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(bpabi.o)
- .data          0x0023636c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_divdi3.o)
- .data          0x0023636c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_udivdi3.o)
- .data          0x0023636c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtend.o
- .data          0x0023636c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtn.o
+ .data          0x00235860        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crti.o
+ .data          0x00235860        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtbegin.o
+                0x00235860                __dso_handle
+ .data          0x00235864        0x0 ./src/DataSet.o
+ .data          0x00235864        0x0 ./src/main.o
+ .data          0x00235864        0x0 ./src/platform.o
+ .data          0x00235864        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(asm_vectors.o)
+ .data          0x00235864        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(boot.o)
+ .data          0x00235864        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(print.o)
+ .data          0x00235864        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(translation_table.o)
+ .data          0x00235864        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(vectors.o)
+ .data          0x00235864        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o)
+ .data          0x00235864        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_cache.o)
+ .data          0x00235864       0x38 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_exception.o)
+                0x00235864                XExc_VectorTable
+ .data          0x0023589c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_io.o)
+ .data          0x0023589c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xtime_l.o)
+ .data          0x0023589c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(cpu_init.o)
+ .data          0x0023589c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(outbyte.o)
+ .data          0x0023589c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xuartps_hw.o)
+ .data          0x0023589c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_udivsi3.o)
+ .data          0x0023589c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_dvmd_tls.o)
+ .data          0x0023589c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_arm_addsubdf3.o)
+ .data          0x0023589c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_fixunsdfdi.o)
+ .data          0x0023589c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(unwind-arm.o)
+ .data          0x0023589c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(libunwind.o)
+ .data          0x0023589c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(pr-support.o)
+ .data          0x0023589c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-abort.o)
+ .data          0x0023589c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-exit.o)
+ .data          0x0023589c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fini.o)
+ *fill*         0x0023589c        0x4 
+ .data          0x002358a0      0x430 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-impure.o)
+                0x002358a0                _impure_ptr
+ .data          0x00235cd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-init.o)
+ .data          0x00235cd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memcpy.o)
+ .data          0x00235cd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-printf.o)
+ .data          0x00235cd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-signal.o)
+ .data          0x00235cd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-signalr.o)
+ .data          0x00235cd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfprintf.o)
+ .data          0x00235cd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wcrtomb.o)
+ .data          0x00235cd0        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wcsrtombs.o)
+ .data          0x00235cd0        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wctomb_r.o)
+                0x00235cd0                __wctomb
+ .data          0x00235cd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wsetup.o)
+ .data          0x00235cd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-__call_atexit.o)
+ .data          0x00235cd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-atexit.o)
+ .data          0x00235cd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-dtoa.o)
+ .data          0x00235cd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fflush.o)
+ .data          0x00235cd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-findfp.o)
+ .data          0x00235cd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-freer.o)
+ .data          0x00235cd4        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fwalk.o)
+ .data          0x00235cd4      0x17c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-locale.o)
+                0x00235cd4                __default_locale
+                0x00235df4                __mb_cur_max
+ .data          0x00235e50        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-makebuf.o)
+ .data          0x00235e50      0x410 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mallocr.o)
+                0x00235e50                __malloc_av_
+                0x00236258                __malloc_sbrk_base
+                0x0023625c                __malloc_trim_threshold
+ .data          0x00236260        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mbtowc_r.o)
+                0x00236260                __mbtowc
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memchr.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memset.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mlock.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-mprec.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-reent.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-s_fpclassify.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-s_frexp.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-sbrkr.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-stdio.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcasecmp.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcat.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strchr.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcmp.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcpy.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strlcpy.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strlen-armv7.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strncasecmp.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strncmp.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strncpy.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strtol.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-vfiprintf.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wcsnrtombs.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-writer.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-__atexit.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-callocr.o)
+ .data          0x00236264        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-closer.o)
+ .data          0x00236264        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-ctype_.o)
+                0x00236264                __ctype_ptr__
+ .data          0x00236268        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fclose.o)
+ .data          0x00236268        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fputwc.o)
+ .data          0x00236268        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fstatr.o)
+ .data          0x00236268        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fvwrite.o)
+ .data          0x00236268        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-getenv_r.o)
+ .data          0x00236268        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-isattyr.o)
+ .data          0x00236268        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-lseekr.o)
+ .data          0x00236268        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memmove.o)
+ .data          0x00236268        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-readr.o)
+ .data          0x00236268        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-reallocr.o)
+ .data          0x00236268        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-wbuf.o)
+ .data          0x00236268        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-environ.o)
+                0x00236268                environ
+ .data          0x0023626c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-envlock.o)
+ .data          0x0023626c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(_exit.o)
+ .data          0x0023626c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(_sbrk.o)
+ .data          0x0023626c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(close.o)
+ .data          0x0023626c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(fstat.o)
+ .data          0x0023626c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(getpid.o)
+ .data          0x0023626c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(isatty.o)
+ .data          0x0023626c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(kill.o)
+ .data          0x0023626c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(lseek.o)
+ .data          0x0023626c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(read.o)
+ .data          0x0023626c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(write.o)
+ .data          0x0023626c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(errno.o)
+ .data          0x0023626c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(inbyte.o)
+ .data          0x0023626c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_divsi3.o)
+ .data          0x0023626c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_aeabi_uldivmod.o)
+ .data          0x0023626c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(bpabi.o)
+ .data          0x0023626c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_divdi3.o)
+ .data          0x0023626c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_udivdi3.o)
+ .data          0x0023626c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtend.o
+ .data          0x0023626c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtn.o
  *(.data.*)
  *(.gnu.linkonce.d.*)
  *(.jcr)
- .jcr           0x0023636c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtbegin.o
- .jcr           0x0023636c        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtend.o
+ .jcr           0x0023626c        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtbegin.o
+ .jcr           0x0023626c        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtend.o
  *(.got)
  *(.got.plt)
-                0x00236370                __data_end = .
+                0x00236270                __data_end = .
 
 .tm_clone_table
-                0x00236370        0x0
+                0x00236270        0x0
  .tm_clone_table
-                0x00236370        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtbegin.o
+                0x00236270        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtbegin.o
  .tm_clone_table
-                0x00236370        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtend.o
+                0x00236270        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtend.o
 
-.igot.plt       0x00236370        0x0
+.igot.plt       0x00236270        0x0
  .igot.plt      0x00000000        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtbegin.o
 
-.got2           0x00236370        0x0
- .got2          0x00236370        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o)
+.got2           0x00236270        0x0
+ .got2          0x00236270        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o)
 
-.data1          0x00236370        0x0
-                0x00236370                __data1_start = .
+.data1          0x00236270        0x0
+                0x00236270                __data1_start = .
  *(.data1)
  *(.data1.*)
-                0x00236370                __data1_end = .
+                0x00236270                __data1_end = .
 
 .got
  *(.got)
 
-.ctors          0x00236370        0x0
-                0x00236370                __CTOR_LIST__ = .
-                0x00236370                ___CTORS_LIST___ = .
+.ctors          0x00236270        0x0
+                0x00236270                __CTOR_LIST__ = .
+                0x00236270                ___CTORS_LIST___ = .
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *(.ctors)
-                0x00236370                __CTOR_END__ = .
-                0x00236370                ___CTORS_END___ = .
+                0x00236270                __CTOR_END__ = .
+                0x00236270                ___CTORS_END___ = .
 
-.dtors          0x00236370        0x0
-                0x00236370                __DTOR_LIST__ = .
-                0x00236370                ___DTORS_LIST___ = .
+.dtors          0x00236270        0x0
+                0x00236270                __DTOR_LIST__ = .
+                0x00236270                ___DTORS_LIST___ = .
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
-                0x00236370                __DTOR_END__ = .
-                0x00236370                ___DTORS_END___ = .
+                0x00236270                __DTOR_END__ = .
+                0x00236270                ___DTORS_END___ = .
 
-.fixup          0x00236370        0x0
-                0x00236370                __fixup_start = .
+.fixup          0x00236270        0x0
+                0x00236270                __fixup_start = .
  *(.fixup)
-                0x00236370                __fixup_end = .
+                0x00236270                __fixup_end = .
 
-.eh_frame       0x00236370       0x74
+.eh_frame       0x00236270       0x74
  *(.eh_frame)
- .eh_frame      0x00236370        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtbegin.o
- .eh_frame      0x00236370       0x70 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcmp.o)
- .eh_frame      0x002363e0        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtend.o
+ .eh_frame      0x00236270        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtbegin.o
+ .eh_frame      0x00236270       0x70 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-strcmp.o)
+ .eh_frame      0x002362e0        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtend.o
 
-.eh_framehdr    0x002363e4        0x0
-                0x002363e4                __eh_framehdr_start = .
+.eh_framehdr    0x002362e4        0x0
+                0x002362e4                __eh_framehdr_start = .
  *(.eh_framehdr)
-                0x002363e4                __eh_framehdr_end = .
+                0x002362e4                __eh_framehdr_end = .
 
 .gcc_except_table
  *(.gcc_except_table)
@@ -1452,7 +1452,7 @@ LOAD c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-no
                 0x0023c400                errno
                 0x0023c404                __bss_end = .
                 0x0023c0e4                _SDA_BASE_ = (__sdata_start + ((__sbss_end - __sdata_start) / 0x2))
-                0x0023595c                _SDA2_BASE_ = (__sdata2_start + ((__sbss2_end - __sdata2_start) / 0x2))
+                0x0023585c                _SDA2_BASE_ = (__sdata2_start + ((__sbss2_end - __sdata2_start) / 0x2))
 
 .heap           0x0023c404   0x10000c
                 0x0023c410                . = ALIGN (0x10)
@@ -1519,15 +1519,15 @@ LOAD c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-no
 LOAD c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtn.o
 OUTPUT(KNN_AXI_Test.elf elf32-littlearm)
 
-.debug_info     0x00000000      0x3b9
+.debug_info     0x00000000      0x379
  .debug_info    0x00000000       0x5d ./src/DataSet.o
- .debug_info    0x0000005d      0x27c ./src/main.o
- .debug_info    0x000002d9       0xe0 ./src/platform.o
+ .debug_info    0x0000005d      0x23c ./src/main.o
+ .debug_info    0x00000299       0xe0 ./src/platform.o
 
-.debug_abbrev   0x00000000      0x19e
+.debug_abbrev   0x00000000      0x193
  .debug_abbrev  0x00000000       0x5c ./src/DataSet.o
- .debug_abbrev  0x0000005c       0xe5 ./src/main.o
- .debug_abbrev  0x00000141       0x5d ./src/platform.o
+ .debug_abbrev  0x0000005c       0xda ./src/main.o
+ .debug_abbrev  0x00000136       0x5d ./src/platform.o
 
 .debug_aranges  0x00000000       0x58
  .debug_aranges
@@ -1588,16 +1588,16 @@ OUTPUT(KNN_AXI_Test.elf elf32-littlearm)
  .debug_macro   0x0000424f      0x166 ./src/platform.o
  .debug_macro   0x000043b5       0x22 ./src/platform.o
 
-.debug_line     0x00000000      0x6d8
+.debug_line     0x00000000      0x6b3
  .debug_line    0x00000000       0x40 ./src/DataSet.o
- .debug_line    0x00000040      0x443 ./src/main.o
- .debug_line    0x00000483      0x255 ./src/platform.o
+ .debug_line    0x00000040      0x41e ./src/main.o
+ .debug_line    0x0000045e      0x255 ./src/platform.o
 
-.debug_str      0x00000000    0x10505
+.debug_str      0x00000000    0x104e4
  .debug_str     0x00000000     0x247b ./src/DataSet.o
- .debug_str     0x0000247b     0xdd82 ./src/main.o
-                              0x10413 (size before relaxing)
- .debug_str     0x000101fd      0x308 ./src/platform.o
+ .debug_str     0x0000247b     0xdd61 ./src/main.o
+                              0x103eb (size before relaxing)
+ .debug_str     0x000101dc      0x308 ./src/platform.o
                                0x71fb (size before relaxing)
 
 .comment        0x00000000       0x63

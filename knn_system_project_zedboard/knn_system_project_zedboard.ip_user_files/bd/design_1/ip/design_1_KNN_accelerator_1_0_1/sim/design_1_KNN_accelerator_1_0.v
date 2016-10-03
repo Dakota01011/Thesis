@@ -47,8 +47,8 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:user:KNN_accelerator:3.16
-// IP Revision: 20
+// IP VLNV: xilinx.com:user:KNN_accelerator:3.17
+// IP Revision: 21
 
 `timescale 1ns/1ps
 
@@ -92,9 +92,9 @@ module design_1_KNN_accelerator_1_0 (
 );
 
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TDATA" *)
-input wire [63 : 0] s00_axis_tdata;
+input wire [127 : 0] s00_axis_tdata;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TSTRB" *)
-input wire [7 : 0] s00_axis_tstrb;
+input wire [15 : 0] s00_axis_tstrb;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TLAST" *)
 input wire s00_axis_tlast;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TVALID" *)
@@ -164,13 +164,13 @@ input wire m00_axis_aresetn;
 
   KNN_accelerator_v3_0 #(
     .WIDTH(32),
-    .NUM_DIM(30),
+    .NUM_DIM(78),
     .KNN_DEBUG(0),
-    .NUM_CH(2),
+    .NUM_CH(4),
     .K(10),
     .C_S00_AXI_DATA_WIDTH(32),
     .C_S00_AXI_ADDR_WIDTH(5),
-    .C_S00_AXIS_TDATA_WIDTH(64),
+    .C_S00_AXIS_TDATA_WIDTH(128),
     .C_M00_AXIS_TDATA_WIDTH(32)
   ) inst (
     .s00_axis_tdata(s00_axis_tdata),
