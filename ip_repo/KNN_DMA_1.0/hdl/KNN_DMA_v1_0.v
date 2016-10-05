@@ -118,19 +118,19 @@
 		output wire  m01_axi_mm2s_rready
 	);
 
-	wire [31:0] control;
-	wire [31:0] status;
-	wire [31:0] addr0;
-	wire [31:0] length0;
-	wire [31:0] addr1;
-	wire [31:0] length1;
+(* mark_debug = "true" *)	wire [31:0] control;
+(* mark_debug = "true" *)	wire [31:0] status;
+(* mark_debug = "true" *)	wire [31:0] addr0;
+(* mark_debug = "true" *)	wire [31:0] length0;
+(* mark_debug = "true" *)	wire [31:0] addr1;
+(* mark_debug = "true" *)	wire [31:0] length1;
 
-	wire [127:0] fifoDataOut;
-	wire fifoDataOutWrEn;
-	wire [63:0] fifoDataIn0;
-	wire [63:0] fifoDataIn1;
-	wire fifoDataInWrEn0;
-	wire fifoDataInWrEn1;
+(* mark_debug = "true" *)	wire [127:0] fifoDataOut;
+(* mark_debug = "true" *)	wire fifoDataOutWrEn;
+(* mark_debug = "true" *)	wire [63:0] fifoDataIn0;
+(* mark_debug = "true" *)	wire [63:0] fifoDataIn1;
+(* mark_debug = "true" *)	wire fifoDataInWrEn0;
+(* mark_debug = "true" *)	wire fifoDataInWrEn1;
 
 // Instantiation of Axi Bus Interface S_AXI_LITE
 	KNN_DMA_v1_0_S_AXI_LITE # ( 

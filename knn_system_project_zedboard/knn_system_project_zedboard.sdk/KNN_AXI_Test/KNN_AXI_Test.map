@@ -314,178 +314,178 @@ LOAD c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-no
  .text          0x0010049c      0x108 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtbegin.o
  .text          0x001005a4        0x0 ./src/DataSet.o
  *fill*         0x001005a4        0x4 
- .text          0x001005a8      0x338 ./src/main.o
+ .text          0x001005a8      0x350 ./src/main.o
                 0x001005a8                main
- .text          0x001008e0       0x5c ./src/platform.o
-                0x001008e0                _Z13enable_cachesv
-                0x001008f4                _Z14disable_cachesv
-                0x00100904                _Z9init_uartv
-                0x00100918                _Z13init_platformv
-                0x0010092c                _Z16cleanup_platformv
- .text          0x0010093c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(asm_vectors.o)
- .text          0x0010093c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(boot.o)
- .text          0x0010093c       0x28 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(print.o)
-                0x0010093c                print
- .text          0x00100964        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(translation_table.o)
- .text          0x00100964       0x78 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(vectors.o)
-                0x00100964                UndefinedException
-                0x00100978                FIQInterrupt
-                0x0010098c                IRQInterrupt
-                0x001009a0                SWInterrupt
-                0x001009b4                DataAbortInterrupt
-                0x001009c8                PrefetchAbortInterrupt
- .text          0x001009dc       0x78 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o)
-                0x001009f0                _start
- .text          0x00100a54      0x9fc ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_cache.o)
-                0x00100a54                Xil_DCacheInvalidateLine
-                0x00100a98                Xil_DCacheFlushRange
-                0x00100af8                Xil_DCacheStoreLine
-                0x00100b38                Xil_ICacheInvalidateLine
-                0x00100b7c                Xil_ICacheInvalidateRange
-                0x00100bd4                Xil_L1DCacheInvalidate
-                0x00100c7c                Xil_L1DCacheEnable
-                0x00100c9c                Xil_L1DCacheInvalidateLine
-                0x00100cb4                Xil_L1DCacheInvalidateRange
-                0x00100cfc                Xil_L1DCacheFlush
-                0x00100d8c                Xil_L1DCacheDisable
-                0x00100da4                Xil_L1DCacheFlushLine
-                0x00100dbc                Xil_L1DCacheFlushRange
-                0x00100e04                Xil_L1DCacheStoreLine
-                0x00100e1c                Xil_L1ICacheEnable
-                0x00100e38                Xil_L1ICacheDisable
-                0x00100e54                Xil_L1ICacheInvalidate
-                0x00100e6c                Xil_L1ICacheInvalidateLine
-                0x00100e84                Xil_L1ICacheInvalidateRange
-                0x00100ecc                Xil_L2CacheInvalidate
-                0x00100f28                Xil_DCacheInvalidate
-                0x00100f48                Xil_ICacheInvalidate
-                0x00100f78                Xil_L2CacheEnable
-                0x00101028                Xil_DCacheEnable
-                0x00101038                Xil_ICacheEnable
-                0x00101054                Xil_L2CacheInvalidateLine
-                0x00101070                Xil_L2CacheInvalidateRange
-                0x001010f4                Xil_L2CacheFlush
-                0x00101158                Xil_DCacheFlush
-                0x00101178                Xil_L2CacheDisable
-                0x001011b8                Xil_DCacheDisable
-                0x001011d4                Xil_ICacheDisable
-                0x001011f8                Xil_L2CacheFlushLine
-                0x00101228                Xil_DCacheInvalidateRange
-                0x00101348                Xil_DCacheFlushLine
-                0x001013b0                Xil_L2CacheFlushRange
-                0x00101434                Xil_L2CacheStoreLine
- .text          0x00101450       0x58 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_exception.o)
-                0x00101454                Xil_DataAbortHandler
-                0x0010145c                Xil_PrefetchAbortHandler
-                0x00101464                Xil_UndefinedExceptionHandler
-                0x00101468                Xil_ExceptionInit
-                0x0010146c                Xil_ExceptionRegisterHandler
-                0x00101484                Xil_ExceptionRemoveHandler
- .text          0x001014a8       0x88 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_io.o)
-                0x001014a8                Xil_In8
-                0x001014b0                Xil_In16
-                0x001014b8                Xil_In32
-                0x001014c0                Xil_Out8
-                0x001014c8                Xil_Out16
-                0x001014d0                Xil_Out32
-                0x001014d8                Xil_In16BE
-                0x001014ec                Xil_In32BE
-                0x001014f8                Xil_Out16BE
-                0x0010150c                Xil_Out32BE
-                0x00101518                Xil_EndianSwap16
-                0x00101528                Xil_EndianSwap32
- .text          0x00101530       0xa0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xtime_l.o)
-                0x00101530                XTime_SetTime
-                0x00101580                XTime_GetTime
- .text          0x001015d0       0x3c ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(cpu_init.o)
-                0x001015d0                __cpu_init
- .text          0x0010160c       0x10 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(outbyte.o)
-                0x0010160c                outbyte
- .text          0x0010161c       0xec ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xuartps_hw.o)
-                0x0010161c                XUartPs_SendByte
-                0x0010164c                XUartPs_RecvByte
-                0x00101678                XUartPs_ResetHw
- .text          0x00101708      0x20c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_udivsi3.o)
-                0x00101708                __aeabi_uidiv
-                0x00101708                __udivsi3
-                0x001018f4                __aeabi_uidivmod
- .text          0x00101914        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_dvmd_tls.o)
-                0x00101914                __aeabi_idiv0
-                0x00101914                __aeabi_ldiv0
- .text          0x00101918      0x3b8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_arm_addsubdf3.o)
-                0x00101918                __aeabi_drsub
-                0x00101920                __aeabi_dsub
-                0x00101920                __subdf3
-                0x00101924                __aeabi_dadd
-                0x00101924                __adddf3
-                0x00101bd0                __floatunsidf
-                0x00101bd0                __aeabi_ui2d
-                0x00101bf4                __floatsidf
-                0x00101bf4                __aeabi_i2d
-                0x00101c1c                __aeabi_f2d
-                0x00101c1c                __extendsfdf2
-                0x00101c5c                __floatundidf
-                0x00101c5c                __aeabi_ul2d
-                0x00101c70                __floatdidf
-                0x00101c70                __aeabi_l2d
- .text          0x00101cd0       0x50 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_fixunsdfdi.o)
-                0x00101cd0                __fixunsdfdi
-                0x00101cd0                __aeabi_d2ulz
- .text          0x00101d20     0x108c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(unwind-arm.o)
-                0x001021ac                _Unwind_GetCFA
-                0x001021b4                __gnu_Unwind_RaiseException
-                0x0010225c                __gnu_Unwind_ForcedUnwind
-                0x00102280                __gnu_Unwind_Resume
-                0x001022f4                __gnu_Unwind_Resume_or_Rethrow
-                0x00102314                _Unwind_Complete
-                0x00102318                _Unwind_DeleteException
-                0x00102330                _Unwind_VRS_Get
-                0x001023b8                _Unwind_VRS_Set
-                0x00102440                __gnu_Unwind_Backtrace
-                0x00102968                __aeabi_unwind_cpp_pr0
-                0x00102970                __aeabi_unwind_cpp_pr1
-                0x00102978                __aeabi_unwind_cpp_pr2
-                0x00102980                _Unwind_VRS_Pop
- .text          0x00102dac      0x1a8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(libunwind.o)
-                0x00102dac                __restore_core_regs
-                0x00102dac                restore_core_regs
-                0x00102dc0                __gnu_Unwind_Restore_VFP
-                0x00102dc8                __gnu_Unwind_Save_VFP
-                0x00102dd0                __gnu_Unwind_Restore_VFP_D
-                0x00102dd8                __gnu_Unwind_Save_VFP_D
-                0x00102de0                __gnu_Unwind_Restore_VFP_D_16_to_31
-                0x00102de8                __gnu_Unwind_Save_VFP_D_16_to_31
-                0x00102df0                __gnu_Unwind_Restore_WMMXD
-                0x00102e34                __gnu_Unwind_Save_WMMXD
-                0x00102e78                __gnu_Unwind_Restore_WMMXC
-                0x00102e8c                __gnu_Unwind_Save_WMMXC
-                0x00102ea0                ___Unwind_RaiseException
-                0x00102ea0                _Unwind_RaiseException
-                0x00102ec4                _Unwind_Resume
-                0x00102ec4                ___Unwind_Resume
-                0x00102ee8                _Unwind_Resume_or_Rethrow
-                0x00102ee8                ___Unwind_Resume_or_Rethrow
-                0x00102f0c                _Unwind_ForcedUnwind
-                0x00102f0c                ___Unwind_ForcedUnwind
-                0x00102f30                ___Unwind_Backtrace
-                0x00102f30                _Unwind_Backtrace
- .text          0x00102f54      0x50c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(pr-support.o)
-                0x00102fe8                __gnu_unwind_execute
-                0x001033e4                __gnu_unwind_frame
-                0x00103424                _Unwind_GetRegionStart
-                0x00103434                _Unwind_GetLanguageSpecificData
-                0x00103450                _Unwind_GetDataRelBase
-                0x00103458                _Unwind_GetTextRelBase
- .text          0x00103460       0x14 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-abort.o)
-                0x00103460                abort
- .text          0x00103474       0x34 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-exit.o)
-                0x00103474                exit
- .text          0x001034a8       0x40 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fini.o)
-                0x001034a8                __libc_fini_array
- .text          0x001034e8        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-impure.o)
- .text          0x001034e8       0x78 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-init.o)
-                0x001034e8                __libc_init_array
- *fill*         0x00103560       0x20 
+ .text          0x001008f8       0x5c ./src/platform.o
+                0x001008f8                _Z13enable_cachesv
+                0x0010090c                _Z14disable_cachesv
+                0x0010091c                _Z9init_uartv
+                0x00100930                _Z13init_platformv
+                0x00100944                _Z16cleanup_platformv
+ .text          0x00100954        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(asm_vectors.o)
+ .text          0x00100954        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(boot.o)
+ .text          0x00100954       0x28 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(print.o)
+                0x00100954                print
+ .text          0x0010097c        0x0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(translation_table.o)
+ .text          0x0010097c       0x78 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(vectors.o)
+                0x0010097c                UndefinedException
+                0x00100990                FIQInterrupt
+                0x001009a4                IRQInterrupt
+                0x001009b8                SWInterrupt
+                0x001009cc                DataAbortInterrupt
+                0x001009e0                PrefetchAbortInterrupt
+ .text          0x001009f4       0x78 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o)
+                0x00100a08                _start
+ .text          0x00100a6c      0x9fc ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_cache.o)
+                0x00100a6c                Xil_DCacheInvalidateLine
+                0x00100ab0                Xil_DCacheFlushRange
+                0x00100b10                Xil_DCacheStoreLine
+                0x00100b50                Xil_ICacheInvalidateLine
+                0x00100b94                Xil_ICacheInvalidateRange
+                0x00100bec                Xil_L1DCacheInvalidate
+                0x00100c94                Xil_L1DCacheEnable
+                0x00100cb4                Xil_L1DCacheInvalidateLine
+                0x00100ccc                Xil_L1DCacheInvalidateRange
+                0x00100d14                Xil_L1DCacheFlush
+                0x00100da4                Xil_L1DCacheDisable
+                0x00100dbc                Xil_L1DCacheFlushLine
+                0x00100dd4                Xil_L1DCacheFlushRange
+                0x00100e1c                Xil_L1DCacheStoreLine
+                0x00100e34                Xil_L1ICacheEnable
+                0x00100e50                Xil_L1ICacheDisable
+                0x00100e6c                Xil_L1ICacheInvalidate
+                0x00100e84                Xil_L1ICacheInvalidateLine
+                0x00100e9c                Xil_L1ICacheInvalidateRange
+                0x00100ee4                Xil_L2CacheInvalidate
+                0x00100f40                Xil_DCacheInvalidate
+                0x00100f60                Xil_ICacheInvalidate
+                0x00100f90                Xil_L2CacheEnable
+                0x00101040                Xil_DCacheEnable
+                0x00101050                Xil_ICacheEnable
+                0x0010106c                Xil_L2CacheInvalidateLine
+                0x00101088                Xil_L2CacheInvalidateRange
+                0x0010110c                Xil_L2CacheFlush
+                0x00101170                Xil_DCacheFlush
+                0x00101190                Xil_L2CacheDisable
+                0x001011d0                Xil_DCacheDisable
+                0x001011ec                Xil_ICacheDisable
+                0x00101210                Xil_L2CacheFlushLine
+                0x00101240                Xil_DCacheInvalidateRange
+                0x00101360                Xil_DCacheFlushLine
+                0x001013c8                Xil_L2CacheFlushRange
+                0x0010144c                Xil_L2CacheStoreLine
+ .text          0x00101468       0x58 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_exception.o)
+                0x0010146c                Xil_DataAbortHandler
+                0x00101474                Xil_PrefetchAbortHandler
+                0x0010147c                Xil_UndefinedExceptionHandler
+                0x00101480                Xil_ExceptionInit
+                0x00101484                Xil_ExceptionRegisterHandler
+                0x0010149c                Xil_ExceptionRemoveHandler
+ .text          0x001014c0       0x88 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xil_io.o)
+                0x001014c0                Xil_In8
+                0x001014c8                Xil_In16
+                0x001014d0                Xil_In32
+                0x001014d8                Xil_Out8
+                0x001014e0                Xil_Out16
+                0x001014e8                Xil_Out32
+                0x001014f0                Xil_In16BE
+                0x00101504                Xil_In32BE
+                0x00101510                Xil_Out16BE
+                0x00101524                Xil_Out32BE
+                0x00101530                Xil_EndianSwap16
+                0x00101540                Xil_EndianSwap32
+ .text          0x00101548       0xa0 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xtime_l.o)
+                0x00101548                XTime_SetTime
+                0x00101598                XTime_GetTime
+ .text          0x001015e8       0x3c ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(cpu_init.o)
+                0x001015e8                __cpu_init
+ .text          0x00101624       0x10 ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(outbyte.o)
+                0x00101624                outbyte
+ .text          0x00101634       0xec ../../KNN_AXI_Test_bsp/ps7_cortexa9_0/lib\libxil.a(xuartps_hw.o)
+                0x00101634                XUartPs_SendByte
+                0x00101664                XUartPs_RecvByte
+                0x00101690                XUartPs_ResetHw
+ .text          0x00101720      0x20c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_udivsi3.o)
+                0x00101720                __aeabi_uidiv
+                0x00101720                __udivsi3
+                0x0010190c                __aeabi_uidivmod
+ .text          0x0010192c        0x4 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_dvmd_tls.o)
+                0x0010192c                __aeabi_idiv0
+                0x0010192c                __aeabi_ldiv0
+ .text          0x00101930      0x3b8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_arm_addsubdf3.o)
+                0x00101930                __aeabi_drsub
+                0x00101938                __aeabi_dsub
+                0x00101938                __subdf3
+                0x0010193c                __aeabi_dadd
+                0x0010193c                __adddf3
+                0x00101be8                __floatunsidf
+                0x00101be8                __aeabi_ui2d
+                0x00101c0c                __floatsidf
+                0x00101c0c                __aeabi_i2d
+                0x00101c34                __aeabi_f2d
+                0x00101c34                __extendsfdf2
+                0x00101c74                __floatundidf
+                0x00101c74                __aeabi_ul2d
+                0x00101c88                __floatdidf
+                0x00101c88                __aeabi_l2d
+ .text          0x00101ce8       0x50 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(_fixunsdfdi.o)
+                0x00101ce8                __fixunsdfdi
+                0x00101ce8                __aeabi_d2ulz
+ .text          0x00101d38     0x108c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(unwind-arm.o)
+                0x001021c4                _Unwind_GetCFA
+                0x001021cc                __gnu_Unwind_RaiseException
+                0x00102274                __gnu_Unwind_ForcedUnwind
+                0x00102298                __gnu_Unwind_Resume
+                0x0010230c                __gnu_Unwind_Resume_or_Rethrow
+                0x0010232c                _Unwind_Complete
+                0x00102330                _Unwind_DeleteException
+                0x00102348                _Unwind_VRS_Get
+                0x001023d0                _Unwind_VRS_Set
+                0x00102458                __gnu_Unwind_Backtrace
+                0x00102980                __aeabi_unwind_cpp_pr0
+                0x00102988                __aeabi_unwind_cpp_pr1
+                0x00102990                __aeabi_unwind_cpp_pr2
+                0x00102998                _Unwind_VRS_Pop
+ .text          0x00102dc4      0x1a8 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(libunwind.o)
+                0x00102dc4                __restore_core_regs
+                0x00102dc4                restore_core_regs
+                0x00102dd8                __gnu_Unwind_Restore_VFP
+                0x00102de0                __gnu_Unwind_Save_VFP
+                0x00102de8                __gnu_Unwind_Restore_VFP_D
+                0x00102df0                __gnu_Unwind_Save_VFP_D
+                0x00102df8                __gnu_Unwind_Restore_VFP_D_16_to_31
+                0x00102e00                __gnu_Unwind_Save_VFP_D_16_to_31
+                0x00102e08                __gnu_Unwind_Restore_WMMXD
+                0x00102e4c                __gnu_Unwind_Save_WMMXD
+                0x00102e90                __gnu_Unwind_Restore_WMMXC
+                0x00102ea4                __gnu_Unwind_Save_WMMXC
+                0x00102eb8                ___Unwind_RaiseException
+                0x00102eb8                _Unwind_RaiseException
+                0x00102edc                _Unwind_Resume
+                0x00102edc                ___Unwind_Resume
+                0x00102f00                _Unwind_Resume_or_Rethrow
+                0x00102f00                ___Unwind_Resume_or_Rethrow
+                0x00102f24                _Unwind_ForcedUnwind
+                0x00102f24                ___Unwind_ForcedUnwind
+                0x00102f48                ___Unwind_Backtrace
+                0x00102f48                _Unwind_Backtrace
+ .text          0x00102f6c      0x50c c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard\libgcc.a(pr-support.o)
+                0x00103000                __gnu_unwind_execute
+                0x001033fc                __gnu_unwind_frame
+                0x0010343c                _Unwind_GetRegionStart
+                0x0010344c                _Unwind_GetLanguageSpecificData
+                0x00103468                _Unwind_GetDataRelBase
+                0x00103470                _Unwind_GetTextRelBase
+ .text          0x00103478       0x14 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-abort.o)
+                0x00103478                abort
+ .text          0x0010348c       0x34 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-exit.o)
+                0x0010348c                exit
+ .text          0x001034c0       0x40 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-fini.o)
+                0x001034c0                __libc_fini_array
+ .text          0x00103500        0x0 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-impure.o)
+ .text          0x00103500       0x78 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-init.o)
+                0x00103500                __libc_init_array
+ *fill*         0x00103578        0x8 
  .text          0x00103580      0x600 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-memcpy.o)
                 0x00103580                memcpy
  .text          0x00103b80       0x74 c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/v7-a/fpv3/hard\libc.a(lib_a-printf.o)
@@ -1520,10 +1520,10 @@ LOAD c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-no
 LOAD c:/xilinx/sdk/2016.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/4.9.2/v7-a/fpv3/hard/crtn.o
 OUTPUT(KNN_AXI_Test.elf elf32-littlearm)
 
-.debug_info     0x00000000      0x379
+.debug_info     0x00000000      0x387
  .debug_info    0x00000000       0x5d ./src/DataSet.o
- .debug_info    0x0000005d      0x23c ./src/main.o
- .debug_info    0x00000299       0xe0 ./src/platform.o
+ .debug_info    0x0000005d      0x24a ./src/main.o
+ .debug_info    0x000002a7       0xe0 ./src/platform.o
 
 .debug_abbrev   0x00000000      0x193
  .debug_abbrev  0x00000000       0x5c ./src/DataSet.o
@@ -1590,16 +1590,16 @@ OUTPUT(KNN_AXI_Test.elf elf32-littlearm)
  .debug_macro   0x000042d4      0x166 ./src/platform.o
  .debug_macro   0x0000443a       0x22 ./src/platform.o
 
-.debug_line     0x00000000      0x6c5
+.debug_line     0x00000000      0x6c6
  .debug_line    0x00000000       0x40 ./src/DataSet.o
- .debug_line    0x00000040      0x430 ./src/main.o
- .debug_line    0x00000470      0x255 ./src/platform.o
+ .debug_line    0x00000040      0x431 ./src/main.o
+ .debug_line    0x00000471      0x255 ./src/platform.o
 
-.debug_str      0x00000000    0x1077f
+.debug_str      0x00000000    0x10788
  .debug_str     0x00000000     0x247b ./src/DataSet.o
- .debug_str     0x0000247b     0xdffc ./src/main.o
-                              0x10686 (size before relaxing)
- .debug_str     0x00010477      0x308 ./src/platform.o
+ .debug_str     0x0000247b     0xe005 ./src/main.o
+                              0x1068f (size before relaxing)
+ .debug_str     0x00010480      0x308 ./src/platform.o
                                0x7262 (size before relaxing)
 
 .comment        0x00000000       0x63

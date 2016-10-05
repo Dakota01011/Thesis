@@ -35,13 +35,14 @@ module kSortingP1 #(
 	input valid,
 	input done,
 	input outEn,
+	input [31:0] start_index,
 	input [VAL_WIDTH-1:0] dataValueIn,
 	output [31:0] dataNameOut,
 	output [VAL_WIDTH-1:0] dataValueOut
 );
 
-(* mark_debug = "true" *)	reg [DATA_WIDTH-1:0] nameMem [K-1:0];
-(* mark_debug = "true" *)	reg [VAL_WIDTH-1:0] valueMem [K-1:0];
+	reg [DATA_WIDTH-1:0] nameMem [K-1:0];
+	reg [VAL_WIDTH-1:0] valueMem [K-1:0];
 	wire [K-1:0] comparator;
 	reg [31:0] outputPointer;
 	reg [31:0] entryId;
@@ -119,11 +120,17 @@ module kSortingP1 #(
 		// internal ID tag generation
 		if (reset)
 		begin
-			entryId <= INSTANCE;
+			case(INSTANCE)
+				0: entryId <= 0;
+				1: entryId <= 1;
+				2: entryId <= start_index;
+				3: entryId <= start_index + 1;
+				default: entryId <= 0;
+			endcase
 		end
 		else if (valid)
 		begin
-			entryId <= entryId + NUM_CH;
+			entryId <= entryId + 2;
 		end
 	end
 

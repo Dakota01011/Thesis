@@ -7,7 +7,7 @@
   <spirit:componentInstances>
     <spirit:componentInstance>
       <spirit:instanceName>design_1_KNN_accelerator_1_0</spirit:instanceName>
-      <spirit:componentRef spirit:vendor="xilinx.com" spirit:library="user" spirit:name="KNN_accelerator" spirit:version="3.17"/>
+      <spirit:componentRef spirit:vendor="xilinx.com" spirit:library="user" spirit:name="KNN_accelerator" spirit:version="3.18"/>
       <spirit:configurableElementValues>
         <spirit:configurableElementValue spirit:referenceId="ADDRBLOCK_BASE_ADDRESS.S00_AXI.S00_AXI_reg">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M00_AXIS.CLK_DOMAIN">design_1_processing_system7_0_0_FCLK_CLK0</spirit:configurableElementValue>
@@ -101,7 +101,7 @@
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.USE_RDI_CUSTOMIZATION">TRUE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.USE_RDI_GENERATION">TRUE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCONTEXT">IP_Integrator</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPREVISION">21</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPREVISION">22</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.MANAGED">TRUE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.OUTPUTDIR">.</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.SELECTEDSIMMODEL"/>

@@ -19,7 +19,8 @@ int main() {
 	u32 *myOutputArray = (u32 *) RX_BUFFER_BASE;
 	UINTPTR BuffInAddr = (UINTPTR)myIntDataSet;
 	UINTPTR BuffOutAddr = (UINTPTR)myOutputArray;
-	u32 Length = NUM_FEATURES * NUM_POINTS * 4;
+	u32 Length1 = NUM_FEATURES * (((NUM_POINTS-1)/2)+1) * 4;
+	u32 Length2 = NUM_FEATURES * ((NUM_POINTS-1)/2) * 4;
 
 	printf("Input Array Address: %p\n\r", myIntDataSet);
 	printf("Output Array Address: %i\n\r", (int)RX_BUFFER_BASE);
@@ -35,9 +36,9 @@ int main() {
 
 	// Activate DMA
 	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG2_OFFSET, BuffInAddr); // addr0
-	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG3_OFFSET, Length); // len0
-	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG4_OFFSET, BuffInAddr); // addr1
-	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG5_OFFSET, Length); // len1
+	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG3_OFFSET, Length1); // len0
+	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG4_OFFSET, BuffInAddr+Length1); // addr1
+	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG5_OFFSET, Length2); // len1
 	KNN_DMA_mWriteReg(XPAR_KNN_DMA_0_S_AXI_LITE_BASEADDR, KNN_DMA_S_AXI_LITE_SLV_REG0_OFFSET, 1); // control
 
 	//Reset

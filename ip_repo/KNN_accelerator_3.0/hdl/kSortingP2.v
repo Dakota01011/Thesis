@@ -40,8 +40,8 @@ module kSortingP2 #(
 	output [DATA_WIDTH-1:0] dataValueOut
 );
 
-(* mark_debug = "true" *)	reg [DATA_WIDTH-1:0] nameMem [K-1:0];
-(* mark_debug = "true" *)	reg [VAL_WIDTH-1:0] valueMem [K-1:0];
+	reg [DATA_WIDTH-1:0] nameMem [K-1:0];
+	reg [VAL_WIDTH-1:0] valueMem [K-1:0];
 	wire [K-1:0] comparator;
 	reg [31:0] outputPointer;
 

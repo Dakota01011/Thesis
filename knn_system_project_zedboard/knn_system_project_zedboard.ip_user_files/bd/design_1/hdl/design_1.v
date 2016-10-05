@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Mon Oct 03 00:12:53 2016
+//Date        : Wed Oct 05 00:43:00 2016
 //Host        : Dakota-PC running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -92,11 +92,11 @@ module design_1
   wire [1:0]KNN_DMA_0_M01_AXI_MM2S_RRESP;
   wire [0:0]KNN_DMA_0_M01_AXI_MM2S_RUSER;
   wire KNN_DMA_0_M01_AXI_MM2S_RVALID;
-  (* MARK_DEBUG *) wire [127:0]KNN_DMA_0_M_AXIS_MM2S_TDATA;
-  (* MARK_DEBUG *) wire KNN_DMA_0_M_AXIS_MM2S_TLAST;
-  (* MARK_DEBUG *) wire KNN_DMA_0_M_AXIS_MM2S_TREADY;
-  (* MARK_DEBUG *) wire [15:0]KNN_DMA_0_M_AXIS_MM2S_TSTRB;
-  (* MARK_DEBUG *) wire KNN_DMA_0_M_AXIS_MM2S_TVALID;
+  wire [127:0]KNN_DMA_0_M_AXIS_MM2S_TDATA;
+  wire KNN_DMA_0_M_AXIS_MM2S_TLAST;
+  wire KNN_DMA_0_M_AXIS_MM2S_TREADY;
+  wire [15:0]KNN_DMA_0_M_AXIS_MM2S_TSTRB;
+  wire KNN_DMA_0_M_AXIS_MM2S_TVALID;
   wire [31:0]KNN_accelerator_1_m00_axis_tdata;
   wire KNN_accelerator_1_m00_axis_tlast;
   wire [3:0]KNN_accelerator_1_m00_axis_tstrb;
@@ -359,7 +359,7 @@ module design_1
         .s_axi_lite_wready(processing_system7_0_axi_periph_M02_AXI_WREADY),
         .s_axi_lite_wstrb(processing_system7_0_axi_periph_M02_AXI_WSTRB),
         .s_axi_lite_wvalid(processing_system7_0_axi_periph_M02_AXI_WVALID));
-  design_1_KNN_accelerator_1_0 KNN_accelerator_1
+  design_1_KNN_accelerator_1_0 KNN_accelerator_0
        (.m00_axis_aclk(processing_system7_0_FCLK_CLK0),
         .m00_axis_aresetn(rst_processing_system7_0_100M_peripheral_aresetn),
         .m00_axis_tdata(KNN_accelerator_1_m00_axis_tdata),

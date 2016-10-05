@@ -34,6 +34,7 @@ module kSortingTop #(
 	input wr_en,
 	input [NUM_CH-1:0] valid,
 	input done,
+	input [31:0] second_start_index,
 	input [(NUM_CH*VAL_WIDTH)-1:0] dataValueIn,
 (* mark_debug = "true" *)	output AXIS_out_wr_en,
 (* mark_debug = "true" *)	output [31:0] dataNameOut,
@@ -72,6 +73,7 @@ module kSortingTop #(
 				.valid(valid[channel]),
 				.done(done),
 				.outEn(channelOutEnable[channel]),
+				.start_index(second_start_index),
 				.dataValueIn(dataValueIn[((channel)*VAL_WIDTH) +: VAL_WIDTH]),
 				.dataNameOut(dataNameP1[channel]),
 				.dataValueOut(dataValueP1[channel])

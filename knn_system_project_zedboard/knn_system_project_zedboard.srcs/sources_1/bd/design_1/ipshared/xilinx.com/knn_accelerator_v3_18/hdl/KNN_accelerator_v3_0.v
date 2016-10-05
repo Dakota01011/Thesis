@@ -96,6 +96,7 @@
 	) KNN_accelerator_v3_0_S00_AXI_inst (
 		.control_reset(control_reset),
 		.control_done(control_done),
+		.second_start_index(second_start_index),
 		.dataName(AXIS_dataOut),
 		.dataValue(dataValueOut),
 		.S_AXI_ACLK(s00_axi_aclk),
@@ -155,7 +156,7 @@
 	// Add user logic here
 
 	//slv_reg0 = done, reset
-	//slv_reg1 = NULL
+	//slv_reg1 = second_start_index
 	//slv_reg2 = count low
 	//slv_reg3 = count high
 	//slv_reg4 = AXIS_dataOut
@@ -165,6 +166,7 @@
 
 	wire control_reset;
 	wire control_done;
+	wire [31:0] second_start_index;
 	wire AXIS_in_wr_en;
 	wire [C_S00_AXIS_TDATA_WIDTH-1:0] AXIS_dataIn;
 	wire AXIS_out_wr_en;
@@ -182,6 +184,7 @@
 		.reset(control_reset),
 		.done(control_done),
 		.AXIS_in_wr_en(AXIS_in_wr_en),
+		.second_start_index(second_start_index),
 		.dataValueIn(AXIS_dataIn),
 		.AXIS_out_wr_en(AXIS_out_wr_en),
 		.dataNameOut(AXIS_dataOut),

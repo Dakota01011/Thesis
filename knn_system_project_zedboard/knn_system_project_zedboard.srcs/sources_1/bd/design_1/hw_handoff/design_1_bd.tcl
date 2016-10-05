@@ -168,7 +168,7 @@ CONFIG.C_M_AXIS_MM2S_TDATA_WIDTH {128} \
  ] $KNN_DMA_0
 
   # Create instance: KNN_accelerator_0, and set properties
-  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:KNN_accelerator:3.17 KNN_accelerator_0 ]
+  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:KNN_accelerator:3.18 KNN_accelerator_0 ]
   set_property -dict [ list \
 CONFIG.K {10} \
 CONFIG.NUM_CH {4} \
@@ -1493,9 +1493,6 @@ CONFIG.NUM_MI {3} \
   connect_bd_intf_net -intf_net KNN_DMA_0_M00_AXI_MM2S [get_bd_intf_pins KNN_DMA_0/M00_AXI_MM2S] [get_bd_intf_pins axi_mem_intercon/S00_AXI]
   connect_bd_intf_net -intf_net KNN_DMA_0_M01_AXI_MM2S [get_bd_intf_pins KNN_DMA_0/M01_AXI_MM2S] [get_bd_intf_pins axi_mem_intercon_2/S00_AXI]
   connect_bd_intf_net -intf_net KNN_DMA_0_M_AXIS_MM2S [get_bd_intf_pins KNN_DMA_0/M_AXIS_MM2S] [get_bd_intf_pins KNN_accelerator_0/S00_AXIS]
-  set_property -dict [ list \
-HDL_ATTRIBUTE.MARK_DEBUG {true} \
- ] [get_bd_intf_nets KNN_DMA_0_M_AXIS_MM2S]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXI_S2MM [get_bd_intf_pins axi_dma_0/M_AXI_S2MM] [get_bd_intf_pins axi_mem_intercon_1/S00_AXI]
   connect_bd_intf_net -intf_net axi_mem_intercon_1_M00_AXI [get_bd_intf_pins axi_mem_intercon_1/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP2]
   connect_bd_intf_net -intf_net axi_mem_intercon_2_M00_AXI [get_bd_intf_pins axi_mem_intercon_2/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP1]
