@@ -250,10 +250,10 @@
   "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_18/hdl/knnTop.v" \
   "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_18/hdl/KNN_accelerator_v3_0.v" \
   "../../../bd/design_1/ip/design_1_KNN_accelerator_1_0_1/sim/design_1_KNN_accelerator_1_0.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_dma_v1_03/hdl/KNN_DMA_v1_0_S_AXI_LITE.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_dma_v1_03/hdl/KNN_DMA_v1_0_M_AXIS_MM2S.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_dma_v1_03/hdl/KNN_DMA_v1_0_M00_AXI_MM2S.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_dma_v1_03/hdl/KNN_DMA_v1_0.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_dma_v1_04/hdl/KNN_DMA_v1_0_S_AXI_LITE.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_dma_v1_04/hdl/KNN_DMA_v1_0_M_AXIS_MM2S.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_dma_v1_04/hdl/KNN_DMA_v1_0_M00_AXI_MM2S.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_dma_v1_04/hdl/KNN_DMA_v1_0.v" \
   "../../../bd/design_1/ip/design_1_KNN_DMA_0_0/sim/design_1_KNN_DMA_0_0.v" \
 -endlib
 -makelib ies/axi_protocol_converter_v2_1_9 \

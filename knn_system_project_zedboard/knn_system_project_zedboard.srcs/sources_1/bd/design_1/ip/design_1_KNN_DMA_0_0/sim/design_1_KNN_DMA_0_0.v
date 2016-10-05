@@ -47,8 +47,8 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:user:KNN_DMA:1.03
-// IP Revision: 8
+// IP VLNV: xilinx.com:user:KNN_DMA:1.04
+// IP Revision: 9
 
 `timescale 1ns/1ps
 

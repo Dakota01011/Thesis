@@ -160,7 +160,7 @@ proc create_root_design { parentCell } {
   # Create ports
 
   # Create instance: KNN_DMA_0, and set properties
-  set KNN_DMA_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:KNN_DMA:1.03 KNN_DMA_0 ]
+  set KNN_DMA_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:KNN_DMA:1.04 KNN_DMA_0 ]
   set_property -dict [ list \
 CONFIG.C_M00_AXI_MM2S_DATA_WIDTH {64} \
 CONFIG.C_M01_AXI_MM2S_DATA_WIDTH {64} \

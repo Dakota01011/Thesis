@@ -90,7 +90,7 @@
 
 	assign M_AXI_ARID		= 'b0;
 	assign M_AXI_ARLOCK		= 1'b0;
-	assign M_AXI_ARCACHE	= 4'b0010;
+	assign M_AXI_ARCACHE	= 4'b0011;
 	assign M_AXI_ARPROT		= 3'h0;
 	assign M_AXI_ARQOS		= 4'h0;
 	assign M_AXI_ARUSER		= 'b1;
