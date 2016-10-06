@@ -1,4 +1,23 @@
-// Dakota Koelling
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: Dakota Koelling
+// Engineer: Dakota Koelling
+// 
+// Create Date: 04/20/2016 09:50:48 AM
+// Design Name: Distance Calculator
+// Module Name: distanceCalculationAccumulator
+// Project Name: KNN Hardware Accelerator
+// Target Devices: Zedboard, Zybo
+// Tool Versions: Vivado 2016.2
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
 module distanceCalculationAccumulator #(
 	parameter DATA_WIDTH = 32,
@@ -26,6 +45,7 @@ localparam acc_width = sqr_width+DIMENSIONS;
 //(* mark_debug = "true" *)	reg stop;
 (* mark_debug = "true" *)	reg diff_stage_valid;
 (* mark_debug = "true" *)	reg sqr_stage_valid;
+(* mark_debug = "true" *)	reg acc_stage_valid;
 (* mark_debug = "true" *)	integer i;
 
 	/*
@@ -66,7 +86,7 @@ localparam acc_width = sqr_width+DIMENSIONS;
 				difference <= data2 - data1;
 			end
 			squared <= difference * difference;
-			if (sqr_stage_valid)
+			if (sqr_stage_valid | acc_stage_valid)
 			begin
 				if (i >= DIMENSIONS-1)
 				begin
@@ -87,6 +107,7 @@ localparam acc_width = sqr_width+DIMENSIONS;
 		begin
 			diff_stage_valid <= 1'b0;
 			sqr_stage_valid <= 1'b0;
+			acc_stage_valid <= 1'b0;
 			i <= -1;
 			distanceValid <= 0;
 		end
@@ -94,7 +115,8 @@ localparam acc_width = sqr_width+DIMENSIONS;
 		begin
 			diff_stage_valid <= dataIn_Valid;
 			sqr_stage_valid <= diff_stage_valid;
-			if (sqr_stage_valid)
+			acc_stage_valid <= sqr_stage_valid;
+			if (sqr_stage_valid | acc_stage_valid)
 			begin
 				if (i >= DIMENSIONS-1)
 				begin
@@ -106,6 +128,10 @@ localparam acc_width = sqr_width+DIMENSIONS;
 					i <= i + 1;
 					distanceValid <= 0;
 				end
+			end
+			else
+			begin
+				distanceValid <= 0;
 			end
 		end
 	end

@@ -1,4 +1,23 @@
-//Dakota Koelling
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: Dakota Koelling
+// Engineer: Dakota Koelling
+// 
+// Create Date: 04/20/2016 09:50:48 AM
+// Design Name: FIFO
+// Module Name: fifo
+// Project Name: KNN Hardware Accelerator
+// Target Devices: Zedboard, Zybo
+// Tool Versions: Vivado 2016.2
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
 module fifo #(
 	parameter DATA_WIDTH = 32,

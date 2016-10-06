@@ -1,5 +1,23 @@
-
-`timescale 1 ns / 1 ps
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: Dakota Koelling
+// Engineer: Dakota Koelling
+// 
+// Create Date: 09/12/2016 01:49:31 PM
+// Design Name: KNN accelerator v2 IP wrapper
+// Module Name: KNN_accelerator_v2_0
+// Project Name: KNN Hardware Accelerator
+// Target Devices: Zedboard, Zybo
+// Tool Versions: Vivado 2016.2
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
 	module KNN_accelerator_v2_0 #
 	(
@@ -7,6 +25,8 @@
 		parameter WIDTH = 32,
 		parameter NUM_DIM = 32,
 		parameter KNN_DEBUG = 0,
+		parameter NUM_CH = 2,
+		parameter K = 1,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 
@@ -16,7 +36,7 @@
 		parameter integer C_S00_AXI_ADDR_WIDTH	= 5,
 
 		// Parameters of Axi Slave Bus Interface S00_AXIS
-		parameter integer C_S00_AXIS_TDATA_WIDTH	= 32
+		parameter integer C_S00_AXIS_TDATA_WIDTH	= NUM_CH*32
 	)
 	(
 		// Users to add ports here
@@ -65,7 +85,6 @@
 		.control(control),
 		.AXI_wr_en(AXI_wr_en),
 		.AXI_rd_en(AXI_rd_en),
-		.k(k),
 		.dataName(dataNameOut),
 		.dataValue(dataValueOut),
 		.S_AXI_ACLK(s00_axi_aclk),
@@ -109,7 +128,7 @@
 	// Add user logic here
 
 	//slv_reg0 = loadRef, done, reset
-	//slv_reg1 = k
+	//slv_reg1 = NULL
 	//slv_reg2 = count low
 	//slv_reg3 = count high
 	//slv_reg4 = dataNameOut
@@ -120,17 +139,18 @@
 	wire [31:0] control;
 	wire AXI_wr_en;
 	wire AXI_rd_en;
-	wire [31:0] k;
 	wire [31:0]	dataNameOut;
 	wire [WIDTH-1:0] dataValueOut;
 
 	wire AXIS_wr_en;
-	wire [31:0] AXIS_data;
+	wire [C_S00_AXIS_TDATA_WIDTH-1:0] AXIS_data;
 
 	knnTop #(
 		.DATA_WIDTH(WIDTH),
 		.DIMENSIONS(NUM_DIM),
-		.DEBUG(KNN_DEBUG)
+		.DEBUG(KNN_DEBUG),
+		.NUM_CH(NUM_CH),
+		.K(K)
 	) knnTop (
 		.mclk(s00_axi_aclk),
 		.reset(control[0]),
@@ -138,7 +158,6 @@
 		.rd_en(AXI_rd_en),
 		.start(control[2]),
 		.done(control[1]),
-		.k(k),
 		.dataValueIn(AXIS_data),
 		.dataNameOut(dataNameOut),
 		.dataValueOut(dataValueOut)

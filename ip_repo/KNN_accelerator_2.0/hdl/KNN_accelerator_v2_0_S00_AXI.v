@@ -1,5 +1,23 @@
-
-`timescale 1 ns / 1 ps
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: Dakota Koelling
+// Engineer: Dakota Koelling
+// 
+// Create Date: 09/12/2016 01:49:31 PM
+// Design Name: AXI interface
+// Module Name: KNN_accelerator_v2_0_S00_AXI
+// Project Name: KNN Hardware Accelerator
+// Target Devices: Zedboard, Zybo
+// Tool Versions: Vivado 2016.2
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
 	module KNN_accelerator_v2_0_S00_AXI #
 	(
@@ -18,7 +36,6 @@
 		output [31:0] 	control,
 		output 			AXI_wr_en,
 		output 			AXI_rd_en,
-		output [31:0] 	k,
 		input [31:0] 	dataName,
 		input [31:0] 	dataValue,
 		// User ports ends
@@ -421,7 +438,6 @@
 	reg [63:0] counter;
 
 	assign control = slv_reg0;
-	assign k = slv_reg1;
 	assign AXI_wr_en = axi_bvalid;
 	assign AXI_rd_en = axi_rvalid;
 

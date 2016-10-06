@@ -4,11 +4,11 @@
 // Engineer: Dakota Koelling
 // 
 // Create Date: 07/29/2016 09:50:48 AM
-// Design Name: 
+// Design Name: KNN Top Testbench
 // Module Name: knnTop_tb
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
+// Project Name: KNN Hardware Accelerator
+// Target Devices: Zedboard, Zybo
+// Tool Versions: Vivado 2016.2
 // Description: 
 // 
 // Dependencies: 
@@ -21,6 +21,11 @@
 
 
 module knnTop_tb();
+	
+	parameter width = 32;
+	parameter dim = 5;
+	parameter ch = 2;
+	parameter k = 3;
 
 	reg clk;
 	reg reset;
@@ -29,13 +34,15 @@ module knnTop_tb();
 	reg start;
 	reg done;
 	reg [31:0] k;
-	reg [31:0] dataValueIn;
+	reg [(ch*32)-1:0] dataValueIn;
 	wire [31:0] dataNameOut;
 	wire [31:0] dataValueOut;
 
 	knnTop_regwrap #(
-		.dataWidth(32),
-		.numberOfDimensions(5)
+		.dataWidth(width),
+		.numberOfDimensions(dim),
+		.numberOfChannels(ch),
+		.k(k)
 	) uut (
 		.clk 			(clk),
 		.reset 			(reset),
@@ -43,7 +50,6 @@ module knnTop_tb();
 		.rd_en 			(rd_en),
 		.start 			(start),
 		.done 			(done),
-		.k 				(k),
 		.dataValueIn 	(dataValueIn),
 		.dataNameOut 	(dataNameOut),
 		.dataValueOut 	(dataValueOut)
@@ -62,80 +68,59 @@ module knnTop_tb();
 		reset = 1;
 		done = 0;
 		start = 0;
-		k = 0;
 		dataValueIn = 0;
-		wr_en = 1;
+		wr_en = 0;
 		rd_en = 0;
 		#90;
 		reset = 0;
 		#20;
-		k = 3;
-		#20;
 		start = 1;
 		#20;
-		dataValueIn = 1; // ref start
+		wr_en = 1;
+		dataValueIn = {32'd0, 32'd1}; // ref start
 		#20;
-		dataValueIn = -2;
+		dataValueIn = {32'd0, 32'd2};
 		#20;
-		dataValueIn = 2;
+		dataValueIn = {32'd0, 32'd2};
 		#20;
-		dataValueIn = -2;
+		dataValueIn = {32'd0, 32'd2};
 		#20;
-		dataValueIn = 3; // ref end
+		dataValueIn = {32'd0, 32'd3}; // ref end
 		#20;
-		dataValueIn = 5; // start 1
+		dataValueIn = {32'd1, 32'd5}; // start 2,1
 		#20;
-		dataValueIn = 10;
+		dataValueIn = {32'd1, 32'd10};
 		#20;
-		dataValueIn = 7;
+		dataValueIn = {32'd1, 32'd7};
 		#20;
-		dataValueIn = 9;
+		dataValueIn = {32'd1, 32'd9};
 		#20;
-		dataValueIn = 6; // end 1
+		dataValueIn = {32'd1, 32'd6}; // end 2,1
 		#20;
-		dataValueIn = 1; //start 2
+		dataValueIn = {32'd2, 32'd2}; // start 4,3
 		#20;
-		dataValueIn = 1;
+		dataValueIn = {32'd2, 32'd2};
 		#20;
-		dataValueIn = 1;
+		dataValueIn = {32'd2, 32'd2};
 		#20;
-		dataValueIn = 1;
+		dataValueIn = {32'd2, 32'd2};
 		#20;
-		dataValueIn = 1; // end 2
+		dataValueIn = {32'd2, 32'd2}; // end 4,3
 		#20;
-		dataValueIn = 2; // start 3
+		dataValueIn = {32'd0, 32'd5}; // start X,5
 		#20;
-		dataValueIn = 2;
+		dataValueIn = {32'd0, 32'd5};
 		#20;
-		dataValueIn = 2;
+		dataValueIn = {32'd0, 32'd5};
 		#20;
-		dataValueIn = 2;
+		dataValueIn = {32'd0, 32'd5};
 		#20;
-		dataValueIn = 2; //end 3
+		dataValueIn = {32'd0, 32'd5}; // end X,5
 		#20;
-		dataValueIn = 2; // start 4
-		#20;
-		dataValueIn = 2;
-		#20;
-		dataValueIn = 2;
-		#20;
-		dataValueIn = 2;
-		#20;
-		dataValueIn = 2; // end 4
-		#20;
-		dataValueIn = 5; // start 5
-		#20;
-		dataValueIn = 5;
-		#20;
-		dataValueIn = 5;
-		#20;
-		dataValueIn = 5;
-		#20;
-		dataValueIn = 5; // end 5
-		#20;
+		wr_en = 0;
+		#200;
 		done = 1;
 		#200;
-		wr_en = 0;
 		rd_en = 1;
 	end
 

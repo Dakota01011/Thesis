@@ -1,5 +1,23 @@
-
-`timescale 1 ns / 1 ps
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: Dakota Koelling
+// Engineer: Dakota Koelling
+// 
+// Create Date: 09/12/2016 01:49:31 PM
+// Design Name: AXIS Interface
+// Module Name: KNN_accelerator_v2_0_S00_AXIS
+// Project Name: KNN Hardware Accelerator
+// Target Devices: Zedboard, Zybo
+// Tool Versions: Vivado 2016.2
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
 	module KNN_accelerator_v2_0_S00_AXIS #
 	(
@@ -14,7 +32,7 @@
 	(
 		// Users to add ports here
 		output fifo_wren,
-		output [31:0] AXIS_data,
+		output [C_S_AXIS_TDATA_WIDTH-1:0] AXIS_data,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
