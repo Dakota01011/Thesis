@@ -14,7 +14,7 @@ int main() {
 	init_platform();
 	print("Now calculating...\n\r");
 
-	u32 RX_BUFFER_BASE = 0x05000000;
+	u32 RX_BUFFER_BASE = 0x00500000;
 	u32 *myOutputArray = (u32 *) RX_BUFFER_BASE;
 	u32 Length1 = NUM_FEATURES * (((NUM_POINTS-1)/2)+1) * 4;
 	u32 Length2 = NUM_FEATURES * ((NUM_POINTS-1)/2) * 4;

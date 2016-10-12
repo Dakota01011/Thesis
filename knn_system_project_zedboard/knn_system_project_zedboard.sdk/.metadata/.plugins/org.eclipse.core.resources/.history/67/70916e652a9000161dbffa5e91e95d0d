@@ -14,14 +14,12 @@ int main() {
 	init_platform();
 	print("Now calculating...\n\r");
 
-	u32 RX_BUFFER_BASE = 0x05000000;
+	u32 RX_BUFFER_BASE = 0x00500000;
 	u32 *myOutputArray = (u32 *) RX_BUFFER_BASE;
+	UINTPTR BuffInAddr = (UINTPTR)myIntDataSet;
+	UINTPTR BuffOutAddr = (UINTPTR)myOutputArray;
 	u32 Length1 = NUM_FEATURES * (((NUM_POINTS-1)/2)+1) * 4;
 	u32 Length2 = NUM_FEATURES * ((NUM_POINTS-1)/2) * 4;
-	u32 max_tx = 8388607; // max to fit in 23 bits
-	UINTPTR BuffInAddr1 = (UINTPTR)myIntDataSet;
-	UINTPTR BuffInAddr2 = BuffInAddr1 + Length1;
-	UINTPTR BuffOutAddr = (UINTPTR)myOutputArray;
 
 	printf("Input Array Address: %p\n\r", myIntDataSet);
 	printf("Output Array Address: %i\n\r", (int)RX_BUFFER_BASE);
@@ -41,10 +39,12 @@ int main() {
 	//MM2S 1 Setup
 	u32 reg = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_CR_OFFSET);
 	XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_CR_OFFSET, reg | XAXIDMA_CR_RUNSTOP_MASK); // start
+	XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_DESTADDR_OFFSET, BuffInAddr); // addr in 1
 
 	//MM2S 2 Setup
 	reg = XAxiDma_ReadReg(XPAR_AXI_DMA_1_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_CR_OFFSET);
 	XAxiDma_WriteReg(XPAR_AXI_DMA_1_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_CR_OFFSET, reg | XAXIDMA_CR_RUNSTOP_MASK); // start
+	XAxiDma_WriteReg(XPAR_AXI_DMA_1_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_DESTADDR_OFFSET, BuffInAddr + Length1); // addr in 2
 
 	//S2MM Setup
 	reg = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_RX_OFFSET + XAXIDMA_CR_OFFSET);
@@ -58,66 +58,20 @@ int main() {
 	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 0); // pull out of reset
 
 	// Activate DMA
+	//MM2S 1 Activate
+	XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_BUFFLEN_OFFSET, Length1); //length
+
+	//MM2S 2 Activate
+	XAxiDma_WriteReg(XPAR_AXI_DMA_1_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_BUFFLEN_OFFSET, Length2); //length
+
 	//S2MM Activate
 	XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_RX_OFFSET + XAXIDMA_BUFFLEN_OFFSET, K*4); //length
 
-	u32 first = 1;
-	u32 continue_tx1 = 1;
-	u32 continue_tx2 = 1;
-	u32 temp_Length1 = Length1;
-	u32 temp_Length2 = Length2;
-	UINTPTR temp_BuffInAddr1 = BuffInAddr1;
-	UINTPTR temp_BuffInAddr2 = BuffInAddr2;
-	while(continue_tx1 || continue_tx2)
-	{
-		if(Length1 > max_tx)
-		{
-			continue_tx1 = 1;
-			temp_Length1 = max_tx;
-		}
-		else
-		{
-			continue_tx1 = 0;
-			temp_Length1 = Length1;
-		}
+	// Setup Complete
 
-		if(Length2 > max_tx)
-		{
-			continue_tx2 = 1;
-			temp_Length2 = max_tx;
-		}
-		else
-		{
-			continue_tx2 = 0;
-			temp_Length2 = Length2;
-		}
-
-		Length1 = Length1 - (temp_Length1 + 1);
-		Length2 = Length2 - (temp_Length2 + 1);
-		if(first)
-		{
-			first = 0;
-		}
-		else
-		{
-			temp_BuffInAddr1 = temp_BuffInAddr1 + temp_Length1;
-			temp_BuffInAddr2 = temp_BuffInAddr2 + temp_Length2;
-		}
-
-		//MM2S 1 Activate
-		XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_DESTADDR_OFFSET, temp_BuffInAddr1); // addr in 1
-		XAxiDma_WriteReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_BUFFLEN_OFFSET, temp_Length1); //length
-
-		//MM2S 2 Activate
-		XAxiDma_WriteReg(XPAR_AXI_DMA_1_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_DESTADDR_OFFSET, temp_BuffInAddr2); // addr in 2
-		XAxiDma_WriteReg(XPAR_AXI_DMA_1_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_BUFFLEN_OFFSET, temp_Length2); //length
-
-		// Setup Complete
-
-		//Wait for MM2S to complete
-		while(XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {}
-		while(XAxiDma_ReadReg(XPAR_AXI_DMA_1_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {}
-	}
+	//Wait for MM2S to complete
+	while(XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {} //TODO: check that 4098 is correct value	
+	while(XAxiDma_ReadReg(XPAR_AXI_DMA_1_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {} //TODO: check that 4098 is correct value
 
 	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 2); // tell KNN that we are done
 	while(XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_RX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {}
