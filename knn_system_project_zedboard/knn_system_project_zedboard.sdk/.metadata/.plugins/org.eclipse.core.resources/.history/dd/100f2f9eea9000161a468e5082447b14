@@ -70,8 +70,8 @@ int main() {
 	// Setup Complete
 
 	//Wait for MM2S to complete
-	while(XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {}
-	while(XAxiDma_ReadReg(XPAR_AXI_DMA_1_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {}
+	while(XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {} //TODO: check that 4098 is correct value	
+	while(XAxiDma_ReadReg(XPAR_AXI_DMA_1_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {} //TODO: check that 4098 is correct value
 
 	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 2); // tell KNN that we are done
 	while(XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_RX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {}

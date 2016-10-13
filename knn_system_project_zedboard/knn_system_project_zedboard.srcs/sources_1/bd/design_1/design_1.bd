@@ -287,25 +287,16 @@
         <spirit:name>axi_dma_0_M_AXIS_MM2S</spirit:name>
         <spirit:activeInterface spirit:busRef="M_AXIS_MM2S" spirit:componentRef="axi_dma_0"/>
         <spirit:activeInterface spirit:busRef="S00_AXIS" spirit:componentRef="KNN_accelerator_0"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>axi_dma_1_M_AXIS_MM2S</spirit:name>
         <spirit:activeInterface spirit:busRef="S01_AXIS" spirit:componentRef="KNN_accelerator_0"/>
         <spirit:activeInterface spirit:busRef="M_AXIS_MM2S" spirit:componentRef="axi_dma_1"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>axi_dma_1_M_AXI_MM2S</spirit:name>
         <spirit:activeInterface spirit:busRef="M_AXI_MM2S" spirit:componentRef="axi_dma_1"/>
         <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="axi_mem_intercon_2"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>S00_AXI_1</spirit:name>
@@ -330,6 +321,10 @@
         <spirit:internalPortReference spirit:componentRef="axi_dma_1" spirit:portRef="s_axi_lite_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="m_axi_mm2s_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_1" spirit:portRef="m_axi_mm2s_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s01_axis_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axis_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="m00_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M00_ACLK"/>
@@ -345,10 +340,6 @@
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon_2" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M02_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M03_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s01_axis_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axis_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axi_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="m00_axis_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_RESET0_N</spirit:name>
@@ -360,6 +351,10 @@
         <spirit:internalPortReference spirit:componentRef="rst_processing_system7_0_100M" spirit:portRef="peripheral_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="axi_resetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_1" spirit:portRef="axi_resetn"/>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s01_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="m00_axis_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M01_ARESETN"/>
@@ -371,10 +366,6 @@
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon_2" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M02_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M03_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s01_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="s00_axi_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="KNN_accelerator_0" spirit:portRef="m00_axis_aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_processing_system7_0_100M_interconnect_aresetn</spirit:name>

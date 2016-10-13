@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Oct 11 11:33:36 2016" VIVADOVERSION="2016.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Oct 12 19:21:53 2016" VIVADOVERSION="2016.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zedboard:part0:1.0" DEVICE="7z020" NAME="design_1" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -6726,6 +6726,10 @@
             <CONNECTION INSTANCE="axi_dma_1" PORT="s_axi_lite_aclk"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="m_axi_mm2s_aclk"/>
             <CONNECTION INSTANCE="axi_dma_1" PORT="m_axi_mm2s_aclk"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s01_axis_aclk"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axis_aclk"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_aclk"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="m00_axis_aclk"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ACLK"/>
@@ -6741,10 +6745,6 @@
             <CONNECTION INSTANCE="axi_mem_intercon_2" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M02_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M03_ACLK"/>
-            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s01_axis_aclk"/>
-            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axis_aclk"/>
-            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_aclk"/>
-            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="m00_axis_aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -8165,6 +8165,10 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_0" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="axi_dma_1" PORT="axi_resetn"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s01_axis_aresetn"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axis_aresetn"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_aresetn"/>
+            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="m00_axis_aresetn"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_ARESETN"/>
@@ -8176,10 +8180,6 @@
             <CONNECTION INSTANCE="axi_mem_intercon_2" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M02_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M03_ARESETN"/>
-            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s01_axis_aresetn"/>
-            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axis_aresetn"/>
-            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="s00_axi_aresetn"/>
-            <CONNECTION INSTANCE="KNN_accelerator_0" PORT="m00_axis_aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

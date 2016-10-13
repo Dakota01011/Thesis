@@ -18,7 +18,7 @@ int main() {
 	u32 *myOutputArray = (u32 *) RX_BUFFER_BASE;
 	UINTPTR BuffInAddr = (UINTPTR)myIntDataSet;
 	UINTPTR BuffOutAddr = (UINTPTR)myOutputArray;
-	u32 Length1 = NUM_FEATURES * (((NUM_POINTS-1)/2)+1) * 4;
+	u32 Length1 = NUM_FEATURES * (((NUM_POINTS-1)/2)+2) * 4;
 	u32 Length2 = NUM_FEATURES * ((NUM_POINTS-1)/2) * 4;
 
 	printf("Input Array Address: %p\n\r", myIntDataSet);
@@ -70,8 +70,8 @@ int main() {
 	// Setup Complete
 
 	//Wait for MM2S to complete
-	while(XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {}
-	while(XAxiDma_ReadReg(XPAR_AXI_DMA_1_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {}
+	while(XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {} //TODO: check that 4098 is correct value	
+	while(XAxiDma_ReadReg(XPAR_AXI_DMA_1_BASEADDR, XAXIDMA_TX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {} //TODO: check that 4098 is correct value
 
 	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 2); // tell KNN that we are done
 	while(XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, XAXIDMA_RX_OFFSET + XAXIDMA_SR_OFFSET) != 4098) {}
