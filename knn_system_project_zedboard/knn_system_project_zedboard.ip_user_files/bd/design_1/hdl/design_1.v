@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Tue Oct 11 11:33:34 2016
+//Date        : Thu Oct 13 17:54:29 2016
 //Host        : Dakota-PC running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -71,9 +71,9 @@ module design_1
   (* MARK_DEBUG *) wire S00_AXI_1_RREADY;
   (* MARK_DEBUG *) wire [1:0]S00_AXI_1_RRESP;
   (* MARK_DEBUG *) wire S00_AXI_1_RVALID;
-  (* MARK_DEBUG *) wire [63:0]axi_dma_0_M_AXIS_MM2S_TDATA;
-  (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S_TREADY;
-  (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S_TVALID;
+  wire [63:0]axi_dma_0_M_AXIS_MM2S_TDATA;
+  wire axi_dma_0_M_AXIS_MM2S_TREADY;
+  wire axi_dma_0_M_AXIS_MM2S_TVALID;
   wire [31:0]axi_dma_0_M_AXI_S2MM_AWADDR;
   wire [1:0]axi_dma_0_M_AXI_S2MM_AWBURST;
   wire [3:0]axi_dma_0_M_AXI_S2MM_AWCACHE;
@@ -91,22 +91,22 @@ module design_1
   wire [3:0]axi_dma_0_M_AXI_S2MM_WSTRB;
   wire axi_dma_0_M_AXI_S2MM_WVALID;
   wire axi_dma_0_s_axis_s2mm_tready;
-  (* MARK_DEBUG *) wire [63:0]axi_dma_1_M_AXIS_MM2S_TDATA;
-  (* MARK_DEBUG *) wire axi_dma_1_M_AXIS_MM2S_TREADY;
-  (* MARK_DEBUG *) wire axi_dma_1_M_AXIS_MM2S_TVALID;
-  (* MARK_DEBUG *) wire [31:0]axi_dma_1_M_AXI_MM2S_ARADDR;
-  (* MARK_DEBUG *) wire [1:0]axi_dma_1_M_AXI_MM2S_ARBURST;
-  (* MARK_DEBUG *) wire [3:0]axi_dma_1_M_AXI_MM2S_ARCACHE;
-  (* MARK_DEBUG *) wire [7:0]axi_dma_1_M_AXI_MM2S_ARLEN;
-  (* MARK_DEBUG *) wire [2:0]axi_dma_1_M_AXI_MM2S_ARPROT;
-  (* MARK_DEBUG *) wire axi_dma_1_M_AXI_MM2S_ARREADY;
-  (* MARK_DEBUG *) wire [2:0]axi_dma_1_M_AXI_MM2S_ARSIZE;
-  (* MARK_DEBUG *) wire axi_dma_1_M_AXI_MM2S_ARVALID;
-  (* MARK_DEBUG *) wire [63:0]axi_dma_1_M_AXI_MM2S_RDATA;
-  (* MARK_DEBUG *) wire axi_dma_1_M_AXI_MM2S_RLAST;
-  (* MARK_DEBUG *) wire axi_dma_1_M_AXI_MM2S_RREADY;
-  (* MARK_DEBUG *) wire [1:0]axi_dma_1_M_AXI_MM2S_RRESP;
-  (* MARK_DEBUG *) wire axi_dma_1_M_AXI_MM2S_RVALID;
+  wire [63:0]axi_dma_1_M_AXIS_MM2S_TDATA;
+  wire axi_dma_1_M_AXIS_MM2S_TREADY;
+  wire axi_dma_1_M_AXIS_MM2S_TVALID;
+  wire [31:0]axi_dma_1_M_AXI_MM2S_ARADDR;
+  wire [1:0]axi_dma_1_M_AXI_MM2S_ARBURST;
+  wire [3:0]axi_dma_1_M_AXI_MM2S_ARCACHE;
+  wire [7:0]axi_dma_1_M_AXI_MM2S_ARLEN;
+  wire [2:0]axi_dma_1_M_AXI_MM2S_ARPROT;
+  wire axi_dma_1_M_AXI_MM2S_ARREADY;
+  wire [2:0]axi_dma_1_M_AXI_MM2S_ARSIZE;
+  wire axi_dma_1_M_AXI_MM2S_ARVALID;
+  wire [63:0]axi_dma_1_M_AXI_MM2S_RDATA;
+  wire axi_dma_1_M_AXI_MM2S_RLAST;
+  wire axi_dma_1_M_AXI_MM2S_RREADY;
+  wire [1:0]axi_dma_1_M_AXI_MM2S_RRESP;
+  wire axi_dma_1_M_AXI_MM2S_RVALID;
   wire [31:0]axi_mem_intercon_1_M00_AXI_AWADDR;
   wire [1:0]axi_mem_intercon_1_M00_AXI_AWBURST;
   wire [3:0]axi_mem_intercon_1_M00_AXI_AWCACHE;

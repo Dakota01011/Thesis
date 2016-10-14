@@ -233,7 +233,7 @@
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>KNN_accelerator_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="xilinx.com" spirit:version="3.21"/>
+        <spirit:componentRef spirit:library="user" spirit:name="KNN_accelerator" spirit:vendor="xilinx.com" spirit:version="3.22"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_KNN_accelerator_1_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="NUM_DIM">78</spirit:configurableElementValue>
@@ -302,9 +302,6 @@
         <spirit:name>S00_AXI_1</spirit:name>
         <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="axi_mem_intercon"/>
         <spirit:activeInterface spirit:busRef="M_AXI_MM2S" spirit:componentRef="axi_dma_0"/>
-        <bd:hdl_attributes>
-          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
-        </bd:hdl_attributes>
       </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>

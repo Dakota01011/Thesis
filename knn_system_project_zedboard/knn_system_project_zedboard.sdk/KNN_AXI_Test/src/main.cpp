@@ -19,13 +19,13 @@ int main() {
 	UINTPTR BuffInAddr = (UINTPTR)myIntDataSet;
 	UINTPTR BuffOutAddr = (UINTPTR)myOutputArray;
 	u32 Length1 = NUM_FEATURES * (((NUM_POINTS-1)/2)+1) * 4;
-	u32 Length2 = NUM_FEATURES * ((NUM_POINTS-1)/2) * 4;
+	u32 Length2 = NUM_FEATURES * ((NUM_POINTS-1)/2+1) * 4;
 
 	printf("Input Array Address: %p\n\r", myIntDataSet);
 	printf("Output Array Address: %i\n\r", (int)RX_BUFFER_BASE);
 
 	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG0_OFFSET, 1); // go into reset
-	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG1_OFFSET, (NUM_POINTS-2)); // second starting point
+	KNN_ACCELERATOR_mWriteReg(XPAR_KNN_ACCELERATOR_0_S00_AXI_BASEADDR, KNN_ACCELERATOR_S00_AXI_SLV_REG1_OFFSET, (NUM_POINTS-4)); // second starting point
 
 	// Setup DMA
 	//Reset

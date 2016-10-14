@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Wed Oct 12 19:21:50 2016
+//Date        : Thu Oct 13 19:00:20 2016
 //Host        : Dakota-PC running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -58,19 +58,19 @@ module design_1
   wire KNN_accelerator_1_m00_axis_tlast;
   wire [3:0]KNN_accelerator_1_m00_axis_tstrb;
   wire KNN_accelerator_1_m00_axis_tvalid;
-  (* MARK_DEBUG *) wire [31:0]S00_AXI_1_ARADDR;
-  (* MARK_DEBUG *) wire [1:0]S00_AXI_1_ARBURST;
-  (* MARK_DEBUG *) wire [3:0]S00_AXI_1_ARCACHE;
-  (* MARK_DEBUG *) wire [7:0]S00_AXI_1_ARLEN;
-  (* MARK_DEBUG *) wire [2:0]S00_AXI_1_ARPROT;
-  (* MARK_DEBUG *) wire S00_AXI_1_ARREADY;
-  (* MARK_DEBUG *) wire [2:0]S00_AXI_1_ARSIZE;
-  (* MARK_DEBUG *) wire S00_AXI_1_ARVALID;
-  (* MARK_DEBUG *) wire [63:0]S00_AXI_1_RDATA;
-  (* MARK_DEBUG *) wire S00_AXI_1_RLAST;
-  (* MARK_DEBUG *) wire S00_AXI_1_RREADY;
-  (* MARK_DEBUG *) wire [1:0]S00_AXI_1_RRESP;
-  (* MARK_DEBUG *) wire S00_AXI_1_RVALID;
+  wire [31:0]S00_AXI_1_ARADDR;
+  wire [1:0]S00_AXI_1_ARBURST;
+  wire [3:0]S00_AXI_1_ARCACHE;
+  wire [7:0]S00_AXI_1_ARLEN;
+  wire [2:0]S00_AXI_1_ARPROT;
+  wire S00_AXI_1_ARREADY;
+  wire [2:0]S00_AXI_1_ARSIZE;
+  wire S00_AXI_1_ARVALID;
+  wire [63:0]S00_AXI_1_RDATA;
+  wire S00_AXI_1_RLAST;
+  wire S00_AXI_1_RREADY;
+  wire [1:0]S00_AXI_1_RRESP;
+  wire S00_AXI_1_RVALID;
   wire [63:0]axi_dma_0_M_AXIS_MM2S_TDATA;
   wire axi_dma_0_M_AXIS_MM2S_TREADY;
   wire axi_dma_0_M_AXIS_MM2S_TVALID;

@@ -160,7 +160,7 @@ proc create_root_design { parentCell } {
   # Create ports
 
   # Create instance: KNN_accelerator_0, and set properties
-  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:KNN_accelerator:3.21 KNN_accelerator_0 ]
+  set KNN_accelerator_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:KNN_accelerator:3.22 KNN_accelerator_0 ]
   set_property -dict [ list \
 CONFIG.K {10} \
 CONFIG.NUM_CH {4} \
@@ -1495,9 +1495,6 @@ CONFIG.NUM_MI {4} \
 
   # Create interface connections
   connect_bd_intf_net -intf_net S00_AXI_1 [get_bd_intf_pins axi_dma_0/M_AXI_MM2S] [get_bd_intf_pins axi_mem_intercon/S00_AXI]
-  set_property -dict [ list \
-HDL_ATTRIBUTE.MARK_DEBUG {true} \
- ] [get_bd_intf_nets S00_AXI_1]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins KNN_accelerator_0/S00_AXIS] [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXI_S2MM [get_bd_intf_pins axi_dma_0/M_AXI_S2MM] [get_bd_intf_pins axi_mem_intercon_1/S00_AXI]
   connect_bd_intf_net -intf_net axi_dma_1_M_AXIS_MM2S [get_bd_intf_pins KNN_accelerator_0/S01_AXIS] [get_bd_intf_pins axi_dma_1/M_AXIS_MM2S]

@@ -68,10 +68,26 @@ def data_format(name):
 				for x in full_ref:
 					if first:
 						first = False
+						data_file_out.write('-2\t0\t0')
+					else:
+						data_file_out.write('\t0\t0')
+				data_file_out.write('\n')
+				first = True
+				for x in full_ref:
+					if first:
+						first = False
 						data_file_out.write('-1\t' + x + '\t' + x)
 					else:
 						data_file_out.write('\t' + x + '\t' + x)
 				data_file_out.write('\n')
+	first = True
+	for x in full_ref:
+		if first:
+			first = False
+			data_file_out.write('-2\t0\t0')
+		else:
+			data_file_out.write('\t0\t0')
+	data_file_out.write('\n')
 
 	data_file.close()
 	data_file_out.close()
