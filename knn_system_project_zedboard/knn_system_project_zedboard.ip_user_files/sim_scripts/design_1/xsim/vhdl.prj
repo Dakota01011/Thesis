@@ -116,5 +116,6 @@ vhdl axi_dma_v7_1_10 "../../../ipstatic/axi_dma_v7_1/hdl/src/vhdl/axi_dma_s2mm_m
 vhdl axi_dma_v7_1_10 "../../../ipstatic/axi_dma_v7_1/hdl/src/vhdl/axi_dma_cmd_split.vhd" 
 vhdl axi_dma_v7_1_10 "../../../ipstatic/axi_dma_v7_1/hdl/src/vhdl/axi_dma.vhd" 
 vhdl xil_defaultlib "../../../bd/design_1/ip/design_1_axi_dma_0_0_1/sim/design_1_axi_dma_0_0.vhd" 
+vhdl xil_defaultlib "../../../bd/design_1/ip/design_1_axi_dma_1_0/sim/design_1_axi_dma_1_0.vhd" 
 
 nosort

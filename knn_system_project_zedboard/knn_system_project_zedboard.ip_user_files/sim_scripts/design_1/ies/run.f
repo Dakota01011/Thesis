@@ -239,22 +239,20 @@
 -endlib
 -makelib ies/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_xbar_0_1/sim/design_1_xbar_0.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_18/hdl/kSortingP2.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_18/hdl/kSortingP1.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_18/hdl/distanceCalcAcc.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_18/hdl/fifo.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_18/hdl/kSortingTop.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_18/hdl/KNN_accelerator_v3_0_S00_AXI.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_18/hdl/KNN_accelerator_v3_0_S00_AXIS.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_18/hdl/KNN_accelerator_v3_0_M00_AXIS.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_18/hdl/knnTop.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_18/hdl/KNN_accelerator_v3_0.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_22/hdl/kSortingP2.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_22/hdl/kSortingP1.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_22/hdl/distanceCalcAcc.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_22/hdl/fifo.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_22/hdl/knnPipe.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_22/hdl/KNN_accelerator_v3_0_S00_AXI.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_22/hdl/KNN_accelerator_v3_0_S00_AXIS.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_22/hdl/KNN_accelerator_v3_0_M00_AXIS.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_22/hdl/knnTop.v" \
+  "../../../bd/design_1/ipshared/xilinx.com/knn_accelerator_v3_22/hdl/KNN_accelerator_v3_0.v" \
   "../../../bd/design_1/ip/design_1_KNN_accelerator_1_0_1/sim/design_1_KNN_accelerator_1_0.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_dma_v1_04/hdl/KNN_DMA_v1_0_S_AXI_LITE.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_dma_v1_04/hdl/KNN_DMA_v1_0_M_AXIS_MM2S.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_dma_v1_04/hdl/KNN_DMA_v1_0_M00_AXI_MM2S.v" \
-  "../../../bd/design_1/ipshared/xilinx.com/knn_dma_v1_04/hdl/KNN_DMA_v1_0.v" \
-  "../../../bd/design_1/ip/design_1_KNN_DMA_0_0/sim/design_1_KNN_DMA_0_0.v" \
+-endlib
+-makelib ies/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_axi_dma_1_0/sim/design_1_axi_dma_1_0.vhd" \
 -endlib
 -makelib ies/axi_protocol_converter_v2_1_9 \
   "../../../ipstatic/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_a_axi3_conv.v" \

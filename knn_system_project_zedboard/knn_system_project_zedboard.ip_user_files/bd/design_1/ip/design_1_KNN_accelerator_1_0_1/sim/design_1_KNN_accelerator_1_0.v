@@ -47,17 +47,20 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:user:KNN_accelerator:3.18
-// IP Revision: 22
+// IP VLNV: xilinx.com:user:KNN_accelerator:3.22
+// IP Revision: 28
 
 `timescale 1ns/1ps
 
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_KNN_accelerator_1_0 (
   s00_axis_tdata,
-  s00_axis_tstrb,
-  s00_axis_tlast,
   s00_axis_tvalid,
+  s01_axis_aclk,
+  s01_axis_aresetn,
+  s01_axis_tready,
+  s01_axis_tdata,
+  s01_axis_tvalid,
   s00_axis_tready,
   s00_axis_aclk,
   s00_axis_aresetn,
@@ -93,12 +96,18 @@ module design_1_KNN_accelerator_1_0 (
 
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TDATA" *)
 input wire [127 : 0] s00_axis_tdata;
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TSTRB" *)
-input wire [15 : 0] s00_axis_tstrb;
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TLAST" *)
-input wire s00_axis_tlast;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TVALID" *)
 input wire s00_axis_tvalid;
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S01_AXIS_CLK CLK" *)
+input wire s01_axis_aclk;
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S01_AXIS_RST RST" *)
+input wire s01_axis_aresetn;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S01_AXIS TREADY" *)
+output wire s01_axis_tready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S01_AXIS TDATA" *)
+input wire [63 : 0] s01_axis_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S01_AXIS TVALID" *)
+input wire s01_axis_tvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TREADY" *)
 output wire s00_axis_tready;
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXIS_CLK CLK" *)
@@ -164,19 +173,23 @@ input wire m00_axis_aresetn;
 
   KNN_accelerator_v3_0 #(
     .WIDTH(32),
-    .NUM_DIM(78),
+    .NUM_DIM(10),
     .KNN_DEBUG(0),
     .NUM_CH(4),
-    .K(10),
+    .K(40),
     .C_S00_AXI_DATA_WIDTH(32),
     .C_S00_AXI_ADDR_WIDTH(5),
     .C_S00_AXIS_TDATA_WIDTH(128),
-    .C_M00_AXIS_TDATA_WIDTH(32)
+    .C_M00_AXIS_TDATA_WIDTH(32),
+    .C_S01_AXIS_TDATA_WIDTH(64)
   ) inst (
     .s00_axis_tdata(s00_axis_tdata),
-    .s00_axis_tstrb(s00_axis_tstrb),
-    .s00_axis_tlast(s00_axis_tlast),
     .s00_axis_tvalid(s00_axis_tvalid),
+    .s01_axis_aclk(s01_axis_aclk),
+    .s01_axis_aresetn(s01_axis_aresetn),
+    .s01_axis_tready(s01_axis_tready),
+    .s01_axis_tdata(s01_axis_tdata),
+    .s01_axis_tvalid(s01_axis_tvalid),
     .s00_axis_tready(s00_axis_tready),
     .s00_axis_aclk(s00_axis_aclk),
     .s00_axis_aresetn(s00_axis_aresetn),
