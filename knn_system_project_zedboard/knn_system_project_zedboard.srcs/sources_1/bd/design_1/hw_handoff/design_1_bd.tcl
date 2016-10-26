@@ -20,7 +20,7 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2016.2
+set scripts_vivado_version 2016.3
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -325,12 +325,23 @@ CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR1 {1} \
 CONFIG.PCW_FCLK3_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR0 {1} \
 CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1 {1} \
-CONFIG.PCW_FCLK_CLK0_BUF {true} \
+CONFIG.PCW_FCLK_CLK0_BUF {TRUE} \
+CONFIG.PCW_FCLK_CLK1_BUF {FALSE} \
+CONFIG.PCW_FCLK_CLK2_BUF {FALSE} \
+CONFIG.PCW_FCLK_CLK3_BUF {FALSE} \
 CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
 CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {150.000000} \
 CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {50} \
 CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {50} \
 CONFIG.PCW_FPGA_FCLK0_ENABLE {1} \
+CONFIG.PCW_FTM_CTI_IN0 {<Select>} \
+CONFIG.PCW_FTM_CTI_IN1 {<Select>} \
+CONFIG.PCW_FTM_CTI_IN2 {<Select>} \
+CONFIG.PCW_FTM_CTI_IN3 {<Select>} \
+CONFIG.PCW_FTM_CTI_OUT0 {<Select>} \
+CONFIG.PCW_FTM_CTI_OUT1 {<Select>} \
+CONFIG.PCW_FTM_CTI_OUT2 {<Select>} \
+CONFIG.PCW_FTM_CTI_OUT3 {<Select>} \
 CONFIG.PCW_GPIO_EMIO_GPIO_ENABLE {0} \
 CONFIG.PCW_GPIO_EMIO_GPIO_IO {<Select>} \
 CONFIG.PCW_GPIO_MIO_GPIO_ENABLE {1} \
@@ -965,11 +976,22 @@ CONFIG.PCW_FCLK3_PERIPHERAL_CLKSRC.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR0.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FCLK_CLK0_BUF.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FCLK_CLK1_BUF.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FCLK_CLK2_BUF.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FCLK_CLK3_BUF.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FPGA_FCLK0_ENABLE.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FTM_CTI_IN0.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FTM_CTI_IN1.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FTM_CTI_IN2.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FTM_CTI_IN3.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FTM_CTI_OUT0.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FTM_CTI_OUT1.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FTM_CTI_OUT2.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_FTM_CTI_OUT3.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_GPIO_EMIO_GPIO_ENABLE.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_GPIO_EMIO_GPIO_IO.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_GPIO_MIO_GPIO_ENABLE.VALUE_SRC {DEFAULT} \
@@ -1530,43 +1552,43 @@ CONFIG.NUM_MI {4} \
 
   # Perform GUI Layout
   regenerate_bd_layout -layout_string {
-   guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
+   guistr: "# # String gsaved with Nlview 6.6.5b  2016-09-06 bk=1.3687 VDI=39 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
 preplace port DDR -pg 1 -y 660 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 680 -defaultsOSRD
 preplace inst axi_dma_0 -pg 1 -lvl 3 -y 180 -defaultsOSRD
-preplace inst axi_dma_1 -pg 1 -lvl 3 -y 620 -defaultsOSRD
-preplace inst axi_mem_intercon_1 -pg 1 -lvl 4 -y 740 -defaultsOSRD
 preplace inst rst_processing_system7_0_100M -pg 1 -lvl 1 -y 710 -defaultsOSRD
+preplace inst axi_mem_intercon_1 -pg 1 -lvl 4 -y 740 -defaultsOSRD
+preplace inst axi_dma_1 -pg 1 -lvl 3 -y 620 -defaultsOSRD
 preplace inst axi_mem_intercon_2 -pg 1 -lvl 4 -y 960 -defaultsOSRD
-preplace inst KNN_accelerator_0 -pg 1 -lvl 4 -y 210 -defaultsOSRD
 preplace inst axi_mem_intercon -pg 1 -lvl 4 -y 500 -defaultsOSRD
+preplace inst KNN_accelerator_0 -pg 1 -lvl 4 -y 210 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 560 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 5 -y 740 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 5 1 NJ
 preplace netloc processing_system7_0_axi_periph_M03_AXI 1 2 1 N
-preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 1 660
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 1 640
 preplace netloc axi_dma_1_M_AXI_MM2S 1 3 1 1100
-preplace netloc axi_dma_1_M_AXIS_MM2S 1 3 1 1130
+preplace netloc axi_dma_1_M_AXIS_MM2S 1 3 1 1120
 preplace netloc axi_mem_intercon_1_M00_AXI 1 4 1 N
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 360 380 NJ 380 NJ 380 NJ 380 1990
-preplace netloc KNN_accelerator_1_m00_axis_tlast 1 2 3 700 10 NJ 10 1540
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 20 800 NJ 800 NJ 800 NJ 620 NJ 590 1970
-preplace netloc axi_mem_intercon_M00_AXI 1 4 1 1520
-preplace netloc KNN_accelerator_1_m00_axis_tstrb 1 2 3 720 360 NJ 360 1510
-preplace netloc KNN_accelerator_1_m00_axis_tdata 1 2 3 690 370 NJ 370 1550
-preplace netloc axi_dma_0_s_axis_s2mm_tready 1 2 3 710 30 NJ 30 1520
-preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 3 340 350 680 350 1170
-preplace netloc KNN_accelerator_1_m00_axis_tvalid 1 2 3 670 20 NJ 20 1530
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 340 380 NJ 380 NJ 380 NJ 380 1990
+preplace netloc KNN_accelerator_1_m00_axis_tlast 1 2 3 680 10 NJ 10 1540
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 20 800 NJ 800 NJ 800 1170J 620 1520J 590 1980
+preplace netloc axi_mem_intercon_M00_AXI 1 4 1 1540
+preplace netloc KNN_accelerator_1_m00_axis_tstrb 1 2 3 700 360 NJ 360 1510
+preplace netloc KNN_accelerator_1_m00_axis_tdata 1 2 3 670 370 NJ 370 1550
+preplace netloc axi_dma_0_s_axis_s2mm_tready 1 2 3 690 30 NJ 30 1520
+preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 3 350 750 660 750 1180
+preplace netloc KNN_accelerator_1_m00_axis_tvalid 1 2 3 650 20 NJ 20 1530
 preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ
-preplace netloc S00_AXI_1 1 3 1 1160
-preplace netloc axi_dma_0_M_AXI_S2MM 1 3 1 1140
-preplace netloc axi_mem_intercon_2_M00_AXI 1 4 1 1550
-preplace netloc rst_processing_system7_0_100M_interconnect_aresetn 1 1 3 360 740 NJ 740 1120
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 20 620 350 370 670 330 1150 1080 1530 580 1980
-preplace netloc axi_dma_0_M_AXIS_MM2S 1 3 1 1120
-preplace netloc processing_system7_0_axi_periph_M01_AXI 1 2 2 700 390 NJ
-levelinfo -pg 1 0 180 510 910 1350 1760 2010 -top 0 -bot 1090
+preplace netloc S00_AXI_1 1 3 1 1140
+preplace netloc axi_dma_0_M_AXI_S2MM 1 3 1 1130
+preplace netloc axi_mem_intercon_2_M00_AXI 1 4 1 1520
+preplace netloc rst_processing_system7_0_100M_interconnect_aresetn 1 1 3 360 940 NJ 940 1160
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 10 1080 340 1080 650 1080 1150 1080 1540 1080 1970
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 3 1 1110
+preplace netloc processing_system7_0_axi_periph_M01_AXI 1 2 2 680 390 1100J
+levelinfo -pg 1 -10 180 510 910 1350 1760 2010 -top 0 -bot 1090
 ",
 }
 

@@ -74,7 +74,6 @@ proc ps7_ddr_init_data_3_0 {} {
     mask_write 0XF80060B0 0x1FFFFFFF 0x1CFFFFFF
     mask_write 0XF80060B4 0x00000200 0x00000200
     mask_write 0XF80060B8 0x01FFFFFF 0x00200066
-    mask_write 0XF80060C4 0x00000003 0x00000003
     mask_write 0XF80060C4 0x00000003 0x00000000
     mask_write 0XF80060C8 0x000000FF 0x00000000
     mask_write 0XF80060DC 0x00000001 0x00000000
@@ -308,7 +307,6 @@ proc ps7_ddr_init_data_2_0 {} {
     mask_write 0XF80060B0 0x1FFFFFFF 0x1CFFFFFF
     mask_write 0XF80060B4 0x000007FF 0x00000200
     mask_write 0XF80060B8 0x01FFFFFF 0x00200066
-    mask_write 0XF80060C4 0x00000003 0x00000003
     mask_write 0XF80060C4 0x00000003 0x00000000
     mask_write 0XF80060C8 0x000000FF 0x00000000
     mask_write 0XF80060DC 0x00000001 0x00000000
@@ -540,7 +538,6 @@ proc ps7_ddr_init_data_1_0 {} {
     mask_write 0XF80060B0 0x1FFFFFFF 0x1CFFFFFF
     mask_write 0XF80060B4 0x000007FF 0x00000200
     mask_write 0XF80060B8 0x01FFFFFF 0x00200066
-    mask_write 0XF80060C4 0x00000003 0x00000003
     mask_write 0XF80060C4 0x00000003 0x00000000
     mask_write 0XF80060C8 0x000000FF 0x00000000
     mask_write 0XF80060DC 0x00000001 0x00000000
@@ -768,13 +765,11 @@ proc ps7_debug {} {
         ps7_debug_3_0   
     }
 }
-
 proc ps7_init {} {
     variable PCW_SILICON_VER_1_0
     variable PCW_SILICON_VER_2_0
     variable PCW_SILICON_VER_3_0
     set sil_ver [ps_version]
-
     if { $sil_ver == $PCW_SILICON_VER_1_0} {
             ps7_mio_init_data_1_0
             ps7_pll_init_data_1_0

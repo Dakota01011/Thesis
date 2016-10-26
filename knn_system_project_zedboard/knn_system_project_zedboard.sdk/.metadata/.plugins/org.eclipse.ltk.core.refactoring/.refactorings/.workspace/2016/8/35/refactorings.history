@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;KNN_AXI_Test&apos;" deleteContents="true" description="Delete resource &apos;KNN_AXI_Test&apos;" element1="/KNN_AXI_Test" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1472227263966"/>&#x0A;<refactoring comment="Delete resource &apos;KNN_AXI_Test/src/main.cc&apos;" deleteContents="false" description="Delete resource &apos;KNN_AXI_Test/src/main.cc&apos;" element1="/KNN_AXI_Test/src/main.cc" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1472227438743"/>
-</session>

@@ -415,6 +415,9 @@
 #define XPAR_PS7_SD_0_SDIO_CLK_FREQ_HZ 50000000
 #define XPAR_PS7_SD_0_HAS_CD 1
 #define XPAR_PS7_SD_0_HAS_WP 1
+#define XPAR_PS7_SD_0_BUS_WIDTH 0
+#define XPAR_PS7_SD_0_MIO_BANK 0
+#define XPAR_PS7_SD_0_HAS_EMIO 0
 
 
 /******************************************************************/
@@ -426,6 +429,9 @@
 #define XPAR_XSDPS_0_SDIO_CLK_FREQ_HZ 50000000
 #define XPAR_XSDPS_0_HAS_CD 1
 #define XPAR_XSDPS_0_HAS_WP 1
+#define XPAR_XSDPS_0_BUS_WIDTH 0
+#define XPAR_XSDPS_0_MIO_BANK 0
+#define XPAR_XSDPS_0_HAS_EMIO 0
 
 
 /******************************************************************/

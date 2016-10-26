@@ -86,9 +86,23 @@ int main() {
 	printf("[FPGA] Time: %4.6f sec\n\r", diff*pow(10,-8));
 
 	printf("[FPGA] K returns: \n\r");
+	u32 results[K] = {48394, 40097, 25701, 3018, 16511, 24116, 27482, 35514, 21016, 13906, 29928, 40295, 33986, 47997, 45967, 44834, 37149, 16450, 26481, 43695, 12176, 34739, 7256, 35663, 10251};
+	u32 passing = 1;
 	for (int i = 0; i < K; i++) {
 		u32 num = Xil_In32(((UINTPTR)myOutputArray) + (4*i));
 		printf("[FPGA] ID: %i \n\r", (int)num);
+		if (num != results[i])
+		{
+			passing = 0;
+		}
+	}
+	if(passing)
+	{
+		printf("[FPGA] PASS \n\r");
+	}
+	else
+	{
+		printf("[FPGA] FAIL \n\r");
 	}
 
 	return 0;

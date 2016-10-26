@@ -11,6 +11,7 @@ def convert_fp(name):
 
 	max_val = 0
 	min_val = math.inf
+	index = -1
 	for line in data_file.readlines():
 		line_split = re.split('\t', line)
 		isId = True
@@ -19,11 +20,13 @@ def convert_fp(name):
 			if num[-1:]== '\n': # Check last char
 				num = num[:-1] # Remove last char
 			if isId: # id number
-				data_file_out.write(num)
+				data_file_out.write(str(index))
+				index += 1
 				isId = False
 			elif isClass: # ignore classification
 				isClass = False
 			else: # process number
+				# print(num)
 				myfloat = abs(float(num))
 				binary = []
 				position = pow(2, 31)

@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:axi_dma:7.1
--- IP Revision: 10
+-- IP Revision: 11
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY axi_dma_v7_1_10;
-USE axi_dma_v7_1_10.axi_dma;
+LIBRARY axi_dma_v7_1_11;
+USE axi_dma_v7_1_11.axi_dma;
 
 ENTITY design_1_axi_dma_0_0 IS
   PORT (

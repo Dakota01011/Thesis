@@ -4,7 +4,7 @@ from channel_data_format import data_format
 
 K = 10
 FP = False
-name = 'training-data3'
+name = 'phy_train'
 
 if FP:
     convert_fp(name)

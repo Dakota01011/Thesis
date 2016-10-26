@@ -10,7 +10,7 @@
 
 #define NUM_FEATURES 156
 #define NUM_POINTS 25004
-#define K 10
+#define K 25
 
 extern const int myIntDataSet[NUM_POINTS][NUM_FEATURES];
 
